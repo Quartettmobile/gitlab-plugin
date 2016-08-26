@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>Project.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">GitLab Plugin</a> &gt; <a href="index.source.html" class="el_package">com.dabsquared.gitlabjenkins.gitlab.hook.model</a> &gt; <span class="el_source">Project.java</span></div><h1>Project.java</h1><pre class="source lang-java linenums">package com.dabsquared.gitlabjenkins.gitlab.hook.model;
+
+import net.karneim.pojobuilder.GeneratePojoBuilder;
+import org.apache.commons.lang.builder.EqualsBuilder;
+import org.apache.commons.lang.builder.HashCodeBuilder;
+import org.apache.commons.lang.builder.ToStringBuilder;
+
+/**
+ * @author Robin Müller
+ */
+@GeneratePojoBuilder(intoPackage = &quot;*.builder.generated&quot;, withFactoryMethod = &quot;*&quot;)
+<span class="fc" id="L12">public class Project {</span>
+
+    private String name;
+    private String description;
+    private String webUrl;
+    private String avatarUrl;
+    private String namespace;
+    private Integer visibilityLevel;
+    private String pathWithNamespace;
+    private String defaultBranch;
+    private String homepage;
+    private String url;
+    private String sshUrl;
+    private String httpUrl;
+
+    public String getName() {
+<span class="fc" id="L28">        return name;</span>
+    }
+
+    public void setName(String name) {
+<span class="fc" id="L32">        this.name = name;</span>
+<span class="fc" id="L33">    }</span>
+
+    public String getDescription() {
+<span class="nc" id="L36">        return description;</span>
+    }
+
+    public void setDescription(String description) {
+<span class="fc" id="L40">        this.description = description;</span>
+<span class="fc" id="L41">    }</span>
+
+    public String getWebUrl() {
+<span class="fc" id="L44">        return webUrl;</span>
+    }
+
+    public void setWebUrl(String webUrl) {
+<span class="fc" id="L48">        this.webUrl = webUrl;</span>
+<span class="fc" id="L49">    }</span>
+
+    public String getAvatarUrl() {
+<span class="nc" id="L52">        return avatarUrl;</span>
+    }
+
+    public void setAvatarUrl(String avatarUrl) {
+<span class="fc" id="L56">        this.avatarUrl = avatarUrl;</span>
+<span class="fc" id="L57">    }</span>
+
+    public String getNamespace() {
+<span class="fc" id="L60">        return namespace;</span>
+    }
+
+    public void setNamespace(String namespace) {
+<span class="fc" id="L64">        this.namespace = namespace;</span>
+<span class="fc" id="L65">    }</span>
+
+    public Integer getVisibilityLevel() {
+<span class="nc" id="L68">        return visibilityLevel;</span>
+    }
+
+    public void setVisibilityLevel(Integer visibilityLevel) {
+<span class="fc" id="L72">        this.visibilityLevel = visibilityLevel;</span>
+<span class="fc" id="L73">    }</span>
+
+    public String getPathWithNamespace() {
+<span class="nc" id="L76">        return pathWithNamespace;</span>
+    }
+
+    public void setPathWithNamespace(String pathWithNamespace) {
+<span class="fc" id="L80">        this.pathWithNamespace = pathWithNamespace;</span>
+<span class="fc" id="L81">    }</span>
+
+    public String getDefaultBranch() {
+<span class="nc" id="L84">        return defaultBranch;</span>
+    }
+
+    public void setDefaultBranch(String defaultBranch) {
+<span class="fc" id="L88">        this.defaultBranch = defaultBranch;</span>
+<span class="fc" id="L89">    }</span>
+
+    public String getHomepage() {
+<span class="fc" id="L92">        return homepage;</span>
+    }
+
+    public void setHomepage(String homepage) {
+<span class="fc" id="L96">        this.homepage = homepage;</span>
+<span class="fc" id="L97">    }</span>
+
+    public String getUrl() {
+<span class="fc" id="L100">        return url;</span>
+    }
+
+    public void setUrl(String url) {
+<span class="fc" id="L104">        this.url = url;</span>
+<span class="fc" id="L105">    }</span>
+
+    public String getSshUrl() {
+<span class="fc" id="L108">        return sshUrl;</span>
+    }
+
+    public void setSshUrl(String sshUrl) {
+<span class="fc" id="L112">        this.sshUrl = sshUrl;</span>
+<span class="fc" id="L113">    }</span>
+
+    public String getHttpUrl() {
+<span class="fc" id="L116">        return httpUrl;</span>
+    }
+
+    public void setHttpUrl(String httpUrl) {
+<span class="fc" id="L120">        this.httpUrl = httpUrl;</span>
+<span class="fc" id="L121">    }</span>
+
+    @Override
+    public boolean equals(Object o) {
+<span class="nc bnc" id="L125" title="All 2 branches missed.">        if (this == o) {</span>
+<span class="nc" id="L126">            return true;</span>
+        }
+<span class="nc bnc" id="L128" title="All 4 branches missed.">        if (o == null || getClass() != o.getClass()) {</span>
+<span class="nc" id="L129">            return false;</span>
+        }
+<span class="nc" id="L131">        Project project = (Project) o;</span>
+<span class="nc" id="L132">        return new EqualsBuilder()</span>
+<span class="nc" id="L133">                .append(name, project.name)</span>
+<span class="nc" id="L134">                .append(description, project.description)</span>
+<span class="nc" id="L135">                .append(webUrl, project.webUrl)</span>
+<span class="nc" id="L136">                .append(avatarUrl, project.avatarUrl)</span>
+<span class="nc" id="L137">                .append(namespace, project.namespace)</span>
+<span class="nc" id="L138">                .append(visibilityLevel, project.visibilityLevel)</span>
+<span class="nc" id="L139">                .append(pathWithNamespace, project.pathWithNamespace)</span>
+<span class="nc" id="L140">                .append(defaultBranch, project.defaultBranch)</span>
+<span class="nc" id="L141">                .append(homepage, project.homepage)</span>
+<span class="nc" id="L142">                .append(url, project.url)</span>
+<span class="nc" id="L143">                .append(sshUrl, project.sshUrl)</span>
+<span class="nc" id="L144">                .append(httpUrl, project.httpUrl)</span>
+<span class="nc" id="L145">                .isEquals();</span>
+    }
+
+    @Override
+    public int hashCode() {
+<span class="nc" id="L150">        return new HashCodeBuilder(17, 37)</span>
+<span class="nc" id="L151">                .append(name)</span>
+<span class="nc" id="L152">                .append(description)</span>
+<span class="nc" id="L153">                .append(webUrl)</span>
+<span class="nc" id="L154">                .append(avatarUrl)</span>
+<span class="nc" id="L155">                .append(namespace)</span>
+<span class="nc" id="L156">                .append(visibilityLevel)</span>
+<span class="nc" id="L157">                .append(pathWithNamespace)</span>
+<span class="nc" id="L158">                .append(defaultBranch)</span>
+<span class="nc" id="L159">                .append(homepage)</span>
+<span class="nc" id="L160">                .append(url)</span>
+<span class="nc" id="L161">                .append(sshUrl)</span>
+<span class="nc" id="L162">                .append(httpUrl)</span>
+<span class="nc" id="L163">                .toHashCode();</span>
+    }
+
+    @Override
+    public String toString() {
+<span class="nc" id="L168">        return new ToStringBuilder(this)</span>
+<span class="nc" id="L169">                .append(&quot;name&quot;, name)</span>
+<span class="nc" id="L170">                .append(&quot;description&quot;, description)</span>
+<span class="nc" id="L171">                .append(&quot;webUrl&quot;, webUrl)</span>
+<span class="nc" id="L172">                .append(&quot;avatarUrl&quot;, avatarUrl)</span>
+<span class="nc" id="L173">                .append(&quot;namespace&quot;, namespace)</span>
+<span class="nc" id="L174">                .append(&quot;visibilityLevel&quot;, visibilityLevel)</span>
+<span class="nc" id="L175">                .append(&quot;pathWithNamespace&quot;, pathWithNamespace)</span>
+<span class="nc" id="L176">                .append(&quot;defaultBranch&quot;, defaultBranch)</span>
+<span class="nc" id="L177">                .append(&quot;homepage&quot;, homepage)</span>
+<span class="nc" id="L178">                .append(&quot;url&quot;, url)</span>
+<span class="nc" id="L179">                .append(&quot;sshUrl&quot;, sshUrl)</span>
+<span class="nc" id="L180">                .append(&quot;httpUrl&quot;, httpUrl)</span>
+<span class="nc" id="L181">                .toString();</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.2.201409121644</span></div></body></html>

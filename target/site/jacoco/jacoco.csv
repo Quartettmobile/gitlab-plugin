@@ -1,0 +1,144 @@
+GROUP,PACKAGE,CLASS,INSTRUCTION_MISSED,INSTRUCTION_COVERED,BRANCH_MISSED,BRANCH_COVERED,LINE_MISSED,LINE_COVERED,COMPLEXITY_MISSED,COMPLEXITY_COVERED,METHOD_MISSED,METHOD_COVERED
+GitLab Plugin,com.dabsquared.gitlabjenkins.gitlab.hook.model.builder.generated,UserBuilder,81,44,5,5,26,15,11,4,6,4
+GitLab Plugin,com.dabsquared.gitlabjenkins.gitlab.hook.model.builder.generated,NoteObjectAttributesBuilder,29,128,7,7,10,41,9,10,2,10
+GitLab Plugin,com.dabsquared.gitlabjenkins.gitlab.hook.model.builder.generated,MergeRequestHookBuilder,68,57,4,6,22,19,9,6,5,5
+GitLab Plugin,com.dabsquared.gitlabjenkins.gitlab.hook.model.builder.generated,PushHookBuilder,81,172,4,22,26,55,10,21,6,12
+GitLab Plugin,com.dabsquared.gitlabjenkins.gitlab.hook.model.builder.generated,ProjectBuilder,94,143,5,19,30,46,12,17,7,10
+GitLab Plugin,com.dabsquared.gitlabjenkins.gitlab.hook.model.builder.generated,CommitBuilder,94,79,5,11,30,26,12,9,7,6
+GitLab Plugin,com.dabsquared.gitlabjenkins.gitlab.hook.model.builder.generated,MergeRequestObjectAttributesBuilder,146,219,9,31,46,70,20,25,11,14
+GitLab Plugin,com.dabsquared.gitlabjenkins.gitlab.hook.model.builder.generated,NoteHookBuilder,81,60,6,6,26,20,12,5,6,5
+GitLab Plugin,com.dabsquared.gitlabjenkins.gitlab.hook.model.builder.generated,RepositoryBuilder,55,102,5,9,18,33,9,10,4,8
+GitLab Plugin,com.dabsquared.gitlabjenkins.gitlab.api.model,BuildState,9,59,0,0,0,2,2,2,2,2
+GitLab Plugin,com.dabsquared.gitlabjenkins.gitlab.api.model,Branch,85,10,6,0,26,4,10,3,7,3
+GitLab Plugin,com.dabsquared.gitlabjenkins.gitlab.api.model,Project,110,30,6,0,31,14,11,8,8,8
+GitLab Plugin,com.dabsquared.gitlabjenkins.gitlab.api.model,Namespace,50,7,6,0,15,3,7,2,4,2
+GitLab Plugin,com.dabsquared.gitlabjenkins.gitlab.api.model,Note,152,0,6,0,48,0,19,0,16,0
+GitLab Plugin,com.dabsquared.gitlabjenkins.gitlab.api.model,MergeRequest,380,0,6,0,120,0,43,0,40,0
+GitLab Plugin,com.dabsquared.gitlabjenkins.gitlab.api.model,User,114,0,6,0,36,0,15,0,12,0
+GitLab Plugin,com.dabsquared.gitlabjenkins.gitlab.api.model,Commit,133,0,6,0,42,0,17,0,14,0
+GitLab Plugin,com.dabsquared.gitlabjenkins.builder.generated,GitLabPushTriggerBuilder,221,0,0,0,64,0,21,0,21,0
+GitLab Plugin,com.dabsquared.gitlabjenkins.workflow,UpdateGitLabCommitStatusStep.DescriptorImpl,25,6,2,0,6,3,3,2,2,2
+GitLab Plugin,com.dabsquared.gitlabjenkins.workflow,GitLabCommitStatusStep,14,0,2,0,4,0,3,0,2,0
+GitLab Plugin,com.dabsquared.gitlabjenkins.workflow,GitLabBuildsStep.Execution,64,0,8,0,18,0,8,0,4,0
+GitLab Plugin,com.dabsquared.gitlabjenkins.workflow,GitLabBuildsStep,46,0,6,0,10,0,6,0,3,0
+GitLab Plugin,com.dabsquared.gitlabjenkins.workflow,PendingBuildsAction,21,0,0,0,9,0,6,0,6,0
+GitLab Plugin,com.dabsquared.gitlabjenkins.workflow,GitLabBuildsStep.Execution.new BodyExecutionCallback() {...},115,0,14,0,21,0,11,0,4,0
+GitLab Plugin,com.dabsquared.gitlabjenkins.workflow,GitLabCommitStatusStep.DescriptorImpl,4,6,0,0,2,3,2,2,2,2
+GitLab Plugin,com.dabsquared.gitlabjenkins.workflow,GitLabBuildsStep.DescriptorImpl,4,6,0,0,2,3,2,2,2,2
+GitLab Plugin,com.dabsquared.gitlabjenkins.workflow,UpdateGitLabCommitStatusStep,20,0,2,0,6,0,4,0,3,0
+GitLab Plugin,com.dabsquared.gitlabjenkins.workflow,UpdateGitLabCommitStatusStep.Execution,35,0,4,0,7,0,4,0,2,0
+GitLab Plugin,com.dabsquared.gitlabjenkins.workflow,GitLabCommitStatusStep.Execution,67,0,8,0,16,0,8,0,4,0
+GitLab Plugin,com.dabsquared.gitlabjenkins.workflow,GitLabCommitStatusStep.Execution.new BodyExecutionCallback() {...},71,0,4,0,13,0,6,0,4,0
+GitLab Plugin,com.dabsquared.gitlabjenkins.trigger.handler.builder.generated,BuildStatusUpdateBuilder,78,0,0,0,25,0,8,0,8,0
+GitLab Plugin,com.dabsquared.gitlabjenkins.cause,CauseData,421,346,9,13,111,63,28,16,22,11
+GitLab Plugin,com.dabsquared.gitlabjenkins.cause,CauseDataBuilder,29,313,0,0,10,87,2,30,2,30
+GitLab Plugin,com.dabsquared.gitlabjenkins.cause,CauseData.ActionType.new CauseData.ActionType() {...},19,41,2,2,4,6,2,2,0,2
+GitLab Plugin,com.dabsquared.gitlabjenkins.cause,CauseData.ActionType.new CauseData.ActionType() {...},20,45,2,2,5,8,2,2,0,2
+GitLab Plugin,com.dabsquared.gitlabjenkins.cause,CauseData.ActionType.new CauseData.ActionType() {...},2,14,1,1,1,4,1,2,0,2
+GitLab Plugin,com.dabsquared.gitlabjenkins.cause,GitLabWebHookCause,0,17,0,0,0,5,0,3,0,3
+GitLab Plugin,com.dabsquared.gitlabjenkins.cause,CauseData.ActionType,9,39,0,0,0,4,2,2,2,2
+GitLab Plugin,com.dabsquared.gitlabjenkins.publisher,GitLabCommitStatusPublisher.DescriptorImpl,12,5,2,0,5,2,4,2,3,2
+GitLab Plugin,com.dabsquared.gitlabjenkins.publisher,GitLabCommitStatusPublisher,13,45,2,4,5,12,4,5,3,3
+GitLab Plugin,com.dabsquared.gitlabjenkins.trigger.handler.note,NoteHookTriggerHandlerImpl,24,209,8,10,7,47,9,11,1,10
+GitLab Plugin,com.dabsquared.gitlabjenkins.trigger.handler.note,NopNoteHookTriggerHandler,4,0,0,0,2,0,2,0,2,0
+GitLab Plugin,com.dabsquared.gitlabjenkins.trigger.handler.note,NoteHookTriggerHandlerFactory,14,0,2,0,4,0,3,0,2,0
+GitLab Plugin,com.dabsquared.gitlabjenkins.environment,GitLabEnvironmentContributor,0,17,0,2,0,5,0,3,0,2
+GitLab Plugin,com.dabsquared.gitlabjenkins.gitlab.hook.model,PushHook,176,71,6,0,47,31,9,20,6,20
+GitLab Plugin,com.dabsquared.gitlabjenkins.gitlab.hook.model,WebHook,62,14,6,0,18,6,7,4,4,4
+GitLab Plugin,com.dabsquared.gitlabjenkins.gitlab.hook.model,MergeRequestHook,74,21,6,0,21,9,7,6,4,6
+GitLab Plugin,com.dabsquared.gitlabjenkins.gitlab.hook.model,User,108,25,6,0,31,11,10,7,7,7
+GitLab Plugin,com.dabsquared.gitlabjenkins.gitlab.hook.model,Project,194,72,6,0,52,32,11,20,8,20
+GitLab Plugin,com.dabsquared.gitlabjenkins.gitlab.hook.model,Commit,149,41,6,0,41,19,12,11,9,11
+GitLab Plugin,com.dabsquared.gitlabjenkins.gitlab.hook.model,Repository,125,46,6,0,34,20,8,13,5,13
+GitLab Plugin,com.dabsquared.gitlabjenkins.gitlab.hook.model,MergeRequestObjectAttributes,296,122,6,0,78,54,13,34,10,34
+GitLab Plugin,com.dabsquared.gitlabjenkins.gitlab.hook.model,Action,5,33,0,0,0,2,1,3,1,3
+GitLab Plugin,com.dabsquared.gitlabjenkins.gitlab.hook.model,State,5,63,0,0,0,2,1,3,1,3
+GitLab Plugin,com.dabsquared.gitlabjenkins.gitlab.hook.model,NoteHook,89,25,6,0,25,11,8,7,5,7
+GitLab Plugin,com.dabsquared.gitlabjenkins.gitlab.hook.model,NoteObjectAttributes,137,34,6,0,38,16,12,9,9,9
+GitLab Plugin,com.dabsquared.gitlabjenkins.trigger.filter,BranchFilterConfig.BranchFilterConfigBuilder,0,34,0,0,0,9,0,6,0,6
+GitLab Plugin,com.dabsquared.gitlabjenkins.trigger.filter,BranchFilterType,5,43,0,0,0,4,1,3,1,3
+GitLab Plugin,com.dabsquared.gitlabjenkins.trigger.filter,BranchFilterFactory.new Object() {...},2,17,0,0,0,1,0,1,0,1
+GitLab Plugin,com.dabsquared.gitlabjenkins.trigger.filter,NameBasedFilter,2,116,2,18,0,23,2,14,0,6
+GitLab Plugin,com.dabsquared.gitlabjenkins.trigger.filter,RegexBasedFilter,0,22,2,4,0,4,2,3,0,2
+GitLab Plugin,com.dabsquared.gitlabjenkins.trigger.filter,BranchFilterConfig,0,27,0,0,0,10,0,5,0,5
+GitLab Plugin,com.dabsquared.gitlabjenkins.trigger.filter,AllBranchesFilter,0,5,0,0,0,2,0,2,0,2
+GitLab Plugin,com.dabsquared.gitlabjenkins.trigger.filter,BranchFilterFactory,3,24,0,3,1,4,1,3,1,1
+GitLab Plugin,com.dabsquared.gitlabjenkins.trigger.branch,ProjectBranchesProvider,312,0,38,0,59,0,32,0,13,0
+GitLab Plugin,com.dabsquared.gitlabjenkins.trigger.branch,AntPathMatcherSet,31,0,4,0,8,0,4,0,2,0
+GitLab Plugin,com.dabsquared.gitlabjenkins.gitlab.api.model.builder.generated,CommitBuilder,125,0,10,0,41,0,15,0,10,0
+GitLab Plugin,com.dabsquared.gitlabjenkins.gitlab.api.model.builder.generated,UserBuilder,109,0,8,0,36,0,13,0,9,0
+GitLab Plugin,com.dabsquared.gitlabjenkins.gitlab.api.model.builder.generated,MergeRequestBuilder,333,0,36,0,106,0,41,0,23,0
+GitLab Plugin,com.dabsquared.gitlabjenkins.gitlab.api.model.builder.generated,BranchBuilder,55,38,3,3,18,13,7,4,4,4
+GitLab Plugin,com.dabsquared.gitlabjenkins.gitlab.api.model.builder.generated,NoteBuilder,141,0,12,0,46,0,17,0,11,0
+GitLab Plugin,com.dabsquared.gitlabjenkins.gitlab.api.model.builder.generated,NamespaceBuilder,61,0,2,0,21,0,7,0,6,0
+GitLab Plugin,com.dabsquared.gitlabjenkins.gitlab.api.model.builder.generated,ProjectBuilder,141,0,12,0,46,0,17,0,11,0
+GitLab Plugin,com.dabsquared.gitlabjenkins.trigger.exception,NoRevisionToBuildException,0,3,0,0,0,1,0,1,0,1
+GitLab Plugin,com.dabsquared.gitlabjenkins.webhook.build,PushBuildAction.SCMSourceOwnerNotifier,90,0,8,0,15,0,6,0,2,0
+GitLab Plugin,com.dabsquared.gitlabjenkins.webhook.build,PushBuildAction,59,58,6,8,14,14,4,7,0,4
+GitLab Plugin,com.dabsquared.gitlabjenkins.webhook.build,MergeRequestBuildAction.new Runnable() {...},0,20,1,1,0,5,1,2,0,2
+GitLab Plugin,com.dabsquared.gitlabjenkins.webhook.build,MergeRequestBuildAction,18,56,6,6,3,16,6,4,0,4
+GitLab Plugin,com.dabsquared.gitlabjenkins.webhook.build,NoteBuildAction.new Runnable() {...},0,20,1,1,0,5,1,2,0,2
+GitLab Plugin,com.dabsquared.gitlabjenkins.webhook.build,PushBuildAction.new Runnable() {...},0,20,0,2,0,5,0,3,0,2
+GitLab Plugin,com.dabsquared.gitlabjenkins.webhook.build,NoteBuildAction,4,35,1,1,1,9,1,3,0,3
+GitLab Plugin,com.dabsquared.gitlabjenkins.webhook.build,BuildWebHookAction,0,8,0,0,0,4,0,2,0,2
+GitLab Plugin,com.dabsquared.gitlabjenkins.trigger,TriggerOpenMergeRequest,9,39,0,0,0,2,2,2,2,2
+GitLab Plugin,com.dabsquared.gitlabjenkins.gitlab,GitLabClientBuilder.LoggingFilter.HeaderToFilteredString,44,0,4,0,6,0,4,0,2,0
+GitLab Plugin,com.dabsquared.gitlabjenkins.gitlab,GitLabClientBuilder.LoggingFilter.HeaderToString,27,0,2,0,2,0,3,0,2,0
+GitLab Plugin,com.dabsquared.gitlabjenkins.gitlab,GitLabClientBuilder.LoggingFilter,191,13,20,2,21,6,15,3,4,3
+GitLab Plugin,com.dabsquared.gitlabjenkins.gitlab,GitLabClientBuilder,59,118,7,7,13,35,8,6,2,5
+GitLab Plugin,com.dabsquared.gitlabjenkins.gitlab,JacksonConfig,0,15,0,0,0,5,0,2,0,2
+GitLab Plugin,com.dabsquared.gitlabjenkins.gitlab,GitLabClientBuilder.ApiHeaderTokenFilter,0,13,0,0,0,5,0,2,0,2
+GitLab Plugin,com.dabsquared.gitlabjenkins.gitlab,GitLabClientBuilder.ResteasyClientBuilder,36,12,5,1,6,4,4,2,1,2
+GitLab Plugin,com.dabsquared.gitlabjenkins.trigger.handler.merge,MergeRequestHookTriggerHandlerFactory,43,0,8,0,11,0,7,0,3,0
+GitLab Plugin,com.dabsquared.gitlabjenkins.trigger.handler.merge,NopMergeRequestHookTriggerHandler,4,0,0,0,2,0,2,0,2,0
+GitLab Plugin,com.dabsquared.gitlabjenkins.trigger.handler.merge,MergeRequestHookTriggerHandlerImpl,88,228,22,14,12,56,19,12,2,11
+GitLab Plugin,com.dabsquared.gitlabjenkins.trigger.handler,AbstractWebHookTriggerHandler.new ParameterizedJobMixIn() {...},0,12,0,0,0,2,0,2,0,2
+GitLab Plugin,com.dabsquared.gitlabjenkins.trigger.handler,AbstractWebHookTriggerHandler.BuildStatusUpdate,21,0,0,0,8,0,4,0,4,0
+GitLab Plugin,com.dabsquared.gitlabjenkins.trigger.handler,AbstractWebHookTriggerHandler,82,136,8,10,16,30,7,10,0,8
+GitLab Plugin,com.dabsquared.gitlabjenkins.util,BuildUtil,17,147,17,21,5,23,17,8,1,5
+GitLab Plugin,com.dabsquared.gitlabjenkins.util,ProjectIdUtil.ProjectIdResolutionException,9,0,0,0,4,0,2,0,2,0
+GitLab Plugin,com.dabsquared.gitlabjenkins.util,ACLUtil,3,15,0,0,2,3,1,1,1,1
+GitLab Plugin,com.dabsquared.gitlabjenkins.util,JsonUtil.DateModule,0,27,0,0,0,4,0,2,0,2
+GitLab Plugin,com.dabsquared.gitlabjenkins.util,ACLUtil.ObjectHolder,0,10,0,0,0,4,0,3,0,3
+GitLab Plugin,com.dabsquared.gitlabjenkins.util,LoggerUtil,3,2,0,0,1,1,1,1,1,1
+GitLab Plugin,com.dabsquared.gitlabjenkins.util,JsonUtil.DateModule.new JsonDeserializer() {...},18,32,1,1,3,5,1,2,0,2
+GitLab Plugin,com.dabsquared.gitlabjenkins.util,CommitStatusUpdater,90,241,13,19,22,57,14,13,2,9
+GitLab Plugin,com.dabsquared.gitlabjenkins.util,ProjectIdUtil,29,21,1,1,4,5,2,2,1,2
+GitLab Plugin,com.dabsquared.gitlabjenkins.util,JsonUtil,15,33,0,0,5,8,1,3,1,3
+GitLab Plugin,com.dabsquared.gitlabjenkins.util,ACLUtil.new Runnable() {...},0,16,0,0,0,3,0,2,0,2
+GitLab Plugin,com.dabsquared.gitlabjenkins.connection,GitLabConnectionConfig.GitLabCredentialMatcher,16,0,4,0,4,0,4,0,2,0
+GitLab Plugin,com.dabsquared.gitlabjenkins.connection,GitLabConnectionProperty.DescriptorImpl,37,5,2,0,8,2,4,2,3,2
+GitLab Plugin,com.dabsquared.gitlabjenkins.connection,GitLabConnectionProperty,6,23,2,2,2,6,3,2,1,2
+GitLab Plugin,com.dabsquared.gitlabjenkins.connection,GitLabApiToken.NameProvider,29,0,2,0,3,0,3,0,2,0
+GitLab Plugin,com.dabsquared.gitlabjenkins.connection,GitLabConnection,55,75,8,6,8,22,6,10,0,9
+GitLab Plugin,com.dabsquared.gitlabjenkins.connection,GitLabApiTokenImpl,12,0,0,0,4,0,2,0,2,0
+GitLab Plugin,com.dabsquared.gitlabjenkins.connection,GitLabApiTokenImpl.DescriptorImpl,0,5,0,0,0,2,0,2,0,2
+GitLab Plugin,com.dabsquared.gitlabjenkins.connection,GitLabConnectionConfig,156,106,26,4,40,26,21,9,7,8
+GitLab Plugin,com.dabsquared.gitlabjenkins.trigger.handler.push,OpenMergeRequestPushHookTriggerHandler,458,0,46,0,96,0,33,0,10,0
+GitLab Plugin,com.dabsquared.gitlabjenkins.trigger.handler.push,PushHookTriggerHandlerList,25,0,2,0,7,0,3,0,2,0
+GitLab Plugin,com.dabsquared.gitlabjenkins.trigger.handler.push,NopPushHookTriggerHandler,4,0,0,0,2,0,2,0,2,0
+GitLab Plugin,com.dabsquared.gitlabjenkins.trigger.handler.push,PushHookTriggerHandlerFactory,44,0,8,0,10,0,7,0,3,0
+GitLab Plugin,com.dabsquared.gitlabjenkins.trigger.handler.push,PushHookTriggerHandlerImpl,57,190,16,16,11,50,12,16,1,11
+GitLab Plugin,com.dabsquared.gitlabjenkins.trigger.handler.push,OpenMergeRequestPushHookTriggerHandler.new ParameterizedJobMixIn() {...},12,0,0,0,2,0,2,0,2,0
+GitLab Plugin,com.dabsquared.gitlabjenkins,GitLabProjectBranchesService.BranchLoadingException,4,0,0,0,2,0,1,0,1,0
+GitLab Plugin,com.dabsquared.gitlabjenkins,GitLabPushTrigger.DescriptorImpl,144,33,12,2,24,13,16,3,9,3
+GitLab Plugin,com.dabsquared.gitlabjenkins,GitLabProjectBranchesService.BranchNamesLoader,0,54,0,2,0,11,0,3,0,2
+GitLab Plugin,com.dabsquared.gitlabjenkins,GitLabPushTrigger,266,85,14,6,73,23,31,3,22,2
+GitLab Plugin,com.dabsquared.gitlabjenkins,GitLabProjectBranchesService,19,36,2,0,6,9,2,3,1,3
+GitLab Plugin,com.dabsquared.gitlabjenkins.webhook,ActionResolver,35,266,9,34,9,50,9,26,0,11
+GitLab Plugin,com.dabsquared.gitlabjenkins.webhook,ActionResolver.NoopAction,1,3,0,0,1,1,1,1,1,1
+GitLab Plugin,com.dabsquared.gitlabjenkins.webhook,GitLabWebHook.GitlabWebHookCrumbExclusion,2,18,2,2,1,5,2,2,0,2
+GitLab Plugin,com.dabsquared.gitlabjenkins.webhook,ActionResolver.new ACLUtil.Function() {...},45,29,11,3,3,7,7,2,0,2
+GitLab Plugin,com.dabsquared.gitlabjenkins.webhook,GitLabWebHook,18,15,0,0,5,5,3,3,3,3
+GitLab Plugin,com.dabsquared.gitlabjenkins.listener,GitLabBuildDescriptionRunListener,20,13,5,3,6,4,3,3,0,2
+GitLab Plugin,com.dabsquared.gitlabjenkins.listener,GitLabMergeRequestRunListener,109,101,14,12,21,20,11,9,1,6
+GitLab Plugin,com.dabsquared.gitlabjenkins.webhook.status,BuildStatusAction,7,74,4,14,3,23,4,9,0,4
+GitLab Plugin,com.dabsquared.gitlabjenkins.webhook.status,CommitStatusPngAction,0,7,0,0,0,2,0,1,0,1
+GitLab Plugin,com.dabsquared.gitlabjenkins.webhook.status,StatusJsonAction,5,56,0,2,2,17,0,4,0,3
+GitLab Plugin,com.dabsquared.gitlabjenkins.webhook.status,BuildPageRedirectAction,5,39,1,1,2,10,1,2,0,2
+GitLab Plugin,com.dabsquared.gitlabjenkins.webhook.status,BuildStatusAction.BuildStatus,5,85,0,0,0,6,1,4,1,4
+GitLab Plugin,com.dabsquared.gitlabjenkins.webhook.status,BranchBuildPageRedirectAction,0,6,0,0,0,2,0,1,0,1
+GitLab Plugin,com.dabsquared.gitlabjenkins.webhook.status,StatusPngAction.new Object() {...},4,29,0,0,0,1,0,1,0,1
+GitLab Plugin,com.dabsquared.gitlabjenkins.webhook.status,BranchStatusPngAction,0,7,0,0,0,2,0,1,0,1
+GitLab Plugin,com.dabsquared.gitlabjenkins.webhook.status,StatusPngAction,5,58,0,5,2,15,0,7,0,3
+GitLab Plugin,com.dabsquared.gitlabjenkins.webhook.status,CommitBuildPageRedirectAction,0,6,0,0,0,2,0,1,0,1

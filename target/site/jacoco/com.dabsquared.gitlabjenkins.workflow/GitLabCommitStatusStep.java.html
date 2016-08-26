@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>GitLabCommitStatusStep.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">GitLab Plugin</a> &gt; <a href="index.source.html" class="el_package">com.dabsquared.gitlabjenkins.workflow</a> &gt; <span class="el_source">GitLabCommitStatusStep.java</span></div><h1>GitLabCommitStatusStep.java</h1><pre class="source lang-java linenums">package com.dabsquared.gitlabjenkins.workflow;
+
+import com.dabsquared.gitlabjenkins.gitlab.api.model.BuildState;
+import com.dabsquared.gitlabjenkins.util.CommitStatusUpdater;
+import hudson.Extension;
+import hudson.model.Run;
+import hudson.model.TaskListener;
+import org.apache.commons.lang.StringUtils;
+import org.jenkinsci.plugins.workflow.steps.AbstractStepDescriptorImpl;
+import org.jenkinsci.plugins.workflow.steps.AbstractStepExecutionImpl;
+import org.jenkinsci.plugins.workflow.steps.AbstractStepImpl;
+import org.jenkinsci.plugins.workflow.steps.BodyExecution;
+import org.jenkinsci.plugins.workflow.steps.BodyExecutionCallback;
+import org.jenkinsci.plugins.workflow.steps.FlowInterruptedException;
+import org.jenkinsci.plugins.workflow.steps.StepContext;
+import org.jenkinsci.plugins.workflow.steps.StepContextParameter;
+import org.kohsuke.stapler.DataBoundConstructor;
+import org.kohsuke.stapler.export.ExportedBean;
+
+import javax.annotation.Nonnull;
+import javax.inject.Inject;
+
+/**
+ * @author &lt;a href=&quot;mailto:robin.mueller@1und1.de&quot;&gt;Robin Müller&lt;/a&gt;
+ */
+@ExportedBean
+public class GitLabCommitStatusStep extends AbstractStepImpl {
+
+    private String name;
+
+    @DataBoundConstructor
+<span class="nc" id="L32">    public GitLabCommitStatusStep(String name) {</span>
+<span class="nc bnc" id="L33" title="All 2 branches missed.">        this.name = StringUtils.isEmpty(name) ? null : name;</span>
+<span class="nc" id="L34">    }</span>
+
+    public String getName() {
+<span class="nc" id="L37">        return name;</span>
+    }
+
+<span class="nc" id="L40">    public static class Execution extends AbstractStepExecutionImpl {</span>
+        private static final long serialVersionUID = 1;
+
+        @StepContextParameter
+        private transient Run&lt;?, ?&gt; run;
+
+        @Inject
+        private transient GitLabCommitStatusStep step;
+
+        private BodyExecution body;
+
+        @Override
+        public boolean start() throws Exception {
+<span class="nc bnc" id="L53" title="All 2 branches missed.">            final String name = StringUtils.isEmpty(step.name) ? &quot;jenkins&quot; : step.name;</span>
+<span class="nc" id="L54">            body = getContext().newBodyInvoker()</span>
+<span class="nc" id="L55">                .withCallback(new BodyExecutionCallback() {</span>
+                    @Override
+                    public void onStart(StepContext context) {
+<span class="nc" id="L58">                        CommitStatusUpdater.updateCommitStatus(run, getTaskListener(context), BuildState.running, name);</span>
+<span class="nc" id="L59">                        PendingBuildsAction action = run.getAction(PendingBuildsAction.class);</span>
+<span class="nc bnc" id="L60" title="All 2 branches missed.">                        if (action != null) {</span>
+<span class="nc" id="L61">                            action.startBuild(name);</span>
+                        }
+<span class="nc" id="L63">                    }</span>
+
+                    @Override
+                    public void onSuccess(StepContext context, Object result) {
+<span class="nc" id="L67">                        CommitStatusUpdater.updateCommitStatus(run, getTaskListener(context), BuildState.success, name);</span>
+<span class="nc" id="L68">                        context.onSuccess(result);</span>
+<span class="nc" id="L69">                    }</span>
+
+                    @Override
+                    public void onFailure(StepContext context, Throwable t) {
+<span class="nc bnc" id="L73" title="All 2 branches missed.">                        BuildState state = t instanceof FlowInterruptedException ? BuildState.canceled : BuildState.failed;</span>
+<span class="nc" id="L74">                        CommitStatusUpdater.updateCommitStatus(run, getTaskListener(context), state, name);</span>
+<span class="nc" id="L75">                        context.onFailure(t);</span>
+<span class="nc" id="L76">                    }</span>
+                })
+<span class="nc" id="L78">                .start();</span>
+<span class="nc" id="L79">            return false;</span>
+        }
+
+        @Override
+        public void stop(@Nonnull Throwable cause) throws Exception {
+            // should be no need to do anything special (but verify in JENKINS-26148)
+<span class="nc bnc" id="L85" title="All 2 branches missed.">            if (body != null) {</span>
+<span class="nc bnc" id="L86" title="All 2 branches missed.">                String name = StringUtils.isEmpty(step.name) ? &quot;jenkins&quot; : step.name;</span>
+<span class="nc" id="L87">                CommitStatusUpdater.updateCommitStatus(run, null, BuildState.canceled, name);</span>
+<span class="nc" id="L88">                body.cancel(cause);</span>
+            }
+<span class="nc" id="L90">        }</span>
+
+        private TaskListener getTaskListener(StepContext context) {
+<span class="nc bnc" id="L93" title="All 2 branches missed.">            if (!context.isReady()) {</span>
+<span class="nc" id="L94">                return null;</span>
+            }
+            try {
+<span class="nc" id="L97">                return context.get(TaskListener.class);</span>
+<span class="nc" id="L98">            } catch (Exception x) {</span>
+<span class="nc" id="L99">                return null;</span>
+            }
+        }
+    }
+
+    @Extension
+    public static final class DescriptorImpl extends AbstractStepDescriptorImpl {
+        public DescriptorImpl() {
+<span class="fc" id="L107">            super(Execution.class);</span>
+<span class="fc" id="L108">        }</span>
+
+        @Override
+        public String getDisplayName() {
+<span class="fc" id="L112">            return &quot;Update the commit status in GitLab depending on the build status&quot;;</span>
+        }
+
+        @Override
+        public String getFunctionName() {
+<span class="nc" id="L117">            return &quot;gitlabCommitStatus&quot;;</span>
+        }
+
+        @Override
+        public boolean takesImplicitBlockArgument() {
+<span class="nc" id="L122">            return true;</span>
+        }
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.2.201409121644</span></div></body></html>

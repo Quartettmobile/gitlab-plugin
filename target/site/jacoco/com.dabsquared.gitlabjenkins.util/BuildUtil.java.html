@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>BuildUtil.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">GitLab Plugin</a> &gt; <a href="index.source.html" class="el_package">com.dabsquared.gitlabjenkins.util</a> &gt; <span class="el_source">BuildUtil.java</span></div><h1>BuildUtil.java</h1><pre class="source lang-java linenums">package com.dabsquared.gitlabjenkins.util;
+
+import hudson.model.Job;
+import hudson.model.Run;
+import hudson.plugins.git.Branch;
+import hudson.plugins.git.util.BuildData;
+import hudson.plugins.git.util.MergeRecord;
+
+/**
+ * @author Robin Müller
+ */
+<span class="nc" id="L12">public class BuildUtil {</span>
+    public static Run&lt;?, ?&gt; getBuildByBranch(Job&lt;?, ?&gt; project, String branchName) {
+<span class="fc bfc" id="L14" title="All 2 branches covered.">        for (Run&lt;?, ?&gt; build : project.getBuilds()) {</span>
+<span class="fc" id="L15">            BuildData data = build.getAction(BuildData.class);</span>
+<span class="fc" id="L16">            MergeRecord merge = build.getAction(MergeRecord.class);</span>
+<span class="pc bpc" id="L17" title="2 of 4 branches missed.">            if (hasLastBuild(data) &amp;&amp; isNoMergeBuild(data, merge)) {</span>
+<span class="pc bpc" id="L18" title="1 of 2 branches missed.">                for (Branch branch : data.lastBuild.getRevision().getBranches()) {</span>
+<span class="pc bpc" id="L19" title="1 of 2 branches missed.">                    if (branch.getName().endsWith(&quot;/&quot; + branchName)) {</span>
+<span class="fc" id="L20">                        return build;</span>
+                    }
+<span class="nc" id="L22">                }</span>
+            }
+<span class="nc" id="L24">        }</span>
+<span class="fc" id="L25">        return null;</span>
+    }
+
+    public static Run&lt;?, ?&gt; getBuildBySHA1WithoutMergeBuilds(Job&lt;?, ?&gt; project, String sha1) {
+<span class="fc bfc" id="L29" title="All 2 branches covered.">        for (Run&lt;?, ?&gt; build : project.getBuilds()) {</span>
+<span class="fc" id="L30">            BuildData data = build.getAction(BuildData.class);</span>
+<span class="fc" id="L31">            MergeRecord merge = build.getAction(MergeRecord.class);</span>
+<span class="pc bpc" id="L32" title="3 of 6 branches missed.">            if (hasLastBuild(data) &amp;&amp; isNoMergeBuild(data, merge) &amp;&amp; data.lastBuild.isFor(sha1)) {</span>
+<span class="fc" id="L33">                return build;</span>
+            }
+<span class="nc" id="L35">        }</span>
+<span class="fc" id="L36">        return null;</span>
+    }
+
+    public static Run&lt;?, ?&gt; getBuildBySHA1IncludingMergeBuilds(Job&lt;?, ?&gt; project, String sha1) {
+<span class="fc bfc" id="L40" title="All 2 branches covered.">        for (Run&lt;?, ?&gt; build : project.getBuilds()) {</span>
+<span class="fc" id="L41">            BuildData data = build.getAction(BuildData.class);</span>
+<span class="pc bpc" id="L42" title="2 of 4 branches missed.">            if (data != null</span>
+                &amp;&amp; data.lastBuild != null
+<span class="pc bpc" id="L44" title="1 of 2 branches missed.">                &amp;&amp; data.lastBuild.getMarked() != null</span>
+<span class="pc bpc" id="L45" title="1 of 2 branches missed.">                &amp;&amp; data.lastBuild.getMarked().getSha1String().equals(sha1)) {</span>
+<span class="fc" id="L46">                return build;</span>
+            }
+<span class="nc" id="L48">        }</span>
+<span class="fc" id="L49">        return null;</span>
+    }
+
+    private static boolean isNoMergeBuild(BuildData data, MergeRecord merge) {
+<span class="pc bpc" id="L53" title="3 of 4 branches missed.">        return merge == null || merge.getSha1().equals(data.lastBuild.getMarked().getSha1String());</span>
+    }
+
+    private static boolean hasLastBuild(BuildData data) {
+<span class="pc bpc" id="L57" title="3 of 6 branches missed.">        return data != null &amp;&amp; data.lastBuild != null &amp;&amp; data.lastBuild.getRevision() != null;</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.2.201409121644</span></div></body></html>

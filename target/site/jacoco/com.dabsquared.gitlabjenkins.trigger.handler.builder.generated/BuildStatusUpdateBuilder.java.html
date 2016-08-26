@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>BuildStatusUpdateBuilder.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">GitLab Plugin</a> &gt; <a href="index.source.html" class="el_package">com.dabsquared.gitlabjenkins.trigger.handler.builder.generated</a> &gt; <span class="el_source">BuildStatusUpdateBuilder.java</span></div><h1>BuildStatusUpdateBuilder.java</h1><pre class="source lang-java linenums">package com.dabsquared.gitlabjenkins.trigger.handler.builder.generated;
+
+import com.dabsquared.gitlabjenkins.trigger.handler.AbstractWebHookTriggerHandler.BuildStatusUpdate;
+import javax.annotation.Generated;
+
+@Generated(&quot;PojoBuilder&quot;)
+public class BuildStatusUpdateBuilder
+    implements Cloneable {
+  protected BuildStatusUpdateBuilder self;
+  protected Integer value$projectId$java$lang$Integer;
+  protected boolean isSet$projectId$java$lang$Integer;
+  protected String value$sha$java$lang$String;
+  protected boolean isSet$sha$java$lang$String;
+  protected String value$ref$java$lang$String;
+  protected boolean isSet$ref$java$lang$String;
+
+  /**
+   * Factory Method to construct a BuildStatusUpdateBuilder
+   *
+   * @return a new BuildStatusUpdateBuilder
+   */
+  public static BuildStatusUpdateBuilder buildStatusUpdate() {
+<span class="nc" id="L23">    return new BuildStatusUpdateBuilder();</span>
+  }
+
+  /**
+   * Creates a new {@link BuildStatusUpdateBuilder}.
+   */
+<span class="nc" id="L29">  public BuildStatusUpdateBuilder() {</span>
+<span class="nc" id="L30">    self = (BuildStatusUpdateBuilder)this;</span>
+<span class="nc" id="L31">  }</span>
+
+  /**
+   * Sets the default value for the {@link BuildStatusUpdate#projectId} property.
+   *
+   * @param value the default value
+   * @return this builder
+   */
+  public BuildStatusUpdateBuilder withProjectId(Integer value) {
+<span class="nc" id="L40">    this.value$projectId$java$lang$Integer = value;</span>
+<span class="nc" id="L41">    this.isSet$projectId$java$lang$Integer = true;</span>
+<span class="nc" id="L42">    return self;</span>
+  }
+
+  /**
+   * Sets the default value for the {@link BuildStatusUpdate#sha} property.
+   *
+   * @param value the default value
+   * @return this builder
+   */
+  public BuildStatusUpdateBuilder withSha(String value) {
+<span class="nc" id="L52">    this.value$sha$java$lang$String = value;</span>
+<span class="nc" id="L53">    this.isSet$sha$java$lang$String = true;</span>
+<span class="nc" id="L54">    return self;</span>
+  }
+
+  /**
+   * Sets the default value for the {@link BuildStatusUpdate#ref} property.
+   *
+   * @param value the default value
+   * @return this builder
+   */
+  public BuildStatusUpdateBuilder withRef(String value) {
+<span class="nc" id="L64">    this.value$ref$java$lang$String = value;</span>
+<span class="nc" id="L65">    this.isSet$ref$java$lang$String = true;</span>
+<span class="nc" id="L66">    return self;</span>
+  }
+
+  /**
+   * Returns a clone of this builder.
+   *
+   * @return the clone
+   */
+  @Override
+  public Object clone() {
+    try {
+<span class="nc" id="L77">      BuildStatusUpdateBuilder result = (BuildStatusUpdateBuilder)super.clone();</span>
+<span class="nc" id="L78">      result.self = result;</span>
+<span class="nc" id="L79">      return result;</span>
+<span class="nc" id="L80">    } catch (CloneNotSupportedException e) {</span>
+<span class="nc" id="L81">      throw new InternalError(e.getMessage());</span>
+    }
+  }
+
+  /**
+   * Returns a clone of this builder.
+   *
+   * @return the clone
+   */
+  public BuildStatusUpdateBuilder but() {
+<span class="nc" id="L91">    return (BuildStatusUpdateBuilder)clone();</span>
+  }
+
+  /**
+   * Creates a new {@link BuildStatusUpdate} based on this builder's settings.
+   *
+   * @return the created BuildStatusUpdate
+   */
+  public BuildStatusUpdate build() {
+    try {
+<span class="nc" id="L101">      BuildStatusUpdate result = new BuildStatusUpdate(value$projectId$java$lang$Integer, value$sha$java$lang$String, value$ref$java$lang$String);</span>
+<span class="nc" id="L102">      return result;</span>
+<span class="nc" id="L103">    } catch (RuntimeException ex) {</span>
+<span class="nc" id="L104">      throw ex;</span>
+<span class="nc" id="L105">    } catch (Exception ex) {</span>
+<span class="nc" id="L106">      throw new java.lang.reflect.UndeclaredThrowableException(ex);</span>
+    }
+  }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.2.201409121644</span></div></body></html>

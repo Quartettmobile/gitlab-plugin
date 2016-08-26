@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>NoteBuildAction.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">GitLab Plugin</a> &gt; <a href="index.source.html" class="el_package">com.dabsquared.gitlabjenkins.webhook.build</a> &gt; <span class="el_source">NoteBuildAction.java</span></div><h1>NoteBuildAction.java</h1><pre class="source lang-java linenums">package com.dabsquared.gitlabjenkins.webhook.build;
+
+import com.dabsquared.gitlabjenkins.GitLabPushTrigger;
+import com.dabsquared.gitlabjenkins.gitlab.hook.model.NoteHook;
+import com.dabsquared.gitlabjenkins.util.JsonUtil;
+import com.dabsquared.gitlabjenkins.webhook.WebHookAction;
+import hudson.model.Item;
+import hudson.model.Job;
+import hudson.security.ACL;
+import hudson.util.HttpResponses;
+import org.kohsuke.stapler.StaplerResponse;
+
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
+import static com.dabsquared.gitlabjenkins.util.JsonUtil.toPrettyPrint;
+
+/**
+ * @author Nikolay Ustinov
+ */
+public class NoteBuildAction implements WebHookAction {
+
+<span class="fc" id="L23">    private final static Logger LOGGER = Logger.getLogger(NoteBuildAction.class.getName());</span>
+    private Item project;
+    private NoteHook noteHook;
+
+<span class="fc" id="L27">    public NoteBuildAction(Item project, String json) {</span>
+<span class="fc" id="L28">        LOGGER.log(Level.FINE, &quot;Note: {0}&quot;, toPrettyPrint(json));</span>
+<span class="fc" id="L29">        this.project = project;</span>
+<span class="fc" id="L30">        this.noteHook = JsonUtil.read(json, NoteHook.class);</span>
+<span class="fc" id="L31">    }</span>
+
+    public void execute(StaplerResponse response) {
+<span class="pc bpc" id="L34" title="1 of 2 branches missed.">        if (!(project instanceof Job&lt;?, ?&gt;)) {</span>
+<span class="nc" id="L35">            throw HttpResponses.errorWithoutStack(409, &quot;Note Hook is not supported for this project&quot;);</span>
+        }
+<span class="fc" id="L37">        ACL.impersonate(ACL.SYSTEM, new Runnable() {</span>
+            public void run() {
+<span class="fc" id="L39">                GitLabPushTrigger trigger = GitLabPushTrigger.getFromJob((Job&lt;?, ?&gt;) project);</span>
+<span class="pc bpc" id="L40" title="1 of 2 branches missed.">                if (trigger != null) {</span>
+<span class="fc" id="L41">                    trigger.onPost(noteHook);</span>
+                }
+<span class="fc" id="L43">            }</span>
+        });
+<span class="fc" id="L45">        throw HttpResponses.ok();</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.2.201409121644</span></div></body></html>

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>Namespace.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">GitLab Plugin</a> &gt; <a href="index.source.html" class="el_package">com.dabsquared.gitlabjenkins.gitlab.api.model</a> &gt; <span class="el_source">Namespace.java</span></div><h1>Namespace.java</h1><pre class="source lang-java linenums">package com.dabsquared.gitlabjenkins.gitlab.api.model;
+
+import net.karneim.pojobuilder.GeneratePojoBuilder;
+import org.apache.commons.lang.builder.EqualsBuilder;
+import org.apache.commons.lang.builder.HashCodeBuilder;
+import org.apache.commons.lang.builder.ToStringBuilder;
+
+/**
+ * @author Robin Müller
+ */
+@GeneratePojoBuilder(intoPackage = &quot;*.builder.generated&quot;, withFactoryMethod = &quot;*&quot;)
+<span class="fc" id="L12">public class Namespace {</span>
+
+    private String path;
+
+    public String getPath() {
+<span class="nc" id="L17">        return path;</span>
+    }
+
+    public void setPath(String path) {
+<span class="fc" id="L21">        this.path = path;</span>
+<span class="fc" id="L22">    }</span>
+
+    @Override
+    public boolean equals(Object o) {
+<span class="nc bnc" id="L26" title="All 2 branches missed.">        if (this == o) {</span>
+<span class="nc" id="L27">            return true;</span>
+        }
+<span class="nc bnc" id="L29" title="All 4 branches missed.">        if (o == null || getClass() != o.getClass()) {</span>
+<span class="nc" id="L30">            return false;</span>
+        }
+<span class="nc" id="L32">        Namespace namespace = (Namespace) o;</span>
+<span class="nc" id="L33">        return new EqualsBuilder()</span>
+<span class="nc" id="L34">            .append(path, namespace.path)</span>
+<span class="nc" id="L35">            .isEquals();</span>
+    }
+
+    @Override
+    public int hashCode() {
+<span class="nc" id="L40">        return new HashCodeBuilder(17, 37)</span>
+<span class="nc" id="L41">            .append(path)</span>
+<span class="nc" id="L42">            .toHashCode();</span>
+    }
+
+    @Override
+    public String toString() {
+<span class="nc" id="L47">        return new ToStringBuilder(this)</span>
+<span class="nc" id="L48">            .append(&quot;path&quot;, path)</span>
+<span class="nc" id="L49">            .toString();</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.2.201409121644</span></div></body></html>

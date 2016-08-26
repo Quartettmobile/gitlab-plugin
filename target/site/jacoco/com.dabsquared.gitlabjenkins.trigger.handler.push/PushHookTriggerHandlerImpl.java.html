@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>PushHookTriggerHandlerImpl.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">GitLab Plugin</a> &gt; <a href="index.source.html" class="el_package">com.dabsquared.gitlabjenkins.trigger.handler.push</a> &gt; <span class="el_source">PushHookTriggerHandlerImpl.java</span></div><h1>PushHookTriggerHandlerImpl.java</h1><pre class="source lang-java linenums">package com.dabsquared.gitlabjenkins.trigger.handler.push;
+
+import com.dabsquared.gitlabjenkins.cause.CauseData;
+import com.dabsquared.gitlabjenkins.gitlab.hook.model.Commit;
+import com.dabsquared.gitlabjenkins.gitlab.hook.model.PushHook;
+import com.dabsquared.gitlabjenkins.trigger.exception.NoRevisionToBuildException;
+import com.dabsquared.gitlabjenkins.trigger.filter.BranchFilter;
+import com.dabsquared.gitlabjenkins.trigger.handler.AbstractWebHookTriggerHandler;
+import hudson.model.Job;
+import hudson.plugins.git.RevisionParameterAction;
+import org.eclipse.jgit.util.StringUtils;
+
+import java.util.List;
+
+import static com.dabsquared.gitlabjenkins.cause.CauseDataBuilder.causeData;
+import static com.dabsquared.gitlabjenkins.trigger.handler.builder.generated.BuildStatusUpdateBuilder.buildStatusUpdate;
+
+/**
+ * @author Robin Müller
+ */
+<span class="fc" id="L21">class PushHookTriggerHandlerImpl extends AbstractWebHookTriggerHandler&lt;PushHook&gt; implements PushHookTriggerHandler {</span>
+
+    private static final String NO_COMMIT = &quot;0000000000000000000000000000000000000000&quot;;
+
+    @Override
+    public void handle(Job&lt;?, ?&gt; job, PushHook hook, boolean ciSkip, BranchFilter branchFilter) {
+<span class="fc bfc" id="L27" title="All 2 branches covered.">        if (isNoRemoveBranchPush(hook)) {</span>
+<span class="fc" id="L28">            super.handle(job, hook, ciSkip, branchFilter);</span>
+        }
+<span class="fc" id="L30">    }</span>
+
+    @Override
+    protected boolean isCiSkip(PushHook hook) {
+<span class="fc" id="L34">        List&lt;Commit&gt; commits = hook.getCommits();</span>
+<span class="pc bpc" id="L35" title="1 of 2 branches missed.">        return commits != null &amp;&amp;</span>
+<span class="nc bnc" id="L36" title="All 2 branches missed.">               !commits.isEmpty() &amp;&amp;</span>
+<span class="nc bnc" id="L37" title="All 2 branches missed.">               commits.get(commits.size() - 1).getMessage() != null &amp;&amp;</span>
+<span class="pc bnc" id="L38" title="All 2 branches missed.">               commits.get(commits.size() - 1).getMessage().contains(&quot;[ci-skip]&quot;);</span>
+    }
+
+    @Override
+    protected CauseData retrieveCauseData(PushHook hook) {
+<span class="fc" id="L43">        return causeData()</span>
+<span class="fc" id="L44">                .withActionType(CauseData.ActionType.PUSH)</span>
+<span class="fc" id="L45">                .withSourceProjectId(hook.getProjectId())</span>
+<span class="fc" id="L46">                .withTargetProjectId(hook.getProjectId())</span>
+<span class="fc" id="L47">                .withBranch(getTargetBranch(hook))</span>
+<span class="fc" id="L48">                .withSourceBranch(getTargetBranch(hook))</span>
+<span class="fc" id="L49">                .withUserName(hook.getUserName())</span>
+<span class="fc" id="L50">                .withUserEmail(hook.getUserEmail())</span>
+<span class="fc" id="L51">                .withSourceRepoHomepage(hook.getRepository().getHomepage())</span>
+<span class="fc" id="L52">                .withSourceRepoName(hook.getRepository().getName())</span>
+<span class="fc" id="L53">                .withSourceNamespace(hook.getProject().getNamespace())</span>
+<span class="fc" id="L54">                .withSourceRepoUrl(hook.getRepository().getUrl())</span>
+<span class="fc" id="L55">                .withSourceRepoSshUrl(hook.getRepository().getGitSshUrl())</span>
+<span class="fc" id="L56">                .withSourceRepoHttpUrl(hook.getRepository().getGitHttpUrl())</span>
+<span class="fc" id="L57">                .withMergeRequestTitle(&quot;&quot;)</span>
+<span class="fc" id="L58">                .withMergeRequestDescription(&quot;&quot;)</span>
+<span class="fc" id="L59">                .withMergeRequestId(null)</span>
+<span class="fc" id="L60">                .withMergeRequestIid(null)</span>
+<span class="fc" id="L61">                .withTargetBranch(getTargetBranch(hook))</span>
+<span class="fc" id="L62">                .withTargetRepoName(&quot;&quot;)</span>
+<span class="fc" id="L63">                .withTargetNamespace(&quot;&quot;)</span>
+<span class="fc" id="L64">                .withTargetRepoSshUrl(&quot;&quot;)</span>
+<span class="fc" id="L65">                .withTargetRepoHttpUrl(&quot;&quot;)</span>
+<span class="fc" id="L66">                .withTriggeredByUser(retrievePushedBy(hook))</span>
+<span class="fc" id="L67">                .withBefore(hook.getBefore())</span>
+<span class="fc" id="L68">                .withAfter(hook.getAfter())</span>
+<span class="fc" id="L69">                .withLastCommit(hook.getAfter())</span>
+<span class="fc" id="L70">                .withTargetProjectUrl(hook.getProject().getWebUrl())</span>
+<span class="fc" id="L71">                .build();</span>
+    }
+
+    @Override
+    protected String getTargetBranch(PushHook hook) {
+<span class="pc bpc" id="L76" title="1 of 2 branches missed.">        return hook.getRef() == null ? null : hook.getRef().replaceFirst(&quot;^refs/heads/&quot;, &quot;&quot;);</span>
+    }
+
+    @Override
+    protected String getTriggerType() {
+<span class="fc" id="L81">        return &quot;push&quot;;</span>
+    }
+
+    @Override
+    protected RevisionParameterAction createRevisionParameter(PushHook hook) throws NoRevisionToBuildException {
+<span class="fc" id="L86">        return new RevisionParameterAction(retrieveRevisionToBuild(hook), retrieveUrIish(hook));</span>
+    }
+
+    @Override
+    protected BuildStatusUpdate retrieveBuildStatusUpdate(PushHook hook) {
+<span class="nc" id="L91">        return buildStatusUpdate()</span>
+<span class="nc" id="L92">            .withProjectId(hook.getProjectId())</span>
+<span class="nc" id="L93">            .withSha(hook.getAfter())</span>
+<span class="nc" id="L94">            .withRef(getTargetBranch(hook))</span>
+<span class="nc" id="L95">            .build();</span>
+    }
+
+    private String retrievePushedBy(final PushHook hook) {
+
+<span class="fc" id="L100">        final String userName = hook.getUserName();</span>
+<span class="pc bpc" id="L101" title="1 of 2 branches missed.">        if (!StringUtils.isEmptyOrNull(userName)) {</span>
+<span class="fc" id="L102">            return userName;</span>
+        }
+
+<span class="nc" id="L105">        final List&lt;Commit&gt; commits = hook.getCommits();</span>
+<span class="nc bnc" id="L106" title="All 4 branches missed.">        if (commits != null &amp;&amp; !commits.isEmpty()) {</span>
+<span class="nc" id="L107">            return commits.get(0).getAuthor().getName();</span>
+        }
+
+<span class="nc" id="L110">        return null;</span>
+    }
+
+    private String retrieveRevisionToBuild(PushHook hook) throws NoRevisionToBuildException {
+<span class="pc bpc" id="L114" title="1 of 4 branches missed.">        if (hook.getCommits() == null || hook.getCommits().isEmpty()) {</span>
+<span class="fc bfc" id="L115" title="All 2 branches covered.">            if (isNewBranchPush(hook)) {</span>
+<span class="fc" id="L116">                return hook.getAfter();</span>
+            } else {
+<span class="fc" id="L118">                throw new NoRevisionToBuildException();</span>
+            }
+        } else {
+<span class="fc" id="L121">            List&lt;Commit&gt; commits = hook.getCommits();</span>
+<span class="fc" id="L122">            return commits.get(commits.size() - 1).getId();</span>
+        }
+    }
+
+    private boolean isNewBranchPush(PushHook hook) {
+<span class="pc bpc" id="L127" title="1 of 4 branches missed.">        return hook.getBefore() != null &amp;&amp; hook.getBefore().equals(NO_COMMIT);</span>
+    }
+
+    private boolean isNoRemoveBranchPush(PushHook hook) {
+<span class="pc bpc" id="L131" title="1 of 4 branches missed.">        return hook.getAfter() != null &amp;&amp; !hook.getAfter().equals(NO_COMMIT);</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.2.201409121644</span></div></body></html>

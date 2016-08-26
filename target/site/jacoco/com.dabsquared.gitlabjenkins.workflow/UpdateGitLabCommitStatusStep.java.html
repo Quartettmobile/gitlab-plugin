@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>UpdateGitLabCommitStatusStep.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">GitLab Plugin</a> &gt; <a href="index.source.html" class="el_package">com.dabsquared.gitlabjenkins.workflow</a> &gt; <span class="el_source">UpdateGitLabCommitStatusStep.java</span></div><h1>UpdateGitLabCommitStatusStep.java</h1><pre class="source lang-java linenums">package com.dabsquared.gitlabjenkins.workflow;
+
+import com.dabsquared.gitlabjenkins.gitlab.api.model.BuildState;
+import com.dabsquared.gitlabjenkins.util.CommitStatusUpdater;
+import hudson.Extension;
+import hudson.model.Run;
+import hudson.util.ListBoxModel;
+import org.apache.commons.lang.StringUtils;
+import org.jenkinsci.plugins.workflow.steps.AbstractStepDescriptorImpl;
+import org.jenkinsci.plugins.workflow.steps.AbstractStepImpl;
+import org.jenkinsci.plugins.workflow.steps.AbstractSynchronousStepExecution;
+import org.jenkinsci.plugins.workflow.steps.StepContextParameter;
+import org.kohsuke.stapler.DataBoundConstructor;
+import org.kohsuke.stapler.export.ExportedBean;
+
+import javax.inject.Inject;
+import java.util.EnumSet;
+
+/**
+ * @author &lt;a href=&quot;mailto:robin.mueller@1und1.de&quot;&gt;Robin Müller&lt;/a&gt;
+ */
+@ExportedBean
+public class UpdateGitLabCommitStatusStep extends AbstractStepImpl {
+
+    private String name;
+    private BuildState state;
+
+    @DataBoundConstructor
+<span class="nc" id="L29">    public UpdateGitLabCommitStatusStep(String name, BuildState state) {</span>
+<span class="nc bnc" id="L30" title="All 2 branches missed.">        this.name = StringUtils.isEmpty(name) ? null : name;</span>
+<span class="nc" id="L31">        this.state = state;</span>
+<span class="nc" id="L32">    }</span>
+
+    public String getName() {
+<span class="nc" id="L35">        return name;</span>
+    }
+
+    public BuildState getState() {
+<span class="nc" id="L39">        return state;</span>
+    }
+
+<span class="nc" id="L42">    public static class Execution extends AbstractSynchronousStepExecution&lt;Void&gt; {</span>
+        private static final long serialVersionUID = 1;
+
+        @StepContextParameter
+        private transient Run&lt;?, ?&gt; run;
+
+        @Inject
+        private transient UpdateGitLabCommitStatusStep step;
+
+        @Override
+        protected Void run() throws Exception {
+<span class="nc bnc" id="L53" title="All 2 branches missed.">            final String name = StringUtils.isEmpty(step.name) ? &quot;jenkins&quot; : step.name;</span>
+<span class="nc" id="L54">            CommitStatusUpdater.updateCommitStatus(run, null, step.state, name);</span>
+<span class="nc" id="L55">            PendingBuildsAction action = run.getAction(PendingBuildsAction.class);</span>
+<span class="nc bnc" id="L56" title="All 2 branches missed.">            if (action != null) {</span>
+<span class="nc" id="L57">                action.startBuild(name);</span>
+            }
+<span class="nc" id="L59">            return null;</span>
+        }
+    }
+
+    @Extension
+    public static final class DescriptorImpl extends AbstractStepDescriptorImpl {
+        public DescriptorImpl() {
+<span class="fc" id="L66">            super(Execution.class);</span>
+<span class="fc" id="L67">        }</span>
+
+        @Override
+        public String getDisplayName() {
+<span class="fc" id="L71">            return &quot;Update the commit status in GitLab&quot;;</span>
+        }
+
+        @Override
+        public String getFunctionName() {
+<span class="nc" id="L76">            return &quot;updateGitlabCommitStatus&quot;;</span>
+        }
+
+        public ListBoxModel doFillStateItems() {
+<span class="nc" id="L80">            ListBoxModel options = new ListBoxModel();</span>
+<span class="nc bnc" id="L81" title="All 2 branches missed.">            for (BuildState buildState : EnumSet.allOf(BuildState.class)) {</span>
+<span class="nc" id="L82">                options.add(buildState.name());</span>
+<span class="nc" id="L83">            }</span>
+<span class="nc" id="L84">            return options;</span>
+        }
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.2.201409121644</span></div></body></html>

@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>ProjectBranchesProvider.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">GitLab Plugin</a> &gt; <a href="index.source.html" class="el_package">com.dabsquared.gitlabjenkins.trigger.branch</a> &gt; <span class="el_source">ProjectBranchesProvider.java</span></div><h1>ProjectBranchesProvider.java</h1><pre class="source lang-java linenums">package com.dabsquared.gitlabjenkins.trigger.branch;
+
+import com.dabsquared.gitlabjenkins.GitLabProjectBranchesService;
+import com.dabsquared.gitlabjenkins.Messages;
+import com.dabsquared.gitlabjenkins.connection.GitLabConnectionProperty;
+import com.google.common.base.Joiner;
+import com.google.common.base.Splitter;
+import hudson.model.AutoCompletionCandidates;
+import hudson.model.Item;
+import hudson.model.Job;
+import hudson.plugins.git.GitSCM;
+import hudson.scm.SCM;
+import hudson.util.FormValidation;
+import jenkins.model.Jenkins;
+import jenkins.triggers.SCMTriggerItem;
+import org.apache.commons.lang.StringUtils;
+import org.eclipse.jgit.transport.RemoteConfig;
+import org.eclipse.jgit.transport.URIish;
+import org.kohsuke.stapler.AncestorInPath;
+import org.kohsuke.stapler.QueryParameter;
+
+import java.util.Collections;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
+/**
+ * @author Robin Müller
+ */
+public final class ProjectBranchesProvider {
+
+<span class="nc" id="L34">    private static final Logger LOGGER = Logger.getLogger(ProjectBranchesProvider.class.getName());</span>
+<span class="nc" id="L35">    private static final ProjectBranchesProvider INSTANCE = new ProjectBranchesProvider();</span>
+
+<span class="nc" id="L37">    private ProjectBranchesProvider() {</span>
+<span class="nc" id="L38">    }</span>
+
+    public static ProjectBranchesProvider instance() {
+<span class="nc" id="L41">        return INSTANCE;</span>
+    }
+
+    private List&lt;String&gt; getProjectBranches(Job&lt;?, ?&gt; project) {
+<span class="nc" id="L45">        final URIish sourceRepository = getSourceRepoURLDefault(project);</span>
+<span class="nc" id="L46">        GitLabConnectionProperty connectionProperty = project.getProperty(GitLabConnectionProperty.class);</span>
+<span class="nc bnc" id="L47" title="All 4 branches missed.">        if (connectionProperty != null &amp;&amp; connectionProperty.getClient() != null) {</span>
+<span class="nc" id="L48">            return GitLabProjectBranchesService.instance().getBranches(connectionProperty.getClient(), sourceRepository.toString());</span>
+        } else {
+<span class="nc" id="L50">            LOGGER.log(Level.WARNING, &quot;getProjectBranches: gitlabHostUrl hasn't been configured globally. Job {0}.&quot;, project.getFullName());</span>
+<span class="nc" id="L51">            return Collections.emptyList();</span>
+        }
+    }
+
+    public AutoCompletionCandidates doAutoCompleteBranchesSpec(Job&lt;?, ?&gt; job, String query) {
+<span class="nc" id="L56">        AutoCompletionCandidates result = new AutoCompletionCandidates();</span>
+        // show all suggestions for short strings
+<span class="nc bnc" id="L58" title="All 2 branches missed.">        if (query.length() &lt; 2) {</span>
+<span class="nc" id="L59">            result.add(getProjectBranchesAsArray(job));</span>
+        } else {
+<span class="nc bnc" id="L61" title="All 2 branches missed.">            for (String branch : getProjectBranchesAsArray(job)) {</span>
+<span class="nc bnc" id="L62" title="All 2 branches missed.">                if (branch.toLowerCase().contains(query.toLowerCase())) {</span>
+<span class="nc" id="L63">                    result.add(branch);</span>
+                }
+            }
+        }
+<span class="nc" id="L67">        return result;</span>
+    }
+
+    public FormValidation doCheckBranchesSpec(@AncestorInPath final Job&lt;?, ?&gt; project, @QueryParameter final String value) {
+<span class="nc bnc" id="L71" title="All 4 branches missed.">        if (!project.hasPermission(Item.CONFIGURE) || containsNoBranches(value)) {</span>
+<span class="nc" id="L72">            return FormValidation.ok();</span>
+        }
+
+        try {
+<span class="nc" id="L76">            return checkMatchingBranches(value, getProjectBranches(project));</span>
+<span class="nc" id="L77">        } catch (GitLabProjectBranchesService.BranchLoadingException e) {</span>
+<span class="nc bnc" id="L78" title="All 2 branches missed.">            return FormValidation.warning(project.hasPermission(Jenkins.ADMINISTER) ? e : null, Messages.GitLabPushTrigger_CannotCheckBranches());</span>
+        }
+    }
+
+    private FormValidation checkMatchingBranches(@QueryParameter String value, List&lt;String&gt; projectBranches) {
+<span class="nc" id="L83">        Set&lt;String&gt; matchingSpecs = new HashSet&lt;&gt;();</span>
+<span class="nc" id="L84">        Set&lt;String&gt; unknownSpecs = new HashSet&lt;&gt;();</span>
+<span class="nc" id="L85">        AntPathMatcherSet projectBranchesMatcherSet = new AntPathMatcherSet(projectBranches);</span>
+<span class="nc bnc" id="L86" title="All 2 branches missed.">        for (String branchSpec : Splitter.on(',').omitEmptyStrings().trimResults().split(value)) {</span>
+<span class="nc bnc" id="L87" title="All 2 branches missed.">            if (projectBranchesMatcherSet.contains(branchSpec)) {</span>
+<span class="nc" id="L88">                matchingSpecs.add(branchSpec);</span>
+            } else {
+<span class="nc" id="L90">                unknownSpecs.add(branchSpec);</span>
+            }
+<span class="nc" id="L92">        }</span>
+
+<span class="nc bnc" id="L94" title="All 2 branches missed.">        if (unknownSpecs.isEmpty()) {</span>
+<span class="nc" id="L95">            return FormValidation.ok(Messages.GitLabPushTrigger_BranchesMatched(matchingSpecs.size()));</span>
+        } else {
+<span class="nc" id="L97">            return FormValidation.warning(Messages.GitLabPushTrigger_BranchesNotFound(Joiner.on(&quot;, &quot;).join(unknownSpecs)));</span>
+        }
+    }
+
+    private boolean containsNoBranches(@QueryParameter String value) {
+<span class="nc bnc" id="L102" title="All 4 branches missed.">        return StringUtils.isEmpty(value) || StringUtils.containsOnly(value, new char[]{',', ' '});</span>
+    }
+
+
+    private String[] getProjectBranchesAsArray(Job&lt;?, ?&gt; job) {
+        try {
+<span class="nc" id="L108">            List&lt;String&gt; branches = getProjectBranches(job);</span>
+<span class="nc" id="L109">            return branches.toArray(new String[branches.size()]);</span>
+<span class="nc" id="L110">        } catch (GitLabProjectBranchesService.BranchLoadingException e) {</span>
+<span class="nc" id="L111">            LOGGER.log(Level.FINEST, &quot;Failed to load branch names from GitLab. Please check the logs and your configuration.&quot;, e);</span>
+        }
+<span class="nc" id="L113">        return new String[0];</span>
+    }
+
+
+    /**
+     * Get the URL of the first declared repository in the project configuration.
+     * Use this as default source repository url.
+     *
+     * @return URIish the default value of the source repository url
+     * @throws IllegalStateException Project does not use git scm.
+     */
+    private URIish getSourceRepoURLDefault(Job&lt;?, ?&gt; job) {
+<span class="nc" id="L125">        SCMTriggerItem item = SCMTriggerItem.SCMTriggerItems.asSCMTriggerItem(job);</span>
+<span class="nc" id="L126">        GitSCM gitSCM = getGitSCM(item);</span>
+<span class="nc bnc" id="L127" title="All 2 branches missed.">        if (gitSCM == null) {</span>
+<span class="nc" id="L128">            LOGGER.log(Level.WARNING, &quot;Could not find GitSCM for project. Project = {1}, next build = {2}&quot;,</span>
+<span class="nc" id="L129">                    array(job.getName(), String.valueOf(job.getNextBuildNumber())));</span>
+<span class="nc" id="L130">            throw new IllegalStateException(&quot;This project does not use git:&quot; + job.getName());</span>
+        }
+<span class="nc" id="L132">        return getFirstRepoURL(gitSCM.getRepositories());</span>
+    }
+
+    private URIish getFirstRepoURL(List&lt;RemoteConfig&gt; repositories) {
+<span class="nc bnc" id="L136" title="All 2 branches missed.">        if (!repositories.isEmpty()) {</span>
+<span class="nc" id="L137">            List&lt;URIish&gt; uris = repositories.get(repositories.size() - 1).getURIs();</span>
+<span class="nc bnc" id="L138" title="All 2 branches missed.">            if (!uris.isEmpty()) {</span>
+<span class="nc" id="L139">                return uris.get(uris.size() - 1);</span>
+            }
+        }
+<span class="nc" id="L142">        throw new IllegalStateException(Messages.GitLabPushTrigger_NoSourceRepository());</span>
+    }
+
+    private GitSCM getGitSCM(SCMTriggerItem item) {
+<span class="nc bnc" id="L146" title="All 2 branches missed.">        if (item != null) {</span>
+<span class="nc bnc" id="L147" title="All 2 branches missed.">            for (SCM scm : item.getSCMs()) {</span>
+<span class="nc bnc" id="L148" title="All 2 branches missed.">                if (scm instanceof GitSCM) {</span>
+<span class="nc" id="L149">                    return (GitSCM) scm;</span>
+                }
+<span class="nc" id="L151">            }</span>
+        }
+<span class="nc" id="L153">        return null;</span>
+    }
+
+    private Object[] array(Object... objects) {
+<span class="nc" id="L157">        return objects;</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.2.201409121644</span></div></body></html>

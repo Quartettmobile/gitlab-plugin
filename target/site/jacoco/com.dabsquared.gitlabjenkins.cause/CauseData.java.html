@@ -1,0 +1,378 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>CauseData.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">GitLab Plugin</a> &gt; <a href="index.source.html" class="el_package">com.dabsquared.gitlabjenkins.cause</a> &gt; <span class="el_source">CauseData.java</span></div><h1>CauseData.java</h1><pre class="source lang-java linenums">package com.dabsquared.gitlabjenkins.cause;
+
+import hudson.markup.EscapedMarkupFormatter;
+import jenkins.model.Jenkins;
+import net.karneim.pojobuilder.GeneratePojoBuilder;
+import org.apache.commons.lang.StringUtils;
+import org.apache.commons.lang.builder.EqualsBuilder;
+import org.apache.commons.lang.builder.HashCodeBuilder;
+import org.apache.commons.lang.builder.ToStringBuilder;
+
+import java.util.HashMap;
+import java.util.Map;
+
+import static com.google.common.base.Preconditions.checkNotNull;
+
+/**
+ * @author Robin Müller
+ */
+public final class CauseData {
+    private final ActionType actionType;
+    private final Integer sourceProjectId;
+    private final Integer targetProjectId;
+    private final String branch;
+    private final String sourceBranch;
+    private final String userName;
+    private final String userEmail;
+    private final String sourceRepoHomepage;
+    private final String sourceRepoName;
+    private final String sourceNamespace;
+    private final String sourceRepoUrl;
+    private final String sourceRepoSshUrl;
+    private final String sourceRepoHttpUrl;
+    private final String mergeRequestTitle;
+    private final String mergeRequestDescription;
+    private final Integer mergeRequestId;
+    private final Integer mergeRequestIid;
+    private final String targetBranch;
+    private final String targetRepoName;
+    private final String targetNamespace;
+    private final String targetRepoSshUrl;
+    private final String targetRepoHttpUrl;
+    private final String triggeredByUser;
+    private final String before;
+    private final String after;
+    private final String lastCommit;
+    private final String targetProjectUrl;
+
+    @GeneratePojoBuilder(withFactoryMethod = &quot;*&quot;)
+    CauseData(ActionType actionType, Integer sourceProjectId, Integer targetProjectId, String branch, String sourceBranch, String userName,
+              String userEmail, String sourceRepoHomepage, String sourceRepoName, String sourceNamespace, String sourceRepoUrl,
+              String sourceRepoSshUrl, String sourceRepoHttpUrl, String mergeRequestTitle, String mergeRequestDescription, Integer mergeRequestId,
+              Integer mergeRequestIid, String targetBranch, String targetRepoName, String targetNamespace, String targetRepoSshUrl,
+<span class="fc" id="L53">              String targetRepoHttpUrl, String triggeredByUser, String before, String after, String lastCommit, String targetProjectUrl) {</span>
+<span class="fc" id="L54">        this.actionType = checkNotNull(actionType, &quot;actionType must not be null.&quot;);</span>
+<span class="fc" id="L55">        this.sourceProjectId = checkNotNull(sourceProjectId, &quot;sourceProjectId must not be null.&quot;);</span>
+<span class="fc" id="L56">        this.targetProjectId = checkNotNull(targetProjectId, &quot;targetProjectId must not be null.&quot;);</span>
+<span class="fc" id="L57">        this.branch = checkNotNull(branch, &quot;branch must not be null.&quot;);</span>
+<span class="fc" id="L58">        this.sourceBranch = checkNotNull(sourceBranch, &quot;sourceBranch must not be null.&quot;);</span>
+<span class="fc" id="L59">        this.userName = checkNotNull(userName, &quot;userName must not be null.&quot;);</span>
+<span class="pc bpc" id="L60" title="1 of 2 branches missed.">        this.userEmail = userEmail == null ? &quot;&quot; : userEmail;</span>
+<span class="pc bpc" id="L61" title="1 of 2 branches missed.">        this.sourceRepoHomepage = sourceRepoHomepage == null ? &quot;&quot; : sourceRepoHomepage;</span>
+<span class="fc" id="L62">        this.sourceRepoName = checkNotNull(sourceRepoName, &quot;sourceRepoName must not be null.&quot;);</span>
+<span class="fc" id="L63">        this.sourceNamespace = checkNotNull(sourceNamespace, &quot;sourceNamespace must not be null.&quot;);</span>
+<span class="pc bpc" id="L64" title="1 of 2 branches missed.">        this.sourceRepoUrl = sourceRepoUrl == null ? sourceRepoSshUrl : sourceRepoUrl;</span>
+<span class="fc" id="L65">        this.sourceRepoSshUrl = checkNotNull(sourceRepoSshUrl, &quot;sourceRepoSshUrl must not be null.&quot;);</span>
+<span class="fc" id="L66">        this.sourceRepoHttpUrl = checkNotNull(sourceRepoHttpUrl, &quot;sourceRepoHttpUrl must not be null.&quot;);</span>
+<span class="fc" id="L67">        this.mergeRequestTitle = checkNotNull(mergeRequestTitle, &quot;mergeRequestTitle must not be null.&quot;);</span>
+<span class="fc bfc" id="L68" title="All 2 branches covered.">        this.mergeRequestDescription = mergeRequestDescription == null ? &quot;&quot; : mergeRequestDescription;</span>
+<span class="fc" id="L69">        this.mergeRequestId = mergeRequestId;</span>
+<span class="fc" id="L70">        this.mergeRequestIid = mergeRequestIid;</span>
+<span class="fc" id="L71">        this.targetBranch = checkNotNull(targetBranch, &quot;targetBranch must not be null.&quot;);</span>
+<span class="fc" id="L72">        this.targetRepoName = checkNotNull(targetRepoName, &quot;targetRepoName must not be null.&quot;);</span>
+<span class="fc" id="L73">        this.targetNamespace = checkNotNull(targetNamespace, &quot;targetNamespace must not be null.&quot;);</span>
+<span class="fc" id="L74">        this.targetRepoSshUrl = checkNotNull(targetRepoSshUrl, &quot;targetRepoSshUrl must not be null.&quot;);</span>
+<span class="fc" id="L75">        this.targetRepoHttpUrl = checkNotNull(targetRepoHttpUrl, &quot;targetRepoHttpUrl must not be null.&quot;);</span>
+<span class="fc" id="L76">        this.triggeredByUser = checkNotNull(triggeredByUser, &quot;triggeredByUser must not be null.&quot;);</span>
+<span class="fc bfc" id="L77" title="All 2 branches covered.">        this.before = before == null ? &quot;&quot; : before;</span>
+<span class="fc bfc" id="L78" title="All 2 branches covered.">        this.after = after == null ? &quot;&quot; : after;</span>
+<span class="fc" id="L79">        this.lastCommit = checkNotNull(lastCommit, &quot;lastCommit must not be null&quot;);</span>
+<span class="fc" id="L80">        this.targetProjectUrl = checkNotNull(targetProjectUrl, &quot;targetProjectUrl must not be null&quot;);</span>
+<span class="fc" id="L81">    }</span>
+
+    public Map&lt;String, String&gt; getBuildVariables() {
+<span class="fc" id="L84">        HashMap&lt;String, String&gt; variables = new HashMap&lt;&gt;();</span>
+<span class="fc" id="L85">        variables.put(&quot;gitlabBranch&quot;, branch);</span>
+<span class="fc" id="L86">        variables.put(&quot;gitlabSourceBranch&quot;, sourceBranch);</span>
+<span class="fc" id="L87">        variables.put(&quot;gitlabActionType&quot;, actionType.name());</span>
+<span class="fc" id="L88">        variables.put(&quot;gitlabUserName&quot;, userName);</span>
+<span class="fc" id="L89">        variables.put(&quot;gitlabUserEmail&quot;, userEmail);</span>
+<span class="fc" id="L90">        variables.put(&quot;gitlabSourceRepoHomepage&quot;, sourceRepoHomepage);</span>
+<span class="fc" id="L91">        variables.put(&quot;gitlabSourceRepoName&quot;, sourceRepoName);</span>
+<span class="fc" id="L92">        variables.put(&quot;gitlabSourceNamespace&quot;, sourceNamespace);</span>
+<span class="fc" id="L93">        variables.put(&quot;gitlabSourceRepoURL&quot;, sourceRepoUrl);</span>
+<span class="fc" id="L94">        variables.put(&quot;gitlabSourceRepoSshUrl&quot;, sourceRepoSshUrl);</span>
+<span class="fc" id="L95">        variables.put(&quot;gitlabSourceRepoHttpUrl&quot;, sourceRepoHttpUrl);</span>
+<span class="fc" id="L96">        variables.put(&quot;gitlabMergeRequestTitle&quot;, mergeRequestTitle);</span>
+<span class="fc" id="L97">        variables.put(&quot;gitlabMergeRequestDescription&quot;, mergeRequestDescription);</span>
+<span class="fc bfc" id="L98" title="All 2 branches covered.">        variables.put(&quot;gitlabMergeRequestId&quot;, mergeRequestId == null ? &quot;&quot; : mergeRequestId.toString());</span>
+<span class="fc bfc" id="L99" title="All 2 branches covered.">        variables.put(&quot;gitlabMergeRequestIid&quot;, mergeRequestIid == null ? &quot;&quot; : mergeRequestIid.toString());</span>
+<span class="fc" id="L100">        variables.put(&quot;gitlabMergeRequestLastCommit&quot;, lastCommit);</span>
+<span class="fc" id="L101">        variables.put(&quot;gitlabTargetBranch&quot;, targetBranch);</span>
+<span class="fc" id="L102">        variables.put(&quot;gitlabTargetRepoName&quot;, targetRepoName);</span>
+<span class="fc" id="L103">        variables.put(&quot;gitlabTargetNamespace&quot;, targetNamespace);</span>
+<span class="fc" id="L104">        variables.put(&quot;gitlabTargetRepoSshUrl&quot;, targetRepoSshUrl);</span>
+<span class="fc" id="L105">        variables.put(&quot;gitlabTargetRepoHttpUrl&quot;, targetRepoHttpUrl);</span>
+<span class="fc" id="L106">        variables.put(&quot;gitlabBefore&quot;, before);</span>
+<span class="fc" id="L107">        variables.put(&quot;gitlabAfter&quot;, after);</span>
+<span class="fc" id="L108">        return variables;</span>
+    }
+
+    public Integer getSourceProjectId() {
+<span class="nc" id="L112">        return sourceProjectId;</span>
+    }
+
+    public Integer getTargetProjectId() {
+<span class="fc" id="L116">        return targetProjectId;</span>
+    }
+
+    public String getBranch() {
+<span class="nc" id="L120">        return branch;</span>
+    }
+
+    public String getSourceBranch() {
+<span class="fc" id="L124">        return sourceBranch;</span>
+    }
+
+    public ActionType getActionType() {
+<span class="fc" id="L128">        return actionType;</span>
+    }
+
+    public String getUserName() {
+<span class="nc" id="L132">        return userName;</span>
+    }
+
+    public String getUserEmail() {
+<span class="nc" id="L136">        return userEmail;</span>
+    }
+
+    public String getSourceRepoHomepage() {
+<span class="nc" id="L140">        return sourceRepoHomepage;</span>
+    }
+
+    public String getSourceRepoName() {
+<span class="nc" id="L144">        return sourceRepoName;</span>
+    }
+
+    public String getSourceNamespace() {
+<span class="fc" id="L148">        return sourceNamespace;</span>
+    }
+
+    public String getSourceRepoUrl() {
+<span class="nc" id="L152">        return sourceRepoUrl;</span>
+    }
+
+    public String getSourceRepoSshUrl() {
+<span class="nc" id="L156">        return sourceRepoSshUrl;</span>
+    }
+
+    public String getSourceRepoHttpUrl() {
+<span class="nc" id="L160">        return sourceRepoHttpUrl;</span>
+    }
+
+    public String getMergeRequestTitle() {
+<span class="nc" id="L164">        return mergeRequestTitle;</span>
+    }
+
+    public String getMergeRequestDescription() {
+<span class="nc" id="L168">        return mergeRequestDescription;</span>
+    }
+
+    public Integer getMergeRequestId() {
+<span class="fc" id="L172">        return mergeRequestId;</span>
+    }
+
+    public Integer getMergeRequestIid() {
+<span class="fc" id="L176">        return mergeRequestIid;</span>
+    }
+
+    public String getTargetBranch() {
+<span class="fc" id="L180">        return targetBranch;</span>
+    }
+
+    public String getTargetRepoName() {
+<span class="nc" id="L184">        return targetRepoName;</span>
+    }
+
+    public String getTargetNamespace() {
+<span class="nc" id="L188">        return targetNamespace;</span>
+    }
+
+    public String getTargetRepoSshUrl() {
+<span class="nc" id="L192">        return targetRepoSshUrl;</span>
+    }
+
+    public String getTargetRepoHttpUrl() {
+<span class="nc" id="L196">        return targetRepoHttpUrl;</span>
+    }
+
+    public String getTriggeredByUser() {
+<span class="fc" id="L200">        return triggeredByUser;</span>
+    }
+
+    public String getBefore() {
+<span class="nc" id="L204">        return before;</span>
+    }
+
+    public String getAfter() {
+<span class="nc" id="L208">        return after;</span>
+    }
+
+    public String getLastCommit() {
+<span class="nc" id="L212">        return lastCommit;</span>
+    }
+
+    public String getTargetProjectUrl() {
+<span class="nc" id="L216">        return targetProjectUrl;</span>
+    }
+
+    String getShortDescription() {
+<span class="fc" id="L220">        return actionType.getShortDescription(this);</span>
+    }
+
+    @Override
+    public boolean equals(Object o) {
+<span class="nc bnc" id="L225" title="All 2 branches missed.">        if (this == o) {</span>
+<span class="nc" id="L226">            return true;</span>
+        }
+<span class="nc bnc" id="L228" title="All 4 branches missed.">        if (o == null || getClass() != o.getClass()) {</span>
+<span class="nc" id="L229">            return false;</span>
+        }
+<span class="nc" id="L231">        CauseData causeData = (CauseData) o;</span>
+<span class="nc" id="L232">        return new EqualsBuilder()</span>
+<span class="nc" id="L233">            .append(actionType, causeData.actionType)</span>
+<span class="nc" id="L234">            .append(sourceProjectId, causeData.sourceProjectId)</span>
+<span class="nc" id="L235">            .append(targetProjectId, causeData.targetProjectId)</span>
+<span class="nc" id="L236">            .append(branch, causeData.branch)</span>
+<span class="nc" id="L237">            .append(sourceBranch, causeData.sourceBranch)</span>
+<span class="nc" id="L238">            .append(userName, causeData.userName)</span>
+<span class="nc" id="L239">            .append(userEmail, causeData.userEmail)</span>
+<span class="nc" id="L240">            .append(sourceRepoHomepage, causeData.sourceRepoHomepage)</span>
+<span class="nc" id="L241">            .append(sourceRepoName, causeData.sourceRepoName)</span>
+<span class="nc" id="L242">            .append(sourceNamespace, causeData.sourceNamespace)</span>
+<span class="nc" id="L243">            .append(sourceRepoUrl, causeData.sourceRepoUrl)</span>
+<span class="nc" id="L244">            .append(sourceRepoSshUrl, causeData.sourceRepoSshUrl)</span>
+<span class="nc" id="L245">            .append(sourceRepoHttpUrl, causeData.sourceRepoHttpUrl)</span>
+<span class="nc" id="L246">            .append(mergeRequestTitle, causeData.mergeRequestTitle)</span>
+<span class="nc" id="L247">            .append(mergeRequestDescription, causeData.mergeRequestDescription)</span>
+<span class="nc" id="L248">            .append(mergeRequestId, causeData.mergeRequestId)</span>
+<span class="nc" id="L249">            .append(mergeRequestIid, causeData.mergeRequestIid)</span>
+<span class="nc" id="L250">            .append(targetBranch, causeData.targetBranch)</span>
+<span class="nc" id="L251">            .append(targetRepoName, causeData.targetRepoName)</span>
+<span class="nc" id="L252">            .append(targetNamespace, causeData.targetNamespace)</span>
+<span class="nc" id="L253">            .append(targetRepoSshUrl, causeData.targetRepoSshUrl)</span>
+<span class="nc" id="L254">            .append(targetRepoHttpUrl, causeData.targetRepoHttpUrl)</span>
+<span class="nc" id="L255">            .append(triggeredByUser, causeData.triggeredByUser)</span>
+<span class="nc" id="L256">            .append(before, causeData.before)</span>
+<span class="nc" id="L257">            .append(after, causeData.after)</span>
+<span class="nc" id="L258">            .append(lastCommit, causeData.lastCommit)</span>
+<span class="nc" id="L259">            .append(targetProjectUrl, causeData.targetProjectUrl)</span>
+<span class="nc" id="L260">            .isEquals();</span>
+    }
+
+    @Override
+    public int hashCode() {
+<span class="nc" id="L265">        return new HashCodeBuilder(17, 37)</span>
+<span class="nc" id="L266">            .append(actionType)</span>
+<span class="nc" id="L267">            .append(sourceProjectId)</span>
+<span class="nc" id="L268">            .append(targetProjectId)</span>
+<span class="nc" id="L269">            .append(branch)</span>
+<span class="nc" id="L270">            .append(sourceBranch)</span>
+<span class="nc" id="L271">            .append(userName)</span>
+<span class="nc" id="L272">            .append(userEmail)</span>
+<span class="nc" id="L273">            .append(sourceRepoHomepage)</span>
+<span class="nc" id="L274">            .append(sourceRepoName)</span>
+<span class="nc" id="L275">            .append(sourceNamespace)</span>
+<span class="nc" id="L276">            .append(sourceRepoUrl)</span>
+<span class="nc" id="L277">            .append(sourceRepoSshUrl)</span>
+<span class="nc" id="L278">            .append(sourceRepoHttpUrl)</span>
+<span class="nc" id="L279">            .append(mergeRequestTitle)</span>
+<span class="nc" id="L280">            .append(mergeRequestDescription)</span>
+<span class="nc" id="L281">            .append(mergeRequestId)</span>
+<span class="nc" id="L282">            .append(mergeRequestIid)</span>
+<span class="nc" id="L283">            .append(targetBranch)</span>
+<span class="nc" id="L284">            .append(targetRepoName)</span>
+<span class="nc" id="L285">            .append(targetNamespace)</span>
+<span class="nc" id="L286">            .append(targetRepoSshUrl)</span>
+<span class="nc" id="L287">            .append(targetRepoHttpUrl)</span>
+<span class="nc" id="L288">            .append(triggeredByUser)</span>
+<span class="nc" id="L289">            .append(before)</span>
+<span class="nc" id="L290">            .append(after)</span>
+<span class="nc" id="L291">            .append(lastCommit)</span>
+<span class="nc" id="L292">            .append(targetProjectUrl)</span>
+<span class="nc" id="L293">            .toHashCode();</span>
+    }
+
+    @Override
+    public String toString() {
+<span class="nc" id="L298">        return new ToStringBuilder(this)</span>
+<span class="nc" id="L299">            .append(&quot;actionType&quot;, actionType)</span>
+<span class="nc" id="L300">            .append(&quot;sourceProjectId&quot;, sourceProjectId)</span>
+<span class="nc" id="L301">            .append(&quot;targetProjectId&quot;, targetProjectId)</span>
+<span class="nc" id="L302">            .append(&quot;branch&quot;, branch)</span>
+<span class="nc" id="L303">            .append(&quot;sourceBranch&quot;, sourceBranch)</span>
+<span class="nc" id="L304">            .append(&quot;userName&quot;, userName)</span>
+<span class="nc" id="L305">            .append(&quot;userEmail&quot;, userEmail)</span>
+<span class="nc" id="L306">            .append(&quot;sourceRepoHomepage&quot;, sourceRepoHomepage)</span>
+<span class="nc" id="L307">            .append(&quot;sourceRepoName&quot;, sourceRepoName)</span>
+<span class="nc" id="L308">            .append(&quot;sourceNamespace&quot;, sourceNamespace)</span>
+<span class="nc" id="L309">            .append(&quot;sourceRepoUrl&quot;, sourceRepoUrl)</span>
+<span class="nc" id="L310">            .append(&quot;sourceRepoSshUrl&quot;, sourceRepoSshUrl)</span>
+<span class="nc" id="L311">            .append(&quot;sourceRepoHttpUrl&quot;, sourceRepoHttpUrl)</span>
+<span class="nc" id="L312">            .append(&quot;mergeRequestTitle&quot;, mergeRequestTitle)</span>
+<span class="nc" id="L313">            .append(&quot;mergeRequestDescription&quot;, mergeRequestDescription)</span>
+<span class="nc" id="L314">            .append(&quot;mergeRequestId&quot;, mergeRequestId)</span>
+<span class="nc" id="L315">            .append(&quot;mergeRequestIid&quot;, mergeRequestIid)</span>
+<span class="nc" id="L316">            .append(&quot;targetBranch&quot;, targetBranch)</span>
+<span class="nc" id="L317">            .append(&quot;targetRepoName&quot;, targetRepoName)</span>
+<span class="nc" id="L318">            .append(&quot;targetNamespace&quot;, targetNamespace)</span>
+<span class="nc" id="L319">            .append(&quot;targetRepoSshUrl&quot;, targetRepoSshUrl)</span>
+<span class="nc" id="L320">            .append(&quot;targetRepoHttpUrl&quot;, targetRepoHttpUrl)</span>
+<span class="nc" id="L321">            .append(&quot;triggeredByUser&quot;, triggeredByUser)</span>
+<span class="nc" id="L322">            .append(&quot;before&quot;, before)</span>
+<span class="nc" id="L323">            .append(&quot;after&quot;, after)</span>
+<span class="nc" id="L324">            .append(&quot;lastCommit&quot;, lastCommit)</span>
+<span class="nc" id="L325">            .append(&quot;targetProjectUrl&quot;, targetProjectUrl)</span>
+<span class="nc" id="L326">            .toString();</span>
+    }
+
+<span class="pc" id="L329">    public enum ActionType {</span>
+<span class="fc" id="L330">        PUSH {</span>
+            @Override
+            String getShortDescription(CauseData data) {
+<span class="fc" id="L333">                String pushedBy = data.getTriggeredByUser();</span>
+<span class="pc bpc" id="L334" title="1 of 2 branches missed.">                if (pushedBy == null) {</span>
+<span class="nc" id="L335">                    return Messages.GitLabWebHookCause_ShortDescription_PushHook_noUser();</span>
+                } else {
+<span class="fc" id="L337">                    return Messages.GitLabWebHookCause_ShortDescription_PushHook(pushedBy);</span>
+                }
+            }
+<span class="fc" id="L340">        }, MERGE {</span>
+            @Override
+            String getShortDescription(CauseData data) {
+<span class="pc bpc" id="L343" title="1 of 2 branches missed.">                String forkNamespace = StringUtils.equals(data.getSourceNamespace(), data.getTargetBranch()) ? &quot;&quot; : data.getSourceNamespace() + &quot;/&quot;;</span>
+<span class="pc bpc" id="L344" title="1 of 2 branches missed.">                if (Jenkins.getActiveInstance().getMarkupFormatter() instanceof EscapedMarkupFormatter) {</span>
+<span class="fc" id="L345">                    return Messages.GitLabWebHookCause_ShortDescription_MergeRequestHook_plain(data.getMergeRequestIid(),</span>
+<span class="fc" id="L346">                                                                                               forkNamespace + data.getSourceBranch(),</span>
+<span class="fc" id="L347">                                                                                               data.getTargetBranch());</span>
+                } else {
+<span class="nc" id="L349">                    return Messages.GitLabWebHookCause_ShortDescription_MergeRequestHook_html(data.getMergeRequestIid(),</span>
+<span class="nc" id="L350">                                                                                              forkNamespace + data.getSourceBranch(),</span>
+<span class="nc" id="L351">                                                                                              data.getTargetBranch(),</span>
+<span class="nc" id="L352">                                                                                              data.getTargetProjectUrl());</span>
+                }
+            }
+<span class="fc" id="L355">        }, NOTE {</span>
+            @Override
+            String getShortDescription(CauseData data) {
+<span class="fc" id="L358">                String triggeredBy = data.getTriggeredByUser();</span>
+<span class="pc bpc" id="L359" title="1 of 2 branches missed.">                String forkNamespace = StringUtils.equals(data.getSourceNamespace(), data.getTargetBranch()) ? &quot;&quot; : data.getSourceNamespace() + &quot;/&quot;;</span>
+<span class="pc bpc" id="L360" title="1 of 2 branches missed.">                if (Jenkins.getActiveInstance().getMarkupFormatter() instanceof EscapedMarkupFormatter) {</span>
+<span class="fc" id="L361">                    return Messages.GitLabWebHookCause_ShortDescription_NoteHook_plain(triggeredBy,</span>
+<span class="fc" id="L362">                                                                                       data.getMergeRequestIid(),</span>
+<span class="fc" id="L363">                                                                                       forkNamespace + data.getSourceBranch(),</span>
+<span class="fc" id="L364">                                                                                       data.getTargetBranch());</span>
+                } else {
+<span class="nc" id="L366">                    return Messages.GitLabWebHookCause_ShortDescription_NoteHook_html(triggeredBy,</span>
+<span class="nc" id="L367">                                                                                      data.getMergeRequestIid(),</span>
+<span class="nc" id="L368">                                                                                      forkNamespace + data.getSourceBranch(),</span>
+<span class="nc" id="L369">                                                                                      data.getTargetBranch(),</span>
+<span class="nc" id="L370">                                                                                      data.getTargetProjectUrl());</span>
+                }
+            }
+        };
+
+        abstract String getShortDescription(CauseData data);
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.2.201409121644</span></div></body></html>

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>MergeRequestBuildAction.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">GitLab Plugin</a> &gt; <a href="index.source.html" class="el_package">com.dabsquared.gitlabjenkins.webhook.build</a> &gt; <span class="el_source">MergeRequestBuildAction.java</span></div><h1>MergeRequestBuildAction.java</h1><pre class="source lang-java linenums">package com.dabsquared.gitlabjenkins.webhook.build;
+
+import com.dabsquared.gitlabjenkins.GitLabPushTrigger;
+import com.dabsquared.gitlabjenkins.gitlab.hook.model.MergeRequestHook;
+import com.dabsquared.gitlabjenkins.gitlab.hook.model.MergeRequestObjectAttributes;
+import com.dabsquared.gitlabjenkins.gitlab.hook.model.Project;
+import com.dabsquared.gitlabjenkins.util.JsonUtil;
+import hudson.model.Item;
+import hudson.model.Job;
+import hudson.security.ACL;
+import hudson.util.HttpResponses;
+
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
+import static com.dabsquared.gitlabjenkins.util.JsonUtil.toPrettyPrint;
+
+/**
+ * @author Robin Müller
+ */
+public class MergeRequestBuildAction extends BuildWebHookAction {
+
+<span class="fc" id="L23">    private final static Logger LOGGER = Logger.getLogger(MergeRequestBuildAction.class.getName());</span>
+    private Item project;
+    private MergeRequestHook mergeRequestHook;
+
+<span class="fc" id="L27">    public MergeRequestBuildAction(Item project, String json) {</span>
+<span class="fc" id="L28">        LOGGER.log(Level.FINE, &quot;MergeRequest: {0}&quot;, toPrettyPrint(json));</span>
+<span class="fc" id="L29">        this.project = project;</span>
+<span class="fc" id="L30">        this.mergeRequestHook = JsonUtil.read(json, MergeRequestHook.class);</span>
+<span class="fc" id="L31">    }</span>
+
+    void processForCompatibility() {
+        // url and homepage are introduced in 8.x versions of Gitlab
+<span class="fc" id="L35">        final MergeRequestObjectAttributes attributes = this.mergeRequestHook.getObjectAttributes();</span>
+<span class="pc bpc" id="L36" title="1 of 2 branches missed.">        if (attributes != null) {</span>
+<span class="fc" id="L37">            final Project source = attributes.getSource();</span>
+<span class="pc bpc" id="L38" title="2 of 4 branches missed.">            if (source != null &amp;&amp; source.getHttpUrl() != null) {</span>
+<span class="pc bpc" id="L39" title="1 of 2 branches missed.">                if (source.getUrl() == null) {</span>
+<span class="nc" id="L40">                    source.setUrl(source.getHttpUrl());</span>
+                }
+<span class="pc bpc" id="L42" title="1 of 2 branches missed.">                if (source.getHomepage() == null) {</span>
+<span class="nc" id="L43">                    source.setHomepage(source.getHttpUrl().substring(0, source.getHttpUrl().lastIndexOf(&quot;.git&quot;)));</span>
+                }
+            }
+        }
+<span class="fc" id="L47">    }</span>
+
+    public void execute() {
+<span class="pc bpc" id="L50" title="1 of 2 branches missed.">        if (!(project instanceof Job&lt;?, ?&gt;)) {</span>
+<span class="nc" id="L51">            throw HttpResponses.errorWithoutStack(409, &quot;Merge Request Hook is not supported for this project&quot;);</span>
+        }
+<span class="fc" id="L53">        ACL.impersonate(ACL.SYSTEM, new Runnable() {</span>
+            public void run() {
+<span class="fc" id="L55">                GitLabPushTrigger trigger = GitLabPushTrigger.getFromJob((Job&lt;?, ?&gt;) project);</span>
+<span class="pc bpc" id="L56" title="1 of 2 branches missed.">                if (trigger != null) {</span>
+<span class="fc" id="L57">                    trigger.onPost(mergeRequestHook);</span>
+                }
+<span class="fc" id="L59">            }</span>
+        });
+<span class="fc" id="L61">        throw HttpResponses.ok();</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.2.201409121644</span></div></body></html>

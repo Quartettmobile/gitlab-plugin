@@ -1,0 +1,272 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>ProjectBuilder.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">GitLab Plugin</a> &gt; <a href="index.source.html" class="el_package">com.dabsquared.gitlabjenkins.gitlab.hook.model.builder.generated</a> &gt; <span class="el_source">ProjectBuilder.java</span></div><h1>ProjectBuilder.java</h1><pre class="source lang-java linenums">package com.dabsquared.gitlabjenkins.gitlab.hook.model.builder.generated;
+
+import com.dabsquared.gitlabjenkins.gitlab.hook.model.Project;
+import javax.annotation.Generated;
+
+@Generated(&quot;PojoBuilder&quot;)
+public class ProjectBuilder
+    implements Cloneable {
+  protected ProjectBuilder self;
+  protected String value$name$java$lang$String;
+  protected boolean isSet$name$java$lang$String;
+  protected String value$description$java$lang$String;
+  protected boolean isSet$description$java$lang$String;
+  protected String value$webUrl$java$lang$String;
+  protected boolean isSet$webUrl$java$lang$String;
+  protected String value$avatarUrl$java$lang$String;
+  protected boolean isSet$avatarUrl$java$lang$String;
+  protected String value$namespace$java$lang$String;
+  protected boolean isSet$namespace$java$lang$String;
+  protected Integer value$visibilityLevel$java$lang$Integer;
+  protected boolean isSet$visibilityLevel$java$lang$Integer;
+  protected String value$pathWithNamespace$java$lang$String;
+  protected boolean isSet$pathWithNamespace$java$lang$String;
+  protected String value$defaultBranch$java$lang$String;
+  protected boolean isSet$defaultBranch$java$lang$String;
+  protected String value$homepage$java$lang$String;
+  protected boolean isSet$homepage$java$lang$String;
+  protected String value$url$java$lang$String;
+  protected boolean isSet$url$java$lang$String;
+  protected String value$sshUrl$java$lang$String;
+  protected boolean isSet$sshUrl$java$lang$String;
+  protected String value$httpUrl$java$lang$String;
+  protected boolean isSet$httpUrl$java$lang$String;
+
+  /**
+   * Factory Method to construct a ProjectBuilder
+   *
+   * @return a new ProjectBuilder
+   */
+  public static ProjectBuilder project() {
+<span class="fc" id="L41">    return new ProjectBuilder();</span>
+  }
+
+  /**
+   * Creates a new {@link ProjectBuilder}.
+   */
+<span class="fc" id="L47">  public ProjectBuilder() {</span>
+<span class="fc" id="L48">    self = (ProjectBuilder)this;</span>
+<span class="fc" id="L49">  }</span>
+
+  /**
+   * Sets the default value for the {@link Project#name} property.
+   *
+   * @param value the default value
+   * @return this builder
+   */
+  public ProjectBuilder withName(String value) {
+<span class="fc" id="L58">    this.value$name$java$lang$String = value;</span>
+<span class="fc" id="L59">    this.isSet$name$java$lang$String = true;</span>
+<span class="fc" id="L60">    return self;</span>
+  }
+
+  /**
+   * Sets the default value for the {@link Project#description} property.
+   *
+   * @param value the default value
+   * @return this builder
+   */
+  public ProjectBuilder withDescription(String value) {
+<span class="nc" id="L70">    this.value$description$java$lang$String = value;</span>
+<span class="nc" id="L71">    this.isSet$description$java$lang$String = true;</span>
+<span class="nc" id="L72">    return self;</span>
+  }
+
+  /**
+   * Sets the default value for the {@link Project#webUrl} property.
+   *
+   * @param value the default value
+   * @return this builder
+   */
+  public ProjectBuilder withWebUrl(String value) {
+<span class="fc" id="L82">    this.value$webUrl$java$lang$String = value;</span>
+<span class="fc" id="L83">    this.isSet$webUrl$java$lang$String = true;</span>
+<span class="fc" id="L84">    return self;</span>
+  }
+
+  /**
+   * Sets the default value for the {@link Project#avatarUrl} property.
+   *
+   * @param value the default value
+   * @return this builder
+   */
+  public ProjectBuilder withAvatarUrl(String value) {
+<span class="nc" id="L94">    this.value$avatarUrl$java$lang$String = value;</span>
+<span class="nc" id="L95">    this.isSet$avatarUrl$java$lang$String = true;</span>
+<span class="nc" id="L96">    return self;</span>
+  }
+
+  /**
+   * Sets the default value for the {@link Project#namespace} property.
+   *
+   * @param value the default value
+   * @return this builder
+   */
+  public ProjectBuilder withNamespace(String value) {
+<span class="fc" id="L106">    this.value$namespace$java$lang$String = value;</span>
+<span class="fc" id="L107">    this.isSet$namespace$java$lang$String = true;</span>
+<span class="fc" id="L108">    return self;</span>
+  }
+
+  /**
+   * Sets the default value for the {@link Project#visibilityLevel} property.
+   *
+   * @param value the default value
+   * @return this builder
+   */
+  public ProjectBuilder withVisibilityLevel(Integer value) {
+<span class="nc" id="L118">    this.value$visibilityLevel$java$lang$Integer = value;</span>
+<span class="nc" id="L119">    this.isSet$visibilityLevel$java$lang$Integer = true;</span>
+<span class="nc" id="L120">    return self;</span>
+  }
+
+  /**
+   * Sets the default value for the {@link Project#pathWithNamespace} property.
+   *
+   * @param value the default value
+   * @return this builder
+   */
+  public ProjectBuilder withPathWithNamespace(String value) {
+<span class="nc" id="L130">    this.value$pathWithNamespace$java$lang$String = value;</span>
+<span class="nc" id="L131">    this.isSet$pathWithNamespace$java$lang$String = true;</span>
+<span class="nc" id="L132">    return self;</span>
+  }
+
+  /**
+   * Sets the default value for the {@link Project#defaultBranch} property.
+   *
+   * @param value the default value
+   * @return this builder
+   */
+  public ProjectBuilder withDefaultBranch(String value) {
+<span class="nc" id="L142">    this.value$defaultBranch$java$lang$String = value;</span>
+<span class="nc" id="L143">    this.isSet$defaultBranch$java$lang$String = true;</span>
+<span class="nc" id="L144">    return self;</span>
+  }
+
+  /**
+   * Sets the default value for the {@link Project#homepage} property.
+   *
+   * @param value the default value
+   * @return this builder
+   */
+  public ProjectBuilder withHomepage(String value) {
+<span class="fc" id="L154">    this.value$homepage$java$lang$String = value;</span>
+<span class="fc" id="L155">    this.isSet$homepage$java$lang$String = true;</span>
+<span class="fc" id="L156">    return self;</span>
+  }
+
+  /**
+   * Sets the default value for the {@link Project#url} property.
+   *
+   * @param value the default value
+   * @return this builder
+   */
+  public ProjectBuilder withUrl(String value) {
+<span class="fc" id="L166">    this.value$url$java$lang$String = value;</span>
+<span class="fc" id="L167">    this.isSet$url$java$lang$String = true;</span>
+<span class="fc" id="L168">    return self;</span>
+  }
+
+  /**
+   * Sets the default value for the {@link Project#sshUrl} property.
+   *
+   * @param value the default value
+   * @return this builder
+   */
+  public ProjectBuilder withSshUrl(String value) {
+<span class="fc" id="L178">    this.value$sshUrl$java$lang$String = value;</span>
+<span class="fc" id="L179">    this.isSet$sshUrl$java$lang$String = true;</span>
+<span class="fc" id="L180">    return self;</span>
+  }
+
+  /**
+   * Sets the default value for the {@link Project#httpUrl} property.
+   *
+   * @param value the default value
+   * @return this builder
+   */
+  public ProjectBuilder withHttpUrl(String value) {
+<span class="fc" id="L190">    this.value$httpUrl$java$lang$String = value;</span>
+<span class="fc" id="L191">    this.isSet$httpUrl$java$lang$String = true;</span>
+<span class="fc" id="L192">    return self;</span>
+  }
+
+  /**
+   * Returns a clone of this builder.
+   *
+   * @return the clone
+   */
+  @Override
+  public Object clone() {
+    try {
+<span class="nc" id="L203">      ProjectBuilder result = (ProjectBuilder)super.clone();</span>
+<span class="nc" id="L204">      result.self = result;</span>
+<span class="nc" id="L205">      return result;</span>
+<span class="nc" id="L206">    } catch (CloneNotSupportedException e) {</span>
+<span class="nc" id="L207">      throw new InternalError(e.getMessage());</span>
+    }
+  }
+
+  /**
+   * Returns a clone of this builder.
+   *
+   * @return the clone
+   */
+  public ProjectBuilder but() {
+<span class="nc" id="L217">    return (ProjectBuilder)clone();</span>
+  }
+
+  /**
+   * Creates a new {@link Project} based on this builder's settings.
+   *
+   * @return the created Project
+   */
+  public Project build() {
+    try {
+<span class="fc" id="L227">      Project result = new Project();</span>
+<span class="fc bfc" id="L228" title="All 2 branches covered.">      if (isSet$name$java$lang$String) {</span>
+<span class="fc" id="L229">        result.setName(value$name$java$lang$String);</span>
+      }
+<span class="pc bpc" id="L231" title="1 of 2 branches missed.">      if (isSet$description$java$lang$String) {</span>
+<span class="nc" id="L232">        result.setDescription(value$description$java$lang$String);</span>
+      }
+<span class="fc bfc" id="L234" title="All 2 branches covered.">      if (isSet$webUrl$java$lang$String) {</span>
+<span class="fc" id="L235">        result.setWebUrl(value$webUrl$java$lang$String);</span>
+      }
+<span class="pc bpc" id="L237" title="1 of 2 branches missed.">      if (isSet$avatarUrl$java$lang$String) {</span>
+<span class="nc" id="L238">        result.setAvatarUrl(value$avatarUrl$java$lang$String);</span>
+      }
+<span class="fc bfc" id="L240" title="All 2 branches covered.">      if (isSet$namespace$java$lang$String) {</span>
+<span class="fc" id="L241">        result.setNamespace(value$namespace$java$lang$String);</span>
+      }
+<span class="pc bpc" id="L243" title="1 of 2 branches missed.">      if (isSet$visibilityLevel$java$lang$Integer) {</span>
+<span class="nc" id="L244">        result.setVisibilityLevel(value$visibilityLevel$java$lang$Integer);</span>
+      }
+<span class="pc bpc" id="L246" title="1 of 2 branches missed.">      if (isSet$pathWithNamespace$java$lang$String) {</span>
+<span class="nc" id="L247">        result.setPathWithNamespace(value$pathWithNamespace$java$lang$String);</span>
+      }
+<span class="pc bpc" id="L249" title="1 of 2 branches missed.">      if (isSet$defaultBranch$java$lang$String) {</span>
+<span class="nc" id="L250">        result.setDefaultBranch(value$defaultBranch$java$lang$String);</span>
+      }
+<span class="fc bfc" id="L252" title="All 2 branches covered.">      if (isSet$homepage$java$lang$String) {</span>
+<span class="fc" id="L253">        result.setHomepage(value$homepage$java$lang$String);</span>
+      }
+<span class="fc bfc" id="L255" title="All 2 branches covered.">      if (isSet$url$java$lang$String) {</span>
+<span class="fc" id="L256">        result.setUrl(value$url$java$lang$String);</span>
+      }
+<span class="fc bfc" id="L258" title="All 2 branches covered.">      if (isSet$sshUrl$java$lang$String) {</span>
+<span class="fc" id="L259">        result.setSshUrl(value$sshUrl$java$lang$String);</span>
+      }
+<span class="fc bfc" id="L261" title="All 2 branches covered.">      if (isSet$httpUrl$java$lang$String) {</span>
+<span class="fc" id="L262">        result.setHttpUrl(value$httpUrl$java$lang$String);</span>
+      }
+<span class="fc" id="L264">      return result;</span>
+<span class="nc" id="L265">    } catch (RuntimeException ex) {</span>
+<span class="nc" id="L266">      throw ex;</span>
+<span class="nc" id="L267">    } catch (Exception ex) {</span>
+<span class="nc" id="L268">      throw new java.lang.reflect.UndeclaredThrowableException(ex);</span>
+    }
+  }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.2.201409121644</span></div></body></html>

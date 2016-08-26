@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>GitLabCommitStatusPublisher.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">GitLab Plugin</a> &gt; <a href="index.source.html" class="el_package">com.dabsquared.gitlabjenkins.publisher</a> &gt; <span class="el_source">GitLabCommitStatusPublisher.java</span></div><h1>GitLabCommitStatusPublisher.java</h1><pre class="source lang-java linenums">package com.dabsquared.gitlabjenkins.publisher;
+
+import com.dabsquared.gitlabjenkins.gitlab.api.model.BuildState;
+import com.dabsquared.gitlabjenkins.util.CommitStatusUpdater;
+import hudson.Extension;
+import hudson.Launcher;
+import hudson.model.AbstractBuild;
+import hudson.model.AbstractProject;
+import hudson.model.BuildListener;
+import hudson.model.Result;
+import hudson.tasks.BuildStepDescriptor;
+import hudson.tasks.BuildStepMonitor;
+import hudson.tasks.Notifier;
+import hudson.tasks.Publisher;
+import hudson.util.FormValidation;
+import org.apache.commons.lang.StringUtils;
+import org.kohsuke.stapler.DataBoundConstructor;
+import org.kohsuke.stapler.QueryParameter;
+
+import java.io.IOException;
+
+/**
+ * @author Robin Müller
+ */
+public class GitLabCommitStatusPublisher extends Notifier {
+
+    private String name;
+
+    @DataBoundConstructor
+<span class="fc" id="L30">    public GitLabCommitStatusPublisher(String name) {</span>
+<span class="fc" id="L31">        this.name = name;</span>
+<span class="fc" id="L32">    }</span>
+
+    public BuildStepMonitor getRequiredMonitorService() {
+<span class="nc" id="L35">        return BuildStepMonitor.NONE;</span>
+    }
+
+    @Override
+    public boolean prebuild(AbstractBuild&lt;?, ?&gt; build, BuildListener listener) {
+<span class="fc" id="L40">        CommitStatusUpdater.updateCommitStatus(build, listener, BuildState.running, name);</span>
+<span class="fc" id="L41">        return true;</span>
+    }
+
+    @Override
+    public boolean perform(AbstractBuild&lt;?, ?&gt; build, Launcher launcher, BuildListener listener) throws InterruptedException, IOException {
+<span class="fc" id="L46">        Result buildResult = build.getResult();</span>
+<span class="fc bfc" id="L47" title="All 2 branches covered.">        if (buildResult == Result.SUCCESS) {</span>
+<span class="fc" id="L48">            CommitStatusUpdater.updateCommitStatus(build, listener, BuildState.success, name);</span>
+<span class="fc bfc" id="L49" title="All 2 branches covered.">        } else if (buildResult == Result.ABORTED) {</span>
+<span class="fc" id="L50">            CommitStatusUpdater.updateCommitStatus(build, listener, BuildState.canceled, name);</span>
+        } else {
+<span class="fc" id="L52">            CommitStatusUpdater.updateCommitStatus(build, listener, BuildState.failed, name);</span>
+        }
+<span class="fc" id="L54">        return true;</span>
+    }
+
+    public String getName() {
+<span class="nc" id="L58">        return name;</span>
+    }
+
+    protected GitLabCommitStatusPublisher readResolve() {
+<span class="nc bnc" id="L62" title="All 2 branches missed.">        if (name == null) {</span>
+<span class="nc" id="L63">            name = &quot;jenkins&quot;;</span>
+        }
+<span class="nc" id="L65">        return this;</span>
+    }
+
+    @Extension
+<span class="fc" id="L69">    public static class DescriptorImpl extends BuildStepDescriptor&lt;Publisher&gt; {</span>
+
+        @Override
+        public boolean isApplicable(Class&lt;? extends AbstractProject&gt; aClass) {
+<span class="nc" id="L73">            return true;</span>
+        }
+
+        @Override
+        public String getDisplayName() {
+<span class="fc" id="L78">            return Messages.GitLabCommitStatusPublisher_DisplayName();</span>
+        }
+
+        @Override
+        public String getHelpFile() {
+<span class="nc" id="L83">            return &quot;/plugin/gitlab-plugin/help/help-gitlab8.1CI.html&quot;;</span>
+        }
+
+        public FormValidation doCheckName(@QueryParameter String value) {
+<span class="nc bnc" id="L87" title="All 2 branches missed.">            if (StringUtils.isEmpty(value)) {</span>
+<span class="nc" id="L88">                return FormValidation.error(Messages.name_required());</span>
+            }
+<span class="nc" id="L90">            return FormValidation.ok();</span>
+        }
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.2.201409121644</span></div></body></html>

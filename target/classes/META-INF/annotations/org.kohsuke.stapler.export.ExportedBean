@@ -1,0 +1,6 @@
+com.dabsquared.gitlabjenkins.cause.GitLabWebHookCause
+com.dabsquared.gitlabjenkins.connection.GitLabApiTokenImpl
+com.dabsquared.gitlabjenkins.connection.GitLabConnectionProperty
+com.dabsquared.gitlabjenkins.workflow.GitLabBuildsStep
+com.dabsquared.gitlabjenkins.workflow.GitLabCommitStatusStep
+com.dabsquared.gitlabjenkins.workflow.UpdateGitLabCommitStatusStep

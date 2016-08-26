@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>NoteHookBuilder.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">GitLab Plugin</a> &gt; <a href="index.source.html" class="el_package">com.dabsquared.gitlabjenkins.gitlab.hook.model.builder.generated</a> &gt; <span class="el_source">NoteHookBuilder.java</span></div><h1>NoteHookBuilder.java</h1><pre class="source lang-java linenums">package com.dabsquared.gitlabjenkins.gitlab.hook.model.builder.generated;
+
+import com.dabsquared.gitlabjenkins.gitlab.hook.model.MergeRequestObjectAttributes;
+import com.dabsquared.gitlabjenkins.gitlab.hook.model.NoteHook;
+import com.dabsquared.gitlabjenkins.gitlab.hook.model.NoteObjectAttributes;
+import com.dabsquared.gitlabjenkins.gitlab.hook.model.Project;
+import com.dabsquared.gitlabjenkins.gitlab.hook.model.Repository;
+import com.dabsquared.gitlabjenkins.gitlab.hook.model.User;
+import javax.annotation.Generated;
+
+@Generated(&quot;PojoBuilder&quot;)
+public class NoteHookBuilder
+    implements Cloneable {
+  protected NoteHookBuilder self;
+  protected String value$objectKind$java$lang$String;
+  protected boolean isSet$objectKind$java$lang$String;
+  protected Repository value$repository$com$dabsquared$gitlabjenkins$gitlab$hook$model$Repository;
+  protected boolean isSet$repository$com$dabsquared$gitlabjenkins$gitlab$hook$model$Repository;
+  protected User value$user$com$dabsquared$gitlabjenkins$gitlab$hook$model$User;
+  protected boolean isSet$user$com$dabsquared$gitlabjenkins$gitlab$hook$model$User;
+  protected Project value$project$com$dabsquared$gitlabjenkins$gitlab$hook$model$Project;
+  protected boolean isSet$project$com$dabsquared$gitlabjenkins$gitlab$hook$model$Project;
+  protected NoteObjectAttributes value$objectAttributes$com$dabsquared$gitlabjenkins$gitlab$hook$model$NoteObjectAttributes;
+  protected boolean isSet$objectAttributes$com$dabsquared$gitlabjenkins$gitlab$hook$model$NoteObjectAttributes;
+  protected MergeRequestObjectAttributes value$mergeRequest$com$dabsquared$gitlabjenkins$gitlab$hook$model$MergeRequestObjectAttributes;
+  protected boolean isSet$mergeRequest$com$dabsquared$gitlabjenkins$gitlab$hook$model$MergeRequestObjectAttributes;
+
+  /**
+   * Factory Method to construct a NoteHookBuilder
+   *
+   * @return a new NoteHookBuilder
+   */
+  public static NoteHookBuilder noteHook() {
+<span class="fc" id="L34">    return new NoteHookBuilder();</span>
+  }
+
+  /**
+   * Creates a new {@link NoteHookBuilder}.
+   */
+<span class="fc" id="L40">  public NoteHookBuilder() {</span>
+<span class="fc" id="L41">    self = (NoteHookBuilder)this;</span>
+<span class="fc" id="L42">  }</span>
+
+  /**
+   * Sets the default value for the {@link NoteHook#objectKind} property.
+   *
+   * @param value the default value
+   * @return this builder
+   */
+  public NoteHookBuilder withObjectKind(String value) {
+<span class="nc" id="L51">    this.value$objectKind$java$lang$String = value;</span>
+<span class="nc" id="L52">    this.isSet$objectKind$java$lang$String = true;</span>
+<span class="nc" id="L53">    return self;</span>
+  }
+
+  /**
+   * Sets the default value for the {@link NoteHook#repository} property.
+   *
+   * @param value the default value
+   * @return this builder
+   */
+  public NoteHookBuilder withRepository(Repository value) {
+<span class="nc" id="L63">    this.value$repository$com$dabsquared$gitlabjenkins$gitlab$hook$model$Repository = value;</span>
+<span class="nc" id="L64">    this.isSet$repository$com$dabsquared$gitlabjenkins$gitlab$hook$model$Repository = true;</span>
+<span class="nc" id="L65">    return self;</span>
+  }
+
+  /**
+   * Sets the default value for the {@link NoteHook#user} property.
+   *
+   * @param value the default value
+   * @return this builder
+   */
+  public NoteHookBuilder withUser(User value) {
+<span class="nc" id="L75">    this.value$user$com$dabsquared$gitlabjenkins$gitlab$hook$model$User = value;</span>
+<span class="nc" id="L76">    this.isSet$user$com$dabsquared$gitlabjenkins$gitlab$hook$model$User = true;</span>
+<span class="nc" id="L77">    return self;</span>
+  }
+
+  /**
+   * Sets the default value for the {@link NoteHook#project} property.
+   *
+   * @param value the default value
+   * @return this builder
+   */
+  public NoteHookBuilder withProject(Project value) {
+<span class="nc" id="L87">    this.value$project$com$dabsquared$gitlabjenkins$gitlab$hook$model$Project = value;</span>
+<span class="nc" id="L88">    this.isSet$project$com$dabsquared$gitlabjenkins$gitlab$hook$model$Project = true;</span>
+<span class="nc" id="L89">    return self;</span>
+  }
+
+  /**
+   * Sets the default value for the {@link NoteHook#objectAttributes} property.
+   *
+   * @param value the default value
+   * @return this builder
+   */
+  public NoteHookBuilder withObjectAttributes(NoteObjectAttributes value) {
+<span class="fc" id="L99">    this.value$objectAttributes$com$dabsquared$gitlabjenkins$gitlab$hook$model$NoteObjectAttributes = value;</span>
+<span class="fc" id="L100">    this.isSet$objectAttributes$com$dabsquared$gitlabjenkins$gitlab$hook$model$NoteObjectAttributes = true;</span>
+<span class="fc" id="L101">    return self;</span>
+  }
+
+  /**
+   * Sets the default value for the {@link NoteHook#mergeRequest} property.
+   *
+   * @param value the default value
+   * @return this builder
+   */
+  public NoteHookBuilder withMergeRequest(MergeRequestObjectAttributes value) {
+<span class="fc" id="L111">    this.value$mergeRequest$com$dabsquared$gitlabjenkins$gitlab$hook$model$MergeRequestObjectAttributes = value;</span>
+<span class="fc" id="L112">    this.isSet$mergeRequest$com$dabsquared$gitlabjenkins$gitlab$hook$model$MergeRequestObjectAttributes = true;</span>
+<span class="fc" id="L113">    return self;</span>
+  }
+
+  /**
+   * Returns a clone of this builder.
+   *
+   * @return the clone
+   */
+  @Override
+  public Object clone() {
+    try {
+<span class="nc" id="L124">      NoteHookBuilder result = (NoteHookBuilder)super.clone();</span>
+<span class="nc" id="L125">      result.self = result;</span>
+<span class="nc" id="L126">      return result;</span>
+<span class="nc" id="L127">    } catch (CloneNotSupportedException e) {</span>
+<span class="nc" id="L128">      throw new InternalError(e.getMessage());</span>
+    }
+  }
+
+  /**
+   * Returns a clone of this builder.
+   *
+   * @return the clone
+   */
+  public NoteHookBuilder but() {
+<span class="nc" id="L138">    return (NoteHookBuilder)clone();</span>
+  }
+
+  /**
+   * Creates a new {@link NoteHook} based on this builder's settings.
+   *
+   * @return the created NoteHook
+   */
+  public NoteHook build() {
+    try {
+<span class="fc" id="L148">      NoteHook result = new NoteHook();</span>
+<span class="pc bpc" id="L149" title="1 of 2 branches missed.">      if (isSet$objectKind$java$lang$String) {</span>
+<span class="nc" id="L150">        result.setObjectKind(value$objectKind$java$lang$String);</span>
+      }
+<span class="pc bpc" id="L152" title="1 of 2 branches missed.">      if (isSet$repository$com$dabsquared$gitlabjenkins$gitlab$hook$model$Repository) {</span>
+<span class="nc" id="L153">        result.setRepository(value$repository$com$dabsquared$gitlabjenkins$gitlab$hook$model$Repository);</span>
+      }
+<span class="pc bpc" id="L155" title="1 of 2 branches missed.">      if (isSet$user$com$dabsquared$gitlabjenkins$gitlab$hook$model$User) {</span>
+<span class="nc" id="L156">        result.setUser(value$user$com$dabsquared$gitlabjenkins$gitlab$hook$model$User);</span>
+      }
+<span class="pc bpc" id="L158" title="1 of 2 branches missed.">      if (isSet$project$com$dabsquared$gitlabjenkins$gitlab$hook$model$Project) {</span>
+<span class="nc" id="L159">        result.setProject(value$project$com$dabsquared$gitlabjenkins$gitlab$hook$model$Project);</span>
+      }
+<span class="pc bpc" id="L161" title="1 of 2 branches missed.">      if (isSet$objectAttributes$com$dabsquared$gitlabjenkins$gitlab$hook$model$NoteObjectAttributes) {</span>
+<span class="fc" id="L162">        result.setObjectAttributes(value$objectAttributes$com$dabsquared$gitlabjenkins$gitlab$hook$model$NoteObjectAttributes);</span>
+      }
+<span class="pc bpc" id="L164" title="1 of 2 branches missed.">      if (isSet$mergeRequest$com$dabsquared$gitlabjenkins$gitlab$hook$model$MergeRequestObjectAttributes) {</span>
+<span class="fc" id="L165">        result.setMergeRequest(value$mergeRequest$com$dabsquared$gitlabjenkins$gitlab$hook$model$MergeRequestObjectAttributes);</span>
+      }
+<span class="fc" id="L167">      return result;</span>
+<span class="nc" id="L168">    } catch (RuntimeException ex) {</span>
+<span class="nc" id="L169">      throw ex;</span>
+<span class="nc" id="L170">    } catch (Exception ex) {</span>
+<span class="nc" id="L171">      throw new java.lang.reflect.UndeclaredThrowableException(ex);</span>
+    }
+  }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.2.201409121644</span></div></body></html>

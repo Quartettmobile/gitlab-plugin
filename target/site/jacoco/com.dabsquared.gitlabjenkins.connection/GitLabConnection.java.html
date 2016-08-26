@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>GitLabConnection.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">GitLab Plugin</a> &gt; <a href="index.source.html" class="el_package">com.dabsquared.gitlabjenkins.connection</a> &gt; <span class="el_source">GitLabConnection.java</span></div><h1>GitLabConnection.java</h1><pre class="source lang-java linenums">package com.dabsquared.gitlabjenkins.connection;
+
+import com.cloudbees.plugins.credentials.CredentialsProvider;
+import com.cloudbees.plugins.credentials.CredentialsScope;
+import com.cloudbees.plugins.credentials.CredentialsStore;
+import com.cloudbees.plugins.credentials.SystemCredentialsProvider;
+import com.cloudbees.plugins.credentials.domains.Domain;
+import hudson.init.InitMilestone;
+import hudson.init.Initializer;
+import hudson.util.Secret;
+import jenkins.model.Jenkins;
+import org.kohsuke.stapler.DataBoundConstructor;
+
+import java.io.IOException;
+import java.util.List;
+import java.util.UUID;
+
+/**
+ * @author Robin Müller
+ */
+public class GitLabConnection {
+
+    private final String name;
+    private final String url;
+    private transient String apiToken;
+    // TODO make final when migration code gets removed
+    private String apiTokenId;
+    private final boolean ignoreCertificateErrors;
+    private final Integer connectionTimeout;
+    private final Integer readTimeout;
+
+    @DataBoundConstructor
+<span class="fc" id="L33">    public GitLabConnection(String name, String url, String apiTokenId, boolean ignoreCertificateErrors, Integer connectionTimeout, Integer readTimeout) {</span>
+<span class="fc" id="L34">        this.name = name;</span>
+<span class="fc" id="L35">        this.url = url;</span>
+<span class="fc" id="L36">        this.apiTokenId = apiTokenId;</span>
+<span class="fc" id="L37">        this.ignoreCertificateErrors = ignoreCertificateErrors;</span>
+<span class="fc" id="L38">        this.connectionTimeout = connectionTimeout;</span>
+<span class="fc" id="L39">        this.readTimeout = readTimeout;</span>
+<span class="fc" id="L40">    }</span>
+
+    public String getName() {
+<span class="fc" id="L43">        return name;</span>
+    }
+
+    public String getUrl() {
+<span class="fc" id="L47">        return url;</span>
+    }
+
+    public String getApiTokenId() {
+<span class="fc" id="L51">        return apiTokenId;</span>
+    }
+
+    public boolean isIgnoreCertificateErrors() {
+<span class="fc" id="L55">        return ignoreCertificateErrors;</span>
+    }
+
+    public int getConnectionTimeout() {
+<span class="fc" id="L59">        return connectionTimeout;</span>
+    }
+
+    public int getReadTimeout() {
+<span class="fc" id="L63">        return readTimeout;</span>
+    }
+
+    protected GitLabConnection readResolve() {
+<span class="pc bpc" id="L67" title="2 of 4 branches missed.">        if (connectionTimeout == null || readTimeout == null) {</span>
+<span class="nc" id="L68">            return new GitLabConnection(name, url, apiTokenId, ignoreCertificateErrors, 10, 10);</span>
+        }
+<span class="fc" id="L70">        return this;</span>
+    }
+
+    @Initializer(after = InitMilestone.PLUGINS_STARTED)
+    public static void migrate() throws IOException {
+<span class="fc" id="L75">        GitLabConnectionConfig descriptor = (GitLabConnectionConfig) Jenkins.getInstance().getDescriptor(GitLabConnectionConfig.class);</span>
+<span class="fc bfc" id="L76" title="All 2 branches covered.">        for (GitLabConnection connection : descriptor.getConnections()) {</span>
+<span class="pc bpc" id="L77" title="2 of 4 branches missed.">            if (connection.apiTokenId == null &amp;&amp; connection.apiToken != null) {</span>
+<span class="nc bnc" id="L78" title="All 2 branches missed.">                for (CredentialsStore credentialsStore : CredentialsProvider.lookupStores(Jenkins.getInstance())) {</span>
+<span class="nc bnc" id="L79" title="All 2 branches missed.">                    if (credentialsStore instanceof SystemCredentialsProvider.StoreImpl) {</span>
+<span class="nc" id="L80">                        List&lt;Domain&gt; domains = credentialsStore.getDomains();</span>
+<span class="nc" id="L81">                        connection.apiTokenId = UUID.randomUUID().toString();</span>
+<span class="nc" id="L82">                        credentialsStore.addCredentials(domains.get(0),</span>
+<span class="nc" id="L83">                            new GitLabApiTokenImpl(CredentialsScope.SYSTEM, connection.apiTokenId, &quot;GitLab API Token&quot;, Secret.fromString(connection.apiToken)));</span>
+                    }
+<span class="nc" id="L85">                }</span>
+            }
+<span class="fc" id="L87">        }</span>
+<span class="fc" id="L88">        descriptor.save();</span>
+<span class="fc" id="L89">    }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.2.201409121644</span></div></body></html>

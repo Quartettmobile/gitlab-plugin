@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>NoteObjectAttributes.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">GitLab Plugin</a> &gt; <a href="index.source.html" class="el_package">com.dabsquared.gitlabjenkins.gitlab.hook.model</a> &gt; <span class="el_source">NoteObjectAttributes.java</span></div><h1>NoteObjectAttributes.java</h1><pre class="source lang-java linenums">package com.dabsquared.gitlabjenkins.gitlab.hook.model;
+
+import net.karneim.pojobuilder.GeneratePojoBuilder;
+import org.apache.commons.lang.builder.EqualsBuilder;
+import org.apache.commons.lang.builder.HashCodeBuilder;
+import org.apache.commons.lang.builder.ToStringBuilder;
+
+import java.util.Date;
+
+/**
+ * @author Nikolay Ustinov
+ */
+@GeneratePojoBuilder(intoPackage = &quot;*.builder.generated&quot;, withFactoryMethod = &quot;*&quot;)
+<span class="fc" id="L14">public class NoteObjectAttributes {</span>
+
+    private Integer id;
+    private String note;
+    private Integer authorId;
+    private Integer projectId;
+    private Date createdAt;
+    private Date updatedAt;
+    private String url;
+
+    public Integer getId() {
+<span class="nc" id="L25">        return id;</span>
+    }
+
+    public void setId(Integer id) {
+<span class="fc" id="L29">        this.id = id;</span>
+<span class="fc" id="L30">    }</span>
+
+    public Integer getProjectId() {
+<span class="nc" id="L33">        return projectId;</span>
+    }
+
+    public void setProjectId(Integer projectId) {
+<span class="fc" id="L37">        this.projectId = projectId;</span>
+<span class="fc" id="L38">    }</span>
+
+    public Integer getAuthorId() {
+<span class="nc" id="L41">        return authorId;</span>
+    }
+
+    public void setAuthorId(Integer authorId) {
+<span class="fc" id="L45">        this.authorId = authorId;</span>
+<span class="fc" id="L46">    }</span>
+
+    public Date getCreatedAt() {
+<span class="nc" id="L49">        return createdAt;</span>
+    }
+
+    public void setCreatedAt(Date createdAt) {
+<span class="fc" id="L53">        this.createdAt = createdAt;</span>
+<span class="fc" id="L54">    }</span>
+
+    public Date getUpdatedAt() {
+<span class="nc" id="L57">        return updatedAt;</span>
+    }
+
+    public void setUpdatedAt(Date updatedAt) {
+<span class="fc" id="L61">        this.updatedAt = updatedAt;</span>
+<span class="fc" id="L62">    }</span>
+
+    public String getNote() {
+<span class="fc" id="L65">        return note;</span>
+    }
+
+    public void setNote(String note) {
+<span class="fc" id="L69">        this.note = note;</span>
+<span class="fc" id="L70">    }</span>
+
+    public String getUrl() {
+<span class="nc" id="L73">        return url;</span>
+    }
+
+    public void setUrl(String url) {
+<span class="fc" id="L77">        this.url = url;</span>
+<span class="fc" id="L78">    }</span>
+
+    @Override
+    public boolean equals(Object o) {
+<span class="nc bnc" id="L82" title="All 2 branches missed.">        if (this == o) {</span>
+<span class="nc" id="L83">            return true;</span>
+        }
+<span class="nc bnc" id="L85" title="All 4 branches missed.">        if (o == null || getClass() != o.getClass()) {</span>
+<span class="nc" id="L86">            return false;</span>
+        }
+<span class="nc" id="L88">        NoteObjectAttributes that = (NoteObjectAttributes) o;</span>
+<span class="nc" id="L89">        return new EqualsBuilder()</span>
+<span class="nc" id="L90">                .append(id, that.id)</span>
+<span class="nc" id="L91">                .append(note, that.note)</span>
+<span class="nc" id="L92">                .append(projectId, that.projectId)</span>
+<span class="nc" id="L93">                .append(authorId, that.authorId)</span>
+<span class="nc" id="L94">                .append(createdAt, that.createdAt)</span>
+<span class="nc" id="L95">                .append(updatedAt, that.updatedAt)</span>
+<span class="nc" id="L96">                .append(url, that.url)</span>
+<span class="nc" id="L97">                .isEquals();</span>
+    }
+
+    @Override
+    public int hashCode() {
+<span class="nc" id="L102">        return new HashCodeBuilder(17, 37)</span>
+<span class="nc" id="L103">                .append(id)</span>
+<span class="nc" id="L104">                .append(note)</span>
+<span class="nc" id="L105">                .append(projectId)</span>
+<span class="nc" id="L106">                .append(authorId)</span>
+<span class="nc" id="L107">                .append(createdAt)</span>
+<span class="nc" id="L108">                .append(updatedAt)</span>
+<span class="nc" id="L109">                .append(url)</span>
+<span class="nc" id="L110">                .toHashCode();</span>
+    }
+
+    @Override
+    public String toString() {
+<span class="nc" id="L115">        return new ToStringBuilder(this)</span>
+<span class="nc" id="L116">                .append(&quot;id&quot;, id)</span>
+<span class="nc" id="L117">                .append(&quot;note&quot;, note)</span>
+<span class="nc" id="L118">                .append(&quot;projectId&quot;, projectId)</span>
+<span class="nc" id="L119">                .append(&quot;authorId&quot;, authorId)</span>
+<span class="nc" id="L120">                .append(&quot;createdAt&quot;, createdAt)</span>
+<span class="nc" id="L121">                .append(&quot;updatedAt&quot;, updatedAt)</span>
+<span class="nc" id="L122">                .append(&quot;url&quot;, url)</span>
+<span class="nc" id="L123">                .toString();</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.2.201409121644</span></div></body></html>

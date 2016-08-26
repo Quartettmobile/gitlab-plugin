@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>OpenMergeRequestPushHookTriggerHandler.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">GitLab Plugin</a> &gt; <a href="index.source.html" class="el_package">com.dabsquared.gitlabjenkins.trigger.handler.push</a> &gt; <span class="el_source">OpenMergeRequestPushHookTriggerHandler.java</span></div><h1>OpenMergeRequestPushHookTriggerHandler.java</h1><pre class="source lang-java linenums">package com.dabsquared.gitlabjenkins.trigger.handler.push;
+
+import com.dabsquared.gitlabjenkins.GitLabPushTrigger;
+import com.dabsquared.gitlabjenkins.cause.CauseData;
+import com.dabsquared.gitlabjenkins.cause.GitLabWebHookCause;
+import com.dabsquared.gitlabjenkins.connection.GitLabConnectionProperty;
+import com.dabsquared.gitlabjenkins.gitlab.api.GitLabApi;
+import com.dabsquared.gitlabjenkins.gitlab.api.model.Branch;
+import com.dabsquared.gitlabjenkins.gitlab.api.model.BuildState;
+import com.dabsquared.gitlabjenkins.gitlab.api.model.MergeRequest;
+import com.dabsquared.gitlabjenkins.gitlab.api.model.Project;
+import com.dabsquared.gitlabjenkins.gitlab.hook.model.PushHook;
+import com.dabsquared.gitlabjenkins.gitlab.hook.model.State;
+import com.dabsquared.gitlabjenkins.publisher.GitLabCommitStatusPublisher;
+import com.dabsquared.gitlabjenkins.trigger.filter.BranchFilter;
+import com.dabsquared.gitlabjenkins.util.LoggerUtil;
+import hudson.model.AbstractProject;
+import hudson.model.Action;
+import hudson.model.CauseAction;
+import hudson.model.Job;
+import hudson.plugins.git.RevisionParameterAction;
+import jenkins.model.Jenkins;
+import jenkins.model.ParameterizedJobMixIn;
+import org.eclipse.jgit.transport.URIish;
+
+import javax.ws.rs.ProcessingException;
+import javax.ws.rs.WebApplicationException;
+import java.net.URISyntaxException;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
+import static com.dabsquared.gitlabjenkins.cause.CauseDataBuilder.causeData;
+import static com.dabsquared.gitlabjenkins.util.LoggerUtil.toArray;
+
+/**
+ * @author Robin Müller
+ */
+class OpenMergeRequestPushHookTriggerHandler implements PushHookTriggerHandler {
+
+<span class="nc" id="L43">    private final static Logger LOGGER = Logger.getLogger(OpenMergeRequestPushHookTriggerHandler.class.getName());</span>
+
+    private final boolean skipWorkInProgressMergeRequest;
+
+<span class="nc" id="L47">    OpenMergeRequestPushHookTriggerHandler(boolean skipWorkInProgressMergeRequest) {</span>
+<span class="nc" id="L48">        this.skipWorkInProgressMergeRequest = skipWorkInProgressMergeRequest;</span>
+<span class="nc" id="L49">    }</span>
+
+    @Override
+    public void handle(Job&lt;?, ?&gt; job, PushHook hook, boolean ciSkip, BranchFilter branchFilter) {
+        try {
+<span class="nc bnc" id="L54" title="All 2 branches missed.">            if (job instanceof AbstractProject&lt;?, ?&gt;) {</span>
+<span class="nc" id="L55">                AbstractProject&lt;?, ?&gt; project = (AbstractProject&lt;?, ?&gt;) job;</span>
+<span class="nc" id="L56">                GitLabConnectionProperty property = job.getProperty(GitLabConnectionProperty.class);</span>
+<span class="nc" id="L57">                final GitLabPushTrigger trigger = project.getTrigger(GitLabPushTrigger.class);</span>
+<span class="nc" id="L58">                Integer projectId = hook.getProjectId();</span>
+<span class="nc bnc" id="L59" title="All 8 branches missed.">                if (property != null &amp;&amp; property.getClient() != null &amp;&amp; projectId != null &amp;&amp; trigger != null) {</span>
+<span class="nc" id="L60">                    GitLabApi client = property.getClient();</span>
+<span class="nc bnc" id="L61" title="All 2 branches missed.">                    for (MergeRequest mergeRequest : getOpenMergeRequests(client, projectId.toString())) {</span>
+<span class="nc" id="L62">                        handleMergeRequest(job, hook, ciSkip, branchFilter, client, mergeRequest);</span>
+<span class="nc" id="L63">                    }</span>
+                }
+            }
+<span class="nc" id="L66">        } catch (WebApplicationException | ProcessingException e) {</span>
+<span class="nc" id="L67">            LOGGER.log(Level.WARNING, &quot;Failed to communicate with gitlab server to determine if this is an update for a merge request: &quot; + e.getMessage(), e);</span>
+<span class="nc" id="L68">        }</span>
+<span class="nc" id="L69">    }</span>
+
+    private List&lt;MergeRequest&gt; getOpenMergeRequests(GitLabApi client, String projectId) {
+<span class="nc" id="L72">        List&lt;MergeRequest&gt; result = new ArrayList&lt;&gt;();</span>
+<span class="nc" id="L73">        Integer page = 1;</span>
+        do {
+<span class="nc" id="L75">            List&lt;MergeRequest&gt; mergeRequests = client.getMergeRequests(projectId, State.opened, page, 100);</span>
+<span class="nc" id="L76">            result.addAll(mergeRequests);</span>
+<span class="nc bnc" id="L77" title="All 2 branches missed.">            page = mergeRequests.isEmpty() ? null : page + 1;</span>
+<span class="nc bnc" id="L78" title="All 2 branches missed.">        } while (page != null);</span>
+<span class="nc" id="L79">        return result;</span>
+    }
+
+    private void handleMergeRequest(Job&lt;?, ?&gt; job, PushHook hook, boolean ciSkip, BranchFilter branchFilter, GitLabApi client, MergeRequest mergeRequest) {
+<span class="nc bnc" id="L83" title="All 6 branches missed.">        if (ciSkip &amp;&amp; mergeRequest.getDescription() != null &amp;&amp; mergeRequest.getDescription().contains(&quot;[ci-skip]&quot;)) {</span>
+<span class="nc" id="L84">            LOGGER.log(Level.INFO, &quot;Skipping MR &quot; + mergeRequest.getTitle() + &quot; due to ci-skip.&quot;);</span>
+<span class="nc" id="L85">            return;</span>
+        }
+
+<span class="nc" id="L88">        Boolean workInProgress = mergeRequest.getWorkInProgress();</span>
+<span class="nc bnc" id="L89" title="All 6 branches missed.">        if (skipWorkInProgressMergeRequest &amp;&amp; workInProgress != null &amp;&amp; workInProgress) {</span>
+<span class="nc" id="L90">            LOGGER.log(Level.INFO, &quot;Skip WIP Merge Request #{0} ({1})&quot;, toArray(mergeRequest.getIid(), mergeRequest.getTitle()));</span>
+<span class="nc" id="L91">            return;</span>
+        }
+
+<span class="nc" id="L94">        String targetBranch = mergeRequest.getTargetBranch();</span>
+<span class="nc" id="L95">        String sourceBranch = mergeRequest.getSourceBranch();</span>
+<span class="nc bnc" id="L96" title="All 8 branches missed.">        if (targetBranch != null &amp;&amp; branchFilter.isBranchAllowed(targetBranch) &amp;&amp; hook.getRef().endsWith(targetBranch) &amp;&amp; sourceBranch != null) {</span>
+<span class="nc" id="L97">            LOGGER.log(Level.INFO, &quot;{0} triggered for push to target branch of open merge request #{1}.&quot;,</span>
+<span class="nc" id="L98">                    LoggerUtil.toArray(job.getFullName(), mergeRequest.getId()));</span>
+
+<span class="nc" id="L100">            Branch branch = client.getBranch(mergeRequest.getSourceProjectId().toString(), sourceBranch);</span>
+<span class="nc" id="L101">            Project project = client.getProject(mergeRequest.getSourceProjectId().toString());</span>
+<span class="nc" id="L102">            String commit = branch.getCommit().getId();</span>
+<span class="nc" id="L103">            setCommitStatusPendingIfNecessary(job, mergeRequest.getSourceProjectId(), commit, branch.getName());</span>
+
+<span class="nc" id="L105">            List&lt;Action&gt; actions = Arrays.&lt;Action&gt;asList(new CauseAction(new GitLabWebHookCause(retrieveCauseData(hook, project, mergeRequest, branch))),</span>
+<span class="nc" id="L106">                                                         new RevisionParameterAction(commit, retrieveUrIish(hook)));</span>
+<span class="nc" id="L107">            scheduleBuild(job, actions.toArray(new Action[actions.size()]));</span>
+        }
+<span class="nc" id="L109">    }</span>
+
+    private CauseData retrieveCauseData(PushHook hook, Project project, MergeRequest mergeRequest, Branch branch) {
+<span class="nc" id="L112">        return causeData()</span>
+<span class="nc" id="L113">                .withActionType(CauseData.ActionType.MERGE)</span>
+<span class="nc" id="L114">                .withSourceProjectId(mergeRequest.getSourceProjectId())</span>
+<span class="nc" id="L115">                .withTargetProjectId(hook.getProjectId())</span>
+<span class="nc" id="L116">                .withBranch(branch.getName())</span>
+<span class="nc" id="L117">                .withSourceBranch(branch.getName())</span>
+<span class="nc" id="L118">                .withUserName(branch.getCommit().getAuthorName())</span>
+<span class="nc" id="L119">                .withUserEmail(branch.getCommit().getAuthorEmail())</span>
+<span class="nc" id="L120">                .withSourceRepoHomepage(project.getWebUrl())</span>
+<span class="nc" id="L121">                .withSourceRepoName(project.getName())</span>
+<span class="nc" id="L122">                .withSourceNamespace(project.getNamespace().getPath())</span>
+<span class="nc" id="L123">                .withSourceRepoUrl(project.getSshUrlToRepo())</span>
+<span class="nc" id="L124">                .withSourceRepoSshUrl(project.getSshUrlToRepo())</span>
+<span class="nc" id="L125">                .withSourceRepoHttpUrl(project.getHttpUrlToRepo())</span>
+<span class="nc" id="L126">                .withMergeRequestTitle(mergeRequest.getTitle())</span>
+<span class="nc" id="L127">                .withMergeRequestDescription(mergeRequest.getDescription())</span>
+<span class="nc" id="L128">                .withMergeRequestId(mergeRequest.getId())</span>
+<span class="nc" id="L129">                .withMergeRequestIid(mergeRequest.getIid())</span>
+<span class="nc" id="L130">                .withTargetBranch(mergeRequest.getTargetBranch())</span>
+<span class="nc" id="L131">                .withTargetRepoName(hook.getRepository().getName())</span>
+<span class="nc" id="L132">                .withTargetNamespace(hook.getProject().getNamespace())</span>
+<span class="nc" id="L133">                .withTargetRepoSshUrl(hook.getRepository().getGitSshUrl())</span>
+<span class="nc" id="L134">                .withTargetRepoHttpUrl(hook.getRepository().getGitHttpUrl())</span>
+<span class="nc" id="L135">                .withTriggeredByUser(hook.getCommits().get(0).getAuthor().getName())</span>
+<span class="nc" id="L136">                .withLastCommit(branch.getCommit().getId())</span>
+<span class="nc" id="L137">                .withTargetProjectUrl(project.getWebUrl())</span>
+<span class="nc" id="L138">                .build();</span>
+    }
+
+    private void setCommitStatusPendingIfNecessary(Job&lt;?, ?&gt; job, Integer projectId, String commit, String ref) {
+<span class="nc bnc" id="L142" title="All 4 branches missed.">        if (job instanceof AbstractProject &amp;&amp; ((AbstractProject) job).getPublishersList().get(GitLabCommitStatusPublisher.class) != null) {</span>
+<span class="nc" id="L143">            GitLabCommitStatusPublisher publisher =</span>
+<span class="nc" id="L144">                (GitLabCommitStatusPublisher) ((AbstractProject) job).getPublishersList().get(GitLabCommitStatusPublisher.class);</span>
+<span class="nc" id="L145">            GitLabApi client = job.getProperty(GitLabConnectionProperty.class).getClient();</span>
+            try {
+<span class="nc" id="L147">                client.changeBuildStatus(projectId, commit, BuildState.pending, ref, publisher.getName(),</span>
+<span class="nc" id="L148">                                         Jenkins.getInstance().getRootUrl() + job.getUrl() + job.getNextBuildNumber(), null);</span>
+<span class="nc" id="L149">            } catch (WebApplicationException | ProcessingException e) {</span>
+<span class="nc" id="L150">                LOGGER.log(Level.SEVERE, &quot;Failed to set build state to pending&quot;, e);</span>
+<span class="nc" id="L151">            }</span>
+        }
+<span class="nc" id="L153">    }</span>
+
+    private void scheduleBuild(Job&lt;?, ?&gt; job, Action[] actions) {
+<span class="nc" id="L156">        int projectBuildDelay = 0;</span>
+<span class="nc bnc" id="L157" title="All 2 branches missed.">        if (job instanceof ParameterizedJobMixIn.ParameterizedJob) {</span>
+<span class="nc" id="L158">            ParameterizedJobMixIn.ParameterizedJob abstractProject = (ParameterizedJobMixIn.ParameterizedJob) job;</span>
+<span class="nc bnc" id="L159" title="All 2 branches missed.">            if (abstractProject.getQuietPeriod() &gt; projectBuildDelay) {</span>
+<span class="nc" id="L160">                projectBuildDelay = abstractProject.getQuietPeriod();</span>
+            }
+        }
+<span class="nc" id="L163">        retrieveScheduleJob(job).scheduleBuild2(projectBuildDelay, actions);</span>
+<span class="nc" id="L164">    }</span>
+
+    private ParameterizedJobMixIn retrieveScheduleJob(final Job&lt;?, ?&gt; job) {
+        // TODO 1.621+ use standard method
+<span class="nc" id="L168">        return new ParameterizedJobMixIn() {</span>
+            @Override
+            protected Job asJob() {
+<span class="nc" id="L171">                return job;</span>
+            }
+        };
+    }
+
+    private URIish retrieveUrIish(PushHook hook) {
+        try {
+<span class="nc bnc" id="L178" title="All 2 branches missed.">            if (hook.getRepository() != null) {</span>
+<span class="nc" id="L179">                return new URIish(hook.getRepository().getUrl());</span>
+            }
+<span class="nc" id="L181">        } catch (URISyntaxException e) {</span>
+<span class="nc" id="L182">            LOGGER.log(Level.WARNING, &quot;could not parse URL&quot;);</span>
+<span class="nc" id="L183">        }</span>
+<span class="nc" id="L184">        return null;</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.2.201409121644</span></div></body></html>

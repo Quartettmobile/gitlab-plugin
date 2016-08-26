@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>GitLabClientBuilder.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">GitLab Plugin</a> &gt; <a href="index.source.html" class="el_package">com.dabsquared.gitlabjenkins.gitlab</a> &gt; <span class="el_source">GitLabClientBuilder.java</span></div><h1>GitLabClientBuilder.java</h1><pre class="source lang-java linenums">package com.dabsquared.gitlabjenkins.gitlab;
+
+import com.cloudbees.plugins.credentials.CredentialsMatchers;
+import com.cloudbees.plugins.credentials.common.StandardCredentials;
+import com.cloudbees.plugins.credentials.domains.DomainRequirement;
+import com.dabsquared.gitlabjenkins.connection.GitLabApiToken;
+import com.dabsquared.gitlabjenkins.connection.GitLabConnection;
+import com.dabsquared.gitlabjenkins.gitlab.api.GitLabApi;
+import com.dabsquared.gitlabjenkins.util.JsonUtil;
+import com.dabsquared.gitlabjenkins.util.LoggerUtil;
+import com.fasterxml.jackson.jaxrs.json.JacksonJsonProvider;
+import com.google.common.base.Function;
+import com.google.common.base.Joiner;
+import com.google.common.collect.FluentIterable;
+import hudson.ProxyConfiguration;
+import hudson.init.InitMilestone;
+import hudson.init.Initializer;
+import hudson.model.Item;
+import hudson.security.ACL;
+import jenkins.model.Jenkins;
+import org.apache.commons.io.IOUtils;
+import org.apache.commons.lang.StringUtils;
+import org.apache.http.auth.AuthScope;
+import org.apache.http.auth.UsernamePasswordCredentials;
+import org.apache.http.client.CredentialsProvider;
+import org.apache.http.impl.client.BasicCredentialsProvider;
+import org.apache.http.impl.client.DefaultHttpClient;
+import org.jboss.resteasy.client.jaxrs.ClientHttpEngine;
+import org.jboss.resteasy.client.jaxrs.engines.ApacheHttpClient4Engine;
+import org.jboss.resteasy.spi.ResteasyProviderFactory;
+import org.jenkinsci.plugins.plaincredentials.StringCredentials;
+
+import javax.annotation.Nullable;
+import javax.ws.rs.client.ClientRequestContext;
+import javax.ws.rs.client.ClientRequestFilter;
+import javax.ws.rs.client.ClientResponseContext;
+import javax.ws.rs.client.ClientResponseFilter;
+import javax.ws.rs.core.MediaType;
+import javax.ws.rs.core.MultivaluedMap;
+import javax.ws.rs.ext.RuntimeDelegate;
+import java.io.ByteArrayInputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.net.InetSocketAddress;
+import java.net.MalformedURLException;
+import java.net.Proxy;
+import java.net.URL;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
+import java.util.concurrent.TimeUnit;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
+import static com.cloudbees.plugins.credentials.CredentialsProvider.lookupCredentials;
+
+/**
+ * @author Robin Müller
+ */
+<span class="nc" id="L60">public class GitLabClientBuilder {</span>
+
+<span class="fc" id="L62">    private final static Logger LOGGER = Logger.getLogger(GitLabClientBuilder.class.getName());</span>
+    private static final String PRIVATE_TOKEN = &quot;PRIVATE-TOKEN&quot;;
+
+    public static GitLabApi buildClient(String gitlabHostUrl, final String gitlabApiTokenId, boolean ignoreCertificateErrors, int connectionTimeout, int readTimeout) {
+<span class="fc" id="L66">        ResteasyClientBuilder builder = new ResteasyClientBuilder();</span>
+<span class="fc bfc" id="L67" title="All 2 branches covered.">        if (ignoreCertificateErrors) {</span>
+<span class="fc" id="L68">            builder.hostnameVerification(ResteasyClientBuilder.HostnameVerificationPolicy.ANY);</span>
+<span class="fc" id="L69">            builder.disableTrustManager();</span>
+        }
+<span class="fc" id="L71">        ProxyConfiguration proxyConfiguration = Jenkins.getActiveInstance().proxy;</span>
+<span class="pc bpc" id="L72" title="1 of 2 branches missed.">        Proxy proxy = proxyConfiguration ==  null ? Proxy.NO_PROXY : proxyConfiguration.createProxy(getHost(gitlabHostUrl));</span>
+<span class="pc bpc" id="L73" title="1 of 2 branches missed.">        if (!proxy.equals(Proxy.NO_PROXY)) {</span>
+<span class="nc" id="L74">            InetSocketAddress address = (InetSocketAddress) proxy.address();</span>
+<span class="nc" id="L75">            builder.defaultProxy(address.getHostName().replaceFirst(&quot;^.*://&quot;, &quot;&quot;),</span>
+<span class="nc" id="L76">                                 address.getPort(),</span>
+<span class="nc bnc" id="L77" title="All 2 branches missed.">                                 address.getHostName().startsWith(&quot;https&quot;) ? &quot;https&quot; : &quot;http&quot;,</span>
+<span class="nc" id="L78">                                 proxyConfiguration.getUserName(),</span>
+<span class="nc" id="L79">                                 proxyConfiguration.getPassword());</span>
+        }
+
+<span class="fc" id="L82">        return builder</span>
+<span class="fc" id="L83">            .connectionPoolSize(60)</span>
+<span class="fc" id="L84">            .maxPooledPerRoute(30)</span>
+<span class="fc" id="L85">            .establishConnectionTimeout(connectionTimeout, TimeUnit.SECONDS)</span>
+<span class="fc" id="L86">            .socketTimeout(readTimeout, TimeUnit.SECONDS)</span>
+<span class="fc" id="L87">            .register(new JacksonJsonProvider())</span>
+<span class="fc" id="L88">            .register(new JacksonConfig())</span>
+<span class="fc" id="L89">            .register(new ApiHeaderTokenFilter(getApiToken(gitlabApiTokenId)))</span>
+<span class="fc" id="L90">            .register(new LoggingFilter())</span>
+<span class="fc" id="L91">            .build().target(gitlabHostUrl)</span>
+<span class="fc" id="L92">            .proxyBuilder(GitLabApi.class)</span>
+<span class="fc" id="L93">            .classloader(Jenkins.getInstance().getPluginManager().uberClassLoader)</span>
+<span class="fc" id="L94">                .build();</span>
+    }
+
+    public static GitLabApi buildClient(GitLabConnection connection) {
+<span class="fc" id="L98">        return buildClient(connection.getUrl(),</span>
+<span class="fc" id="L99">                           connection.getApiTokenId(),</span>
+<span class="fc" id="L100">                           connection.isIgnoreCertificateErrors(),</span>
+<span class="fc" id="L101">                           connection.getConnectionTimeout(),</span>
+<span class="fc" id="L102">                           connection.getReadTimeout());</span>
+    }
+
+    @Initializer(before = InitMilestone.PLUGINS_STARTED)
+    public static void setRuntimeDelegate() {
+<span class="fc" id="L107">        RuntimeDelegate.setInstance(new ResteasyProviderFactory());</span>
+<span class="fc" id="L108">    }</span>
+
+    private static String getHost(String gitlabUrl) {
+        try {
+<span class="nc" id="L112">            return new URL(gitlabUrl).getHost();</span>
+<span class="nc" id="L113">        } catch (MalformedURLException e) {</span>
+<span class="nc" id="L114">            return null;</span>
+        }
+    }
+
+    private static String getApiToken(String apiTokenId) {
+<span class="fc" id="L119">        StandardCredentials credentials = CredentialsMatchers.firstOrNull(</span>
+<span class="fc" id="L120">            lookupCredentials(StandardCredentials.class, (Item) null, ACL.SYSTEM, new ArrayList&lt;DomainRequirement&gt;()),</span>
+<span class="fc" id="L121">            CredentialsMatchers.withId(apiTokenId));</span>
+<span class="pc bpc" id="L122" title="1 of 2 branches missed.">        if (credentials != null) {</span>
+<span class="pc bpc" id="L123" title="1 of 2 branches missed.">            if (credentials instanceof GitLabApiToken) {</span>
+<span class="nc" id="L124">                return ((GitLabApiToken) credentials).getApiToken().getPlainText();</span>
+            }
+<span class="pc bpc" id="L126" title="1 of 2 branches missed.">            if (credentials instanceof StringCredentials) {</span>
+<span class="fc" id="L127">                return ((StringCredentials) credentials).getSecret().getPlainText();</span>
+            }
+        }
+<span class="nc" id="L130">        throw new IllegalStateException(&quot;No credentials found for credentialsId: &quot; + apiTokenId);</span>
+    }
+
+    private static class ApiHeaderTokenFilter implements ClientRequestFilter {
+        private final String gitlabApiToken;
+
+<span class="fc" id="L136">        ApiHeaderTokenFilter(String gitlabApiToken) {</span>
+<span class="fc" id="L137">            this.gitlabApiToken = gitlabApiToken;</span>
+<span class="fc" id="L138">        }</span>
+
+        public void filter(ClientRequestContext requestContext) throws IOException {
+<span class="fc" id="L141">            requestContext.getHeaders().putSingle(PRIVATE_TOKEN, gitlabApiToken);</span>
+<span class="fc" id="L142">        }</span>
+    }
+
+<span class="fc" id="L145">    private static class LoggingFilter implements ClientRequestFilter, ClientResponseFilter {</span>
+        @Override
+        public void filter(ClientRequestContext context) throws IOException {
+<span class="pc bpc" id="L148" title="1 of 2 branches missed.">            if (LOGGER.isLoggable(Level.FINEST)) {</span>
+<span class="nc" id="L149">                LOGGER.log(Level.FINEST, &quot;Call GitLab:\nHTTP method: {0}\nURL: {1}\nRequest headers: [\n{2}\n]&quot;,</span>
+<span class="nc" id="L150">                        LoggerUtil.toArray(context.getMethod(), context.getUri(), toFilteredString(context.getHeaders())));</span>
+            }
+<span class="fc" id="L152">        }</span>
+
+        @Override
+        public void filter(ClientRequestContext request, ClientResponseContext response) throws IOException {
+<span class="pc bpc" id="L156" title="1 of 2 branches missed.">            if (LOGGER.isLoggable(Level.FINEST)) {</span>
+<span class="nc" id="L157">                LOGGER.log(Level.FINEST, &quot;Got response from GitLab:\nURL: {0}\nStatus: {1} {2}\nResponse headers: [\n{3}\n]\nResponse body: {4}&quot;,</span>
+<span class="nc" id="L158">                        LoggerUtil.toArray(request.getUri(), response.getStatus(), response.getStatusInfo(), toString(response.getHeaders()),</span>
+<span class="nc" id="L159">                                getPrettyPrintResponseBody(response)));</span>
+            }
+<span class="fc" id="L161">        }</span>
+
+        private String toFilteredString(MultivaluedMap&lt;String, Object&gt; headers) {
+<span class="nc" id="L164">            return FluentIterable.from(headers.entrySet()).transform(new HeaderToFilteredString()).join(Joiner.on(&quot;,\n&quot;));</span>
+        }
+
+        private String toString(MultivaluedMap&lt;String, String&gt; headers) {
+<span class="nc" id="L168">            return FluentIterable.from(headers.entrySet()).transform(new HeaderToString()).join(Joiner.on(&quot;,\n&quot;));</span>
+        }
+
+        private String getPrettyPrintResponseBody(ClientResponseContext responseContext) {
+<span class="nc" id="L172">            String responseBody = getResponseBody(responseContext);</span>
+<span class="nc bnc" id="L173" title="All 4 branches missed.">            if (StringUtils.isNotEmpty(responseBody) &amp;&amp; responseContext.getMediaType().equals(MediaType.APPLICATION_JSON_TYPE)) {</span>
+<span class="nc" id="L174">                return JsonUtil.toPrettyPrint(responseBody);</span>
+            }
+<span class="nc" id="L176">            return responseBody;</span>
+        }
+
+        private String getResponseBody(ClientResponseContext context) {
+<span class="nc" id="L180">            try (InputStream entityStream = context.getEntityStream()) {</span>
+<span class="nc bnc" id="L181" title="All 2 branches missed.">                if (entityStream != null) {</span>
+<span class="nc" id="L182">                    byte[] bytes = IOUtils.toByteArray(entityStream);</span>
+<span class="nc" id="L183">                    context.setEntityStream(new ByteArrayInputStream(bytes));</span>
+<span class="nc" id="L184">                    return new String(bytes);</span>
+                }
+<span class="nc bnc" id="L186" title="All 12 branches missed.">            } catch (IOException e) {</span>
+<span class="nc" id="L187">                LOGGER.log(Level.SEVERE, &quot;Failure during reading the response body&quot;, e);</span>
+<span class="nc" id="L188">                context.setEntityStream(new ByteArrayInputStream(new byte[0]));</span>
+<span class="nc" id="L189">            }</span>
+<span class="nc" id="L190">            return &quot;&quot;;</span>
+        }
+
+<span class="nc" id="L193">        private static class HeaderToFilteredString implements Function&lt;Map.Entry&lt;String, List&lt;Object&gt;&gt;, String&gt; {</span>
+            @Nullable
+            @Override
+            public String apply(@Nullable Map.Entry&lt;String, List&lt;Object&gt;&gt; input) {
+<span class="nc bnc" id="L197" title="All 2 branches missed.">                if (input == null) {</span>
+<span class="nc" id="L198">                    return null;</span>
+<span class="nc bnc" id="L199" title="All 2 branches missed.">                } else if (input.getKey().equals(PRIVATE_TOKEN)) {</span>
+<span class="nc" id="L200">                    return input.getKey() + &quot; = [****FILTERED****]&quot;;</span>
+                } else {
+<span class="nc" id="L202">                    return input.getKey() + &quot; = [&quot; + Joiner.on(&quot;, &quot;).join(input.getValue()) + &quot;]&quot;;</span>
+                }
+            }
+        }
+
+<span class="pc" id="L207">        private static class HeaderToString implements Function&lt;Map.Entry&lt;String, List&lt;String&gt;&gt;, String&gt; {</span>
+            @Nullable
+            @Override
+            public String apply(@Nullable Map.Entry&lt;String, List&lt;String&gt;&gt; input) {
+<span class="nc bnc" id="L211" title="All 2 branches missed.">                return input == null ? null : input.getKey() + &quot; = [&quot; + Joiner.on(&quot;, &quot;).join(input.getValue()) + &quot;]&quot;;</span>
+            }
+        }
+    }
+
+<span class="pc" id="L216">    private static class ResteasyClientBuilder extends org.jboss.resteasy.client.jaxrs.ResteasyClientBuilder {</span>
+
+        private CredentialsProvider proxyCredentials;
+
+        ResteasyClientBuilder defaultProxy(String hostname, int port, final String scheme, String username, String password) {
+<span class="nc" id="L221">            super.defaultProxy(hostname, port, scheme);</span>
+<span class="nc bnc" id="L222" title="All 4 branches missed.">            if (username != null &amp;&amp; password != null) {</span>
+<span class="nc" id="L223">                proxyCredentials = new BasicCredentialsProvider();</span>
+<span class="nc" id="L224">                proxyCredentials.setCredentials(new AuthScope(hostname, port), new UsernamePasswordCredentials(username, password));</span>
+            }
+<span class="nc" id="L226">            return this;</span>
+        }
+
+        @Override
+        protected ClientHttpEngine initDefaultEngine() {
+<span class="fc" id="L231">            ApacheHttpClient4Engine httpEngine = (ApacheHttpClient4Engine) super.initDefaultEngine();</span>
+<span class="pc bpc" id="L232" title="1 of 2 branches missed.">            if (proxyCredentials != null) {</span>
+<span class="nc" id="L233">                ((DefaultHttpClient) httpEngine.getHttpClient()).setCredentialsProvider(proxyCredentials);</span>
+            }
+<span class="fc" id="L235">            return httpEngine;</span>
+        }
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.2.201409121644</span></div></body></html>

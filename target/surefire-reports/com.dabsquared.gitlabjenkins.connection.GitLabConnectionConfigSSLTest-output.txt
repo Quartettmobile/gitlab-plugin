@@ -1,0 +1,846 @@
+SLF4J: Class path contains multiple SLF4J bindings.
+SLF4J: Found binding in [jar:file:/Users/tippelsk/.m2/repository/ch/qos/logback/logback-classic/1.1.3/logback-classic-1.1.3.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: Found binding in [jar:file:/Users/tippelsk/.m2/repository/org/slf4j/slf4j-jdk14/1.7.7/slf4j-jdk14-1.7.7.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: See http://www.slf4j.org/codes.html#multiple_bindings for an explanation.
+SLF4J: Actual binding is of type [ch.qos.logback.classic.util.ContextSelectorStaticBinder]
+17:09:03.522 [main] INFO  org.mortbay.log - Logging to Logger[org.mortbay.log] via org.mortbay.log.Slf4jLog
+17:09:03.530 [main] DEBUG org.mortbay.log - Container Server@23941fb4 + SslSocketConnector@0.0.0.0:52225 as connector
+17:09:03.531 [main] DEBUG org.mortbay.log - Container Server@23941fb4 + GitLabConnectionConfigSSLTest$1@7486b455 as handler
+17:09:03.531 [main] INFO  org.mortbay.log - jetty-6.1.26
+17:09:03.550 [main] DEBUG org.mortbay.log - Container Server@23941fb4 + org.mortbay.thread.QueuedThreadPool@238d68ff as threadpool
+17:09:03.553 [main] DEBUG org.mortbay.log - started org.mortbay.thread.QueuedThreadPool@238d68ff
+17:09:03.553 [main] DEBUG org.mortbay.log - starting GitLabConnectionConfigSSLTest$1@7486b455
+17:09:03.553 [main] DEBUG org.mortbay.log - started GitLabConnectionConfigSSLTest$1@7486b455
+17:09:03.553 [main] DEBUG org.mortbay.log - starting Server@23941fb4
+17:09:03.564 [main] DEBUG org.mortbay.log - Checking Resource aliases
+17:09:03.766 [main] INFO  org.mortbay.log - Started SslSocketConnector@0.0.0.0:52225
+17:09:03.770 [main] DEBUG org.mortbay.log - started SslSocketConnector@0.0.0.0:52225
+17:09:03.772 [main] DEBUG org.mortbay.log - started Server@23941fb4
+17:09:04.499 [main] DEBUG o.a.c.b.converters.BooleanConverter - Setting default value: false
+17:09:04.499 [main] DEBUG o.a.c.b.converters.BooleanConverter - Converting 'Boolean' value 'false' to type 'Boolean'
+17:09:04.499 [main] DEBUG o.a.c.b.converters.BooleanConverter -     No conversion required, value is already a Boolean
+17:09:04.502 [main] DEBUG o.a.c.b.converters.ByteConverter - Setting default value: 0
+17:09:04.502 [main] DEBUG o.a.c.b.converters.ByteConverter - Converting 'Integer' value '0' to type 'Byte'
+17:09:04.502 [main] DEBUG o.a.c.b.converters.ByteConverter -     Converted to Byte value '0'
+17:09:04.503 [main] DEBUG o.a.c.b.c.CharacterConverter - Setting default value:  
+17:09:04.503 [main] DEBUG o.a.c.b.c.CharacterConverter - Converting 'Character' value ' ' to type 'Character'
+17:09:04.504 [main] DEBUG o.a.c.b.c.CharacterConverter -     No conversion required, value is already a Character
+17:09:04.504 [main] DEBUG o.a.c.b.converters.DoubleConverter - Setting default value: 0
+17:09:04.504 [main] DEBUG o.a.c.b.converters.DoubleConverter - Converting 'Integer' value '0' to type 'Double'
+17:09:04.504 [main] DEBUG o.a.c.b.converters.DoubleConverter -     Converted to Double value '0.0'
+17:09:04.506 [main] DEBUG o.a.c.b.converters.FloatConverter - Setting default value: 0
+17:09:04.506 [main] DEBUG o.a.c.b.converters.FloatConverter - Converting 'Integer' value '0' to type 'Float'
+17:09:04.506 [main] DEBUG o.a.c.b.converters.FloatConverter -     Converted to Float value '0.0'
+17:09:04.507 [main] DEBUG o.a.c.b.converters.IntegerConverter - Setting default value: 0
+17:09:04.507 [main] DEBUG o.a.c.b.converters.IntegerConverter - Converting 'Integer' value '0' to type 'Integer'
+17:09:04.507 [main] DEBUG o.a.c.b.converters.IntegerConverter -     No conversion required, value is already a Integer
+17:09:04.508 [main] DEBUG o.a.c.b.converters.LongConverter - Setting default value: 0
+17:09:04.508 [main] DEBUG o.a.c.b.converters.LongConverter - Converting 'Integer' value '0' to type 'Long'
+17:09:04.508 [main] DEBUG o.a.c.b.converters.LongConverter -     Converted to Long value '0'
+17:09:04.509 [main] DEBUG o.a.c.b.converters.ShortConverter - Setting default value: 0
+17:09:04.509 [main] DEBUG o.a.c.b.converters.ShortConverter - Converting 'Integer' value '0' to type 'Short'
+17:09:04.509 [main] DEBUG o.a.c.b.converters.ShortConverter -     Converted to Short value '0'
+17:09:04.510 [main] DEBUG o.a.c.b.c.BigDecimalConverter - Setting default value: 0.0
+17:09:04.510 [main] DEBUG o.a.c.b.c.BigDecimalConverter - Converting 'BigDecimal' value '0.0' to type 'BigDecimal'
+17:09:04.510 [main] DEBUG o.a.c.b.c.BigDecimalConverter -     No conversion required, value is already a BigDecimal
+17:09:04.510 [main] DEBUG o.a.c.b.c.BigIntegerConverter - Setting default value: 0
+17:09:04.511 [main] DEBUG o.a.c.b.c.BigIntegerConverter - Converting 'BigInteger' value '0' to type 'BigInteger'
+17:09:04.511 [main] DEBUG o.a.c.b.c.BigIntegerConverter -     No conversion required, value is already a BigInteger
+17:09:04.511 [main] DEBUG o.a.c.b.converters.BooleanConverter - Setting default value: false
+17:09:04.511 [main] DEBUG o.a.c.b.converters.BooleanConverter - Converting 'Boolean' value 'false' to type 'Boolean'
+17:09:04.511 [main] DEBUG o.a.c.b.converters.BooleanConverter -     No conversion required, value is already a Boolean
+17:09:04.511 [main] DEBUG o.a.c.b.converters.ByteConverter - Setting default value: 0
+17:09:04.511 [main] DEBUG o.a.c.b.converters.ByteConverter - Converting 'Integer' value '0' to type 'Byte'
+17:09:04.511 [main] DEBUG o.a.c.b.converters.ByteConverter -     Converted to Byte value '0'
+17:09:04.511 [main] DEBUG o.a.c.b.c.CharacterConverter - Setting default value:  
+17:09:04.511 [main] DEBUG o.a.c.b.c.CharacterConverter - Converting 'Character' value ' ' to type 'Character'
+17:09:04.511 [main] DEBUG o.a.c.b.c.CharacterConverter -     No conversion required, value is already a Character
+17:09:04.511 [main] DEBUG o.a.c.b.converters.DoubleConverter - Setting default value: 0
+17:09:04.511 [main] DEBUG o.a.c.b.converters.DoubleConverter - Converting 'Integer' value '0' to type 'Double'
+17:09:04.511 [main] DEBUG o.a.c.b.converters.DoubleConverter -     Converted to Double value '0.0'
+17:09:04.512 [main] DEBUG o.a.c.b.converters.FloatConverter - Setting default value: 0
+17:09:04.512 [main] DEBUG o.a.c.b.converters.FloatConverter - Converting 'Integer' value '0' to type 'Float'
+17:09:04.512 [main] DEBUG o.a.c.b.converters.FloatConverter -     Converted to Float value '0.0'
+17:09:04.512 [main] DEBUG o.a.c.b.converters.IntegerConverter - Setting default value: 0
+17:09:04.512 [main] DEBUG o.a.c.b.converters.IntegerConverter - Converting 'Integer' value '0' to type 'Integer'
+17:09:04.512 [main] DEBUG o.a.c.b.converters.IntegerConverter -     No conversion required, value is already a Integer
+17:09:04.512 [main] DEBUG o.a.c.b.converters.LongConverter - Setting default value: 0
+17:09:04.512 [main] DEBUG o.a.c.b.converters.LongConverter - Converting 'Integer' value '0' to type 'Long'
+17:09:04.514 [main] DEBUG o.a.c.b.converters.LongConverter -     Converted to Long value '0'
+17:09:04.514 [main] DEBUG o.a.c.b.converters.ShortConverter - Setting default value: 0
+17:09:04.514 [main] DEBUG o.a.c.b.converters.ShortConverter - Converting 'Integer' value '0' to type 'Short'
+17:09:04.515 [main] DEBUG o.a.c.b.converters.ShortConverter -     Converted to Short value '0'
+17:09:04.515 [main] DEBUG o.a.c.b.converters.StringConverter - Setting default value: 
+17:09:04.516 [main] DEBUG o.a.c.b.converters.StringConverter - Converting 'String' value '' to type 'String'
+17:09:04.524 [main] DEBUG o.a.c.b.converters.ArrayConverter - Setting default value: [Z@1a22e0ef
+17:09:04.524 [main] DEBUG o.a.c.b.converters.ArrayConverter - Converting 'boolean[]' value '[Z@1a22e0ef' to type 'boolean[]'
+17:09:04.524 [main] DEBUG o.a.c.b.converters.ArrayConverter -     No conversion required, value is already a boolean[]
+17:09:04.524 [main] DEBUG o.a.c.b.converters.ArrayConverter - Setting default value: [B@67514bdd
+17:09:04.524 [main] DEBUG o.a.c.b.converters.ArrayConverter - Converting 'byte[]' value '[B@67514bdd' to type 'byte[]'
+17:09:04.524 [main] DEBUG o.a.c.b.converters.ArrayConverter -     No conversion required, value is already a byte[]
+17:09:04.524 [main] DEBUG o.a.c.b.converters.ArrayConverter - Setting default value: [C@3b920bdc
+17:09:04.525 [main] DEBUG o.a.c.b.converters.ArrayConverter - Converting 'char[]' value '[C@3b920bdc' to type 'char[]'
+17:09:04.525 [main] DEBUG o.a.c.b.converters.ArrayConverter -     No conversion required, value is already a char[]
+17:09:04.525 [main] DEBUG o.a.c.b.converters.ArrayConverter - Setting default value: [D@7f5538a1
+17:09:04.525 [main] DEBUG o.a.c.b.converters.ArrayConverter - Converting 'double[]' value '[D@7f5538a1' to type 'double[]'
+17:09:04.525 [main] DEBUG o.a.c.b.converters.ArrayConverter -     No conversion required, value is already a double[]
+17:09:04.526 [main] DEBUG o.a.c.b.converters.ArrayConverter - Setting default value: [F@72fd8a3c
+17:09:04.526 [main] DEBUG o.a.c.b.converters.ArrayConverter - Converting 'float[]' value '[F@72fd8a3c' to type 'float[]'
+17:09:04.526 [main] DEBUG o.a.c.b.converters.ArrayConverter -     No conversion required, value is already a float[]
+17:09:04.526 [main] DEBUG o.a.c.b.converters.ArrayConverter - Setting default value: [I@1f9f381d
+17:09:04.526 [main] DEBUG o.a.c.b.converters.ArrayConverter - Converting 'int[]' value '[I@1f9f381d' to type 'int[]'
+17:09:04.526 [main] DEBUG o.a.c.b.converters.ArrayConverter -     No conversion required, value is already a int[]
+17:09:04.526 [main] DEBUG o.a.c.b.converters.ArrayConverter - Setting default value: [J@34780cd9
+17:09:04.527 [main] DEBUG o.a.c.b.converters.ArrayConverter - Converting 'long[]' value '[J@34780cd9' to type 'long[]'
+17:09:04.527 [main] DEBUG o.a.c.b.converters.ArrayConverter -     No conversion required, value is already a long[]
+17:09:04.527 [main] DEBUG o.a.c.b.converters.ArrayConverter - Setting default value: [S@623ebac7
+17:09:04.527 [main] DEBUG o.a.c.b.converters.ArrayConverter - Converting 'short[]' value '[S@623ebac7' to type 'short[]'
+17:09:04.528 [main] DEBUG o.a.c.b.converters.ArrayConverter -     No conversion required, value is already a short[]
+17:09:04.535 [main] DEBUG o.a.c.b.converters.ArrayConverter - Setting default value: [Ljava.math.BigDecimal;@7c8c70d6
+17:09:04.535 [main] DEBUG o.a.c.b.converters.ArrayConverter - Converting 'BigDecimal[]' value '[Ljava.math.BigDecimal;@7c8c70d6' to type 'BigDecimal[]'
+17:09:04.537 [main] DEBUG o.a.c.b.converters.ArrayConverter -     No conversion required, value is already a BigDecimal[]
+17:09:04.538 [main] DEBUG o.a.c.b.converters.ArrayConverter - Setting default value: [Ljava.math.BigInteger;@1ab5f08a
+17:09:04.538 [main] DEBUG o.a.c.b.converters.ArrayConverter - Converting 'BigInteger[]' value '[Ljava.math.BigInteger;@1ab5f08a' to type 'BigInteger[]'
+17:09:04.538 [main] DEBUG o.a.c.b.converters.ArrayConverter -     No conversion required, value is already a BigInteger[]
+17:09:04.538 [main] DEBUG o.a.c.b.converters.ArrayConverter - Setting default value: [Ljava.lang.Boolean;@6edf29c1
+17:09:04.538 [main] DEBUG o.a.c.b.converters.ArrayConverter - Converting 'Boolean[]' value '[Ljava.lang.Boolean;@6edf29c1' to type 'Boolean[]'
+17:09:04.538 [main] DEBUG o.a.c.b.converters.ArrayConverter -     No conversion required, value is already a Boolean[]
+17:09:04.538 [main] DEBUG o.a.c.b.converters.ArrayConverter - Setting default value: [Ljava.lang.Byte;@79a04e5f
+17:09:04.539 [main] DEBUG o.a.c.b.converters.ArrayConverter - Converting 'Byte[]' value '[Ljava.lang.Byte;@79a04e5f' to type 'Byte[]'
+17:09:04.539 [main] DEBUG o.a.c.b.converters.ArrayConverter -     No conversion required, value is already a Byte[]
+17:09:04.539 [main] DEBUG o.a.c.b.converters.ArrayConverter - Setting default value: [Ljava.lang.Character;@66b59b7d
+17:09:04.539 [main] DEBUG o.a.c.b.converters.ArrayConverter - Converting 'Character[]' value '[Ljava.lang.Character;@66b59b7d' to type 'Character[]'
+17:09:04.539 [main] DEBUG o.a.c.b.converters.ArrayConverter -     No conversion required, value is already a Character[]
+17:09:04.539 [main] DEBUG o.a.c.b.converters.ArrayConverter - Setting default value: [Ljava.lang.Double;@53311681
+17:09:04.539 [main] DEBUG o.a.c.b.converters.ArrayConverter - Converting 'Double[]' value '[Ljava.lang.Double;@53311681' to type 'Double[]'
+17:09:04.539 [main] DEBUG o.a.c.b.converters.ArrayConverter -     No conversion required, value is already a Double[]
+17:09:04.539 [main] DEBUG o.a.c.b.converters.ArrayConverter - Setting default value: [Ljava.lang.Float;@4437ac07
+17:09:04.539 [main] DEBUG o.a.c.b.converters.ArrayConverter - Converting 'Float[]' value '[Ljava.lang.Float;@4437ac07' to type 'Float[]'
+17:09:04.539 [main] DEBUG o.a.c.b.converters.ArrayConverter -     No conversion required, value is already a Float[]
+17:09:04.539 [main] DEBUG o.a.c.b.converters.ArrayConverter - Setting default value: [Ljava.lang.Integer;@3f1ed068
+17:09:04.540 [main] DEBUG o.a.c.b.converters.ArrayConverter - Converting 'Integer[]' value '[Ljava.lang.Integer;@3f1ed068' to type 'Integer[]'
+17:09:04.540 [main] DEBUG o.a.c.b.converters.ArrayConverter -     No conversion required, value is already a Integer[]
+17:09:04.540 [main] DEBUG o.a.c.b.converters.ArrayConverter - Setting default value: [Ljava.lang.Long;@753aca85
+17:09:04.540 [main] DEBUG o.a.c.b.converters.ArrayConverter - Converting 'Long[]' value '[Ljava.lang.Long;@753aca85' to type 'Long[]'
+17:09:04.540 [main] DEBUG o.a.c.b.converters.ArrayConverter -     No conversion required, value is already a Long[]
+17:09:04.540 [main] DEBUG o.a.c.b.converters.ArrayConverter - Setting default value: [Ljava.lang.Short;@2e645fbd
+17:09:04.540 [main] DEBUG o.a.c.b.converters.ArrayConverter - Converting 'Short[]' value '[Ljava.lang.Short;@2e645fbd' to type 'Short[]'
+17:09:04.540 [main] DEBUG o.a.c.b.converters.ArrayConverter -     No conversion required, value is already a Short[]
+17:09:04.540 [main] DEBUG o.a.c.b.converters.ArrayConverter - Setting default value: [Ljava.lang.String;@574a89e2
+17:09:04.541 [main] DEBUG o.a.c.b.converters.ArrayConverter - Converting 'String[]' value '[Ljava.lang.String;@574a89e2' to type 'String[]'
+17:09:04.541 [main] DEBUG o.a.c.b.converters.ArrayConverter -     No conversion required, value is already a String[]
+17:09:04.541 [main] DEBUG o.a.c.b.converters.ArrayConverter - Setting default value: [Ljava.lang.Class;@1e1e9ef3
+17:09:04.541 [main] DEBUG o.a.c.b.converters.ArrayConverter - Converting 'Class[]' value '[Ljava.lang.Class;@1e1e9ef3' to type 'Class[]'
+17:09:04.541 [main] DEBUG o.a.c.b.converters.ArrayConverter -     No conversion required, value is already a Class[]
+17:09:04.541 [main] DEBUG o.a.c.b.converters.ArrayConverter - Setting default value: [Ljava.util.Date;@3dd31157
+17:09:04.541 [main] DEBUG o.a.c.b.converters.ArrayConverter - Converting 'Date[]' value '[Ljava.util.Date;@3dd31157' to type 'Date[]'
+17:09:04.541 [main] DEBUG o.a.c.b.converters.ArrayConverter -     No conversion required, value is already a Date[]
+17:09:04.541 [main] DEBUG o.a.c.b.converters.ArrayConverter - Setting default value: [Ljava.util.Calendar;@3240b2a4
+17:09:04.541 [main] DEBUG o.a.c.b.converters.ArrayConverter - Converting 'Calendar[]' value '[Ljava.util.Calendar;@3240b2a4' to type 'Calendar[]'
+17:09:04.541 [main] DEBUG o.a.c.b.converters.ArrayConverter -     No conversion required, value is already a Calendar[]
+17:09:04.541 [main] DEBUG o.a.c.b.converters.ArrayConverter - Setting default value: [Ljava.io.File;@7d3fb0ef
+17:09:04.542 [main] DEBUG o.a.c.b.converters.ArrayConverter - Converting 'java.io.File[]' value '[Ljava.io.File;@7d3fb0ef' to type 'java.io.File[]'
+17:09:04.542 [main] DEBUG o.a.c.b.converters.ArrayConverter -     No conversion required, value is already a java.io.File[]
+17:09:04.542 [main] DEBUG o.a.c.b.converters.ArrayConverter - Setting default value: [Ljava.sql.Date;@4adc663e
+17:09:04.542 [main] DEBUG o.a.c.b.converters.ArrayConverter - Converting 'java.sql.Date[]' value '[Ljava.sql.Date;@4adc663e' to type 'java.sql.Date[]'
+17:09:04.542 [main] DEBUG o.a.c.b.converters.ArrayConverter -     No conversion required, value is already a java.sql.Date[]
+17:09:04.542 [main] DEBUG o.a.c.b.converters.ArrayConverter - Setting default value: [Ljava.sql.Time;@8bd86c8
+17:09:04.542 [main] DEBUG o.a.c.b.converters.ArrayConverter - Converting 'java.sql.Time[]' value '[Ljava.sql.Time;@8bd86c8' to type 'java.sql.Time[]'
+17:09:04.542 [main] DEBUG o.a.c.b.converters.ArrayConverter -     No conversion required, value is already a java.sql.Time[]
+17:09:04.543 [main] DEBUG o.a.c.b.converters.ArrayConverter - Setting default value: [Ljava.sql.Timestamp;@2d3ef181
+17:09:04.543 [main] DEBUG o.a.c.b.converters.ArrayConverter - Converting 'java.sql.Timestamp[]' value '[Ljava.sql.Timestamp;@2d3ef181' to type 'java.sql.Timestamp[]'
+17:09:04.543 [main] DEBUG o.a.c.b.converters.ArrayConverter -     No conversion required, value is already a java.sql.Timestamp[]
+17:09:04.543 [main] DEBUG o.a.c.b.converters.ArrayConverter - Setting default value: [Ljava.net.URL;@6e4c0d8c
+17:09:04.543 [main] DEBUG o.a.c.b.converters.ArrayConverter - Converting 'java.net.URL[]' value '[Ljava.net.URL;@6e4c0d8c' to type 'java.net.URL[]'
+17:09:04.543 [main] DEBUG o.a.c.b.converters.ArrayConverter -     No conversion required, value is already a java.net.URL[]
+17:09:04.546 [main] DEBUG o.a.c.b.converters.IntegerConverter - Setting default value: null
+17:09:04.546 [main] DEBUG o.a.c.b.converters.FloatConverter - Setting default value: null
+17:09:04.546 [main] DEBUG o.a.c.b.converters.DoubleConverter - Setting default value: null
+Exploding /Users/tippelsk/.m2/repository/org/jenkins-ci/main/jenkins-war/1.609.3/jenkins-war-1.609.3-war-for-test.jar into /Users/tippelsk/Documents/Programming/opensource/gitlab-plugin/target/jenkins-for-test
+17:09:05.909 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - Container Server@7634f2b + org.mortbay.jetty.webapp.WebAppContext@1d15c0a1{/jenkins,/Users/tippelsk/Documents/Programming/opensource/gitlab-plugin/target/jenkins-for-test} as handler
+17:09:05.909 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - Container SecurityHandler@15639d09 + ServletHandler@4fba8eec as handler
+17:09:05.911 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - Container SessionHandler@52bd9a27 + SecurityHandler@15639d09 as handler
+17:09:05.912 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - Container SessionHandler@52bd9a27 + org.mortbay.jetty.servlet.HashSessionManager@611e5819 as sessionManager
+17:09:05.912 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - Container org.mortbay.jetty.webapp.WebAppContext@1d15c0a1{/jenkins,/Users/tippelsk/Documents/Programming/opensource/gitlab-plugin/target/jenkins-for-test} + SessionHandler@52bd9a27 as handler
+17:09:05.912 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - Container org.mortbay.jetty.webapp.WebAppContext@1d15c0a1{/jenkins,/Users/tippelsk/Documents/Programming/opensource/gitlab-plugin/target/jenkins-for-test} + ErrorPageErrorHandler@681c0ae6 as error
+17:09:05.920 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - Container Server@7634f2b + org.jvnet.hudson.test.ThreadPoolImpl@7eeb38b2 as threadpool
+17:09:05.920 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - Container Server@7634f2b + SocketConnector@0.0.0.0:0 as connector
+17:09:05.924 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - Container Server@7634f2b + Realm[default]==[bob, alice, charlie] as realm
+17:09:05.924 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] INFO  org.mortbay.log - jetty-6.1.26
+17:09:05.924 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - started Realm[default]==[bob, alice, charlie]
+17:09:05.924 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - started org.jvnet.hudson.test.ThreadPoolImpl@7eeb38b2
+17:09:05.924 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - Thread Context class loader is: sun.misc.Launcher$AppClassLoader@58644d46
+17:09:05.924 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - Parent class loader is: sun.misc.Launcher$ExtClassLoader@45ac5f9b
+17:09:05.925 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - Created temp dir /var/folders/v_/m3p4ckmx2zn4y_xvs4rl6_4w0000gp/T/Jetty_0_0_0_0_0_jenkins.for.test__jenkins__.avcwu for org.mortbay.jetty.webapp.WebAppContext@1d15c0a1{/jenkins,/Users/tippelsk/Documents/Programming/opensource/gitlab-plugin/target/jenkins-for-test}
+17:09:05.926 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - parse: jar:file:/Users/tippelsk/.m2/repository/org/mortbay/jetty/jetty/6.1.26/jetty-6.1.26.jar!/org/mortbay/jetty/webapp/webdefault.xml
+17:09:05.931 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - parsing: sid=jar:file:/Users/tippelsk/.m2/repository/org/mortbay/jetty/jetty/6.1.26/jetty-6.1.26.jar!/org/mortbay/jetty/webapp/webdefault.xml,pid=null
+17:09:05.962 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - ContextParam: org.mortbay.jetty.webapp.NoTLDJarPattern=start.jar|ant-.*\.jar|dojo-.*\.jar|jetty-.*\.jar|jsp-api-.*\.jar|junit-.*\.jar|servlet-api-.*\.jar|dnsns\.jar|rt\.jar|jsse\.jar|tools\.jar|sunpkcs11\.jar|sunjce_provider\.jar|xerces.*\.jar
+17:09:05.968 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] INFO  org.mortbay.log - NO JSP Support for /jenkins, did not find org.apache.jasper.servlet.JspServlet
+17:09:05.973 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - filterNameMap=null
+17:09:05.973 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - pathFilters=[]
+17:09:05.973 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - servletFilterMap=null
+17:09:05.973 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - servletPathMap=null
+17:09:05.973 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - servletNameMap=null
+17:09:05.973 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - Container ServletHandler@4fba8eec + default as servlet
+17:09:05.973 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - Container ServletHandler@4fba8eec + jsp as servlet
+17:09:05.974 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - Container ServletHandler@4fba8eec + (S=default,[/]) as servletMapping
+17:09:05.974 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - Container ServletHandler@4fba8eec + (S=jsp,[*.jsp, *.jspf, *.jspx, *.xsp, *.JSP, *.JSPF, *.JSPX, *.XSP]) as servletMapping
+17:09:05.975 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - filterNameMap=null
+17:09:05.975 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - pathFilters=[]
+17:09:05.975 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - servletFilterMap=null
+17:09:05.975 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - servletPathMap={*.jspx=jsp, *.JSPX=jsp, *.jsp=jsp, *.JSPF=jsp, *.jspf=jsp, *.JSP=jsp, *.xsp=jsp, *.XSP=jsp, /=default}
+17:09:05.975 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - servletNameMap={default=default, jsp=jsp}
+17:09:05.976 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - Try webapp=file:/Users/tippelsk/Documents/Programming/opensource/gitlab-plugin/target/jenkins-for-test/, exists=true, directory=true
+17:09:05.976 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - webapp=file:/Users/tippelsk/Documents/Programming/opensource/gitlab-plugin/target/jenkins-for-test/
+17:09:05.976 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - parse: file:/Users/tippelsk/Documents/Programming/opensource/gitlab-plugin/target/jenkins-for-test/WEB-INF/web.xml
+17:09:05.976 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - parsing: sid=file:/Users/tippelsk/Documents/Programming/opensource/gitlab-plugin/target/jenkins-for-test/WEB-INF/web.xml,pid=null
+17:09:06.029 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - Element env-entry not handled in org.mortbay.jetty.webapp.WebXmlConfiguration@33a8c9c9
+17:09:06.029 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - <env-entry>
+    <env-entry-name>HUDSON_HOME</env-entry-name>
+    <env-entry-type>java.lang.String</env-entry-type>
+    <env-entry-value/>
+  </env-entry>
+17:09:06.030 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - Container ServletHandler@4fba8eec + diagnostic-name-filter as filter
+17:09:06.030 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - Container ServletHandler@4fba8eec + encoding-filter as filter
+17:09:06.030 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - Container ServletHandler@4fba8eec + compression-filter as filter
+17:09:06.030 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - Container ServletHandler@4fba8eec + authentication-filter as filter
+17:09:06.030 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - Container ServletHandler@4fba8eec + csrf-filter as filter
+17:09:06.030 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - Container ServletHandler@4fba8eec + plugins-filter as filter
+17:09:06.030 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - Container ServletHandler@4fba8eec + (F=diagnostic-name-filter,[/*],[],0) as filterMapping
+17:09:06.031 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - Container ServletHandler@4fba8eec + (F=encoding-filter,[/*],[],0) as filterMapping
+17:09:06.031 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - Container ServletHandler@4fba8eec + (F=compression-filter,[/*],[],0) as filterMapping
+17:09:06.031 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - Container ServletHandler@4fba8eec + (F=authentication-filter,[/*],[],0) as filterMapping
+17:09:06.031 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - Container ServletHandler@4fba8eec + (F=csrf-filter,[/*],[],0) as filterMapping
+17:09:06.031 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - Container ServletHandler@4fba8eec + (F=plugins-filter,[/*],[],0) as filterMapping
+17:09:06.031 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - filterNameMap={csrf-filter=csrf-filter, encoding-filter=encoding-filter, diagnostic-name-filter=diagnostic-name-filter, compression-filter=compression-filter, plugins-filter=plugins-filter, authentication-filter=authentication-filter}
+17:09:06.031 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - pathFilters=[(F=diagnostic-name-filter,[/*],[],0), (F=encoding-filter,[/*],[],0), (F=compression-filter,[/*],[],0), (F=authentication-filter,[/*],[],0), (F=csrf-filter,[/*],[],0), (F=plugins-filter,[/*],[],0)]
+17:09:06.031 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - servletFilterMap=null
+17:09:06.031 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - servletPathMap={*.jspx=jsp, *.JSPX=jsp, *.jsp=jsp, *.JSPF=jsp, *.jspf=jsp, *.JSP=jsp, *.xsp=jsp, *.XSP=jsp, /=default}
+17:09:06.031 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - servletNameMap={default=default, jsp=jsp}
+17:09:06.031 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - Container ServletHandler@4fba8eec + Stapler as servlet
+17:09:06.031 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - Container ServletHandler@4fba8eec + (S=Stapler,[/*]) as servletMapping
+17:09:06.031 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - filterNameMap={csrf-filter=csrf-filter, encoding-filter=encoding-filter, diagnostic-name-filter=diagnostic-name-filter, compression-filter=compression-filter, plugins-filter=plugins-filter, authentication-filter=authentication-filter}
+17:09:06.032 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - pathFilters=[(F=diagnostic-name-filter,[/*],[],0), (F=encoding-filter,[/*],[],0), (F=compression-filter,[/*],[],0), (F=authentication-filter,[/*],[],0), (F=csrf-filter,[/*],[],0), (F=plugins-filter,[/*],[],0)]
+17:09:06.032 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - servletFilterMap=null
+17:09:06.032 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - servletPathMap={*.jspx=jsp, *.JSPX=jsp, *.jsp=jsp, *.JSPF=jsp, *.jspf=jsp, *.JSP=jsp, *.xsp=jsp, *.XSP=jsp, /*=Stapler, /=default}
+17:09:06.032 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - servletNameMap={default=default, jsp=jsp, Stapler=Stapler}
+17:09:06.035 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - Container Server@7634f2b + org.mortbay.jetty.servlet.HashSessionIdManager@55e1192 as sessionIdManager
+17:09:06.035 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - Init SecureRandom.
+17:09:06.035 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - started org.mortbay.jetty.servlet.HashSessionIdManager@55e1192
+17:09:06.036 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - started org.mortbay.jetty.servlet.HashSessionManager@611e5819
+17:09:06.047 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - filterNameMap={csrf-filter=csrf-filter, encoding-filter=encoding-filter, diagnostic-name-filter=diagnostic-name-filter, compression-filter=compression-filter, plugins-filter=plugins-filter, authentication-filter=authentication-filter}
+17:09:06.047 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - pathFilters=[(F=diagnostic-name-filter,[/*],[],0), (F=encoding-filter,[/*],[],0), (F=compression-filter,[/*],[],0), (F=authentication-filter,[/*],[],0), (F=csrf-filter,[/*],[],0), (F=plugins-filter,[/*],[],0)]
+17:09:06.047 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - servletFilterMap=null
+17:09:06.047 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - servletPathMap={*.jspx=jsp, *.JSPX=jsp, *.jsp=jsp, *.JSPF=jsp, *.jspf=jsp, *.JSP=jsp, *.xsp=jsp, *.XSP=jsp, /*=Stapler, /=default}
+17:09:06.047 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - servletNameMap={default=default, jsp=jsp, Stapler=Stapler}
+17:09:06.047 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - starting ServletHandler@4fba8eec
+17:09:06.047 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - started ServletHandler@4fba8eec
+17:09:06.047 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - starting SecurityHandler@15639d09
+17:09:06.047 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - started SecurityHandler@15639d09
+17:09:06.047 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - starting SessionHandler@52bd9a27
+17:09:06.047 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - started SessionHandler@52bd9a27
+17:09:06.047 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - starting org.mortbay.jetty.webapp.WebAppContext@1d15c0a1{/jenkins,/Users/tippelsk/Documents/Programming/opensource/gitlab-plugin/target/jenkins-for-test}
+17:09:06.047 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - starting ErrorPageErrorHandler@681c0ae6
+17:09:06.047 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - started ErrorPageErrorHandler@681c0ae6
+17:09:06.048 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - Holding class org.kohsuke.stapler.DiagnosticThreadNameFilter
+17:09:06.049 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - started diagnostic-name-filter
+17:09:06.050 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - Holding class hudson.util.CharacterEncodingFilter
+17:09:06.050 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - started encoding-filter
+17:09:06.051 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - Holding class org.kohsuke.stapler.compression.CompressionFilter
+17:09:06.051 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - started compression-filter
+17:09:06.052 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - Holding class hudson.security.HudsonFilter
+17:09:06.054 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - started authentication-filter
+17:09:06.055 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - Holding class hudson.security.csrf.CrumbFilter
+17:09:06.056 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - started csrf-filter
+17:09:06.060 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - Holding class hudson.util.PluginServletFilter
+17:09:06.060 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - started plugins-filter
+17:09:06.061 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - Holding class org.kohsuke.stapler.Stapler
+17:09:06.062 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - started Stapler
+17:09:06.065 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - Holding class org.mortbay.jetty.servlet.DefaultServlet
+17:09:06.078 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - started org.mortbay.jetty.servlet.DefaultServlet$NIOResourceCache@559af296
+17:09:06.079 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - started org.mortbay.jetty.ResourceCache@5edc3e29
+17:09:06.079 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - resource base = file:/Users/tippelsk/Documents/Programming/opensource/gitlab-plugin/target/jenkins-for-test/
+17:09:06.079 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - started default
+17:09:06.080 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - Holding class org.mortbay.servlet.NoJspServlet
+17:09:06.080 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - started jsp
+17:09:06.080 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - started org.mortbay.jetty.webapp.WebAppContext@1d15c0a1{/jenkins,/Users/tippelsk/Documents/Programming/opensource/gitlab-plugin/target/jenkins-for-test}
+17:09:06.080 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - starting Server@7634f2b
+17:09:06.083 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] INFO  org.mortbay.log - Started SocketConnector@0.0.0.0:52226
+17:09:06.084 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - started SocketConnector@0.0.0.0:52226
+17:09:06.084 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - started Server@7634f2b
+Aug 26, 2016 5:09:06 PM org.jvnet.hudson.test.JenkinsRule createWebServer
+INFO: Running on http://localhost:52226/jenkins/
+Aug 26, 2016 5:09:06 PM jenkins.InitReactorRunner$1 onAttained
+INFO: Started initialization
+Aug 26, 2016 5:09:13 PM jenkins.InitReactorRunner$1 onAttained
+INFO: Listed all plugins
+Aug 26, 2016 5:09:13 PM jenkins.InitReactorRunner$1 onAttained
+INFO: Prepared all plugins
+Aug 26, 2016 5:09:13 PM jenkins.InitReactorRunner$1 onAttained
+INFO: Started all plugins
+Aug 26, 2016 5:09:13 PM jenkins.InitReactorRunner$1 onAttained
+INFO: Augmented all extensions
+Aug 26, 2016 5:09:17 PM jenkins.InitReactorRunner$1 onAttained
+INFO: Loaded all jobs
+17:09:19.604 [SSHD.init] INFO  o.a.sshd.common.util.SecurityUtils - Trying to register BouncyCastle as a JCE provider
+17:09:19.807 [SSHD.init] INFO  o.a.sshd.common.util.SecurityUtils - Registration succeeded
+Aug 26, 2016 5:09:19 PM org.jenkinsci.main.modules.sshd.SSHD start
+INFO: Started SSHD at port 52231
+Aug 26, 2016 5:09:19 PM jenkins.InitReactorRunner$1 onAttained
+INFO: Completed initialization
+Aug 26, 2016 5:09:19 PM hudson.UDPBroadcastThread run
+WARNING: UDP handling problem
+java.net.SocketException: Can't assign requested address
+	at java.net.PlainDatagramSocketImpl.join(Native Method)
+	at java.net.AbstractPlainDatagramSocketImpl.join(AbstractPlainDatagramSocketImpl.java:179)
+	at java.net.MulticastSocket.joinGroup(MulticastSocket.java:323)
+	at hudson.UDPBroadcastThread.run(UDPBroadcastThread.java:76)
+
+17:09:19.968 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG o.a.c.b.converters.BooleanConverter - Setting default value: false
+17:09:19.968 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG o.a.c.b.converters.BooleanConverter - Converting 'Boolean' value 'false' to type 'Boolean'
+17:09:19.968 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG o.a.c.b.converters.BooleanConverter -     No conversion required, value is already a Boolean
+17:09:19.968 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG o.a.c.b.converters.ByteConverter - Setting default value: 0
+17:09:19.968 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG o.a.c.b.converters.ByteConverter - Converting 'Integer' value '0' to type 'Byte'
+17:09:19.968 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG o.a.c.b.converters.ByteConverter -     Converted to Byte value '0'
+17:09:19.968 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG o.a.c.b.c.CharacterConverter - Setting default value:  
+17:09:19.968 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG o.a.c.b.c.CharacterConverter - Converting 'Character' value ' ' to type 'Character'
+17:09:19.968 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG o.a.c.b.c.CharacterConverter -     No conversion required, value is already a Character
+17:09:19.968 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG o.a.c.b.converters.DoubleConverter - Setting default value: 0
+17:09:19.968 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG o.a.c.b.converters.DoubleConverter - Converting 'Integer' value '0' to type 'Double'
+17:09:19.968 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG o.a.c.b.converters.DoubleConverter -     Converted to Double value '0.0'
+17:09:19.968 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG o.a.c.b.converters.FloatConverter - Setting default value: 0
+17:09:19.968 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG o.a.c.b.converters.FloatConverter - Converting 'Integer' value '0' to type 'Float'
+17:09:19.968 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG o.a.c.b.converters.FloatConverter -     Converted to Float value '0.0'
+17:09:19.968 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG o.a.c.b.converters.IntegerConverter - Setting default value: 0
+17:09:19.968 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG o.a.c.b.converters.IntegerConverter - Converting 'Integer' value '0' to type 'Integer'
+17:09:19.968 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG o.a.c.b.converters.IntegerConverter -     No conversion required, value is already a Integer
+17:09:19.968 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG o.a.c.b.converters.LongConverter - Setting default value: 0
+17:09:19.968 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG o.a.c.b.converters.LongConverter - Converting 'Integer' value '0' to type 'Long'
+17:09:19.969 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG o.a.c.b.converters.LongConverter -     Converted to Long value '0'
+17:09:19.969 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG o.a.c.b.converters.ShortConverter - Setting default value: 0
+17:09:19.969 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG o.a.c.b.converters.ShortConverter - Converting 'Integer' value '0' to type 'Short'
+17:09:19.969 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG o.a.c.b.converters.ShortConverter -     Converted to Short value '0'
+17:09:19.969 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG o.a.c.b.c.BigDecimalConverter - Setting default value: 0.0
+17:09:19.969 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG o.a.c.b.c.BigDecimalConverter - Converting 'BigDecimal' value '0.0' to type 'BigDecimal'
+17:09:19.969 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG o.a.c.b.c.BigDecimalConverter -     No conversion required, value is already a BigDecimal
+17:09:19.969 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG o.a.c.b.c.BigIntegerConverter - Setting default value: 0
+17:09:19.969 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG o.a.c.b.c.BigIntegerConverter - Converting 'BigInteger' value '0' to type 'BigInteger'
+17:09:19.969 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG o.a.c.b.c.BigIntegerConverter -     No conversion required, value is already a BigInteger
+17:09:19.969 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG o.a.c.b.converters.BooleanConverter - Setting default value: false
+17:09:19.969 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG o.a.c.b.converters.BooleanConverter - Converting 'Boolean' value 'false' to type 'Boolean'
+17:09:19.969 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG o.a.c.b.converters.BooleanConverter -     No conversion required, value is already a Boolean
+17:09:19.969 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG o.a.c.b.converters.ByteConverter - Setting default value: 0
+17:09:19.969 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG o.a.c.b.converters.ByteConverter - Converting 'Integer' value '0' to type 'Byte'
+17:09:19.969 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG o.a.c.b.converters.ByteConverter -     Converted to Byte value '0'
+17:09:19.969 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG o.a.c.b.c.CharacterConverter - Setting default value:  
+17:09:19.969 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG o.a.c.b.c.CharacterConverter - Converting 'Character' value ' ' to type 'Character'
+17:09:19.969 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG o.a.c.b.c.CharacterConverter -     No conversion required, value is already a Character
+17:09:19.969 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG o.a.c.b.converters.DoubleConverter - Setting default value: 0
+17:09:19.969 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG o.a.c.b.converters.DoubleConverter - Converting 'Integer' value '0' to type 'Double'
+17:09:19.969 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG o.a.c.b.converters.DoubleConverter -     Converted to Double value '0.0'
+17:09:19.969 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG o.a.c.b.converters.FloatConverter - Setting default value: 0
+17:09:19.969 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG o.a.c.b.converters.FloatConverter - Converting 'Integer' value '0' to type 'Float'
+17:09:19.969 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG o.a.c.b.converters.FloatConverter -     Converted to Float value '0.0'
+17:09:19.969 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG o.a.c.b.converters.IntegerConverter - Setting default value: 0
+17:09:19.969 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG o.a.c.b.converters.IntegerConverter - Converting 'Integer' value '0' to type 'Integer'
+17:09:19.969 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG o.a.c.b.converters.IntegerConverter -     No conversion required, value is already a Integer
+17:09:19.969 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG o.a.c.b.converters.LongConverter - Setting default value: 0
+17:09:19.969 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG o.a.c.b.converters.LongConverter - Converting 'Integer' value '0' to type 'Long'
+17:09:19.969 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG o.a.c.b.converters.LongConverter -     Converted to Long value '0'
+17:09:19.969 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG o.a.c.b.converters.ShortConverter - Setting default value: 0
+17:09:19.970 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG o.a.c.b.converters.ShortConverter - Converting 'Integer' value '0' to type 'Short'
+17:09:19.970 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG o.a.c.b.converters.ShortConverter -     Converted to Short value '0'
+17:09:19.970 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG o.a.c.b.converters.StringConverter - Setting default value: 
+17:09:19.970 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG o.a.c.b.converters.StringConverter - Converting 'String' value '' to type 'String'
+17:09:19.970 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG o.a.c.b.converters.ArrayConverter - Setting default value: [Z@63262071
+17:09:19.970 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG o.a.c.b.converters.ArrayConverter - Converting 'boolean[]' value '[Z@63262071' to type 'boolean[]'
+17:09:19.970 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG o.a.c.b.converters.ArrayConverter -     No conversion required, value is already a boolean[]
+17:09:19.970 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG o.a.c.b.converters.ArrayConverter - Setting default value: [B@2d4f67e
+17:09:19.970 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG o.a.c.b.converters.ArrayConverter - Converting 'byte[]' value '[B@2d4f67e' to type 'byte[]'
+17:09:19.970 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG o.a.c.b.converters.ArrayConverter -     No conversion required, value is already a byte[]
+17:09:19.970 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG o.a.c.b.converters.ArrayConverter - Setting default value: [C@1282f784
+17:09:19.970 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG o.a.c.b.converters.ArrayConverter - Converting 'char[]' value '[C@1282f784' to type 'char[]'
+17:09:19.970 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG o.a.c.b.converters.ArrayConverter -     No conversion required, value is already a char[]
+17:09:19.970 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG o.a.c.b.converters.ArrayConverter - Setting default value: [D@41167ded
+17:09:19.970 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG o.a.c.b.converters.ArrayConverter - Converting 'double[]' value '[D@41167ded' to type 'double[]'
+17:09:19.970 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG o.a.c.b.converters.ArrayConverter -     No conversion required, value is already a double[]
+17:09:19.970 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG o.a.c.b.converters.ArrayConverter - Setting default value: [F@13e1e816
+17:09:19.970 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG o.a.c.b.converters.ArrayConverter - Converting 'float[]' value '[F@13e1e816' to type 'float[]'
+17:09:19.970 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG o.a.c.b.converters.ArrayConverter -     No conversion required, value is already a float[]
+17:09:19.970 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG o.a.c.b.converters.ArrayConverter - Setting default value: [I@36238b12
+17:09:19.970 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG o.a.c.b.converters.ArrayConverter - Converting 'int[]' value '[I@36238b12' to type 'int[]'
+17:09:19.970 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG o.a.c.b.converters.ArrayConverter -     No conversion required, value is already a int[]
+17:09:19.970 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG o.a.c.b.converters.ArrayConverter - Setting default value: [J@33187485
+17:09:19.970 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG o.a.c.b.converters.ArrayConverter - Converting 'long[]' value '[J@33187485' to type 'long[]'
+17:09:19.970 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG o.a.c.b.converters.ArrayConverter -     No conversion required, value is already a long[]
+17:09:19.970 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG o.a.c.b.converters.ArrayConverter - Setting default value: [S@41938e1e
+17:09:19.970 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG o.a.c.b.converters.ArrayConverter - Converting 'short[]' value '[S@41938e1e' to type 'short[]'
+17:09:19.970 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG o.a.c.b.converters.ArrayConverter -     No conversion required, value is already a short[]
+17:09:19.970 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG o.a.c.b.converters.ArrayConverter - Setting default value: [Ljava.math.BigDecimal;@5d2e6f62
+17:09:19.970 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG o.a.c.b.converters.ArrayConverter - Converting 'BigDecimal[]' value '[Ljava.math.BigDecimal;@5d2e6f62' to type 'BigDecimal[]'
+17:09:19.970 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG o.a.c.b.converters.ArrayConverter -     No conversion required, value is already a BigDecimal[]
+17:09:19.971 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG o.a.c.b.converters.ArrayConverter - Setting default value: [Ljava.math.BigInteger;@77ff14ce
+17:09:19.971 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG o.a.c.b.converters.ArrayConverter - Converting 'BigInteger[]' value '[Ljava.math.BigInteger;@77ff14ce' to type 'BigInteger[]'
+17:09:19.971 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG o.a.c.b.converters.ArrayConverter -     No conversion required, value is already a BigInteger[]
+17:09:19.971 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG o.a.c.b.converters.ArrayConverter - Setting default value: [Ljava.lang.Boolean;@733fae8
+17:09:19.971 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG o.a.c.b.converters.ArrayConverter - Converting 'Boolean[]' value '[Ljava.lang.Boolean;@733fae8' to type 'Boolean[]'
+17:09:19.971 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG o.a.c.b.converters.ArrayConverter -     No conversion required, value is already a Boolean[]
+17:09:19.971 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG o.a.c.b.converters.ArrayConverter - Setting default value: [Ljava.lang.Byte;@5a8d676e
+17:09:19.971 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG o.a.c.b.converters.ArrayConverter - Converting 'Byte[]' value '[Ljava.lang.Byte;@5a8d676e' to type 'Byte[]'
+17:09:19.971 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG o.a.c.b.converters.ArrayConverter -     No conversion required, value is already a Byte[]
+17:09:19.971 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG o.a.c.b.converters.ArrayConverter - Setting default value: [Ljava.lang.Character;@74764622
+17:09:19.971 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG o.a.c.b.converters.ArrayConverter - Converting 'Character[]' value '[Ljava.lang.Character;@74764622' to type 'Character[]'
+17:09:19.971 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG o.a.c.b.converters.ArrayConverter -     No conversion required, value is already a Character[]
+17:09:19.971 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG o.a.c.b.converters.ArrayConverter - Setting default value: [Ljava.lang.Double;@7ba06506
+17:09:19.971 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG o.a.c.b.converters.ArrayConverter - Converting 'Double[]' value '[Ljava.lang.Double;@7ba06506' to type 'Double[]'
+17:09:19.971 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG o.a.c.b.converters.ArrayConverter -     No conversion required, value is already a Double[]
+17:09:19.971 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG o.a.c.b.converters.ArrayConverter - Setting default value: [Ljava.lang.Float;@63dc3420
+17:09:19.971 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG o.a.c.b.converters.ArrayConverter - Converting 'Float[]' value '[Ljava.lang.Float;@63dc3420' to type 'Float[]'
+17:09:19.971 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG o.a.c.b.converters.ArrayConverter -     No conversion required, value is already a Float[]
+17:09:19.971 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG o.a.c.b.converters.ArrayConverter - Setting default value: [Ljava.lang.Integer;@525b8922
+17:09:19.971 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG o.a.c.b.converters.ArrayConverter - Converting 'Integer[]' value '[Ljava.lang.Integer;@525b8922' to type 'Integer[]'
+17:09:19.971 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG o.a.c.b.converters.ArrayConverter -     No conversion required, value is already a Integer[]
+17:09:19.971 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG o.a.c.b.converters.ArrayConverter - Setting default value: [Ljava.lang.Long;@145a821d
+17:09:19.971 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG o.a.c.b.converters.ArrayConverter - Converting 'Long[]' value '[Ljava.lang.Long;@145a821d' to type 'Long[]'
+17:09:19.971 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG o.a.c.b.converters.ArrayConverter -     No conversion required, value is already a Long[]
+17:09:19.971 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG o.a.c.b.converters.ArrayConverter - Setting default value: [Ljava.lang.Short;@6caa4dc5
+17:09:19.971 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG o.a.c.b.converters.ArrayConverter - Converting 'Short[]' value '[Ljava.lang.Short;@6caa4dc5' to type 'Short[]'
+17:09:19.971 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG o.a.c.b.converters.ArrayConverter -     No conversion required, value is already a Short[]
+17:09:19.971 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG o.a.c.b.converters.ArrayConverter - Setting default value: [Ljava.lang.String;@6ed51944
+17:09:19.971 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG o.a.c.b.converters.ArrayConverter - Converting 'String[]' value '[Ljava.lang.String;@6ed51944' to type 'String[]'
+17:09:19.971 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG o.a.c.b.converters.ArrayConverter -     No conversion required, value is already a String[]
+17:09:19.971 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG o.a.c.b.converters.ArrayConverter - Setting default value: [Ljava.lang.Class;@60c98f25
+17:09:19.971 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG o.a.c.b.converters.ArrayConverter - Converting 'Class[]' value '[Ljava.lang.Class;@60c98f25' to type 'Class[]'
+17:09:19.972 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG o.a.c.b.converters.ArrayConverter -     No conversion required, value is already a Class[]
+17:09:19.972 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG o.a.c.b.converters.ArrayConverter - Setting default value: [Ljava.util.Date;@20c3b34b
+17:09:19.972 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG o.a.c.b.converters.ArrayConverter - Converting 'Date[]' value '[Ljava.util.Date;@20c3b34b' to type 'Date[]'
+17:09:19.972 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG o.a.c.b.converters.ArrayConverter -     No conversion required, value is already a Date[]
+17:09:19.972 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG o.a.c.b.converters.ArrayConverter - Setting default value: [Ljava.util.Calendar;@1eb906f3
+17:09:19.972 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG o.a.c.b.converters.ArrayConverter - Converting 'Calendar[]' value '[Ljava.util.Calendar;@1eb906f3' to type 'Calendar[]'
+17:09:19.972 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG o.a.c.b.converters.ArrayConverter -     No conversion required, value is already a Calendar[]
+17:09:19.972 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG o.a.c.b.converters.ArrayConverter - Setting default value: [Ljava.io.File;@58e02359
+17:09:19.972 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG o.a.c.b.converters.ArrayConverter - Converting 'java.io.File[]' value '[Ljava.io.File;@58e02359' to type 'java.io.File[]'
+17:09:19.972 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG o.a.c.b.converters.ArrayConverter -     No conversion required, value is already a java.io.File[]
+17:09:19.972 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG o.a.c.b.converters.ArrayConverter - Setting default value: [Ljava.sql.Date;@74fc3fc7
+17:09:19.972 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG o.a.c.b.converters.ArrayConverter - Converting 'java.sql.Date[]' value '[Ljava.sql.Date;@74fc3fc7' to type 'java.sql.Date[]'
+17:09:19.972 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG o.a.c.b.converters.ArrayConverter -     No conversion required, value is already a java.sql.Date[]
+17:09:19.972 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG o.a.c.b.converters.ArrayConverter - Setting default value: [Ljava.sql.Time;@491893f8
+17:09:19.972 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG o.a.c.b.converters.ArrayConverter - Converting 'java.sql.Time[]' value '[Ljava.sql.Time;@491893f8' to type 'java.sql.Time[]'
+17:09:19.972 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG o.a.c.b.converters.ArrayConverter -     No conversion required, value is already a java.sql.Time[]
+17:09:19.972 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG o.a.c.b.converters.ArrayConverter - Setting default value: [Ljava.sql.Timestamp;@1f408ab6
+17:09:19.972 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG o.a.c.b.converters.ArrayConverter - Converting 'java.sql.Timestamp[]' value '[Ljava.sql.Timestamp;@1f408ab6' to type 'java.sql.Timestamp[]'
+17:09:19.972 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG o.a.c.b.converters.ArrayConverter -     No conversion required, value is already a java.sql.Timestamp[]
+17:09:19.972 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG o.a.c.b.converters.ArrayConverter - Setting default value: [Ljava.net.URL;@46e388ec
+17:09:19.972 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG o.a.c.b.converters.ArrayConverter - Converting 'java.net.URL[]' value '[Ljava.net.URL;@46e388ec' to type 'java.net.URL[]'
+17:09:19.972 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG o.a.c.b.converters.ArrayConverter -     No conversion required, value is already a java.net.URL[]
+17:09:19.981 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG o.apache.commons.jelly.JellyContext - Registering tag library to:  taglib: org.kohsuke.stapler.jelly.ReallyStaticTagLibrary@3f6f9cef
+17:09:19.983 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG o.apache.commons.jelly.JellyContext - Registering tag library to: this taglib: org.kohsuke.stapler.jelly.ThisTagLibrary@6e364f1f
+17:09:19.987 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - Container Server@2b5f8e61 + ContextHandlerCollection@6ba0ee4a as handler
+17:09:19.987 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - Container ContextHandlerCollection@6ba0ee4a + org.mortbay.jetty.servlet.Context@73b0ed03{/,null} as handler
+17:09:19.987 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - Container SessionHandler@55061418 + ServletHandler@27db45f as handler
+17:09:19.987 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - Container SessionHandler@55061418 + org.mortbay.jetty.servlet.HashSessionManager@6ec3d8e4 as sessionManager
+17:09:19.987 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - Container org.mortbay.jetty.servlet.Context@73b0ed03{/,null} + SessionHandler@55061418 as handler
+17:09:19.987 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - Container ServletHandler@27db45f + org.jvnet.hudson.test.JavaNetReverseProxy-451934410 as servlet
+17:09:19.987 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - Container ServletHandler@27db45f + (S=org.jvnet.hudson.test.JavaNetReverseProxy-451934410,[/]) as servletMapping
+17:09:19.987 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - filterNameMap=null
+17:09:19.987 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - pathFilters=null
+17:09:19.987 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - servletFilterMap=null
+17:09:19.987 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - servletPathMap={/=org.jvnet.hudson.test.JavaNetReverseProxy-451934410}
+17:09:19.987 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - servletNameMap={org.jvnet.hudson.test.JavaNetReverseProxy-451934410=org.jvnet.hudson.test.JavaNetReverseProxy-451934410}
+17:09:19.987 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - Container Server@2b5f8e61 + SocketConnector@0.0.0.0:0 as connector
+17:09:19.987 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] INFO  org.mortbay.log - jetty-6.1.26
+17:09:19.987 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - Container Server@2b5f8e61 + org.mortbay.thread.QueuedThreadPool@7f2c995b as threadpool
+17:09:19.988 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - started org.mortbay.thread.QueuedThreadPool@7f2c995b
+17:09:19.988 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - Container org.mortbay.jetty.servlet.Context@73b0ed03{/,null} + ErrorHandler@5a466dd as errorHandler
+17:09:19.988 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - Container Server@2b5f8e61 + org.mortbay.jetty.servlet.HashSessionIdManager@1ed9d173 as sessionIdManager
+17:09:19.988 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - Init SecureRandom.
+17:09:19.988 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - started org.mortbay.jetty.servlet.HashSessionIdManager@1ed9d173
+17:09:19.988 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - started org.mortbay.jetty.servlet.HashSessionManager@6ec3d8e4
+17:09:19.988 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - filterNameMap=null
+17:09:19.988 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - pathFilters=null
+17:09:19.988 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - servletFilterMap=null
+17:09:19.988 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - servletPathMap={/=org.jvnet.hudson.test.JavaNetReverseProxy-451934410}
+17:09:19.988 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - servletNameMap={org.jvnet.hudson.test.JavaNetReverseProxy-451934410=org.jvnet.hudson.test.JavaNetReverseProxy-451934410}
+17:09:19.988 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - starting ServletHandler@27db45f
+17:09:19.988 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - started ServletHandler@27db45f
+17:09:19.988 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - starting SessionHandler@55061418
+17:09:19.988 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - started SessionHandler@55061418
+17:09:19.988 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - starting org.mortbay.jetty.servlet.Context@73b0ed03{/,null}
+17:09:19.988 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - starting ErrorHandler@5a466dd
+17:09:19.988 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - started ErrorHandler@5a466dd
+17:09:19.988 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - started org.jvnet.hudson.test.JavaNetReverseProxy-451934410
+17:09:19.988 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - started org.mortbay.jetty.servlet.Context@73b0ed03{/,null}
+17:09:19.989 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - starting ContextHandlerCollection@6ba0ee4a
+17:09:19.989 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - started ContextHandlerCollection@6ba0ee4a
+17:09:19.989 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - starting Server@2b5f8e61
+17:09:19.989 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] INFO  org.mortbay.log - Started SocketConnector@0.0.0.0:52233
+17:09:19.989 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - started SocketConnector@0.0.0.0:52233
+17:09:19.989 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - started Server@2b5f8e61
+=== Starting doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)
+log4j:WARN No appenders could be found for logger (org.jboss.logging).
+log4j:WARN Please initialize the log4j system properly.
+log4j:WARN See http://logging.apache.org/log4j/1.2/faq.html#noconfig for more info.
+17:09:20.310 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG o.a.h.i.c.PoolingClientConnectionManager - Connection request: [route: {s}->https://localhost:52225][total kept alive: 0; route allocated: 0 of 30; total allocated: 0 of 60]
+17:09:20.322 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG o.a.h.i.c.PoolingClientConnectionManager - Connection leased: [id: 0][route: {s}->https://localhost:52225][total kept alive: 0; route allocated: 1 of 30; total allocated: 1 of 60]
+17:09:20.327 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG o.a.h.i.c.DefaultClientConnectionOperator - Connecting to localhost:52225
+17:09:20.417 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG o.a.h.c.protocol.RequestAddCookies - CookieSpec selected: best-match
+17:09:20.426 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG o.a.h.c.protocol.RequestAuthCache - Auth cache not set in the context
+17:09:20.426 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG o.a.h.c.p.RequestTargetAuthentication - Target auth state: UNCHALLENGED
+17:09:20.426 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG o.a.h.c.p.RequestProxyAuthentication - Proxy auth state: UNCHALLENGED
+17:09:20.426 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG o.a.h.impl.client.DefaultHttpClient - Attempt 1 to execute request
+17:09:20.427 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG o.a.h.i.conn.DefaultClientConnection - Sending request: HEAD /gitlab/api/v3/user HTTP/1.1
+17:09:20.427 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.apache.http.wire -  >> "HEAD /gitlab/api/v3/user HTTP/1.1[\r][\n]"
+17:09:20.428 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.apache.http.wire -  >> "Accept: application/json[\r][\n]"
+17:09:20.428 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.apache.http.wire -  >> "Accept-Encoding: gzip, deflate[\r][\n]"
+17:09:20.428 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.apache.http.wire -  >> "PRIVATE-TOKEN: apiTokenId[\r][\n]"
+17:09:20.428 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.apache.http.wire -  >> "Content-Length: 0[\r][\n]"
+17:09:20.428 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.apache.http.wire -  >> "Host: localhost:52225[\r][\n]"
+17:09:20.428 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.apache.http.wire -  >> "Connection: Keep-Alive[\r][\n]"
+17:09:20.428 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.apache.http.wire -  >> "[\r][\n]"
+17:09:20.428 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.apache.http.headers - >> HEAD /gitlab/api/v3/user HTTP/1.1
+17:09:20.429 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.apache.http.headers - >> Accept: application/json
+17:09:20.429 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.apache.http.headers - >> Accept-Encoding: gzip, deflate
+17:09:20.429 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.apache.http.headers - >> PRIVATE-TOKEN: apiTokenId
+17:09:20.429 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.apache.http.headers - >> Content-Length: 0
+17:09:20.429 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.apache.http.headers - >> Host: localhost:52225
+17:09:20.429 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.apache.http.headers - >> Connection: Keep-Alive
+17:09:20.440 [795242171@qtp-596470015-0 - /gitlab/api/v3/user] DEBUG org.mortbay.log - REQUEST /gitlab/api/v3/user on org.mortbay.jetty.HttpConnection@115a8e1e
+17:09:20.441 [795242171@qtp-596470015-0 - /gitlab/api/v3/user] DEBUG org.mortbay.log - RESPONSE /gitlab/api/v3/user  200
+17:09:20.449 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.apache.http.wire -  << "HTTP/1.1 200 OK[\r][\n]"
+17:09:20.450 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.apache.http.wire -  << "Content-Length: 0[\r][\n]"
+17:09:20.450 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.apache.http.wire -  << "Server: Jetty(6.1.26)[\r][\n]"
+17:09:20.451 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.apache.http.wire -  << "[\r][\n]"
+17:09:20.451 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG o.a.h.i.conn.DefaultClientConnection - Receiving response: HTTP/1.1 200 OK
+17:09:20.451 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.apache.http.headers - << HTTP/1.1 200 OK
+17:09:20.451 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.apache.http.headers - << Content-Length: 0
+17:09:20.451 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.apache.http.headers - << Server: Jetty(6.1.26)
+17:09:20.453 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG o.a.h.impl.client.DefaultHttpClient - Connection can be kept alive indefinitely
+17:09:20.454 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG o.a.h.i.c.PoolingClientConnectionManager - Connection [id: 0][route: {s}->https://localhost:52225] can be kept alive indefinitely
+17:09:20.454 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG o.a.h.i.c.PoolingClientConnectionManager - Connection released: [id: 0][route: {s}->https://localhost:52225][total kept alive: 1; route allocated: 1 of 30; total allocated: 1 of 60]
+17:09:20.463 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - stopped Realm[default]==[bob, alice, charlie]
+17:09:20.464 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] INFO  org.mortbay.log - Stopped SocketConnector@0.0.0.0:52226
+17:09:20.464 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - stopped SocketConnector@0.0.0.0:0
+17:09:20.464 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - stopping Server@7634f2b
+17:09:20.464 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - stopping org.mortbay.jetty.webapp.WebAppContext@1d15c0a1{/jenkins,/Users/tippelsk/Documents/Programming/opensource/gitlab-plugin/target/jenkins-for-test}
+17:09:20.464 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - stopping SessionHandler@52bd9a27
+17:09:20.464 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - stopping SecurityHandler@15639d09
+17:09:20.464 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - stopping ServletHandler@4fba8eec
+17:09:20.464 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - stopped plugins-filter
+17:09:20.464 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - stopped csrf-filter
+17:09:20.464 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - stopped authentication-filter
+17:09:20.465 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - stopped compression-filter
+17:09:20.465 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - stopped encoding-filter
+17:09:20.465 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - stopped diagnostic-name-filter
+17:09:20.465 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - stopped Stapler
+17:09:20.465 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - stopped jsp
+17:09:20.465 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - stopped org.mortbay.jetty.servlet.DefaultServlet$NIOResourceCache@559af296
+17:09:20.465 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - stopped org.mortbay.jetty.ResourceCache@5edc3e29
+17:09:20.465 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - stopped default
+17:09:20.465 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - stopped ServletHandler@4fba8eec
+17:09:20.465 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - stopped SecurityHandler@15639d09
+17:09:20.465 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - stopped org.mortbay.jetty.servlet.HashSessionManager@611e5819
+17:09:20.465 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - stopped SessionHandler@52bd9a27
+17:09:20.465 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - stopping ErrorPageErrorHandler@681c0ae6
+17:09:20.465 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - stopped ErrorPageErrorHandler@681c0ae6
+17:09:20.466 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - Container ServletHandler@4fba8eec - plugins-filter as filter
+17:09:20.466 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - Container ServletHandler@4fba8eec - csrf-filter as filter
+17:09:20.466 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - Container ServletHandler@4fba8eec - authentication-filter as filter
+17:09:20.466 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - Container ServletHandler@4fba8eec - compression-filter as filter
+17:09:20.466 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - Container ServletHandler@4fba8eec - encoding-filter as filter
+17:09:20.466 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - Container ServletHandler@4fba8eec - diagnostic-name-filter as filter
+17:09:20.466 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - Container ServletHandler@4fba8eec - (F=plugins-filter,[/*],[],0) as filterMapping
+17:09:20.466 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - Container ServletHandler@4fba8eec - (F=csrf-filter,[/*],[],0) as filterMapping
+17:09:20.466 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - Container ServletHandler@4fba8eec - (F=authentication-filter,[/*],[],0) as filterMapping
+17:09:20.466 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - Container ServletHandler@4fba8eec - (F=compression-filter,[/*],[],0) as filterMapping
+17:09:20.466 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - Container ServletHandler@4fba8eec - (F=encoding-filter,[/*],[],0) as filterMapping
+17:09:20.466 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - Container ServletHandler@4fba8eec - (F=diagnostic-name-filter,[/*],[],0) as filterMapping
+17:09:20.466 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - filterNameMap=null
+17:09:20.467 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - pathFilters=null
+17:09:20.467 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - servletFilterMap=null
+17:09:20.467 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - servletPathMap={*.jspx=jsp, *.JSPX=jsp, *.jsp=jsp, *.JSPF=jsp, *.jspf=jsp, *.JSP=jsp, *.xsp=jsp, *.XSP=jsp, /*=Stapler, /=default}
+17:09:20.467 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - servletNameMap={default=default, jsp=jsp, Stapler=Stapler}
+17:09:20.467 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - Container ServletHandler@4fba8eec - Stapler as servlet
+17:09:20.467 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - Container ServletHandler@4fba8eec - jsp as servlet
+17:09:20.467 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - Container ServletHandler@4fba8eec - default as servlet
+17:09:20.467 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - Container ServletHandler@4fba8eec - (S=Stapler,[/*]) as servletMapping
+17:09:20.467 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - Container ServletHandler@4fba8eec - (S=jsp,[*.jsp, *.jspf, *.jspx, *.xsp, *.JSP, *.JSPF, *.JSPX, *.XSP]) as servletMapping
+17:09:20.467 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - Container ServletHandler@4fba8eec - (S=default,[/]) as servletMapping
+17:09:20.467 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - filterNameMap=null
+17:09:20.467 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - pathFilters=null
+17:09:20.467 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - servletFilterMap=null
+17:09:20.467 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - servletPathMap=null
+17:09:20.467 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - servletNameMap=null
+17:09:20.467 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - stopped org.mortbay.jetty.webapp.WebAppContext@1d15c0a1{/jenkins,/Users/tippelsk/Documents/Programming/opensource/gitlab-plugin/target/jenkins-for-test}
+17:09:20.468 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - stopped org.mortbay.jetty.servlet.HashSessionIdManager@55e1192
+17:09:20.468 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - stopped org.jvnet.hudson.test.ThreadPoolImpl@7eeb38b2
+17:09:20.468 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - stopped Server@7634f2b
+17:09:20.469 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG o.a.m.core.service.AbstractIoService - awaitTermination on (nio socket acceptor: not bound) called by thread=[Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)]
+17:09:20.472 [Executing doCheckConnection_ignoreCertificateErrors(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG o.a.m.core.service.AbstractIoService - awaitTermination on (nio socket acceptor: not bound) finished
+Aug 26, 2016 5:09:20 PM hudson.TcpSlaveAgentListener shutdown
+WARNING: Failed to close down TCP port
+java.io.IOException: No such file or directory
+	at sun.nio.ch.NativeThread.signal(Native Method)
+	at sun.nio.ch.ServerSocketChannelImpl.implCloseSelectableChannel(ServerSocketChannelImpl.java:283)
+	at java.nio.channels.spi.AbstractSelectableChannel.implCloseChannel(AbstractSelectableChannel.java:234)
+	at java.nio.channels.spi.AbstractInterruptibleChannel.close(AbstractInterruptibleChannel.java:115)
+	at hudson.TcpSlaveAgentListener.shutdown(TcpSlaveAgentListener.java:119)
+	at jenkins.model.Jenkins.cleanUp(Jenkins.java:2795)
+	at org.jvnet.hudson.test.JenkinsRule.after(JenkinsRule.java:460)
+	at org.jvnet.hudson.test.JenkinsRule$2.evaluate(JenkinsRule.java:526)
+	at org.junit.rules.RunRules.evaluate(RunRules.java:20)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:283)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeWithRerun(JUnit4Provider.java:173)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:153)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:128)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:203)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:155)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:103)
+
+WARN: The method class org.apache.commons.logging.impl.SLF4JLogFactory#release() was invoked.
+WARN: Please see http://www.slf4j.org/codes.html#release for an explanation.
+17:09:20.608 [Finalizer] DEBUG o.a.h.i.c.PoolingClientConnectionManager - Connection manager is shutting down
+17:09:20.609 [Finalizer] DEBUG o.a.h.i.conn.DefaultClientConnection - Connection 0.0.0.0:52234<->127.0.0.1:52225 closed
+17:09:20.609 [Finalizer] DEBUG o.a.h.i.conn.DefaultClientConnection - Connection 0.0.0.0:52234<->127.0.0.1:52225 closed
+17:09:20.609 [Finalizer] DEBUG o.a.h.i.c.PoolingClientConnectionManager - Connection manager shut down
+17:09:20.609 [795242171@qtp-596470015-0] DEBUG org.mortbay.log - EOF
+17:09:20.610 [Finalizer] DEBUG o.a.h.i.c.PoolingClientConnectionManager - Connection manager is shutting down
+17:09:20.610 [Finalizer] DEBUG o.a.h.i.c.PoolingClientConnectionManager - Connection manager shut down
+17:09:20.612 [Executing doCheckConnection_certificateError(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - Container Server@71469e01 + org.mortbay.jetty.webapp.WebAppContext@41bbb219{/jenkins,/Users/tippelsk/Documents/Programming/opensource/gitlab-plugin/target/jenkins-for-test} as handler
+17:09:20.612 [Executing doCheckConnection_certificateError(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - Container SecurityHandler@3f2ae973 + ServletHandler@1a8b22b5 as handler
+17:09:20.612 [Executing doCheckConnection_certificateError(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - Container SessionHandler@5f781173 + SecurityHandler@3f2ae973 as handler
+17:09:20.612 [Executing doCheckConnection_certificateError(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - Container SessionHandler@5f781173 + org.mortbay.jetty.servlet.HashSessionManager@43cf5bff as sessionManager
+17:09:20.612 [Executing doCheckConnection_certificateError(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - Container org.mortbay.jetty.webapp.WebAppContext@41bbb219{/jenkins,/Users/tippelsk/Documents/Programming/opensource/gitlab-plugin/target/jenkins-for-test} + SessionHandler@5f781173 as handler
+17:09:20.612 [Executing doCheckConnection_certificateError(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - Container org.mortbay.jetty.webapp.WebAppContext@41bbb219{/jenkins,/Users/tippelsk/Documents/Programming/opensource/gitlab-plugin/target/jenkins-for-test} + ErrorPageErrorHandler@2b464384 as error
+17:09:20.612 [Executing doCheckConnection_certificateError(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - Container Server@71469e01 + org.jvnet.hudson.test.ThreadPoolImpl@681b42d3 as threadpool
+17:09:20.612 [Executing doCheckConnection_certificateError(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - Container Server@71469e01 + SocketConnector@0.0.0.0:0 as connector
+17:09:20.612 [Executing doCheckConnection_certificateError(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - Container Server@71469e01 + Realm[default]==[bob, alice, charlie] as realm
+17:09:20.612 [Executing doCheckConnection_certificateError(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] INFO  org.mortbay.log - jetty-6.1.26
+17:09:20.612 [Executing doCheckConnection_certificateError(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - started Realm[default]==[bob, alice, charlie]
+17:09:20.612 [Executing doCheckConnection_certificateError(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - started org.jvnet.hudson.test.ThreadPoolImpl@681b42d3
+17:09:20.612 [Executing doCheckConnection_certificateError(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - Thread Context class loader is: sun.misc.Launcher$AppClassLoader@58644d46
+17:09:20.612 [Executing doCheckConnection_certificateError(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - Parent class loader is: sun.misc.Launcher$ExtClassLoader@45ac5f9b
+17:09:20.613 [Executing doCheckConnection_certificateError(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - Created temp dir /var/folders/v_/m3p4ckmx2zn4y_xvs4rl6_4w0000gp/T/Jetty_0_0_0_0_0_jenkins.for.test__jenkins__.avcwu for org.mortbay.jetty.webapp.WebAppContext@41bbb219{/jenkins,/Users/tippelsk/Documents/Programming/opensource/gitlab-plugin/target/jenkins-for-test}
+17:09:20.613 [Executing doCheckConnection_certificateError(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - parse: jar:file:/Users/tippelsk/.m2/repository/org/mortbay/jetty/jetty/6.1.26/jetty-6.1.26.jar!/org/mortbay/jetty/webapp/webdefault.xml
+17:09:20.613 [Executing doCheckConnection_certificateError(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - parsing: sid=jar:file:/Users/tippelsk/.m2/repository/org/mortbay/jetty/jetty/6.1.26/jetty-6.1.26.jar!/org/mortbay/jetty/webapp/webdefault.xml,pid=null
+17:09:20.618 [Executing doCheckConnection_certificateError(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - ContextParam: org.mortbay.jetty.webapp.NoTLDJarPattern=start.jar|ant-.*\.jar|dojo-.*\.jar|jetty-.*\.jar|jsp-api-.*\.jar|junit-.*\.jar|servlet-api-.*\.jar|dnsns\.jar|rt\.jar|jsse\.jar|tools\.jar|sunpkcs11\.jar|sunjce_provider\.jar|xerces.*\.jar
+17:09:20.619 [Executing doCheckConnection_certificateError(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] INFO  org.mortbay.log - NO JSP Support for /jenkins, did not find org.apache.jasper.servlet.JspServlet
+17:09:20.619 [Executing doCheckConnection_certificateError(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - filterNameMap=null
+17:09:20.619 [Executing doCheckConnection_certificateError(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - pathFilters=[]
+17:09:20.619 [Executing doCheckConnection_certificateError(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - servletFilterMap=null
+17:09:20.619 [Executing doCheckConnection_certificateError(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - servletPathMap=null
+17:09:20.619 [Executing doCheckConnection_certificateError(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - servletNameMap=null
+17:09:20.620 [Executing doCheckConnection_certificateError(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - Container ServletHandler@1a8b22b5 + default as servlet
+17:09:20.620 [Executing doCheckConnection_certificateError(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - Container ServletHandler@1a8b22b5 + jsp as servlet
+17:09:20.620 [Executing doCheckConnection_certificateError(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - Container ServletHandler@1a8b22b5 + (S=default,[/]) as servletMapping
+17:09:20.620 [Executing doCheckConnection_certificateError(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - Container ServletHandler@1a8b22b5 + (S=jsp,[*.jsp, *.jspf, *.jspx, *.xsp, *.JSP, *.JSPF, *.JSPX, *.XSP]) as servletMapping
+17:09:20.620 [Executing doCheckConnection_certificateError(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - filterNameMap=null
+17:09:20.620 [Executing doCheckConnection_certificateError(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - pathFilters=[]
+17:09:20.620 [Executing doCheckConnection_certificateError(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - servletFilterMap=null
+17:09:20.620 [Executing doCheckConnection_certificateError(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - servletPathMap={*.jspx=jsp, *.JSPX=jsp, *.jsp=jsp, *.JSPF=jsp, *.jspf=jsp, *.JSP=jsp, *.xsp=jsp, *.XSP=jsp, /=default}
+17:09:20.620 [Executing doCheckConnection_certificateError(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - servletNameMap={default=default, jsp=jsp}
+17:09:20.620 [Executing doCheckConnection_certificateError(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - Try webapp=file:/Users/tippelsk/Documents/Programming/opensource/gitlab-plugin/target/jenkins-for-test/, exists=true, directory=true
+17:09:20.620 [Executing doCheckConnection_certificateError(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - webapp=file:/Users/tippelsk/Documents/Programming/opensource/gitlab-plugin/target/jenkins-for-test/
+17:09:20.620 [Executing doCheckConnection_certificateError(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - parse: file:/Users/tippelsk/Documents/Programming/opensource/gitlab-plugin/target/jenkins-for-test/WEB-INF/web.xml
+17:09:20.620 [Executing doCheckConnection_certificateError(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - parsing: sid=file:/Users/tippelsk/Documents/Programming/opensource/gitlab-plugin/target/jenkins-for-test/WEB-INF/web.xml,pid=null
+17:09:20.623 [Executing doCheckConnection_certificateError(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - Element env-entry not handled in org.mortbay.jetty.webapp.WebXmlConfiguration@484a5ddd
+17:09:20.624 [Executing doCheckConnection_certificateError(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - <env-entry>
+    <env-entry-name>HUDSON_HOME</env-entry-name>
+    <env-entry-type>java.lang.String</env-entry-type>
+    <env-entry-value/>
+  </env-entry>
+17:09:20.624 [Executing doCheckConnection_certificateError(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - Container ServletHandler@1a8b22b5 + diagnostic-name-filter as filter
+17:09:20.624 [Executing doCheckConnection_certificateError(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - Container ServletHandler@1a8b22b5 + encoding-filter as filter
+17:09:20.624 [Executing doCheckConnection_certificateError(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - Container ServletHandler@1a8b22b5 + compression-filter as filter
+17:09:20.624 [Executing doCheckConnection_certificateError(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - Container ServletHandler@1a8b22b5 + authentication-filter as filter
+17:09:20.624 [Executing doCheckConnection_certificateError(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - Container ServletHandler@1a8b22b5 + csrf-filter as filter
+17:09:20.624 [Executing doCheckConnection_certificateError(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - Container ServletHandler@1a8b22b5 + plugins-filter as filter
+17:09:20.624 [Executing doCheckConnection_certificateError(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - Container ServletHandler@1a8b22b5 + (F=diagnostic-name-filter,[/*],[],0) as filterMapping
+17:09:20.624 [Executing doCheckConnection_certificateError(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - Container ServletHandler@1a8b22b5 + (F=encoding-filter,[/*],[],0) as filterMapping
+17:09:20.624 [Executing doCheckConnection_certificateError(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - Container ServletHandler@1a8b22b5 + (F=compression-filter,[/*],[],0) as filterMapping
+17:09:20.624 [Executing doCheckConnection_certificateError(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - Container ServletHandler@1a8b22b5 + (F=authentication-filter,[/*],[],0) as filterMapping
+17:09:20.624 [Executing doCheckConnection_certificateError(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - Container ServletHandler@1a8b22b5 + (F=csrf-filter,[/*],[],0) as filterMapping
+17:09:20.624 [Executing doCheckConnection_certificateError(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - Container ServletHandler@1a8b22b5 + (F=plugins-filter,[/*],[],0) as filterMapping
+17:09:20.624 [Executing doCheckConnection_certificateError(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - filterNameMap={csrf-filter=csrf-filter, encoding-filter=encoding-filter, diagnostic-name-filter=diagnostic-name-filter, compression-filter=compression-filter, plugins-filter=plugins-filter, authentication-filter=authentication-filter}
+17:09:20.624 [Executing doCheckConnection_certificateError(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - pathFilters=[(F=diagnostic-name-filter,[/*],[],0), (F=encoding-filter,[/*],[],0), (F=compression-filter,[/*],[],0), (F=authentication-filter,[/*],[],0), (F=csrf-filter,[/*],[],0), (F=plugins-filter,[/*],[],0)]
+17:09:20.624 [Executing doCheckConnection_certificateError(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - servletFilterMap=null
+17:09:20.624 [Executing doCheckConnection_certificateError(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - servletPathMap={*.jspx=jsp, *.JSPX=jsp, *.jsp=jsp, *.JSPF=jsp, *.jspf=jsp, *.JSP=jsp, *.xsp=jsp, *.XSP=jsp, /=default}
+17:09:20.624 [Executing doCheckConnection_certificateError(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - servletNameMap={default=default, jsp=jsp}
+17:09:20.624 [Executing doCheckConnection_certificateError(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - Container ServletHandler@1a8b22b5 + Stapler as servlet
+17:09:20.624 [Executing doCheckConnection_certificateError(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - Container ServletHandler@1a8b22b5 + (S=Stapler,[/*]) as servletMapping
+17:09:20.624 [Executing doCheckConnection_certificateError(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - filterNameMap={csrf-filter=csrf-filter, encoding-filter=encoding-filter, diagnostic-name-filter=diagnostic-name-filter, compression-filter=compression-filter, plugins-filter=plugins-filter, authentication-filter=authentication-filter}
+17:09:20.625 [Executing doCheckConnection_certificateError(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - pathFilters=[(F=diagnostic-name-filter,[/*],[],0), (F=encoding-filter,[/*],[],0), (F=compression-filter,[/*],[],0), (F=authentication-filter,[/*],[],0), (F=csrf-filter,[/*],[],0), (F=plugins-filter,[/*],[],0)]
+17:09:20.625 [Executing doCheckConnection_certificateError(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - servletFilterMap=null
+17:09:20.625 [Executing doCheckConnection_certificateError(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - servletPathMap={*.jspx=jsp, *.JSPX=jsp, *.jsp=jsp, *.JSPF=jsp, *.jspf=jsp, *.JSP=jsp, *.xsp=jsp, *.XSP=jsp, /*=Stapler, /=default}
+17:09:20.625 [Executing doCheckConnection_certificateError(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - servletNameMap={default=default, jsp=jsp, Stapler=Stapler}
+17:09:20.625 [Executing doCheckConnection_certificateError(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - Container Server@71469e01 + org.mortbay.jetty.servlet.HashSessionIdManager@16c0be3b as sessionIdManager
+17:09:20.625 [Executing doCheckConnection_certificateError(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - Init SecureRandom.
+17:09:20.625 [Executing doCheckConnection_certificateError(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - started org.mortbay.jetty.servlet.HashSessionIdManager@16c0be3b
+17:09:20.625 [Executing doCheckConnection_certificateError(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - started org.mortbay.jetty.servlet.HashSessionManager@43cf5bff
+17:09:20.625 [Executing doCheckConnection_certificateError(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - filterNameMap={csrf-filter=csrf-filter, encoding-filter=encoding-filter, diagnostic-name-filter=diagnostic-name-filter, compression-filter=compression-filter, plugins-filter=plugins-filter, authentication-filter=authentication-filter}
+17:09:20.625 [Executing doCheckConnection_certificateError(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - pathFilters=[(F=diagnostic-name-filter,[/*],[],0), (F=encoding-filter,[/*],[],0), (F=compression-filter,[/*],[],0), (F=authentication-filter,[/*],[],0), (F=csrf-filter,[/*],[],0), (F=plugins-filter,[/*],[],0)]
+17:09:20.625 [Executing doCheckConnection_certificateError(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - servletFilterMap=null
+17:09:20.625 [Executing doCheckConnection_certificateError(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - servletPathMap={*.jspx=jsp, *.JSPX=jsp, *.jsp=jsp, *.JSPF=jsp, *.jspf=jsp, *.JSP=jsp, *.xsp=jsp, *.XSP=jsp, /*=Stapler, /=default}
+17:09:20.625 [Executing doCheckConnection_certificateError(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - servletNameMap={default=default, jsp=jsp, Stapler=Stapler}
+17:09:20.625 [Executing doCheckConnection_certificateError(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - starting ServletHandler@1a8b22b5
+17:09:20.625 [Executing doCheckConnection_certificateError(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - started ServletHandler@1a8b22b5
+17:09:20.625 [Executing doCheckConnection_certificateError(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - starting SecurityHandler@3f2ae973
+17:09:20.625 [Executing doCheckConnection_certificateError(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - started SecurityHandler@3f2ae973
+17:09:20.625 [Executing doCheckConnection_certificateError(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - starting SessionHandler@5f781173
+17:09:20.625 [Executing doCheckConnection_certificateError(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - started SessionHandler@5f781173
+17:09:20.625 [Executing doCheckConnection_certificateError(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - starting org.mortbay.jetty.webapp.WebAppContext@41bbb219{/jenkins,/Users/tippelsk/Documents/Programming/opensource/gitlab-plugin/target/jenkins-for-test}
+17:09:20.625 [Executing doCheckConnection_certificateError(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - starting ErrorPageErrorHandler@2b464384
+17:09:20.625 [Executing doCheckConnection_certificateError(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - started ErrorPageErrorHandler@2b464384
+17:09:20.625 [Executing doCheckConnection_certificateError(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - Holding class org.kohsuke.stapler.DiagnosticThreadNameFilter
+17:09:20.625 [Executing doCheckConnection_certificateError(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - started diagnostic-name-filter
+17:09:20.625 [Executing doCheckConnection_certificateError(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - Holding class hudson.util.CharacterEncodingFilter
+17:09:20.625 [Executing doCheckConnection_certificateError(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - started encoding-filter
+17:09:20.625 [Executing doCheckConnection_certificateError(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - Holding class org.kohsuke.stapler.compression.CompressionFilter
+17:09:20.626 [Executing doCheckConnection_certificateError(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - started compression-filter
+17:09:20.626 [Executing doCheckConnection_certificateError(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - Holding class hudson.security.HudsonFilter
+17:09:20.626 [Executing doCheckConnection_certificateError(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - started authentication-filter
+17:09:20.626 [Executing doCheckConnection_certificateError(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - Holding class hudson.security.csrf.CrumbFilter
+17:09:20.626 [Executing doCheckConnection_certificateError(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - started csrf-filter
+17:09:20.626 [Executing doCheckConnection_certificateError(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - Holding class hudson.util.PluginServletFilter
+17:09:20.626 [Executing doCheckConnection_certificateError(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - started plugins-filter
+17:09:20.626 [Executing doCheckConnection_certificateError(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - Holding class org.kohsuke.stapler.Stapler
+17:09:20.626 [Executing doCheckConnection_certificateError(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - started Stapler
+17:09:20.626 [Executing doCheckConnection_certificateError(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - Holding class org.mortbay.jetty.servlet.DefaultServlet
+17:09:20.626 [Executing doCheckConnection_certificateError(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - started org.mortbay.jetty.servlet.DefaultServlet$NIOResourceCache@60ee7a51
+17:09:20.626 [Executing doCheckConnection_certificateError(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - started org.mortbay.jetty.ResourceCache@70e1aa20
+17:09:20.626 [Executing doCheckConnection_certificateError(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - resource base = file:/Users/tippelsk/Documents/Programming/opensource/gitlab-plugin/target/jenkins-for-test/
+17:09:20.626 [Executing doCheckConnection_certificateError(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - started default
+17:09:20.626 [Executing doCheckConnection_certificateError(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - Holding class org.mortbay.servlet.NoJspServlet
+17:09:20.626 [Executing doCheckConnection_certificateError(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - started jsp
+17:09:20.626 [Executing doCheckConnection_certificateError(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - started org.mortbay.jetty.webapp.WebAppContext@41bbb219{/jenkins,/Users/tippelsk/Documents/Programming/opensource/gitlab-plugin/target/jenkins-for-test}
+17:09:20.627 [Executing doCheckConnection_certificateError(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - starting Server@71469e01
+17:09:20.627 [Executing doCheckConnection_certificateError(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] INFO  org.mortbay.log - Started SocketConnector@0.0.0.0:52235
+17:09:20.627 [Executing doCheckConnection_certificateError(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - started SocketConnector@0.0.0.0:52235
+17:09:20.627 [Executing doCheckConnection_certificateError(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - started Server@71469e01
+Aug 26, 2016 5:09:20 PM org.jvnet.hudson.test.JenkinsRule createWebServer
+INFO: Running on http://localhost:52235/jenkins/
+Aug 26, 2016 5:09:20 PM jenkins.InitReactorRunner$1 onAttained
+INFO: Started initialization
+Aug 26, 2016 5:09:20 PM jenkins.InitReactorRunner$1 onAttained
+INFO: Listed all plugins
+Aug 26, 2016 5:09:20 PM jenkins.InitReactorRunner$1 onAttained
+INFO: Prepared all plugins
+Aug 26, 2016 5:09:20 PM jenkins.InitReactorRunner$1 onAttained
+INFO: Started all plugins
+Aug 26, 2016 5:09:20 PM jenkins.InitReactorRunner$1 onAttained
+INFO: Augmented all extensions
+Aug 26, 2016 5:09:21 PM jenkins.InitReactorRunner$1 onAttained
+INFO: Loaded all jobs
+Aug 26, 2016 5:09:21 PM org.jenkinsci.main.modules.sshd.SSHD start
+INFO: Started SSHD at port 52236
+Aug 26, 2016 5:09:21 PM jenkins.InitReactorRunner$1 onAttained
+INFO: Completed initialization
+Aug 26, 2016 5:09:21 PM hudson.UDPBroadcastThread run
+WARNING: UDP handling problem
+java.net.SocketException: Can't assign requested address
+	at java.net.PlainDatagramSocketImpl.join(Native Method)
+	at java.net.AbstractPlainDatagramSocketImpl.join(AbstractPlainDatagramSocketImpl.java:179)
+	at java.net.MulticastSocket.joinGroup(MulticastSocket.java:323)
+	at hudson.UDPBroadcastThread.run(UDPBroadcastThread.java:76)
+
+=== Starting doCheckConnection_certificateError(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)
+17:09:21.298 [Executing doCheckConnection_certificateError(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG o.a.h.i.c.PoolingClientConnectionManager - Connection request: [route: {s}->https://localhost:52225][total kept alive: 0; route allocated: 0 of 30; total allocated: 0 of 60]
+17:09:21.299 [Executing doCheckConnection_certificateError(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG o.a.h.i.c.PoolingClientConnectionManager - Connection leased: [id: 1][route: {s}->https://localhost:52225][total kept alive: 0; route allocated: 1 of 30; total allocated: 1 of 60]
+17:09:21.300 [Executing doCheckConnection_certificateError(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG o.a.h.i.c.DefaultClientConnectionOperator - Connecting to localhost:52225
+17:09:21.318 [Executing doCheckConnection_certificateError(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG o.a.h.i.conn.DefaultClientConnection - Connection org.apache.http.impl.conn.DefaultClientConnection@5e2b512b closed
+17:09:21.319 [Executing doCheckConnection_certificateError(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG o.a.h.i.conn.DefaultClientConnection - Connection org.apache.http.impl.conn.DefaultClientConnection@5e2b512b shut down
+17:09:21.319 [Executing doCheckConnection_certificateError(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG o.a.h.i.conn.DefaultClientConnection - Connection org.apache.http.impl.conn.DefaultClientConnection@5e2b512b closed
+17:09:21.319 [Executing doCheckConnection_certificateError(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG o.a.h.i.c.PoolingClientConnectionManager - Connection released: [id: 1][route: {s}->https://localhost:52225][total kept alive: 0; route allocated: 0 of 30; total allocated: 0 of 60]
+17:09:21.323 [Executing doCheckConnection_certificateError(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - stopped Realm[default]==[bob, alice, charlie]
+17:09:21.323 [Executing doCheckConnection_certificateError(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] INFO  org.mortbay.log - Stopped SocketConnector@0.0.0.0:52235
+17:09:21.323 [Executing doCheckConnection_certificateError(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - stopped SocketConnector@0.0.0.0:0
+17:09:21.323 [Executing doCheckConnection_certificateError(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - stopping Server@71469e01
+17:09:21.323 [Executing doCheckConnection_certificateError(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - stopping org.mortbay.jetty.webapp.WebAppContext@41bbb219{/jenkins,/Users/tippelsk/Documents/Programming/opensource/gitlab-plugin/target/jenkins-for-test}
+17:09:21.323 [Executing doCheckConnection_certificateError(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - stopping SessionHandler@5f781173
+17:09:21.323 [Executing doCheckConnection_certificateError(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - stopping SecurityHandler@3f2ae973
+17:09:21.323 [Executing doCheckConnection_certificateError(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - stopping ServletHandler@1a8b22b5
+17:09:21.323 [Executing doCheckConnection_certificateError(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - stopped plugins-filter
+17:09:21.323 [Executing doCheckConnection_certificateError(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - stopped csrf-filter
+17:09:21.323 [Executing doCheckConnection_certificateError(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - stopped authentication-filter
+17:09:21.323 [Executing doCheckConnection_certificateError(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - stopped compression-filter
+17:09:21.323 [Executing doCheckConnection_certificateError(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - stopped encoding-filter
+17:09:21.324 [Executing doCheckConnection_certificateError(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - stopped diagnostic-name-filter
+17:09:21.324 [Executing doCheckConnection_certificateError(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - stopped Stapler
+17:09:21.324 [Executing doCheckConnection_certificateError(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - stopped jsp
+17:09:21.324 [Executing doCheckConnection_certificateError(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - stopped org.mortbay.jetty.servlet.DefaultServlet$NIOResourceCache@60ee7a51
+17:09:21.324 [Executing doCheckConnection_certificateError(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - stopped org.mortbay.jetty.ResourceCache@70e1aa20
+17:09:21.324 [Executing doCheckConnection_certificateError(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - stopped default
+17:09:21.324 [Executing doCheckConnection_certificateError(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - stopped ServletHandler@1a8b22b5
+17:09:21.324 [Executing doCheckConnection_certificateError(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - stopped SecurityHandler@3f2ae973
+17:09:21.324 [Executing doCheckConnection_certificateError(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - stopped org.mortbay.jetty.servlet.HashSessionManager@43cf5bff
+17:09:21.324 [Executing doCheckConnection_certificateError(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - stopped SessionHandler@5f781173
+17:09:21.324 [Executing doCheckConnection_certificateError(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - stopping ErrorPageErrorHandler@2b464384
+17:09:21.324 [Executing doCheckConnection_certificateError(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - stopped ErrorPageErrorHandler@2b464384
+17:09:21.324 [Executing doCheckConnection_certificateError(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - Container ServletHandler@1a8b22b5 - plugins-filter as filter
+17:09:21.324 [Executing doCheckConnection_certificateError(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - Container ServletHandler@1a8b22b5 - csrf-filter as filter
+17:09:21.324 [Executing doCheckConnection_certificateError(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - Container ServletHandler@1a8b22b5 - authentication-filter as filter
+17:09:21.324 [Executing doCheckConnection_certificateError(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - Container ServletHandler@1a8b22b5 - compression-filter as filter
+17:09:21.324 [Executing doCheckConnection_certificateError(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - Container ServletHandler@1a8b22b5 - encoding-filter as filter
+17:09:21.324 [Executing doCheckConnection_certificateError(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - Container ServletHandler@1a8b22b5 - diagnostic-name-filter as filter
+17:09:21.324 [Executing doCheckConnection_certificateError(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - Container ServletHandler@1a8b22b5 - (F=plugins-filter,[/*],[],0) as filterMapping
+17:09:21.324 [Executing doCheckConnection_certificateError(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - Container ServletHandler@1a8b22b5 - (F=csrf-filter,[/*],[],0) as filterMapping
+17:09:21.324 [Executing doCheckConnection_certificateError(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - Container ServletHandler@1a8b22b5 - (F=authentication-filter,[/*],[],0) as filterMapping
+17:09:21.324 [Executing doCheckConnection_certificateError(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - Container ServletHandler@1a8b22b5 - (F=compression-filter,[/*],[],0) as filterMapping
+17:09:21.324 [Executing doCheckConnection_certificateError(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - Container ServletHandler@1a8b22b5 - (F=encoding-filter,[/*],[],0) as filterMapping
+17:09:21.324 [Executing doCheckConnection_certificateError(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - Container ServletHandler@1a8b22b5 - (F=diagnostic-name-filter,[/*],[],0) as filterMapping
+17:09:21.324 [Executing doCheckConnection_certificateError(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - filterNameMap=null
+17:09:21.324 [Executing doCheckConnection_certificateError(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - pathFilters=null
+17:09:21.324 [Executing doCheckConnection_certificateError(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - servletFilterMap=null
+17:09:21.324 [Executing doCheckConnection_certificateError(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - servletPathMap={*.jspx=jsp, *.JSPX=jsp, *.jsp=jsp, *.JSPF=jsp, *.jspf=jsp, *.JSP=jsp, *.xsp=jsp, *.XSP=jsp, /*=Stapler, /=default}
+17:09:21.324 [Executing doCheckConnection_certificateError(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - servletNameMap={default=default, jsp=jsp, Stapler=Stapler}
+17:09:21.324 [Executing doCheckConnection_certificateError(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - Container ServletHandler@1a8b22b5 - Stapler as servlet
+17:09:21.324 [Executing doCheckConnection_certificateError(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - Container ServletHandler@1a8b22b5 - jsp as servlet
+17:09:21.324 [Executing doCheckConnection_certificateError(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - Container ServletHandler@1a8b22b5 - default as servlet
+17:09:21.324 [Executing doCheckConnection_certificateError(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - Container ServletHandler@1a8b22b5 - (S=Stapler,[/*]) as servletMapping
+17:09:21.324 [Executing doCheckConnection_certificateError(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - Container ServletHandler@1a8b22b5 - (S=jsp,[*.jsp, *.jspf, *.jspx, *.xsp, *.JSP, *.JSPF, *.JSPX, *.XSP]) as servletMapping
+17:09:21.324 [Executing doCheckConnection_certificateError(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - Container ServletHandler@1a8b22b5 - (S=default,[/]) as servletMapping
+17:09:21.324 [Executing doCheckConnection_certificateError(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - filterNameMap=null
+17:09:21.324 [Executing doCheckConnection_certificateError(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - pathFilters=null
+17:09:21.324 [Executing doCheckConnection_certificateError(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - servletFilterMap=null
+17:09:21.324 [Executing doCheckConnection_certificateError(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - servletPathMap=null
+17:09:21.324 [Executing doCheckConnection_certificateError(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - servletNameMap=null
+17:09:21.325 [Executing doCheckConnection_certificateError(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - stopped org.mortbay.jetty.webapp.WebAppContext@41bbb219{/jenkins,/Users/tippelsk/Documents/Programming/opensource/gitlab-plugin/target/jenkins-for-test}
+17:09:21.325 [Executing doCheckConnection_certificateError(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - stopped org.mortbay.jetty.servlet.HashSessionIdManager@16c0be3b
+17:09:21.325 [Executing doCheckConnection_certificateError(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - stopped org.jvnet.hudson.test.ThreadPoolImpl@681b42d3
+17:09:21.325 [Executing doCheckConnection_certificateError(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG org.mortbay.log - stopped Server@71469e01
+17:09:21.325 [795242171@qtp-596470015-0] WARN  org.mortbay.log - EXCEPTION 
+javax.net.ssl.SSLHandshakeException: Received fatal alert: certificate_unknown
+	at sun.security.ssl.Alerts.getSSLException(Alerts.java:192) ~[na:1.8.0_31]
+	at sun.security.ssl.Alerts.getSSLException(Alerts.java:154) ~[na:1.8.0_31]
+	at sun.security.ssl.SSLSocketImpl.recvAlert(SSLSocketImpl.java:2011) ~[na:1.8.0_31]
+	at sun.security.ssl.SSLSocketImpl.readRecord(SSLSocketImpl.java:1113) ~[na:1.8.0_31]
+	at sun.security.ssl.SSLSocketImpl.performInitialHandshake(SSLSocketImpl.java:1363) ~[na:1.8.0_31]
+	at sun.security.ssl.SSLSocketImpl.startHandshake(SSLSocketImpl.java:1391) ~[na:1.8.0_31]
+	at sun.security.ssl.SSLSocketImpl.startHandshake(SSLSocketImpl.java:1375) ~[na:1.8.0_31]
+	at org.mortbay.jetty.security.SslSocketConnector$SslConnection.run(SslSocketConnector.java:708) ~[jetty-6.1.26.jar:6.1.26]
+	at org.mortbay.thread.QueuedThreadPool$PoolThread.run(QueuedThreadPool.java:582) [jetty-util-6.1.26.jar:6.1.26]
+17:09:21.325 [Executing doCheckConnection_certificateError(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG o.a.m.core.service.AbstractIoService - awaitTermination on (nio socket acceptor: not bound) called by thread=[Executing doCheckConnection_certificateError(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)]
+17:09:21.326 [Executing doCheckConnection_certificateError(com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfigSSLTest)] DEBUG o.a.m.core.service.AbstractIoService - awaitTermination on (nio socket acceptor: not bound) finished
+WARN: The method class org.apache.commons.logging.impl.SLF4JLogFactory#release() was invoked.
+WARN: Please see http://www.slf4j.org/codes.html#release for an explanation.
+17:09:21.464 [main] INFO  org.mortbay.log - Stopped SslSocketConnector@0.0.0.0:52225
+17:09:21.464 [main] DEBUG org.mortbay.log - stopped SslSocketConnector@0.0.0.0:52225
+17:09:21.464 [main] DEBUG org.mortbay.log - stopping Server@23941fb4
+17:09:21.465 [main] DEBUG org.mortbay.log - stopping GitLabConnectionConfigSSLTest$1@7486b455
+17:09:21.465 [main] DEBUG org.mortbay.log - stopped GitLabConnectionConfigSSLTest$1@7486b455
+17:09:21.465 [Finalizer] DEBUG o.a.h.i.c.PoolingClientConnectionManager - Connection manager is shutting down
+17:09:21.465 [main] DEBUG org.mortbay.log - stopped org.mortbay.thread.QueuedThreadPool@238d68ff
+17:09:21.465 [Finalizer] DEBUG o.a.h.i.c.PoolingClientConnectionManager - Connection manager shut down
+17:09:21.465 [main] DEBUG org.mortbay.log - stopped Server@23941fb4
+17:09:21.465 [Finalizer] DEBUG o.a.h.i.c.PoolingClientConnectionManager - Connection manager is shutting down
+17:09:21.465 [Finalizer] DEBUG o.a.h.i.c.PoolingClientConnectionManager - Connection manager shut down

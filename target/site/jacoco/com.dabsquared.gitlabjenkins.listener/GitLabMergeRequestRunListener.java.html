@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>GitLabMergeRequestRunListener.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">GitLab Plugin</a> &gt; <a href="index.source.html" class="el_package">com.dabsquared.gitlabjenkins.listener</a> &gt; <span class="el_source">GitLabMergeRequestRunListener.java</span></div><h1>GitLabMergeRequestRunListener.java</h1><pre class="source lang-java linenums">package com.dabsquared.gitlabjenkins.listener;
+
+import com.dabsquared.gitlabjenkins.GitLabPushTrigger;
+import com.dabsquared.gitlabjenkins.cause.CauseData;
+import com.dabsquared.gitlabjenkins.cause.GitLabWebHookCause;
+import com.dabsquared.gitlabjenkins.connection.GitLabConnectionProperty;
+import com.dabsquared.gitlabjenkins.gitlab.api.GitLabApi;
+import hudson.Extension;
+import hudson.model.Result;
+import hudson.model.Run;
+import hudson.model.TaskListener;
+import hudson.model.listeners.RunListener;
+import jenkins.model.Jenkins;
+
+import javax.annotation.Nonnull;
+import javax.ws.rs.ProcessingException;
+import javax.ws.rs.WebApplicationException;
+import java.text.MessageFormat;
+
+/**
+ * @author Robin Müller
+ */
+@Extension
+<span class="fc" id="L24">public class GitLabMergeRequestRunListener extends RunListener&lt;Run&lt;?, ?&gt;&gt; {</span>
+
+    @Override
+    public void onCompleted(Run&lt;?, ?&gt; build, @Nonnull TaskListener listener) {
+<span class="fc" id="L28">        GitLabPushTrigger trigger = GitLabPushTrigger.getFromJob(build.getParent());</span>
+<span class="fc" id="L29">        GitLabWebHookCause cause = build.getCause(GitLabWebHookCause.class);</span>
+
+<span class="pc bpc" id="L31" title="1 of 8 branches missed.">        if (trigger != null &amp;&amp; cause != null &amp;&amp; (cause.getData().getActionType() == CauseData.ActionType.MERGE || cause.getData().getActionType() == CauseData.ActionType.NOTE)) {</span>
+<span class="fc" id="L32">            String buildUrl = getBuildUrl(build);</span>
+<span class="fc" id="L33">            Result buildResult = build.getResult();</span>
+<span class="fc" id="L34">            Integer projectId = cause.getData().getTargetProjectId();</span>
+<span class="fc" id="L35">            Integer mergeRequestId = cause.getData().getMergeRequestId();</span>
+<span class="fc" id="L36">            addNoteOnMergeRequestIfNecessary(build, trigger, listener, projectId.toString(), mergeRequestId, build.getParent().getDisplayName(), build.getNumber(),</span>
+<span class="fc" id="L37">                buildUrl, getResultIcon(trigger, buildResult), buildResult.color.getDescription());</span>
+<span class="pc bpc" id="L38" title="1 of 2 branches missed.">            if (buildResult == Result.SUCCESS) {</span>
+<span class="fc" id="L39">                acceptMergeRequestIfNecessary(build, trigger, listener, projectId.toString(), mergeRequestId);</span>
+            }
+        }
+<span class="fc" id="L42">    }</span>
+
+    private String getBuildUrl(Run&lt;?, ?&gt; build) {
+<span class="fc" id="L45">        return Jenkins.getInstance().getRootUrl() + build.getUrl();</span>
+    }
+
+    private void acceptMergeRequestIfNecessary(Run&lt;?, ?&gt; build, GitLabPushTrigger trigger, TaskListener listener, String projectId, Integer mergeRequestId) {
+<span class="pc bpc" id="L49" title="1 of 2 branches missed.">        if (trigger.getAcceptMergeRequestOnSuccess()) {</span>
+            try {
+<span class="nc" id="L51">                GitLabApi client = getClient(build);</span>
+<span class="nc bnc" id="L52" title="All 2 branches missed.">                if (client == null) {</span>
+<span class="nc" id="L53">                    listener.getLogger().println(&quot;No GitLab connection configured&quot;);</span>
+                } else {
+<span class="nc" id="L55">                    client.acceptMergeRequest(projectId, mergeRequestId, &quot;Merge Request accepted by jenkins build success&quot;, false);</span>
+                }
+<span class="nc" id="L57">            } catch (WebApplicationException | ProcessingException e) {</span>
+<span class="nc" id="L58">                listener.getLogger().printf(&quot;Failed to accept merge request: %s&quot;, e.getMessage());</span>
+<span class="nc" id="L59">            }</span>
+        }
+<span class="fc" id="L61">    }</span>
+
+    private void addNoteOnMergeRequestIfNecessary(Run&lt;?, ?&gt; build, GitLabPushTrigger trigger, TaskListener listener, String projectId, Integer mergeRequestId,
+                                                  String projectName, int buildNumber, String buildUrl, String resultIcon, String statusDescription) {
+<span class="pc bpc" id="L65" title="1 of 2 branches missed.">        if (trigger.getAddNoteOnMergeRequest()) {</span>
+<span class="nc" id="L66">            String message = MessageFormat.format(&quot;{0} Jenkins Build {1}\n\nResults available at: [Jenkins [{2} #{3}]]({4})&quot;, resultIcon,</span>
+<span class="nc" id="L67">                    statusDescription, projectName, buildNumber, buildUrl);</span>
+            try {
+<span class="nc" id="L69">                GitLabApi client = getClient(build);</span>
+<span class="nc bnc" id="L70" title="All 2 branches missed.">                if (client == null) {</span>
+<span class="nc" id="L71">                    listener.getLogger().println(&quot;No GitLab connection configured&quot;);</span>
+                } else {
+<span class="nc" id="L73">                    client.createMergeRequestNote(projectId, mergeRequestId, message);</span>
+                }
+<span class="nc" id="L75">            } catch (WebApplicationException | ProcessingException e) {</span>
+<span class="nc" id="L76">                listener.getLogger().printf(&quot;Failed to add message to merge request: %s&quot;, e.getMessage());</span>
+<span class="nc" id="L77">            }</span>
+        }
+<span class="fc" id="L79">    }</span>
+
+    private String getResultIcon(GitLabPushTrigger trigger, Result result) {
+<span class="pc bpc" id="L82" title="1 of 2 branches missed.">        if (result == Result.SUCCESS) {</span>
+<span class="pc bpc" id="L83" title="1 of 2 branches missed.">            return trigger.getAddVoteOnMergeRequest() ? &quot;:+1:&quot; : &quot;:white_check_mark:&quot;;</span>
+        } else {
+<span class="nc bnc" id="L85" title="All 2 branches missed.">            return trigger.getAddVoteOnMergeRequest() ? &quot;:-1:&quot; : &quot;:anguished:&quot;;</span>
+        }
+    }
+
+    private GitLabApi getClient(Run&lt;?, ?&gt; run) {
+<span class="nc" id="L90">        GitLabConnectionProperty connectionProperty = run.getParent().getProperty(GitLabConnectionProperty.class);</span>
+<span class="nc bnc" id="L91" title="All 2 branches missed.">        if (connectionProperty != null) {</span>
+<span class="nc" id="L92">            return connectionProperty.getClient();</span>
+        }
+<span class="nc" id="L94">        return null;</span>
+    }
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.2.201409121644</span></div></body></html>

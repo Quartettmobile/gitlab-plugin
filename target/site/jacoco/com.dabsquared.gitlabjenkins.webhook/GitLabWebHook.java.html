@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>GitLabWebHook.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">GitLab Plugin</a> &gt; <a href="index.source.html" class="el_package">com.dabsquared.gitlabjenkins.webhook</a> &gt; <span class="el_source">GitLabWebHook.java</span></div><h1>GitLabWebHook.java</h1><pre class="source lang-java linenums">package com.dabsquared.gitlabjenkins.webhook;
+
+import hudson.Extension;
+import hudson.model.UnprotectedRootAction;
+import hudson.security.csrf.CrumbExclusion;
+import org.kohsuke.stapler.StaplerRequest;
+import org.kohsuke.stapler.StaplerResponse;
+
+import javax.servlet.FilterChain;
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
+/**
+ * @author Daniel Brooks
+ */
+
+@Extension
+<span class="fc" id="L22">public class GitLabWebHook implements UnprotectedRootAction {</span>
+
+    public static final String WEBHOOK_URL = &quot;project&quot;;
+
+<span class="fc" id="L26">    private static final Logger LOGGER = Logger.getLogger(GitLabWebHook.class.getName());</span>
+
+<span class="fc" id="L28">    private transient final ActionResolver actionResolver = new ActionResolver();</span>
+
+    public String getIconFileName() {
+<span class="nc" id="L31">        return null;</span>
+    }
+
+    public String getDisplayName() {
+<span class="nc" id="L35">        return null;</span>
+    }
+
+    public String getUrlName() {
+<span class="fc" id="L39">        return WEBHOOK_URL;</span>
+    }
+
+    public void getDynamic(final String projectName, final StaplerRequest request, StaplerResponse response) {
+<span class="nc" id="L43">        LOGGER.log(Level.INFO, &quot;WebHook called with url: {0}&quot;, request.getRequestURIWithQueryString());</span>
+<span class="nc" id="L44">        actionResolver.resolve(projectName, request).execute(response);</span>
+<span class="nc" id="L45">    }</span>
+
+<span class="fc" id="L47">    @Extension</span>
+<span class="fc" id="L48">    public static class GitlabWebHookCrumbExclusion extends CrumbExclusion {</span>
+        @Override
+        public boolean process(HttpServletRequest req, HttpServletResponse resp, FilterChain chain) throws IOException, ServletException {
+<span class="fc" id="L51">            String pathInfo = req.getPathInfo();</span>
+<span class="pc bpc" id="L52" title="2 of 4 branches missed.">            if (pathInfo != null &amp;&amp; pathInfo.startsWith('/' + WEBHOOK_URL + '/')) {</span>
+<span class="fc" id="L53">                chain.doFilter(req, resp);</span>
+<span class="fc" id="L54">                return true;</span>
+            }
+<span class="nc" id="L56">            return false;</span>
+        }
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.2.201409121644</span></div></body></html>

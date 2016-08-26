@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>BuildStatusAction.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">GitLab Plugin</a> &gt; <a href="index.source.html" class="el_package">com.dabsquared.gitlabjenkins.webhook.status</a> &gt; <span class="el_source">BuildStatusAction.java</span></div><h1>BuildStatusAction.java</h1><pre class="source lang-java linenums">package com.dabsquared.gitlabjenkins.webhook.status;
+
+import com.dabsquared.gitlabjenkins.webhook.WebHookAction;
+import hudson.model.Job;
+import hudson.model.Result;
+import hudson.model.Run;
+import hudson.plugins.git.GitSCM;
+import hudson.scm.SCM;
+import hudson.util.HttpResponses;
+import jenkins.triggers.SCMTriggerItem;
+import org.kohsuke.stapler.StaplerResponse;
+
+/**
+ * @author Robin Müller
+ */
+abstract class BuildStatusAction implements WebHookAction {
+
+    private final Job&lt;?, ?&gt; project;
+    private Run&lt;?, ?&gt; build;
+
+<span class="fc" id="L21">    protected BuildStatusAction(Job&lt;?, ?&gt; project, Run&lt;?, ?&gt; build) {</span>
+<span class="fc" id="L22">        this.project = project;</span>
+<span class="fc" id="L23">        this.build = build;</span>
+<span class="fc" id="L24">    }</span>
+
+    public void execute(StaplerResponse response) {
+<span class="fc" id="L27">        SCMTriggerItem item = SCMTriggerItem.SCMTriggerItems.asSCMTriggerItem(project);</span>
+<span class="pc bpc" id="L28" title="1 of 2 branches missed.">        if (!hasGitSCM(item)) {</span>
+<span class="nc" id="L29">            throw HttpResponses.error(409, &quot;The project has no GitSCM configured&quot;);</span>
+        }
+<span class="fc" id="L31">        writeStatusBody(response, build, getStatus(build));</span>
+<span class="fc" id="L32">    }</span>
+
+    protected abstract void writeStatusBody(StaplerResponse response, Run&lt;?, ?&gt; build, BuildStatus status);
+
+    private boolean hasGitSCM(SCMTriggerItem item) {
+<span class="pc bpc" id="L37" title="1 of 2 branches missed.">        if (item != null) {</span>
+<span class="pc bpc" id="L38" title="1 of 2 branches missed.">            for (SCM scm : item.getSCMs()) {</span>
+<span class="pc bpc" id="L39" title="1 of 2 branches missed.">                if (scm instanceof GitSCM) {</span>
+<span class="fc" id="L40">                    return true;</span>
+                }
+<span class="nc" id="L42">            }</span>
+        }
+<span class="nc" id="L44">        return false;</span>
+    }
+
+    private BuildStatus getStatus(Run&lt;?, ?&gt; build) {
+<span class="fc bfc" id="L48" title="All 2 branches covered.">        if (build == null) {</span>
+<span class="fc" id="L49">            return BuildStatus.NOT_FOUND;</span>
+<span class="fc bfc" id="L50" title="All 2 branches covered.">        } else if (build.isBuilding()) {</span>
+<span class="fc" id="L51">            return BuildStatus.RUNNING;</span>
+<span class="fc bfc" id="L52" title="All 2 branches covered.">        } else if (build.getResult() == Result.ABORTED) {</span>
+<span class="fc" id="L53">            return BuildStatus.CANCELED;</span>
+<span class="fc bfc" id="L54" title="All 2 branches covered.">        } else if (build.getResult() == Result.SUCCESS) {</span>
+<span class="fc" id="L55">            return BuildStatus.SUCCESS;</span>
+<span class="fc bfc" id="L56" title="All 2 branches covered.">        } else if (build.getResult() == Result.UNSTABLE) {</span>
+<span class="fc" id="L57">            return BuildStatus.UNSTABLE;</span>
+        } else {
+<span class="fc" id="L59">            return BuildStatus.FAILED;</span>
+        }
+    }
+
+<span class="pc" id="L63">    protected enum BuildStatus {</span>
+<span class="fc" id="L64">        NOT_FOUND(&quot;not_found&quot;), RUNNING(&quot;running&quot;), CANCELED(&quot;canceled&quot;), SUCCESS(&quot;success&quot;), FAILED(&quot;failed&quot;), UNSTABLE(&quot;failed&quot;);</span>
+
+        private String value;
+
+<span class="fc" id="L68">        BuildStatus(String value) {</span>
+<span class="fc" id="L69">            this.value = value;</span>
+<span class="fc" id="L70">        }</span>
+
+        public String getValue() {
+<span class="fc" id="L73">            return value;</span>
+        }
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.2.201409121644</span></div></body></html>

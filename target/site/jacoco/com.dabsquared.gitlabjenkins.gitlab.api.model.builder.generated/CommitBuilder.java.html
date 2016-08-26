@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>CommitBuilder.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">GitLab Plugin</a> &gt; <a href="index.source.html" class="el_package">com.dabsquared.gitlabjenkins.gitlab.api.model.builder.generated</a> &gt; <span class="el_source">CommitBuilder.java</span></div><h1>CommitBuilder.java</h1><pre class="source lang-java linenums">package com.dabsquared.gitlabjenkins.gitlab.api.model.builder.generated;
+
+import com.dabsquared.gitlabjenkins.gitlab.api.model.Commit;
+import java.util.Date;
+import javax.annotation.Generated;
+
+@Generated(&quot;PojoBuilder&quot;)
+public class CommitBuilder
+    implements Cloneable {
+  protected CommitBuilder self;
+  protected String value$id$java$lang$String;
+  protected boolean isSet$id$java$lang$String;
+  protected String value$message$java$lang$String;
+  protected boolean isSet$message$java$lang$String;
+  protected Date value$authoredDate$java$util$Date;
+  protected boolean isSet$authoredDate$java$util$Date;
+  protected String value$authorName$java$lang$String;
+  protected boolean isSet$authorName$java$lang$String;
+  protected String value$authorEmail$java$lang$String;
+  protected boolean isSet$authorEmail$java$lang$String;
+
+  /**
+   * Factory Method to construct a CommitBuilder
+   *
+   * @return a new CommitBuilder
+   */
+  public static CommitBuilder commit() {
+<span class="nc" id="L28">    return new CommitBuilder();</span>
+  }
+
+  /**
+   * Creates a new {@link CommitBuilder}.
+   */
+<span class="nc" id="L34">  public CommitBuilder() {</span>
+<span class="nc" id="L35">    self = (CommitBuilder)this;</span>
+<span class="nc" id="L36">  }</span>
+
+  /**
+   * Sets the default value for the {@link Commit#id} property.
+   *
+   * @param value the default value
+   * @return this builder
+   */
+  public CommitBuilder withId(String value) {
+<span class="nc" id="L45">    this.value$id$java$lang$String = value;</span>
+<span class="nc" id="L46">    this.isSet$id$java$lang$String = true;</span>
+<span class="nc" id="L47">    return self;</span>
+  }
+
+  /**
+   * Sets the default value for the {@link Commit#message} property.
+   *
+   * @param value the default value
+   * @return this builder
+   */
+  public CommitBuilder withMessage(String value) {
+<span class="nc" id="L57">    this.value$message$java$lang$String = value;</span>
+<span class="nc" id="L58">    this.isSet$message$java$lang$String = true;</span>
+<span class="nc" id="L59">    return self;</span>
+  }
+
+  /**
+   * Sets the default value for the {@link Commit#authoredDate} property.
+   *
+   * @param value the default value
+   * @return this builder
+   */
+  public CommitBuilder withAuthoredDate(Date value) {
+<span class="nc" id="L69">    this.value$authoredDate$java$util$Date = value;</span>
+<span class="nc" id="L70">    this.isSet$authoredDate$java$util$Date = true;</span>
+<span class="nc" id="L71">    return self;</span>
+  }
+
+  /**
+   * Sets the default value for the {@link Commit#authorName} property.
+   *
+   * @param value the default value
+   * @return this builder
+   */
+  public CommitBuilder withAuthorName(String value) {
+<span class="nc" id="L81">    this.value$authorName$java$lang$String = value;</span>
+<span class="nc" id="L82">    this.isSet$authorName$java$lang$String = true;</span>
+<span class="nc" id="L83">    return self;</span>
+  }
+
+  /**
+   * Sets the default value for the {@link Commit#authorEmail} property.
+   *
+   * @param value the default value
+   * @return this builder
+   */
+  public CommitBuilder withAuthorEmail(String value) {
+<span class="nc" id="L93">    this.value$authorEmail$java$lang$String = value;</span>
+<span class="nc" id="L94">    this.isSet$authorEmail$java$lang$String = true;</span>
+<span class="nc" id="L95">    return self;</span>
+  }
+
+  /**
+   * Returns a clone of this builder.
+   *
+   * @return the clone
+   */
+  @Override
+  public Object clone() {
+    try {
+<span class="nc" id="L106">      CommitBuilder result = (CommitBuilder)super.clone();</span>
+<span class="nc" id="L107">      result.self = result;</span>
+<span class="nc" id="L108">      return result;</span>
+<span class="nc" id="L109">    } catch (CloneNotSupportedException e) {</span>
+<span class="nc" id="L110">      throw new InternalError(e.getMessage());</span>
+    }
+  }
+
+  /**
+   * Returns a clone of this builder.
+   *
+   * @return the clone
+   */
+  public CommitBuilder but() {
+<span class="nc" id="L120">    return (CommitBuilder)clone();</span>
+  }
+
+  /**
+   * Creates a new {@link Commit} based on this builder's settings.
+   *
+   * @return the created Commit
+   */
+  public Commit build() {
+    try {
+<span class="nc" id="L130">      Commit result = new Commit();</span>
+<span class="nc bnc" id="L131" title="All 2 branches missed.">      if (isSet$id$java$lang$String) {</span>
+<span class="nc" id="L132">        result.setId(value$id$java$lang$String);</span>
+      }
+<span class="nc bnc" id="L134" title="All 2 branches missed.">      if (isSet$message$java$lang$String) {</span>
+<span class="nc" id="L135">        result.setMessage(value$message$java$lang$String);</span>
+      }
+<span class="nc bnc" id="L137" title="All 2 branches missed.">      if (isSet$authoredDate$java$util$Date) {</span>
+<span class="nc" id="L138">        result.setAuthoredDate(value$authoredDate$java$util$Date);</span>
+      }
+<span class="nc bnc" id="L140" title="All 2 branches missed.">      if (isSet$authorName$java$lang$String) {</span>
+<span class="nc" id="L141">        result.setAuthorName(value$authorName$java$lang$String);</span>
+      }
+<span class="nc bnc" id="L143" title="All 2 branches missed.">      if (isSet$authorEmail$java$lang$String) {</span>
+<span class="nc" id="L144">        result.setAuthorEmail(value$authorEmail$java$lang$String);</span>
+      }
+<span class="nc" id="L146">      return result;</span>
+<span class="nc" id="L147">    } catch (RuntimeException ex) {</span>
+<span class="nc" id="L148">      throw ex;</span>
+<span class="nc" id="L149">    } catch (Exception ex) {</span>
+<span class="nc" id="L150">      throw new java.lang.reflect.UndeclaredThrowableException(ex);</span>
+    }
+  }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.2.201409121644</span></div></body></html>

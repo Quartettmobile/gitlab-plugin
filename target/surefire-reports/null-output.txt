@@ -1,0 +1,284 @@
+SLF4J: Class path contains multiple SLF4J bindings.
+SLF4J: Found binding in [jar:file:/Users/tippelsk/.m2/repository/ch/qos/logback/logback-classic/1.1.3/logback-classic-1.1.3.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: Found binding in [jar:file:/Users/tippelsk/.m2/repository/org/slf4j/slf4j-jdk14/1.7.7/slf4j-jdk14-1.7.7.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: See http://www.slf4j.org/codes.html#multiple_bindings for an explanation.
+SLF4J: Actual binding is of type [ch.qos.logback.classic.util.ContextSelectorStaticBinder]
+17:09:04.512 [main] DEBUG o.a.c.b.converters.BooleanConverter - Setting default value: false
+17:09:04.526 [main] DEBUG o.a.c.b.converters.BooleanConverter - Converting 'Boolean' value 'false' to type 'Boolean'
+17:09:04.526 [main] DEBUG o.a.c.b.converters.BooleanConverter -     No conversion required, value is already a Boolean
+17:09:04.529 [main] DEBUG o.a.c.b.converters.ByteConverter - Setting default value: 0
+17:09:04.529 [main] DEBUG o.a.c.b.converters.ByteConverter - Converting 'Integer' value '0' to type 'Byte'
+17:09:04.529 [main] DEBUG o.a.c.b.converters.ByteConverter -     Converted to Byte value '0'
+17:09:04.530 [main] DEBUG o.a.c.b.c.CharacterConverter - Setting default value:  
+17:09:04.530 [main] DEBUG o.a.c.b.c.CharacterConverter - Converting 'Character' value ' ' to type 'Character'
+17:09:04.530 [main] DEBUG o.a.c.b.c.CharacterConverter -     No conversion required, value is already a Character
+17:09:04.531 [main] DEBUG o.a.c.b.converters.DoubleConverter - Setting default value: 0
+17:09:04.531 [main] DEBUG o.a.c.b.converters.DoubleConverter - Converting 'Integer' value '0' to type 'Double'
+17:09:04.531 [main] DEBUG o.a.c.b.converters.DoubleConverter -     Converted to Double value '0.0'
+17:09:04.532 [main] DEBUG o.a.c.b.converters.FloatConverter - Setting default value: 0
+17:09:04.532 [main] DEBUG o.a.c.b.converters.FloatConverter - Converting 'Integer' value '0' to type 'Float'
+17:09:04.532 [main] DEBUG o.a.c.b.converters.FloatConverter -     Converted to Float value '0.0'
+17:09:04.533 [main] DEBUG o.a.c.b.converters.IntegerConverter - Setting default value: 0
+17:09:04.533 [main] DEBUG o.a.c.b.converters.IntegerConverter - Converting 'Integer' value '0' to type 'Integer'
+17:09:04.533 [main] DEBUG o.a.c.b.converters.IntegerConverter -     No conversion required, value is already a Integer
+17:09:04.536 [main] DEBUG o.a.c.b.converters.LongConverter - Setting default value: 0
+17:09:04.536 [main] DEBUG o.a.c.b.converters.LongConverter - Converting 'Integer' value '0' to type 'Long'
+17:09:04.537 [main] DEBUG o.a.c.b.converters.LongConverter -     Converted to Long value '0'
+17:09:04.537 [main] DEBUG o.a.c.b.converters.ShortConverter - Setting default value: 0
+17:09:04.537 [main] DEBUG o.a.c.b.converters.ShortConverter - Converting 'Integer' value '0' to type 'Short'
+17:09:04.538 [main] DEBUG o.a.c.b.converters.ShortConverter -     Converted to Short value '0'
+17:09:04.539 [main] DEBUG o.a.c.b.c.BigDecimalConverter - Setting default value: 0.0
+17:09:04.539 [main] DEBUG o.a.c.b.c.BigDecimalConverter - Converting 'BigDecimal' value '0.0' to type 'BigDecimal'
+17:09:04.539 [main] DEBUG o.a.c.b.c.BigDecimalConverter -     No conversion required, value is already a BigDecimal
+17:09:04.540 [main] DEBUG o.a.c.b.c.BigIntegerConverter - Setting default value: 0
+17:09:04.540 [main] DEBUG o.a.c.b.c.BigIntegerConverter - Converting 'BigInteger' value '0' to type 'BigInteger'
+17:09:04.540 [main] DEBUG o.a.c.b.c.BigIntegerConverter -     No conversion required, value is already a BigInteger
+17:09:04.540 [main] DEBUG o.a.c.b.converters.BooleanConverter - Setting default value: false
+17:09:04.540 [main] DEBUG o.a.c.b.converters.BooleanConverter - Converting 'Boolean' value 'false' to type 'Boolean'
+17:09:04.540 [main] DEBUG o.a.c.b.converters.BooleanConverter -     No conversion required, value is already a Boolean
+17:09:04.541 [main] DEBUG o.a.c.b.converters.ByteConverter - Setting default value: 0
+17:09:04.541 [main] DEBUG o.a.c.b.converters.ByteConverter - Converting 'Integer' value '0' to type 'Byte'
+17:09:04.541 [main] DEBUG o.a.c.b.converters.ByteConverter -     Converted to Byte value '0'
+17:09:04.541 [main] DEBUG o.a.c.b.c.CharacterConverter - Setting default value:  
+17:09:04.541 [main] DEBUG o.a.c.b.c.CharacterConverter - Converting 'Character' value ' ' to type 'Character'
+17:09:04.541 [main] DEBUG o.a.c.b.c.CharacterConverter -     No conversion required, value is already a Character
+17:09:04.541 [main] DEBUG o.a.c.b.converters.DoubleConverter - Setting default value: 0
+17:09:04.542 [main] DEBUG o.a.c.b.converters.DoubleConverter - Converting 'Integer' value '0' to type 'Double'
+17:09:04.542 [main] DEBUG o.a.c.b.converters.DoubleConverter -     Converted to Double value '0.0'
+17:09:04.544 [main] DEBUG o.a.c.b.converters.FloatConverter - Setting default value: 0
+17:09:04.544 [main] DEBUG o.a.c.b.converters.FloatConverter - Converting 'Integer' value '0' to type 'Float'
+17:09:04.545 [main] DEBUG o.a.c.b.converters.FloatConverter -     Converted to Float value '0.0'
+17:09:04.545 [main] DEBUG o.a.c.b.converters.IntegerConverter - Setting default value: 0
+17:09:04.545 [main] DEBUG o.a.c.b.converters.IntegerConverter - Converting 'Integer' value '0' to type 'Integer'
+17:09:04.545 [main] DEBUG o.a.c.b.converters.IntegerConverter -     No conversion required, value is already a Integer
+17:09:04.545 [main] DEBUG o.a.c.b.converters.LongConverter - Setting default value: 0
+17:09:04.545 [main] DEBUG o.a.c.b.converters.LongConverter - Converting 'Integer' value '0' to type 'Long'
+17:09:04.545 [main] DEBUG o.a.c.b.converters.LongConverter -     Converted to Long value '0'
+17:09:04.545 [main] DEBUG o.a.c.b.converters.ShortConverter - Setting default value: 0
+17:09:04.545 [main] DEBUG o.a.c.b.converters.ShortConverter - Converting 'Integer' value '0' to type 'Short'
+17:09:04.545 [main] DEBUG o.a.c.b.converters.ShortConverter -     Converted to Short value '0'
+17:09:04.546 [main] DEBUG o.a.c.b.converters.StringConverter - Setting default value: 
+17:09:04.546 [main] DEBUG o.a.c.b.converters.StringConverter - Converting 'String' value '' to type 'String'
+17:09:04.557 [main] DEBUG o.a.c.b.converters.ArrayConverter - Setting default value: [Z@25d0cb3a
+17:09:04.557 [main] DEBUG o.a.c.b.converters.ArrayConverter - Converting 'boolean[]' value '[Z@25d0cb3a' to type 'boolean[]'
+17:09:04.558 [main] DEBUG o.a.c.b.converters.ArrayConverter -     No conversion required, value is already a boolean[]
+17:09:04.558 [main] DEBUG o.a.c.b.converters.ArrayConverter - Setting default value: [B@345cbf40
+17:09:04.558 [main] DEBUG o.a.c.b.converters.ArrayConverter - Converting 'byte[]' value '[B@345cbf40' to type 'byte[]'
+17:09:04.558 [main] DEBUG o.a.c.b.converters.ArrayConverter -     No conversion required, value is already a byte[]
+17:09:04.558 [main] DEBUG o.a.c.b.converters.ArrayConverter - Setting default value: [C@6e3eb0cd
+17:09:04.558 [main] DEBUG o.a.c.b.converters.ArrayConverter - Converting 'char[]' value '[C@6e3eb0cd' to type 'char[]'
+17:09:04.558 [main] DEBUG o.a.c.b.converters.ArrayConverter -     No conversion required, value is already a char[]
+17:09:04.558 [main] DEBUG o.a.c.b.converters.ArrayConverter - Setting default value: [D@463561c5
+17:09:04.558 [main] DEBUG o.a.c.b.converters.ArrayConverter - Converting 'double[]' value '[D@463561c5' to type 'double[]'
+17:09:04.558 [main] DEBUG o.a.c.b.converters.ArrayConverter -     No conversion required, value is already a double[]
+17:09:04.559 [main] DEBUG o.a.c.b.converters.ArrayConverter - Setting default value: [F@659feb22
+17:09:04.559 [main] DEBUG o.a.c.b.converters.ArrayConverter - Converting 'float[]' value '[F@659feb22' to type 'float[]'
+17:09:04.559 [main] DEBUG o.a.c.b.converters.ArrayConverter -     No conversion required, value is already a float[]
+17:09:04.559 [main] DEBUG o.a.c.b.converters.ArrayConverter - Setting default value: [I@3468ee6e
+17:09:04.559 [main] DEBUG o.a.c.b.converters.ArrayConverter - Converting 'int[]' value '[I@3468ee6e' to type 'int[]'
+17:09:04.560 [main] DEBUG o.a.c.b.converters.ArrayConverter -     No conversion required, value is already a int[]
+17:09:04.560 [main] DEBUG o.a.c.b.converters.ArrayConverter - Setting default value: [J@2f4b98f6
+17:09:04.560 [main] DEBUG o.a.c.b.converters.ArrayConverter - Converting 'long[]' value '[J@2f4b98f6' to type 'long[]'
+17:09:04.560 [main] DEBUG o.a.c.b.converters.ArrayConverter -     No conversion required, value is already a long[]
+17:09:04.560 [main] DEBUG o.a.c.b.converters.ArrayConverter - Setting default value: [S@421def93
+17:09:04.560 [main] DEBUG o.a.c.b.converters.ArrayConverter - Converting 'short[]' value '[S@421def93' to type 'short[]'
+17:09:04.560 [main] DEBUG o.a.c.b.converters.ArrayConverter -     No conversion required, value is already a short[]
+17:09:04.560 [main] DEBUG o.a.c.b.converters.ArrayConverter - Setting default value: [Ljava.math.BigDecimal;@58c1da09
+17:09:04.560 [main] DEBUG o.a.c.b.converters.ArrayConverter - Converting 'BigDecimal[]' value '[Ljava.math.BigDecimal;@58c1da09' to type 'BigDecimal[]'
+17:09:04.560 [main] DEBUG o.a.c.b.converters.ArrayConverter -     No conversion required, value is already a BigDecimal[]
+17:09:04.560 [main] DEBUG o.a.c.b.converters.ArrayConverter - Setting default value: [Ljava.math.BigInteger;@2b2954e1
+17:09:04.560 [main] DEBUG o.a.c.b.converters.ArrayConverter - Converting 'BigInteger[]' value '[Ljava.math.BigInteger;@2b2954e1' to type 'BigInteger[]'
+17:09:04.561 [main] DEBUG o.a.c.b.converters.ArrayConverter -     No conversion required, value is already a BigInteger[]
+17:09:04.561 [main] DEBUG o.a.c.b.converters.ArrayConverter - Setting default value: [Ljava.lang.Boolean;@58d6e55a
+17:09:04.561 [main] DEBUG o.a.c.b.converters.ArrayConverter - Converting 'Boolean[]' value '[Ljava.lang.Boolean;@58d6e55a' to type 'Boolean[]'
+17:09:04.561 [main] DEBUG o.a.c.b.converters.ArrayConverter -     No conversion required, value is already a Boolean[]
+17:09:04.561 [main] DEBUG o.a.c.b.converters.ArrayConverter - Setting default value: [Ljava.lang.Byte;@751ae8a4
+17:09:04.561 [main] DEBUG o.a.c.b.converters.ArrayConverter - Converting 'Byte[]' value '[Ljava.lang.Byte;@751ae8a4' to type 'Byte[]'
+17:09:04.563 [main] DEBUG o.a.c.b.converters.ArrayConverter -     No conversion required, value is already a Byte[]
+17:09:04.564 [main] DEBUG o.a.c.b.converters.ArrayConverter - Setting default value: [Ljava.lang.Character;@235d659c
+17:09:04.565 [main] DEBUG o.a.c.b.converters.ArrayConverter - Converting 'Character[]' value '[Ljava.lang.Character;@235d659c' to type 'Character[]'
+17:09:04.565 [main] DEBUG o.a.c.b.converters.ArrayConverter -     No conversion required, value is already a Character[]
+17:09:04.566 [main] DEBUG o.a.c.b.converters.ArrayConverter - Setting default value: [Ljava.lang.Double;@4232b34a
+17:09:04.566 [main] DEBUG o.a.c.b.converters.ArrayConverter - Converting 'Double[]' value '[Ljava.lang.Double;@4232b34a' to type 'Double[]'
+17:09:04.566 [main] DEBUG o.a.c.b.converters.ArrayConverter -     No conversion required, value is already a Double[]
+17:09:04.566 [main] DEBUG o.a.c.b.converters.ArrayConverter - Setting default value: [Ljava.lang.Float;@2da16263
+17:09:04.566 [main] DEBUG o.a.c.b.converters.ArrayConverter - Converting 'Float[]' value '[Ljava.lang.Float;@2da16263' to type 'Float[]'
+17:09:04.566 [main] DEBUG o.a.c.b.converters.ArrayConverter -     No conversion required, value is already a Float[]
+17:09:04.566 [main] DEBUG o.a.c.b.converters.ArrayConverter - Setting default value: [Ljava.lang.Integer;@f5ce0bb
+17:09:04.566 [main] DEBUG o.a.c.b.converters.ArrayConverter - Converting 'Integer[]' value '[Ljava.lang.Integer;@f5ce0bb' to type 'Integer[]'
+17:09:04.566 [main] DEBUG o.a.c.b.converters.ArrayConverter -     No conversion required, value is already a Integer[]
+17:09:04.566 [main] DEBUG o.a.c.b.converters.ArrayConverter - Setting default value: [Ljava.lang.Long;@47e51549
+17:09:04.566 [main] DEBUG o.a.c.b.converters.ArrayConverter - Converting 'Long[]' value '[Ljava.lang.Long;@47e51549' to type 'Long[]'
+17:09:04.566 [main] DEBUG o.a.c.b.converters.ArrayConverter -     No conversion required, value is already a Long[]
+17:09:04.566 [main] DEBUG o.a.c.b.converters.ArrayConverter - Setting default value: [Ljava.lang.Short;@101a461c
+17:09:04.566 [main] DEBUG o.a.c.b.converters.ArrayConverter - Converting 'Short[]' value '[Ljava.lang.Short;@101a461c' to type 'Short[]'
+17:09:04.566 [main] DEBUG o.a.c.b.converters.ArrayConverter -     No conversion required, value is already a Short[]
+17:09:04.566 [main] DEBUG o.a.c.b.converters.ArrayConverter - Setting default value: [Ljava.lang.String;@360e9c06
+17:09:04.567 [main] DEBUG o.a.c.b.converters.ArrayConverter - Converting 'String[]' value '[Ljava.lang.String;@360e9c06' to type 'String[]'
+17:09:04.567 [main] DEBUG o.a.c.b.converters.ArrayConverter -     No conversion required, value is already a String[]
+17:09:04.568 [main] DEBUG o.a.c.b.converters.ArrayConverter - Setting default value: [Ljava.lang.Class;@5ebffb44
+17:09:04.569 [main] DEBUG o.a.c.b.converters.ArrayConverter - Converting 'Class[]' value '[Ljava.lang.Class;@5ebffb44' to type 'Class[]'
+17:09:04.569 [main] DEBUG o.a.c.b.converters.ArrayConverter -     No conversion required, value is already a Class[]
+17:09:04.569 [main] DEBUG o.a.c.b.converters.ArrayConverter - Setting default value: [Ljava.util.Date;@311ff287
+17:09:04.569 [main] DEBUG o.a.c.b.converters.ArrayConverter - Converting 'Date[]' value '[Ljava.util.Date;@311ff287' to type 'Date[]'
+17:09:04.569 [main] DEBUG o.a.c.b.converters.ArrayConverter -     No conversion required, value is already a Date[]
+17:09:04.569 [main] DEBUG o.a.c.b.converters.ArrayConverter - Setting default value: [Ljava.util.Calendar;@31db34da
+17:09:04.569 [main] DEBUG o.a.c.b.converters.ArrayConverter - Converting 'Calendar[]' value '[Ljava.util.Calendar;@31db34da' to type 'Calendar[]'
+17:09:04.569 [main] DEBUG o.a.c.b.converters.ArrayConverter -     No conversion required, value is already a Calendar[]
+17:09:04.569 [main] DEBUG o.a.c.b.converters.ArrayConverter - Setting default value: [Ljava.io.File;@5edacf20
+17:09:04.569 [main] DEBUG o.a.c.b.converters.ArrayConverter - Converting 'java.io.File[]' value '[Ljava.io.File;@5edacf20' to type 'java.io.File[]'
+17:09:04.569 [main] DEBUG o.a.c.b.converters.ArrayConverter -     No conversion required, value is already a java.io.File[]
+17:09:04.569 [main] DEBUG o.a.c.b.converters.ArrayConverter - Setting default value: [Ljava.sql.Date;@7e307087
+17:09:04.569 [main] DEBUG o.a.c.b.converters.ArrayConverter - Converting 'java.sql.Date[]' value '[Ljava.sql.Date;@7e307087' to type 'java.sql.Date[]'
+17:09:04.570 [main] DEBUG o.a.c.b.converters.ArrayConverter -     No conversion required, value is already a java.sql.Date[]
+17:09:04.570 [main] DEBUG o.a.c.b.converters.ArrayConverter - Setting default value: [Ljava.sql.Time;@1a8b81e8
+17:09:04.570 [main] DEBUG o.a.c.b.converters.ArrayConverter - Converting 'java.sql.Time[]' value '[Ljava.sql.Time;@1a8b81e8' to type 'java.sql.Time[]'
+17:09:04.570 [main] DEBUG o.a.c.b.converters.ArrayConverter -     No conversion required, value is already a java.sql.Time[]
+17:09:04.570 [main] DEBUG o.a.c.b.converters.ArrayConverter - Setting default value: [Ljava.sql.Timestamp;@5e8507f1
+17:09:04.570 [main] DEBUG o.a.c.b.converters.ArrayConverter - Converting 'java.sql.Timestamp[]' value '[Ljava.sql.Timestamp;@5e8507f1' to type 'java.sql.Timestamp[]'
+17:09:04.570 [main] DEBUG o.a.c.b.converters.ArrayConverter -     No conversion required, value is already a java.sql.Timestamp[]
+17:09:04.570 [main] DEBUG o.a.c.b.converters.ArrayConverter - Setting default value: [Ljava.net.URL;@d08edc5
+17:09:04.570 [main] DEBUG o.a.c.b.converters.ArrayConverter - Converting 'java.net.URL[]' value '[Ljava.net.URL;@d08edc5' to type 'java.net.URL[]'
+17:09:04.570 [main] DEBUG o.a.c.b.converters.ArrayConverter -     No conversion required, value is already a java.net.URL[]
+17:09:04.572 [main] DEBUG o.a.c.b.converters.IntegerConverter - Setting default value: null
+17:09:04.573 [main] DEBUG o.a.c.b.converters.FloatConverter - Setting default value: null
+17:09:04.573 [main] DEBUG o.a.c.b.converters.DoubleConverter - Setting default value: null
+17:09:04.778 [main] DEBUG o.a.c.b.converters.BooleanConverter - Setting default value: false
+17:09:04.778 [main] DEBUG o.a.c.b.converters.BooleanConverter - Converting 'Boolean' value 'false' to type 'Boolean'
+17:09:04.778 [main] DEBUG o.a.c.b.converters.BooleanConverter -     No conversion required, value is already a Boolean
+17:09:04.778 [main] DEBUG o.a.c.b.converters.ByteConverter - Setting default value: 0
+17:09:04.779 [main] DEBUG o.a.c.b.converters.ByteConverter - Converting 'Integer' value '0' to type 'Byte'
+17:09:04.779 [main] DEBUG o.a.c.b.converters.ByteConverter -     Converted to Byte value '0'
+17:09:04.779 [main] DEBUG o.a.c.b.c.CharacterConverter - Setting default value:  
+17:09:04.780 [main] DEBUG o.a.c.b.c.CharacterConverter - Converting 'Character' value ' ' to type 'Character'
+17:09:04.780 [main] DEBUG o.a.c.b.c.CharacterConverter -     No conversion required, value is already a Character
+17:09:04.780 [main] DEBUG o.a.c.b.converters.DoubleConverter - Setting default value: 0
+17:09:04.780 [main] DEBUG o.a.c.b.converters.DoubleConverter - Converting 'Integer' value '0' to type 'Double'
+17:09:04.780 [main] DEBUG o.a.c.b.converters.DoubleConverter -     Converted to Double value '0.0'
+17:09:04.780 [main] DEBUG o.a.c.b.converters.FloatConverter - Setting default value: 0
+17:09:04.780 [main] DEBUG o.a.c.b.converters.FloatConverter - Converting 'Integer' value '0' to type 'Float'
+17:09:04.780 [main] DEBUG o.a.c.b.converters.FloatConverter -     Converted to Float value '0.0'
+17:09:04.780 [main] DEBUG o.a.c.b.converters.IntegerConverter - Setting default value: 0
+17:09:04.780 [main] DEBUG o.a.c.b.converters.IntegerConverter - Converting 'Integer' value '0' to type 'Integer'
+17:09:04.780 [main] DEBUG o.a.c.b.converters.IntegerConverter -     No conversion required, value is already a Integer
+17:09:04.780 [main] DEBUG o.a.c.b.converters.LongConverter - Setting default value: 0
+17:09:04.780 [main] DEBUG o.a.c.b.converters.LongConverter - Converting 'Integer' value '0' to type 'Long'
+17:09:04.780 [main] DEBUG o.a.c.b.converters.LongConverter -     Converted to Long value '0'
+17:09:04.780 [main] DEBUG o.a.c.b.converters.ShortConverter - Setting default value: 0
+17:09:04.780 [main] DEBUG o.a.c.b.converters.ShortConverter - Converting 'Integer' value '0' to type 'Short'
+17:09:04.780 [main] DEBUG o.a.c.b.converters.ShortConverter -     Converted to Short value '0'
+17:09:04.780 [main] DEBUG o.a.c.b.c.BigDecimalConverter - Setting default value: 0.0
+17:09:04.780 [main] DEBUG o.a.c.b.c.BigDecimalConverter - Converting 'BigDecimal' value '0.0' to type 'BigDecimal'
+17:09:04.780 [main] DEBUG o.a.c.b.c.BigDecimalConverter -     No conversion required, value is already a BigDecimal
+17:09:04.781 [main] DEBUG o.a.c.b.c.BigIntegerConverter - Setting default value: 0
+17:09:04.781 [main] DEBUG o.a.c.b.c.BigIntegerConverter - Converting 'BigInteger' value '0' to type 'BigInteger'
+17:09:04.781 [main] DEBUG o.a.c.b.c.BigIntegerConverter -     No conversion required, value is already a BigInteger
+17:09:04.781 [main] DEBUG o.a.c.b.converters.BooleanConverter - Setting default value: false
+17:09:04.781 [main] DEBUG o.a.c.b.converters.BooleanConverter - Converting 'Boolean' value 'false' to type 'Boolean'
+17:09:04.781 [main] DEBUG o.a.c.b.converters.BooleanConverter -     No conversion required, value is already a Boolean
+17:09:04.781 [main] DEBUG o.a.c.b.converters.ByteConverter - Setting default value: 0
+17:09:04.781 [main] DEBUG o.a.c.b.converters.ByteConverter - Converting 'Integer' value '0' to type 'Byte'
+17:09:04.781 [main] DEBUG o.a.c.b.converters.ByteConverter -     Converted to Byte value '0'
+17:09:04.781 [main] DEBUG o.a.c.b.c.CharacterConverter - Setting default value:  
+17:09:04.781 [main] DEBUG o.a.c.b.c.CharacterConverter - Converting 'Character' value ' ' to type 'Character'
+17:09:04.781 [main] DEBUG o.a.c.b.c.CharacterConverter -     No conversion required, value is already a Character
+17:09:04.781 [main] DEBUG o.a.c.b.converters.DoubleConverter - Setting default value: 0
+17:09:04.781 [main] DEBUG o.a.c.b.converters.DoubleConverter - Converting 'Integer' value '0' to type 'Double'
+17:09:04.781 [main] DEBUG o.a.c.b.converters.DoubleConverter -     Converted to Double value '0.0'
+17:09:04.781 [main] DEBUG o.a.c.b.converters.FloatConverter - Setting default value: 0
+17:09:04.781 [main] DEBUG o.a.c.b.converters.FloatConverter - Converting 'Integer' value '0' to type 'Float'
+17:09:04.791 [main] DEBUG o.a.c.b.converters.FloatConverter -     Converted to Float value '0.0'
+17:09:04.791 [main] DEBUG o.a.c.b.converters.IntegerConverter - Setting default value: 0
+17:09:04.791 [main] DEBUG o.a.c.b.converters.IntegerConverter - Converting 'Integer' value '0' to type 'Integer'
+17:09:04.791 [main] DEBUG o.a.c.b.converters.IntegerConverter -     No conversion required, value is already a Integer
+17:09:04.791 [main] DEBUG o.a.c.b.converters.LongConverter - Setting default value: 0
+17:09:04.791 [main] DEBUG o.a.c.b.converters.LongConverter - Converting 'Integer' value '0' to type 'Long'
+17:09:04.791 [main] DEBUG o.a.c.b.converters.LongConverter -     Converted to Long value '0'
+17:09:04.791 [main] DEBUG o.a.c.b.converters.ShortConverter - Setting default value: 0
+17:09:04.791 [main] DEBUG o.a.c.b.converters.ShortConverter - Converting 'Integer' value '0' to type 'Short'
+17:09:04.792 [main] DEBUG o.a.c.b.converters.ShortConverter -     Converted to Short value '0'
+17:09:04.792 [main] DEBUG o.a.c.b.converters.StringConverter - Setting default value: 
+17:09:04.792 [main] DEBUG o.a.c.b.converters.StringConverter - Converting 'String' value '' to type 'String'
+17:09:04.792 [main] DEBUG o.a.c.b.converters.ArrayConverter - Setting default value: [Z@270a620
+17:09:04.792 [main] DEBUG o.a.c.b.converters.ArrayConverter - Converting 'boolean[]' value '[Z@270a620' to type 'boolean[]'
+17:09:04.792 [main] DEBUG o.a.c.b.converters.ArrayConverter -     No conversion required, value is already a boolean[]
+17:09:04.792 [main] DEBUG o.a.c.b.converters.ArrayConverter - Setting default value: [B@41f4039e
+17:09:04.792 [main] DEBUG o.a.c.b.converters.ArrayConverter - Converting 'byte[]' value '[B@41f4039e' to type 'byte[]'
+17:09:04.792 [main] DEBUG o.a.c.b.converters.ArrayConverter -     No conversion required, value is already a byte[]
+17:09:04.792 [main] DEBUG o.a.c.b.converters.ArrayConverter - Setting default value: [C@5ff00507
+17:09:04.792 [main] DEBUG o.a.c.b.converters.ArrayConverter - Converting 'char[]' value '[C@5ff00507' to type 'char[]'
+17:09:04.792 [main] DEBUG o.a.c.b.converters.ArrayConverter -     No conversion required, value is already a char[]
+17:09:04.793 [main] DEBUG o.a.c.b.converters.ArrayConverter - Setting default value: [D@603cabc4
+17:09:04.793 [main] DEBUG o.a.c.b.converters.ArrayConverter - Converting 'double[]' value '[D@603cabc4' to type 'double[]'
+17:09:04.793 [main] DEBUG o.a.c.b.converters.ArrayConverter -     No conversion required, value is already a double[]
+17:09:04.793 [main] DEBUG o.a.c.b.converters.ArrayConverter - Setting default value: [F@67fa5045
+17:09:04.793 [main] DEBUG o.a.c.b.converters.ArrayConverter - Converting 'float[]' value '[F@67fa5045' to type 'float[]'
+17:09:04.793 [main] DEBUG o.a.c.b.converters.ArrayConverter -     No conversion required, value is already a float[]
+17:09:04.793 [main] DEBUG o.a.c.b.converters.ArrayConverter - Setting default value: [I@6f347d7
+17:09:04.793 [main] DEBUG o.a.c.b.converters.ArrayConverter - Converting 'int[]' value '[I@6f347d7' to type 'int[]'
+17:09:04.793 [main] DEBUG o.a.c.b.converters.ArrayConverter -     No conversion required, value is already a int[]
+17:09:04.793 [main] DEBUG o.a.c.b.converters.ArrayConverter - Setting default value: [J@5974b233
+17:09:04.793 [main] DEBUG o.a.c.b.converters.ArrayConverter - Converting 'long[]' value '[J@5974b233' to type 'long[]'
+17:09:04.793 [main] DEBUG o.a.c.b.converters.ArrayConverter -     No conversion required, value is already a long[]
+17:09:04.793 [main] DEBUG o.a.c.b.converters.ArrayConverter - Setting default value: [S@5c134052
+17:09:04.793 [main] DEBUG o.a.c.b.converters.ArrayConverter - Converting 'short[]' value '[S@5c134052' to type 'short[]'
+17:09:04.793 [main] DEBUG o.a.c.b.converters.ArrayConverter -     No conversion required, value is already a short[]
+17:09:04.793 [main] DEBUG o.a.c.b.converters.ArrayConverter - Setting default value: [Ljava.math.BigDecimal;@69de5bed
+17:09:04.793 [main] DEBUG o.a.c.b.converters.ArrayConverter - Converting 'BigDecimal[]' value '[Ljava.math.BigDecimal;@69de5bed' to type 'BigDecimal[]'
+17:09:04.793 [main] DEBUG o.a.c.b.converters.ArrayConverter -     No conversion required, value is already a BigDecimal[]
+17:09:04.793 [main] DEBUG o.a.c.b.converters.ArrayConverter - Setting default value: [Ljava.math.BigInteger;@750f64fe
+17:09:04.793 [main] DEBUG o.a.c.b.converters.ArrayConverter - Converting 'BigInteger[]' value '[Ljava.math.BigInteger;@750f64fe' to type 'BigInteger[]'
+17:09:04.793 [main] DEBUG o.a.c.b.converters.ArrayConverter -     No conversion required, value is already a BigInteger[]
+17:09:04.794 [main] DEBUG o.a.c.b.converters.ArrayConverter - Setting default value: [Ljava.lang.Boolean;@996a546
+17:09:04.794 [main] DEBUG o.a.c.b.converters.ArrayConverter - Converting 'Boolean[]' value '[Ljava.lang.Boolean;@996a546' to type 'Boolean[]'
+17:09:04.794 [main] DEBUG o.a.c.b.converters.ArrayConverter -     No conversion required, value is already a Boolean[]
+17:09:04.794 [main] DEBUG o.a.c.b.converters.ArrayConverter - Setting default value: [Ljava.lang.Byte;@4fc165f6
+17:09:04.794 [main] DEBUG o.a.c.b.converters.ArrayConverter - Converting 'Byte[]' value '[Ljava.lang.Byte;@4fc165f6' to type 'Byte[]'
+17:09:04.794 [main] DEBUG o.a.c.b.converters.ArrayConverter -     No conversion required, value is already a Byte[]
+17:09:04.794 [main] DEBUG o.a.c.b.converters.ArrayConverter - Setting default value: [Ljava.lang.Character;@545b5ed0
+17:09:04.794 [main] DEBUG o.a.c.b.converters.ArrayConverter - Converting 'Character[]' value '[Ljava.lang.Character;@545b5ed0' to type 'Character[]'
+17:09:04.794 [main] DEBUG o.a.c.b.converters.ArrayConverter -     No conversion required, value is already a Character[]
+17:09:04.794 [main] DEBUG o.a.c.b.converters.ArrayConverter - Setting default value: [Ljava.lang.Double;@5a7df831
+17:09:04.794 [main] DEBUG o.a.c.b.converters.ArrayConverter - Converting 'Double[]' value '[Ljava.lang.Double;@5a7df831' to type 'Double[]'
+17:09:04.794 [main] DEBUG o.a.c.b.converters.ArrayConverter -     No conversion required, value is already a Double[]
+17:09:04.794 [main] DEBUG o.a.c.b.converters.ArrayConverter - Setting default value: [Ljava.lang.Float;@667dcaad
+17:09:04.794 [main] DEBUG o.a.c.b.converters.ArrayConverter - Converting 'Float[]' value '[Ljava.lang.Float;@667dcaad' to type 'Float[]'
+17:09:04.794 [main] DEBUG o.a.c.b.converters.ArrayConverter -     No conversion required, value is already a Float[]
+17:09:04.794 [main] DEBUG o.a.c.b.converters.ArrayConverter - Setting default value: [Ljava.lang.Integer;@22d7fd41
+17:09:04.794 [main] DEBUG o.a.c.b.converters.ArrayConverter - Converting 'Integer[]' value '[Ljava.lang.Integer;@22d7fd41' to type 'Integer[]'
+17:09:04.794 [main] DEBUG o.a.c.b.converters.ArrayConverter -     No conversion required, value is already a Integer[]
+17:09:04.794 [main] DEBUG o.a.c.b.converters.ArrayConverter - Setting default value: [Ljava.lang.Long;@2c748a15
+17:09:04.794 [main] DEBUG o.a.c.b.converters.ArrayConverter - Converting 'Long[]' value '[Ljava.lang.Long;@2c748a15' to type 'Long[]'
+17:09:04.794 [main] DEBUG o.a.c.b.converters.ArrayConverter -     No conversion required, value is already a Long[]
+17:09:04.794 [main] DEBUG o.a.c.b.converters.ArrayConverter - Setting default value: [Ljava.lang.Short;@19fd43da
+17:09:04.795 [main] DEBUG o.a.c.b.converters.ArrayConverter - Converting 'Short[]' value '[Ljava.lang.Short;@19fd43da' to type 'Short[]'
+17:09:04.795 [main] DEBUG o.a.c.b.converters.ArrayConverter -     No conversion required, value is already a Short[]
+17:09:04.795 [main] DEBUG o.a.c.b.converters.ArrayConverter - Setting default value: [Ljava.lang.String;@115dcaea
+17:09:04.795 [main] DEBUG o.a.c.b.converters.ArrayConverter - Converting 'String[]' value '[Ljava.lang.String;@115dcaea' to type 'String[]'
+17:09:04.795 [main] DEBUG o.a.c.b.converters.ArrayConverter -     No conversion required, value is already a String[]
+17:09:04.795 [main] DEBUG o.a.c.b.converters.ArrayConverter - Setting default value: [Ljava.lang.Class;@cfd1075
+17:09:04.795 [main] DEBUG o.a.c.b.converters.ArrayConverter - Converting 'Class[]' value '[Ljava.lang.Class;@cfd1075' to type 'Class[]'
+17:09:04.795 [main] DEBUG o.a.c.b.converters.ArrayConverter -     No conversion required, value is already a Class[]
+17:09:04.795 [main] DEBUG o.a.c.b.converters.ArrayConverter - Setting default value: [Ljava.util.Date;@45117dd
+17:09:04.795 [main] DEBUG o.a.c.b.converters.ArrayConverter - Converting 'Date[]' value '[Ljava.util.Date;@45117dd' to type 'Date[]'
+17:09:04.795 [main] DEBUG o.a.c.b.converters.ArrayConverter -     No conversion required, value is already a Date[]
+17:09:04.795 [main] DEBUG o.a.c.b.converters.ArrayConverter - Setting default value: [Ljava.util.Calendar;@7741771e
+17:09:04.795 [main] DEBUG o.a.c.b.converters.ArrayConverter - Converting 'Calendar[]' value '[Ljava.util.Calendar;@7741771e' to type 'Calendar[]'
+17:09:04.795 [main] DEBUG o.a.c.b.converters.ArrayConverter -     No conversion required, value is already a Calendar[]
+17:09:04.795 [main] DEBUG o.a.c.b.converters.ArrayConverter - Setting default value: [Ljava.io.File;@834e986
+17:09:04.795 [main] DEBUG o.a.c.b.converters.ArrayConverter - Converting 'java.io.File[]' value '[Ljava.io.File;@834e986' to type 'java.io.File[]'
+17:09:04.795 [main] DEBUG o.a.c.b.converters.ArrayConverter -     No conversion required, value is already a java.io.File[]
+17:09:04.795 [main] DEBUG o.a.c.b.converters.ArrayConverter - Setting default value: [Ljava.sql.Date;@6cae2e4d
+17:09:04.795 [main] DEBUG o.a.c.b.converters.ArrayConverter - Converting 'java.sql.Date[]' value '[Ljava.sql.Date;@6cae2e4d' to type 'java.sql.Date[]'
+17:09:04.795 [main] DEBUG o.a.c.b.converters.ArrayConverter -     No conversion required, value is already a java.sql.Date[]
+17:09:04.796 [main] DEBUG o.a.c.b.converters.ArrayConverter - Setting default value: [Ljava.sql.Time;@604d23fa
+17:09:04.796 [main] DEBUG o.a.c.b.converters.ArrayConverter - Converting 'java.sql.Time[]' value '[Ljava.sql.Time;@604d23fa' to type 'java.sql.Time[]'
+17:09:04.796 [main] DEBUG o.a.c.b.converters.ArrayConverter -     No conversion required, value is already a java.sql.Time[]
+17:09:04.796 [main] DEBUG o.a.c.b.converters.ArrayConverter - Setting default value: [Ljava.sql.Timestamp;@1cc8416a
+17:09:04.796 [main] DEBUG o.a.c.b.converters.ArrayConverter - Converting 'java.sql.Timestamp[]' value '[Ljava.sql.Timestamp;@1cc8416a' to type 'java.sql.Timestamp[]'
+17:09:04.796 [main] DEBUG o.a.c.b.converters.ArrayConverter -     No conversion required, value is already a java.sql.Timestamp[]
+17:09:04.796 [main] DEBUG o.a.c.b.converters.ArrayConverter - Setting default value: [Ljava.net.URL;@331ff3ac
+17:09:04.796 [main] DEBUG o.a.c.b.converters.ArrayConverter - Converting 'java.net.URL[]' value '[Ljava.net.URL;@331ff3ac' to type 'java.net.URL[]'
+17:09:04.796 [main] DEBUG o.a.c.b.converters.ArrayConverter -     No conversion required, value is already a java.net.URL[]
+17:09:04.805 [main] DEBUG o.apache.commons.jelly.JellyContext - Registering tag library to:  taglib: org.kohsuke.stapler.jelly.ReallyStaticTagLibrary@483f286e
+17:09:04.807 [main] DEBUG o.apache.commons.jelly.JellyContext - Registering tag library to: this taglib: org.kohsuke.stapler.jelly.ThisTagLibrary@193bb809

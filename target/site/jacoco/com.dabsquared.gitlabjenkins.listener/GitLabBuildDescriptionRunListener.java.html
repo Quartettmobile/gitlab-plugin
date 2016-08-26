@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>GitLabBuildDescriptionRunListener.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">GitLab Plugin</a> &gt; <a href="index.source.html" class="el_package">com.dabsquared.gitlabjenkins.listener</a> &gt; <span class="el_source">GitLabBuildDescriptionRunListener.java</span></div><h1>GitLabBuildDescriptionRunListener.java</h1><pre class="source lang-java linenums">package com.dabsquared.gitlabjenkins.listener;
+
+import com.dabsquared.gitlabjenkins.GitLabPushTrigger;
+import com.dabsquared.gitlabjenkins.cause.GitLabWebHookCause;
+import hudson.Extension;
+import hudson.model.Cause;
+import hudson.model.Run;
+import hudson.model.TaskListener;
+import hudson.model.listeners.RunListener;
+
+import java.io.IOException;
+
+/**
+ * RunListener that will be called when a build starts and completes.
+ * Will lookup GitLabPushTrigger and call set the build description if necessary.
+ *
+ * @author Robin Müller
+ */
+@Extension
+<span class="fc" id="L20">public class GitLabBuildDescriptionRunListener extends RunListener&lt;Run&lt;?, ?&gt;&gt; {</span>
+
+    @Override
+    public void onStarted(Run&lt;?, ?&gt; build, TaskListener listener) {
+<span class="fc" id="L24">        GitLabPushTrigger trigger = GitLabPushTrigger.getFromJob(build.getParent());</span>
+<span class="pc bpc" id="L25" title="1 of 4 branches missed.">        if (trigger != null &amp;&amp; trigger.getSetBuildDescription()) {</span>
+<span class="nc" id="L26">            Cause cause = build.getCause(GitLabWebHookCause.class);</span>
+<span class="nc bnc" id="L27" title="All 4 branches missed.">            if (cause != null &amp;&amp; !cause.getShortDescription().isEmpty()) {</span>
+                try {
+<span class="nc" id="L29">                    build.setDescription(cause.getShortDescription());</span>
+<span class="nc" id="L30">                } catch (IOException e) {</span>
+<span class="nc" id="L31">                    listener.getLogger().println(&quot;Failed to set build description&quot;);</span>
+<span class="nc" id="L32">                }</span>
+            }
+        }
+<span class="fc" id="L35">    }</span>
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.2.201409121644</span></div></body></html>

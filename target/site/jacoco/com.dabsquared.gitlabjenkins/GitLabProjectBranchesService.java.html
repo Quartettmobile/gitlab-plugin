@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>GitLabProjectBranchesService.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">GitLab Plugin</a> &gt; <a href="index.source.html" class="el_package">com.dabsquared.gitlabjenkins</a> &gt; <span class="el_source">GitLabProjectBranchesService.java</span></div><h1>GitLabProjectBranchesService.java</h1><pre class="source lang-java linenums">package com.dabsquared.gitlabjenkins;
+
+import com.dabsquared.gitlabjenkins.gitlab.api.GitLabApi;
+import com.dabsquared.gitlabjenkins.gitlab.api.model.Branch;
+import com.dabsquared.gitlabjenkins.util.LoggerUtil;
+import com.dabsquared.gitlabjenkins.util.ProjectIdUtil;
+import com.google.common.cache.Cache;
+import com.google.common.cache.CacheBuilder;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.concurrent.Callable;
+import java.util.concurrent.ExecutionException;
+import java.util.concurrent.TimeUnit;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
+
+public class GitLabProjectBranchesService {
+
+<span class="fc" id="L21">    private static final Logger LOGGER = Logger.getLogger(GitLabProjectBranchesService.class.getName());</span>
+
+    private static transient GitLabProjectBranchesService gitLabProjectBranchesService;
+    private final Cache&lt;String, List&lt;String&gt;&gt; projectBranchCache;
+
+<span class="fc" id="L26">    GitLabProjectBranchesService() {</span>
+<span class="fc" id="L27">        this.projectBranchCache = CacheBuilder.&lt;String, String&gt;newBuilder()</span>
+<span class="fc" id="L28">                .maximumSize(1000)</span>
+<span class="fc" id="L29">                .expireAfterWrite(5, TimeUnit.SECONDS)</span>
+<span class="fc" id="L30">                .build();</span>
+<span class="fc" id="L31">    }</span>
+
+    public static GitLabProjectBranchesService instance() {
+<span class="nc bnc" id="L34" title="All 2 branches missed.">        if (gitLabProjectBranchesService == null) {</span>
+<span class="nc" id="L35">            gitLabProjectBranchesService = new GitLabProjectBranchesService();</span>
+        }
+<span class="nc" id="L37">        return gitLabProjectBranchesService;</span>
+    }
+
+    public List&lt;String&gt; getBranches(GitLabApi client, String sourceRepositoryString) {
+<span class="fc" id="L41">        synchronized (projectBranchCache) {</span>
+            try {
+<span class="fc" id="L43">                return projectBranchCache.get(sourceRepositoryString, new BranchNamesLoader(client, sourceRepositoryString));</span>
+<span class="nc" id="L44">            } catch (ExecutionException e) {</span>
+<span class="nc" id="L45">                throw new BranchLoadingException(e);</span>
+            }
+<span class="nc" id="L47">        }</span>
+    }
+
+    public static class BranchLoadingException extends RuntimeException {
+        BranchLoadingException(Throwable cause) {
+<span class="nc" id="L52">            super(cause);</span>
+<span class="nc" id="L53">        }</span>
+    }
+
+    private static class BranchNamesLoader implements Callable&lt;List&lt;String&gt;&gt; {
+        private final GitLabApi client;
+        private final String sourceRepository;
+
+<span class="fc" id="L60">        private BranchNamesLoader(GitLabApi client, String sourceRepository) {</span>
+<span class="fc" id="L61">            this.client = client;</span>
+<span class="fc" id="L62">            this.sourceRepository = sourceRepository;</span>
+<span class="fc" id="L63">        }</span>
+
+        @Override
+        public List&lt;String&gt; call() throws Exception {
+<span class="fc" id="L67">            List&lt;String&gt; result = new ArrayList&lt;&gt;();</span>
+<span class="fc" id="L68">            String projectId = ProjectIdUtil.retrieveProjectId(sourceRepository);</span>
+<span class="fc bfc" id="L69" title="All 2 branches covered.">            for (Branch branch : client.getBranches(projectId)) {</span>
+<span class="fc" id="L70">                result.add(branch.getName());</span>
+<span class="fc" id="L71">            }</span>
+<span class="fc" id="L72">            LOGGER.log(Level.FINEST, &quot;found these branches for repo {0} : {1}&quot;, LoggerUtil.toArray(sourceRepository, result));</span>
+<span class="fc" id="L73">            return result;</span>
+        }
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.2.201409121644</span></div></body></html>

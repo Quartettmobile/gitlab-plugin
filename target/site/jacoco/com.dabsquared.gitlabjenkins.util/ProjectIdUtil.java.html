@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>ProjectIdUtil.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">GitLab Plugin</a> &gt; <a href="index.source.html" class="el_package">com.dabsquared.gitlabjenkins.util</a> &gt; <span class="el_source">ProjectIdUtil.java</span></div><h1>ProjectIdUtil.java</h1><pre class="source lang-java linenums">package com.dabsquared.gitlabjenkins.util;
+
+import org.eclipse.jgit.transport.URIish;
+
+import java.net.URISyntaxException;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+/**
+ * @author Robin Müller
+ */
+public final class ProjectIdUtil {
+
+<span class="fc" id="L14">    private static final Pattern PROJECT_ID_PATTERN = Pattern.compile(&quot;^/?(.*/)?(?&lt;projectId&gt;.*/.*)(\\.git)$&quot;);</span>
+
+<span class="nc" id="L16">    private ProjectIdUtil() { }</span>
+
+    public static String retrieveProjectId(String remoteUrl) throws ProjectIdResolutionException {
+        try {
+<span class="fc" id="L20">            String projectId = new URIish(remoteUrl).getPath();</span>
+<span class="fc" id="L21">            Matcher matcher = PROJECT_ID_PATTERN.matcher(projectId);</span>
+<span class="pc bpc" id="L22" title="1 of 2 branches missed.">            if (matcher.matches()) {</span>
+<span class="fc" id="L23">                return matcher.group(&quot;projectId&quot;);</span>
+            } else {
+<span class="nc" id="L25">                throw new ProjectIdResolutionException(String.format(&quot;Failed to retrieve GitLab projectId for %s&quot;, remoteUrl));</span>
+            }
+<span class="nc" id="L27">        } catch (URISyntaxException e) {</span>
+<span class="nc" id="L28">            throw new ProjectIdResolutionException(String.format(&quot;Failed to retrieve GitLab projectId for %s&quot;, remoteUrl), e);</span>
+        }
+    }
+
+    public static class ProjectIdResolutionException extends Exception {
+        public ProjectIdResolutionException(String message, Throwable cause) {
+<span class="nc" id="L34">            super(message, cause);</span>
+<span class="nc" id="L35">        }</span>
+
+        public ProjectIdResolutionException(String message) {
+<span class="nc" id="L38">            super(message);</span>
+<span class="nc" id="L39">        }</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.2.201409121644</span></div></body></html>

@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>MergeRequestHookTriggerHandlerImpl.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">GitLab Plugin</a> &gt; <a href="index.source.html" class="el_package">com.dabsquared.gitlabjenkins.trigger.handler.merge</a> &gt; <span class="el_source">MergeRequestHookTriggerHandlerImpl.java</span></div><h1>MergeRequestHookTriggerHandlerImpl.java</h1><pre class="source lang-java linenums">package com.dabsquared.gitlabjenkins.trigger.handler.merge;
+
+import com.dabsquared.gitlabjenkins.cause.CauseData;
+import com.dabsquared.gitlabjenkins.cause.GitLabWebHookCause;
+import com.dabsquared.gitlabjenkins.gitlab.hook.model.MergeRequestHook;
+import com.dabsquared.gitlabjenkins.gitlab.hook.model.MergeRequestObjectAttributes;
+import com.dabsquared.gitlabjenkins.gitlab.hook.model.State;
+import com.dabsquared.gitlabjenkins.trigger.exception.NoRevisionToBuildException;
+import com.dabsquared.gitlabjenkins.trigger.filter.BranchFilter;
+import com.dabsquared.gitlabjenkins.trigger.handler.AbstractWebHookTriggerHandler;
+import com.dabsquared.gitlabjenkins.util.BuildUtil;
+import hudson.model.Job;
+import hudson.model.Run;
+import hudson.plugins.git.RevisionParameterAction;
+import org.apache.commons.lang.StringUtils;
+
+import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
+import static com.dabsquared.gitlabjenkins.cause.CauseDataBuilder.causeData;
+import static com.dabsquared.gitlabjenkins.trigger.handler.builder.generated.BuildStatusUpdateBuilder.buildStatusUpdate;
+import static com.dabsquared.gitlabjenkins.util.LoggerUtil.toArray;
+
+/**
+ * @author Robin Müller
+ */
+class MergeRequestHookTriggerHandlerImpl extends AbstractWebHookTriggerHandler&lt;MergeRequestHook&gt; implements MergeRequestHookTriggerHandler {
+
+<span class="fc" id="L30">    private static final Logger LOGGER = Logger.getLogger(MergeRequestHookTriggerHandlerImpl.class.getName());</span>
+
+    private final List&lt;State&gt; allowedStates;
+    private final boolean skipWorkInProgressMergeRequest;
+
+<span class="fc" id="L35">    MergeRequestHookTriggerHandlerImpl(List&lt;State&gt; allowedStates, boolean skipWorkInProgressMergeRequest) {</span>
+<span class="fc" id="L36">        this.allowedStates = allowedStates;</span>
+<span class="fc" id="L37">        this.skipWorkInProgressMergeRequest = skipWorkInProgressMergeRequest;</span>
+<span class="fc" id="L38">    }</span>
+
+    @Override
+    public void handle(Job&lt;?, ?&gt; job, MergeRequestHook hook, boolean ciSkip, BranchFilter branchFilter) {
+<span class="fc" id="L42">        MergeRequestObjectAttributes objectAttributes = hook.getObjectAttributes();</span>
+<span class="fc bfc" id="L43" title="All 2 branches covered.">        if (allowedStates.contains(objectAttributes.getState())</span>
+<span class="pc bpc" id="L44" title="1 of 2 branches missed.">            &amp;&amp; isLastCommitNotYetBuild(job, hook)</span>
+<span class="pc bpc" id="L45" title="1 of 2 branches missed.">            &amp;&amp; isNotSkipWorkInProgressMergeRequest(objectAttributes)) {</span>
+<span class="fc" id="L46">            super.handle(job, hook, ciSkip, branchFilter);</span>
+        }
+<span class="fc" id="L48">    }</span>
+
+    @Override
+    protected boolean isCiSkip(MergeRequestHook hook) {
+<span class="pc bpc" id="L52" title="1 of 2 branches missed.">        return hook.getObjectAttributes() != null</span>
+<span class="pc bpc" id="L53" title="1 of 2 branches missed.">                &amp;&amp; hook.getObjectAttributes().getDescription() != null</span>
+<span class="pc bnc" id="L54" title="All 2 branches missed.">                &amp;&amp; hook.getObjectAttributes().getDescription().contains(&quot;[ci-skip]&quot;);</span>
+    }
+
+    @Override
+    protected String getTargetBranch(MergeRequestHook hook) {
+<span class="pc bpc" id="L59" title="1 of 2 branches missed.">        return hook.getObjectAttributes() == null ? null : hook.getObjectAttributes().getTargetBranch();</span>
+    }
+
+    @Override
+    protected String getTriggerType() {
+<span class="fc" id="L64">        return &quot;merge request&quot;;</span>
+    }
+
+    @Override
+    protected CauseData retrieveCauseData(MergeRequestHook hook) {
+<span class="fc" id="L69">        return causeData()</span>
+<span class="fc" id="L70">                .withActionType(CauseData.ActionType.MERGE)</span>
+<span class="fc" id="L71">                .withSourceProjectId(hook.getObjectAttributes().getSourceProjectId())</span>
+<span class="fc" id="L72">                .withTargetProjectId(hook.getObjectAttributes().getTargetProjectId())</span>
+<span class="fc" id="L73">                .withBranch(hook.getObjectAttributes().getSourceBranch())</span>
+<span class="fc" id="L74">                .withSourceBranch(hook.getObjectAttributes().getSourceBranch())</span>
+<span class="fc" id="L75">                .withUserName(hook.getObjectAttributes().getLastCommit().getAuthor().getName())</span>
+<span class="fc" id="L76">                .withUserEmail(hook.getObjectAttributes().getLastCommit().getAuthor().getEmail())</span>
+<span class="fc" id="L77">                .withSourceRepoHomepage(hook.getObjectAttributes().getSource().getHomepage())</span>
+<span class="fc" id="L78">                .withSourceRepoName(hook.getObjectAttributes().getSource().getName())</span>
+<span class="fc" id="L79">                .withSourceNamespace(hook.getObjectAttributes().getSource().getNamespace())</span>
+<span class="fc" id="L80">                .withSourceRepoUrl(hook.getObjectAttributes().getSource().getUrl())</span>
+<span class="fc" id="L81">                .withSourceRepoSshUrl(hook.getObjectAttributes().getSource().getSshUrl())</span>
+<span class="fc" id="L82">                .withSourceRepoHttpUrl(hook.getObjectAttributes().getSource().getHttpUrl())</span>
+<span class="fc" id="L83">                .withMergeRequestTitle(hook.getObjectAttributes().getTitle())</span>
+<span class="fc" id="L84">                .withMergeRequestDescription(hook.getObjectAttributes().getDescription())</span>
+<span class="fc" id="L85">                .withMergeRequestId(hook.getObjectAttributes().getId())</span>
+<span class="fc" id="L86">                .withMergeRequestIid(hook.getObjectAttributes().getIid())</span>
+<span class="fc" id="L87">                .withTargetBranch(hook.getObjectAttributes().getTargetBranch())</span>
+<span class="fc" id="L88">                .withTargetRepoName(hook.getObjectAttributes().getTarget().getName())</span>
+<span class="fc" id="L89">                .withTargetNamespace(hook.getObjectAttributes().getTarget().getNamespace())</span>
+<span class="fc" id="L90">                .withTargetRepoSshUrl(hook.getObjectAttributes().getTarget().getSshUrl())</span>
+<span class="fc" id="L91">                .withTargetRepoHttpUrl(hook.getObjectAttributes().getTarget().getHttpUrl())</span>
+<span class="fc" id="L92">                .withTriggeredByUser(hook.getObjectAttributes().getLastCommit().getAuthor().getName())</span>
+<span class="fc" id="L93">                .withLastCommit(hook.getObjectAttributes().getLastCommit().getId())</span>
+<span class="fc" id="L94">                .withTargetProjectUrl(hook.getProject().getWebUrl())</span>
+<span class="fc" id="L95">                .build();</span>
+    }
+
+    @Override
+    protected RevisionParameterAction createRevisionParameter(MergeRequestHook hook) throws NoRevisionToBuildException {
+<span class="fc" id="L100">        return new RevisionParameterAction(retrieveRevisionToBuild(hook), retrieveUrIish(hook));</span>
+    }
+
+    @Override
+    protected BuildStatusUpdate retrieveBuildStatusUpdate(MergeRequestHook hook) {
+<span class="nc" id="L105">        return buildStatusUpdate()</span>
+<span class="nc" id="L106">            .withProjectId(hook.getObjectAttributes().getSourceProjectId())</span>
+<span class="nc" id="L107">            .withSha(hook.getObjectAttributes().getLastCommit().getId())</span>
+<span class="nc" id="L108">            .withRef(hook.getObjectAttributes().getSourceBranch())</span>
+<span class="nc" id="L109">            .build();</span>
+    }
+
+    private String retrieveRevisionToBuild(MergeRequestHook hook) throws NoRevisionToBuildException {
+<span class="pc bpc" id="L113" title="1 of 2 branches missed.">        if (hook.getObjectAttributes() != null</span>
+<span class="pc bpc" id="L114" title="1 of 2 branches missed.">                &amp;&amp; hook.getObjectAttributes().getLastCommit() != null</span>
+<span class="pc bpc" id="L115" title="1 of 2 branches missed.">                &amp;&amp; hook.getObjectAttributes().getLastCommit().getId() != null) {</span>
+
+<span class="fc" id="L117">            return hook.getObjectAttributes().getLastCommit().getId();</span>
+        } else {
+<span class="nc" id="L119">            throw new NoRevisionToBuildException();</span>
+        }
+    }
+
+    private boolean isLastCommitNotYetBuild(Job&lt;?, ?&gt; project, MergeRequestHook hook) {
+<span class="fc" id="L124">        MergeRequestObjectAttributes objectAttributes = hook.getObjectAttributes();</span>
+<span class="pc bpc" id="L125" title="2 of 4 branches missed.">        if (objectAttributes != null &amp;&amp; objectAttributes.getLastCommit() != null) {</span>
+<span class="fc" id="L126">            Run&lt;?, ?&gt; mergeBuild = BuildUtil.getBuildBySHA1IncludingMergeBuilds(project, objectAttributes.getLastCommit().getId());</span>
+<span class="pc bpc" id="L127" title="3 of 4 branches missed.">            if (mergeBuild != null &amp;&amp; StringUtils.equals(getTargetBranchFromBuild(mergeBuild), objectAttributes.getTargetBranch())) {</span>
+<span class="nc" id="L128">                LOGGER.log(Level.INFO, &quot;Last commit in Merge Request has already been built in build #&quot; + mergeBuild.getNumber());</span>
+<span class="nc" id="L129">                return false;</span>
+            }
+        }
+<span class="fc" id="L132">        return true;</span>
+    }
+
+    private String getTargetBranchFromBuild(Run&lt;?, ?&gt; mergeBuild) {
+<span class="nc" id="L136">        GitLabWebHookCause cause = mergeBuild.getCause(GitLabWebHookCause.class);</span>
+<span class="nc bnc" id="L137" title="All 2 branches missed.">        return cause == null ? null : cause.getData().getTargetBranch();</span>
+    }
+
+    private boolean isNotSkipWorkInProgressMergeRequest(MergeRequestObjectAttributes objectAttributes) {
+<span class="fc" id="L141">        Boolean workInProgress = objectAttributes.getWorkInProgress();</span>
+<span class="pc bpc" id="L142" title="5 of 6 branches missed.">        if (skipWorkInProgressMergeRequest &amp;&amp; workInProgress != null &amp;&amp; workInProgress) {</span>
+<span class="nc" id="L143">            LOGGER.log(Level.INFO, &quot;Skip WIP Merge Request #{0} ({1})&quot;, toArray(objectAttributes.getIid(), objectAttributes.getTitle()));</span>
+<span class="nc" id="L144">            return false;</span>
+        }
+<span class="fc" id="L146">        return true;</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.2.201409121644</span></div></body></html>

@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>Repository.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">GitLab Plugin</a> &gt; <a href="index.source.html" class="el_package">com.dabsquared.gitlabjenkins.gitlab.hook.model</a> &gt; <span class="el_source">Repository.java</span></div><h1>Repository.java</h1><pre class="source lang-java linenums">package com.dabsquared.gitlabjenkins.gitlab.hook.model;
+
+import net.karneim.pojobuilder.GeneratePojoBuilder;
+import org.apache.commons.lang.builder.EqualsBuilder;
+import org.apache.commons.lang.builder.HashCodeBuilder;
+import org.apache.commons.lang.builder.ToStringBuilder;
+
+/**
+ * @author Robin Müller
+ */
+@GeneratePojoBuilder(intoPackage = &quot;*.builder.generated&quot;, withFactoryMethod = &quot;*&quot;)
+<span class="fc" id="L12">public class Repository {</span>
+
+    private String name;
+    private String description;
+    private String url;
+    private String homepage;
+    private String gitSshUrl;
+    private String gitHttpUrl;
+    private Integer visibilityLevel;
+
+    public String getName() {
+<span class="fc" id="L23">        return name;</span>
+    }
+
+    public void setName(String name) {
+<span class="fc" id="L27">        this.name = name;</span>
+<span class="fc" id="L28">    }</span>
+
+    public String getDescription() {
+<span class="nc" id="L31">        return description;</span>
+    }
+
+    public void setDescription(String description) {
+<span class="fc" id="L35">        this.description = description;</span>
+<span class="fc" id="L36">    }</span>
+
+    public String getUrl() {
+<span class="fc" id="L39">        return url;</span>
+    }
+
+    public void setUrl(String url) {
+<span class="fc" id="L43">        this.url = url;</span>
+<span class="fc" id="L44">    }</span>
+
+    public String getHomepage() {
+<span class="fc" id="L47">        return homepage;</span>
+    }
+
+    public void setHomepage(String homepage) {
+<span class="fc" id="L51">        this.homepage = homepage;</span>
+<span class="fc" id="L52">    }</span>
+
+    public String getGitSshUrl() {
+<span class="fc" id="L55">        return gitSshUrl;</span>
+    }
+
+    public void setGitSshUrl(String gitSshUrl) {
+<span class="fc" id="L59">        this.gitSshUrl = gitSshUrl;</span>
+<span class="fc" id="L60">    }</span>
+
+    public String getGitHttpUrl() {
+<span class="fc" id="L63">        return gitHttpUrl;</span>
+    }
+
+    public void setGitHttpUrl(String gitHttpUrl) {
+<span class="fc" id="L67">        this.gitHttpUrl = gitHttpUrl;</span>
+<span class="fc" id="L68">    }</span>
+
+    public Integer getVisibilityLevel() {
+<span class="nc" id="L71">        return visibilityLevel;</span>
+    }
+
+    public void setVisibilityLevel(Integer visibilityLevel) {
+<span class="fc" id="L75">        this.visibilityLevel = visibilityLevel;</span>
+<span class="fc" id="L76">    }</span>
+
+    @Override
+    public boolean equals(Object o) {
+<span class="nc bnc" id="L80" title="All 2 branches missed.">        if (this == o) {</span>
+<span class="nc" id="L81">            return true;</span>
+        }
+<span class="nc bnc" id="L83" title="All 4 branches missed.">        if (o == null || getClass() != o.getClass()) {</span>
+<span class="nc" id="L84">            return false;</span>
+        }
+<span class="nc" id="L86">        Repository that = (Repository) o;</span>
+<span class="nc" id="L87">        return new EqualsBuilder()</span>
+<span class="nc" id="L88">                .append(name, that.name)</span>
+<span class="nc" id="L89">                .append(description, that.description)</span>
+<span class="nc" id="L90">                .append(url, that.url)</span>
+<span class="nc" id="L91">                .append(homepage, that.homepage)</span>
+<span class="nc" id="L92">                .append(gitSshUrl, that.gitSshUrl)</span>
+<span class="nc" id="L93">                .append(gitHttpUrl, that.gitHttpUrl)</span>
+<span class="nc" id="L94">                .append(visibilityLevel, that.visibilityLevel)</span>
+<span class="nc" id="L95">                .isEquals();</span>
+    }
+
+    @Override
+    public int hashCode() {
+<span class="nc" id="L100">        return new HashCodeBuilder(17, 37)</span>
+<span class="nc" id="L101">                .append(name)</span>
+<span class="nc" id="L102">                .append(description)</span>
+<span class="nc" id="L103">                .append(url)</span>
+<span class="nc" id="L104">                .append(homepage)</span>
+<span class="nc" id="L105">                .append(gitSshUrl)</span>
+<span class="nc" id="L106">                .append(gitHttpUrl)</span>
+<span class="nc" id="L107">                .append(visibilityLevel)</span>
+<span class="nc" id="L108">                .toHashCode();</span>
+    }
+
+    @Override
+    public String toString() {
+<span class="nc" id="L113">        return new ToStringBuilder(this)</span>
+<span class="nc" id="L114">                .append(&quot;name&quot;, name)</span>
+<span class="nc" id="L115">                .append(&quot;description&quot;, description)</span>
+<span class="nc" id="L116">                .append(&quot;url&quot;, url)</span>
+<span class="nc" id="L117">                .append(&quot;homepage&quot;, homepage)</span>
+<span class="nc" id="L118">                .append(&quot;gitSshUrl&quot;, gitSshUrl)</span>
+<span class="nc" id="L119">                .append(&quot;gitHttpUrl&quot;, gitHttpUrl)</span>
+<span class="nc" id="L120">                .append(&quot;visibilityLevel&quot;, visibilityLevel)</span>
+<span class="nc" id="L121">                .toString();</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.2.201409121644</span></div></body></html>

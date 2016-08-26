@@ -1,0 +1,398 @@
+17:10:07.557 [Executing redirectToBuildUrl(com.dabsquared.gitlabjenkins.webhook.status.BranchBuildPageRedirectActionTest)] DEBUG org.mortbay.log - Container Server@756476a3 + org.mortbay.jetty.webapp.WebAppContext@65e4ee59{/jenkins,/Users/tippelsk/Documents/Programming/opensource/gitlab-plugin/target/jenkins-for-testx} as handler
+17:10:07.557 [Executing redirectToBuildUrl(com.dabsquared.gitlabjenkins.webhook.status.BranchBuildPageRedirectActionTest)] DEBUG org.mortbay.log - Container SecurityHandler@4746d52d + ServletHandler@4d0927df as handler
+17:10:07.557 [Executing redirectToBuildUrl(com.dabsquared.gitlabjenkins.webhook.status.BranchBuildPageRedirectActionTest)] DEBUG org.mortbay.log - Container SessionHandler@1b0e81b3 + SecurityHandler@4746d52d as handler
+17:10:07.557 [Executing redirectToBuildUrl(com.dabsquared.gitlabjenkins.webhook.status.BranchBuildPageRedirectActionTest)] DEBUG org.mortbay.log - Container SessionHandler@1b0e81b3 + org.mortbay.jetty.servlet.HashSessionManager@59da32ad as sessionManager
+17:10:07.557 [Executing redirectToBuildUrl(com.dabsquared.gitlabjenkins.webhook.status.BranchBuildPageRedirectActionTest)] DEBUG org.mortbay.log - Container org.mortbay.jetty.webapp.WebAppContext@65e4ee59{/jenkins,/Users/tippelsk/Documents/Programming/opensource/gitlab-plugin/target/jenkins-for-testx} + SessionHandler@1b0e81b3 as handler
+17:10:07.557 [Executing redirectToBuildUrl(com.dabsquared.gitlabjenkins.webhook.status.BranchBuildPageRedirectActionTest)] DEBUG org.mortbay.log - Container org.mortbay.jetty.webapp.WebAppContext@65e4ee59{/jenkins,/Users/tippelsk/Documents/Programming/opensource/gitlab-plugin/target/jenkins-for-testx} + ErrorPageErrorHandler@28446b06 as error
+17:10:07.557 [Executing redirectToBuildUrl(com.dabsquared.gitlabjenkins.webhook.status.BranchBuildPageRedirectActionTest)] DEBUG org.mortbay.log - Container Server@756476a3 + org.jvnet.hudson.test.ThreadPoolImpl@2cf7860e as threadpool
+17:10:07.557 [Executing redirectToBuildUrl(com.dabsquared.gitlabjenkins.webhook.status.BranchBuildPageRedirectActionTest)] DEBUG org.mortbay.log - Container Server@756476a3 + SocketConnector@0.0.0.0:0 as connector
+17:10:07.557 [Executing redirectToBuildUrl(com.dabsquared.gitlabjenkins.webhook.status.BranchBuildPageRedirectActionTest)] DEBUG org.mortbay.log - Container Server@756476a3 + Realm[default]==[bob, alice, charlie] as realm
+17:10:07.557 [Executing redirectToBuildUrl(com.dabsquared.gitlabjenkins.webhook.status.BranchBuildPageRedirectActionTest)] INFO  org.mortbay.log - jetty-6.1.26
+17:10:07.557 [Executing redirectToBuildUrl(com.dabsquared.gitlabjenkins.webhook.status.BranchBuildPageRedirectActionTest)] DEBUG org.mortbay.log - started Realm[default]==[bob, alice, charlie]
+17:10:07.557 [Executing redirectToBuildUrl(com.dabsquared.gitlabjenkins.webhook.status.BranchBuildPageRedirectActionTest)] DEBUG org.mortbay.log - started org.jvnet.hudson.test.ThreadPoolImpl@2cf7860e
+17:10:07.557 [Executing redirectToBuildUrl(com.dabsquared.gitlabjenkins.webhook.status.BranchBuildPageRedirectActionTest)] DEBUG org.mortbay.log - Thread Context class loader is: sun.misc.Launcher$AppClassLoader@58644d46
+17:10:07.557 [Executing redirectToBuildUrl(com.dabsquared.gitlabjenkins.webhook.status.BranchBuildPageRedirectActionTest)] DEBUG org.mortbay.log - Parent class loader is: sun.misc.Launcher$ExtClassLoader@78fa769e
+17:10:07.557 [Executing redirectToBuildUrl(com.dabsquared.gitlabjenkins.webhook.status.BranchBuildPageRedirectActionTest)] DEBUG org.mortbay.log - Created temp dir /var/folders/v_/m3p4ckmx2zn4y_xvs4rl6_4w0000gp/T/Jetty_0_0_0_0_0_jenkins.for.testx__jenkins__g54ua0 for org.mortbay.jetty.webapp.WebAppContext@65e4ee59{/jenkins,/Users/tippelsk/Documents/Programming/opensource/gitlab-plugin/target/jenkins-for-testx}
+17:10:07.558 [Executing redirectToBuildUrl(com.dabsquared.gitlabjenkins.webhook.status.BranchBuildPageRedirectActionTest)] DEBUG org.mortbay.log - parse: jar:file:/Users/tippelsk/.m2/repository/org/mortbay/jetty/jetty/6.1.26/jetty-6.1.26.jar!/org/mortbay/jetty/webapp/webdefault.xml
+17:10:07.558 [Executing redirectToBuildUrl(com.dabsquared.gitlabjenkins.webhook.status.BranchBuildPageRedirectActionTest)] DEBUG org.mortbay.log - parsing: sid=jar:file:/Users/tippelsk/.m2/repository/org/mortbay/jetty/jetty/6.1.26/jetty-6.1.26.jar!/org/mortbay/jetty/webapp/webdefault.xml,pid=null
+17:10:07.559 [Executing redirectToBuildUrl(com.dabsquared.gitlabjenkins.webhook.status.BranchBuildPageRedirectActionTest)] DEBUG org.mortbay.log - ContextParam: org.mortbay.jetty.webapp.NoTLDJarPattern=start.jar|ant-.*\.jar|dojo-.*\.jar|jetty-.*\.jar|jsp-api-.*\.jar|junit-.*\.jar|servlet-api-.*\.jar|dnsns\.jar|rt\.jar|jsse\.jar|tools\.jar|sunpkcs11\.jar|sunjce_provider\.jar|xerces.*\.jar
+17:10:07.559 [Executing redirectToBuildUrl(com.dabsquared.gitlabjenkins.webhook.status.BranchBuildPageRedirectActionTest)] INFO  org.mortbay.log - NO JSP Support for /jenkins, did not find org.apache.jasper.servlet.JspServlet
+17:10:07.560 [Executing redirectToBuildUrl(com.dabsquared.gitlabjenkins.webhook.status.BranchBuildPageRedirectActionTest)] DEBUG org.mortbay.log - filterNameMap=null
+17:10:07.560 [Executing redirectToBuildUrl(com.dabsquared.gitlabjenkins.webhook.status.BranchBuildPageRedirectActionTest)] DEBUG org.mortbay.log - pathFilters=[]
+17:10:07.560 [Executing redirectToBuildUrl(com.dabsquared.gitlabjenkins.webhook.status.BranchBuildPageRedirectActionTest)] DEBUG org.mortbay.log - servletFilterMap=null
+17:10:07.560 [Executing redirectToBuildUrl(com.dabsquared.gitlabjenkins.webhook.status.BranchBuildPageRedirectActionTest)] DEBUG org.mortbay.log - servletPathMap=null
+17:10:07.560 [Executing redirectToBuildUrl(com.dabsquared.gitlabjenkins.webhook.status.BranchBuildPageRedirectActionTest)] DEBUG org.mortbay.log - servletNameMap=null
+17:10:07.560 [Executing redirectToBuildUrl(com.dabsquared.gitlabjenkins.webhook.status.BranchBuildPageRedirectActionTest)] DEBUG org.mortbay.log - Container ServletHandler@4d0927df + default as servlet
+17:10:07.560 [Executing redirectToBuildUrl(com.dabsquared.gitlabjenkins.webhook.status.BranchBuildPageRedirectActionTest)] DEBUG org.mortbay.log - Container ServletHandler@4d0927df + jsp as servlet
+17:10:07.560 [Executing redirectToBuildUrl(com.dabsquared.gitlabjenkins.webhook.status.BranchBuildPageRedirectActionTest)] DEBUG org.mortbay.log - Container ServletHandler@4d0927df + (S=default,[/]) as servletMapping
+17:10:07.560 [Executing redirectToBuildUrl(com.dabsquared.gitlabjenkins.webhook.status.BranchBuildPageRedirectActionTest)] DEBUG org.mortbay.log - Container ServletHandler@4d0927df + (S=jsp,[*.jsp, *.jspf, *.jspx, *.xsp, *.JSP, *.JSPF, *.JSPX, *.XSP]) as servletMapping
+17:10:07.560 [Executing redirectToBuildUrl(com.dabsquared.gitlabjenkins.webhook.status.BranchBuildPageRedirectActionTest)] DEBUG org.mortbay.log - filterNameMap=null
+17:10:07.560 [Executing redirectToBuildUrl(com.dabsquared.gitlabjenkins.webhook.status.BranchBuildPageRedirectActionTest)] DEBUG org.mortbay.log - pathFilters=[]
+17:10:07.560 [Executing redirectToBuildUrl(com.dabsquared.gitlabjenkins.webhook.status.BranchBuildPageRedirectActionTest)] DEBUG org.mortbay.log - servletFilterMap=null
+17:10:07.560 [Executing redirectToBuildUrl(com.dabsquared.gitlabjenkins.webhook.status.BranchBuildPageRedirectActionTest)] DEBUG org.mortbay.log - servletPathMap={*.jspx=jsp, *.JSPX=jsp, *.jsp=jsp, *.JSPF=jsp, *.jspf=jsp, *.JSP=jsp, *.xsp=jsp, *.XSP=jsp, /=default}
+17:10:07.560 [Executing redirectToBuildUrl(com.dabsquared.gitlabjenkins.webhook.status.BranchBuildPageRedirectActionTest)] DEBUG org.mortbay.log - servletNameMap={default=default, jsp=jsp}
+17:10:07.560 [Executing redirectToBuildUrl(com.dabsquared.gitlabjenkins.webhook.status.BranchBuildPageRedirectActionTest)] DEBUG org.mortbay.log - Try webapp=file:/Users/tippelsk/Documents/Programming/opensource/gitlab-plugin/target/jenkins-for-testx/, exists=true, directory=true
+17:10:07.560 [Executing redirectToBuildUrl(com.dabsquared.gitlabjenkins.webhook.status.BranchBuildPageRedirectActionTest)] DEBUG org.mortbay.log - webapp=file:/Users/tippelsk/Documents/Programming/opensource/gitlab-plugin/target/jenkins-for-testx/
+17:10:07.560 [Executing redirectToBuildUrl(com.dabsquared.gitlabjenkins.webhook.status.BranchBuildPageRedirectActionTest)] DEBUG org.mortbay.log - parse: file:/Users/tippelsk/Documents/Programming/opensource/gitlab-plugin/target/jenkins-for-testx/WEB-INF/web.xml
+17:10:07.560 [Executing redirectToBuildUrl(com.dabsquared.gitlabjenkins.webhook.status.BranchBuildPageRedirectActionTest)] DEBUG org.mortbay.log - parsing: sid=file:/Users/tippelsk/Documents/Programming/opensource/gitlab-plugin/target/jenkins-for-testx/WEB-INF/web.xml,pid=null
+17:10:07.561 [Executing redirectToBuildUrl(com.dabsquared.gitlabjenkins.webhook.status.BranchBuildPageRedirectActionTest)] DEBUG org.mortbay.log - Element env-entry not handled in org.mortbay.jetty.webapp.WebXmlConfiguration@1f6865ca
+17:10:07.561 [Executing redirectToBuildUrl(com.dabsquared.gitlabjenkins.webhook.status.BranchBuildPageRedirectActionTest)] DEBUG org.mortbay.log - <env-entry>
+    <env-entry-name>HUDSON_HOME</env-entry-name>
+    <env-entry-type>java.lang.String</env-entry-type>
+    <env-entry-value/>
+  </env-entry>
+17:10:07.561 [Executing redirectToBuildUrl(com.dabsquared.gitlabjenkins.webhook.status.BranchBuildPageRedirectActionTest)] DEBUG org.mortbay.log - Container ServletHandler@4d0927df + diagnostic-name-filter as filter
+17:10:07.561 [Executing redirectToBuildUrl(com.dabsquared.gitlabjenkins.webhook.status.BranchBuildPageRedirectActionTest)] DEBUG org.mortbay.log - Container ServletHandler@4d0927df + encoding-filter as filter
+17:10:07.561 [Executing redirectToBuildUrl(com.dabsquared.gitlabjenkins.webhook.status.BranchBuildPageRedirectActionTest)] DEBUG org.mortbay.log - Container ServletHandler@4d0927df + compression-filter as filter
+17:10:07.561 [Executing redirectToBuildUrl(com.dabsquared.gitlabjenkins.webhook.status.BranchBuildPageRedirectActionTest)] DEBUG org.mortbay.log - Container ServletHandler@4d0927df + authentication-filter as filter
+17:10:07.561 [Executing redirectToBuildUrl(com.dabsquared.gitlabjenkins.webhook.status.BranchBuildPageRedirectActionTest)] DEBUG org.mortbay.log - Container ServletHandler@4d0927df + csrf-filter as filter
+17:10:07.561 [Executing redirectToBuildUrl(com.dabsquared.gitlabjenkins.webhook.status.BranchBuildPageRedirectActionTest)] DEBUG org.mortbay.log - Container ServletHandler@4d0927df + plugins-filter as filter
+17:10:07.561 [Executing redirectToBuildUrl(com.dabsquared.gitlabjenkins.webhook.status.BranchBuildPageRedirectActionTest)] DEBUG org.mortbay.log - Container ServletHandler@4d0927df + (F=diagnostic-name-filter,[/*],[],0) as filterMapping
+17:10:07.561 [Executing redirectToBuildUrl(com.dabsquared.gitlabjenkins.webhook.status.BranchBuildPageRedirectActionTest)] DEBUG org.mortbay.log - Container ServletHandler@4d0927df + (F=encoding-filter,[/*],[],0) as filterMapping
+17:10:07.561 [Executing redirectToBuildUrl(com.dabsquared.gitlabjenkins.webhook.status.BranchBuildPageRedirectActionTest)] DEBUG org.mortbay.log - Container ServletHandler@4d0927df + (F=compression-filter,[/*],[],0) as filterMapping
+17:10:07.561 [Executing redirectToBuildUrl(com.dabsquared.gitlabjenkins.webhook.status.BranchBuildPageRedirectActionTest)] DEBUG org.mortbay.log - Container ServletHandler@4d0927df + (F=authentication-filter,[/*],[],0) as filterMapping
+17:10:07.561 [Executing redirectToBuildUrl(com.dabsquared.gitlabjenkins.webhook.status.BranchBuildPageRedirectActionTest)] DEBUG org.mortbay.log - Container ServletHandler@4d0927df + (F=csrf-filter,[/*],[],0) as filterMapping
+17:10:07.561 [Executing redirectToBuildUrl(com.dabsquared.gitlabjenkins.webhook.status.BranchBuildPageRedirectActionTest)] DEBUG org.mortbay.log - Container ServletHandler@4d0927df + (F=plugins-filter,[/*],[],0) as filterMapping
+17:10:07.561 [Executing redirectToBuildUrl(com.dabsquared.gitlabjenkins.webhook.status.BranchBuildPageRedirectActionTest)] DEBUG org.mortbay.log - filterNameMap={csrf-filter=csrf-filter, encoding-filter=encoding-filter, diagnostic-name-filter=diagnostic-name-filter, compression-filter=compression-filter, plugins-filter=plugins-filter, authentication-filter=authentication-filter}
+17:10:07.561 [Executing redirectToBuildUrl(com.dabsquared.gitlabjenkins.webhook.status.BranchBuildPageRedirectActionTest)] DEBUG org.mortbay.log - pathFilters=[(F=diagnostic-name-filter,[/*],[],0), (F=encoding-filter,[/*],[],0), (F=compression-filter,[/*],[],0), (F=authentication-filter,[/*],[],0), (F=csrf-filter,[/*],[],0), (F=plugins-filter,[/*],[],0)]
+17:10:07.561 [Executing redirectToBuildUrl(com.dabsquared.gitlabjenkins.webhook.status.BranchBuildPageRedirectActionTest)] DEBUG org.mortbay.log - servletFilterMap=null
+17:10:07.561 [Executing redirectToBuildUrl(com.dabsquared.gitlabjenkins.webhook.status.BranchBuildPageRedirectActionTest)] DEBUG org.mortbay.log - servletPathMap={*.jspx=jsp, *.JSPX=jsp, *.jsp=jsp, *.JSPF=jsp, *.jspf=jsp, *.JSP=jsp, *.xsp=jsp, *.XSP=jsp, /=default}
+17:10:07.561 [Executing redirectToBuildUrl(com.dabsquared.gitlabjenkins.webhook.status.BranchBuildPageRedirectActionTest)] DEBUG org.mortbay.log - servletNameMap={default=default, jsp=jsp}
+17:10:07.561 [Executing redirectToBuildUrl(com.dabsquared.gitlabjenkins.webhook.status.BranchBuildPageRedirectActionTest)] DEBUG org.mortbay.log - Container ServletHandler@4d0927df + Stapler as servlet
+17:10:07.561 [Executing redirectToBuildUrl(com.dabsquared.gitlabjenkins.webhook.status.BranchBuildPageRedirectActionTest)] DEBUG org.mortbay.log - Container ServletHandler@4d0927df + (S=Stapler,[/*]) as servletMapping
+17:10:07.561 [Executing redirectToBuildUrl(com.dabsquared.gitlabjenkins.webhook.status.BranchBuildPageRedirectActionTest)] DEBUG org.mortbay.log - filterNameMap={csrf-filter=csrf-filter, encoding-filter=encoding-filter, diagnostic-name-filter=diagnostic-name-filter, compression-filter=compression-filter, plugins-filter=plugins-filter, authentication-filter=authentication-filter}
+17:10:07.561 [Executing redirectToBuildUrl(com.dabsquared.gitlabjenkins.webhook.status.BranchBuildPageRedirectActionTest)] DEBUG org.mortbay.log - pathFilters=[(F=diagnostic-name-filter,[/*],[],0), (F=encoding-filter,[/*],[],0), (F=compression-filter,[/*],[],0), (F=authentication-filter,[/*],[],0), (F=csrf-filter,[/*],[],0), (F=plugins-filter,[/*],[],0)]
+17:10:07.561 [Executing redirectToBuildUrl(com.dabsquared.gitlabjenkins.webhook.status.BranchBuildPageRedirectActionTest)] DEBUG org.mortbay.log - servletFilterMap=null
+17:10:07.561 [Executing redirectToBuildUrl(com.dabsquared.gitlabjenkins.webhook.status.BranchBuildPageRedirectActionTest)] DEBUG org.mortbay.log - servletPathMap={*.jspx=jsp, *.JSPX=jsp, *.jsp=jsp, *.JSPF=jsp, *.jspf=jsp, *.JSP=jsp, *.xsp=jsp, *.XSP=jsp, /*=Stapler, /=default}
+17:10:07.561 [Executing redirectToBuildUrl(com.dabsquared.gitlabjenkins.webhook.status.BranchBuildPageRedirectActionTest)] DEBUG org.mortbay.log - servletNameMap={default=default, jsp=jsp, Stapler=Stapler}
+17:10:07.561 [Executing redirectToBuildUrl(com.dabsquared.gitlabjenkins.webhook.status.BranchBuildPageRedirectActionTest)] DEBUG org.mortbay.log - Container Server@756476a3 + org.mortbay.jetty.servlet.HashSessionIdManager@583f6270 as sessionIdManager
+17:10:07.561 [Executing redirectToBuildUrl(com.dabsquared.gitlabjenkins.webhook.status.BranchBuildPageRedirectActionTest)] DEBUG org.mortbay.log - Init SecureRandom.
+17:10:07.561 [Executing redirectToBuildUrl(com.dabsquared.gitlabjenkins.webhook.status.BranchBuildPageRedirectActionTest)] DEBUG org.mortbay.log - started org.mortbay.jetty.servlet.HashSessionIdManager@583f6270
+17:10:07.561 [Executing redirectToBuildUrl(com.dabsquared.gitlabjenkins.webhook.status.BranchBuildPageRedirectActionTest)] DEBUG org.mortbay.log - started org.mortbay.jetty.servlet.HashSessionManager@59da32ad
+17:10:07.562 [Executing redirectToBuildUrl(com.dabsquared.gitlabjenkins.webhook.status.BranchBuildPageRedirectActionTest)] DEBUG org.mortbay.log - filterNameMap={csrf-filter=csrf-filter, encoding-filter=encoding-filter, diagnostic-name-filter=diagnostic-name-filter, compression-filter=compression-filter, plugins-filter=plugins-filter, authentication-filter=authentication-filter}
+17:10:07.562 [Executing redirectToBuildUrl(com.dabsquared.gitlabjenkins.webhook.status.BranchBuildPageRedirectActionTest)] DEBUG org.mortbay.log - pathFilters=[(F=diagnostic-name-filter,[/*],[],0), (F=encoding-filter,[/*],[],0), (F=compression-filter,[/*],[],0), (F=authentication-filter,[/*],[],0), (F=csrf-filter,[/*],[],0), (F=plugins-filter,[/*],[],0)]
+17:10:07.562 [Executing redirectToBuildUrl(com.dabsquared.gitlabjenkins.webhook.status.BranchBuildPageRedirectActionTest)] DEBUG org.mortbay.log - servletFilterMap=null
+17:10:07.562 [Executing redirectToBuildUrl(com.dabsquared.gitlabjenkins.webhook.status.BranchBuildPageRedirectActionTest)] DEBUG org.mortbay.log - servletPathMap={*.jspx=jsp, *.JSPX=jsp, *.jsp=jsp, *.JSPF=jsp, *.jspf=jsp, *.JSP=jsp, *.xsp=jsp, *.XSP=jsp, /*=Stapler, /=default}
+17:10:07.562 [Executing redirectToBuildUrl(com.dabsquared.gitlabjenkins.webhook.status.BranchBuildPageRedirectActionTest)] DEBUG org.mortbay.log - servletNameMap={default=default, jsp=jsp, Stapler=Stapler}
+17:10:07.562 [Executing redirectToBuildUrl(com.dabsquared.gitlabjenkins.webhook.status.BranchBuildPageRedirectActionTest)] DEBUG org.mortbay.log - starting ServletHandler@4d0927df
+17:10:07.562 [Executing redirectToBuildUrl(com.dabsquared.gitlabjenkins.webhook.status.BranchBuildPageRedirectActionTest)] DEBUG org.mortbay.log - started ServletHandler@4d0927df
+17:10:07.562 [Executing redirectToBuildUrl(com.dabsquared.gitlabjenkins.webhook.status.BranchBuildPageRedirectActionTest)] DEBUG org.mortbay.log - starting SecurityHandler@4746d52d
+17:10:07.562 [Executing redirectToBuildUrl(com.dabsquared.gitlabjenkins.webhook.status.BranchBuildPageRedirectActionTest)] DEBUG org.mortbay.log - started SecurityHandler@4746d52d
+17:10:07.562 [Executing redirectToBuildUrl(com.dabsquared.gitlabjenkins.webhook.status.BranchBuildPageRedirectActionTest)] DEBUG org.mortbay.log - starting SessionHandler@1b0e81b3
+17:10:07.562 [Executing redirectToBuildUrl(com.dabsquared.gitlabjenkins.webhook.status.BranchBuildPageRedirectActionTest)] DEBUG org.mortbay.log - started SessionHandler@1b0e81b3
+17:10:07.562 [Executing redirectToBuildUrl(com.dabsquared.gitlabjenkins.webhook.status.BranchBuildPageRedirectActionTest)] DEBUG org.mortbay.log - starting org.mortbay.jetty.webapp.WebAppContext@65e4ee59{/jenkins,/Users/tippelsk/Documents/Programming/opensource/gitlab-plugin/target/jenkins-for-testx}
+17:10:07.562 [Executing redirectToBuildUrl(com.dabsquared.gitlabjenkins.webhook.status.BranchBuildPageRedirectActionTest)] DEBUG org.mortbay.log - starting ErrorPageErrorHandler@28446b06
+17:10:07.562 [Executing redirectToBuildUrl(com.dabsquared.gitlabjenkins.webhook.status.BranchBuildPageRedirectActionTest)] DEBUG org.mortbay.log - started ErrorPageErrorHandler@28446b06
+17:10:07.562 [Executing redirectToBuildUrl(com.dabsquared.gitlabjenkins.webhook.status.BranchBuildPageRedirectActionTest)] DEBUG org.mortbay.log - Holding class org.kohsuke.stapler.DiagnosticThreadNameFilter
+17:10:07.562 [Executing redirectToBuildUrl(com.dabsquared.gitlabjenkins.webhook.status.BranchBuildPageRedirectActionTest)] DEBUG org.mortbay.log - started diagnostic-name-filter
+17:10:07.562 [Executing redirectToBuildUrl(com.dabsquared.gitlabjenkins.webhook.status.BranchBuildPageRedirectActionTest)] DEBUG org.mortbay.log - Holding class hudson.util.CharacterEncodingFilter
+17:10:07.562 [Executing redirectToBuildUrl(com.dabsquared.gitlabjenkins.webhook.status.BranchBuildPageRedirectActionTest)] DEBUG org.mortbay.log - started encoding-filter
+17:10:07.562 [Executing redirectToBuildUrl(com.dabsquared.gitlabjenkins.webhook.status.BranchBuildPageRedirectActionTest)] DEBUG org.mortbay.log - Holding class org.kohsuke.stapler.compression.CompressionFilter
+17:10:07.562 [Executing redirectToBuildUrl(com.dabsquared.gitlabjenkins.webhook.status.BranchBuildPageRedirectActionTest)] DEBUG org.mortbay.log - started compression-filter
+17:10:07.562 [Executing redirectToBuildUrl(com.dabsquared.gitlabjenkins.webhook.status.BranchBuildPageRedirectActionTest)] DEBUG org.mortbay.log - Holding class hudson.security.HudsonFilter
+17:10:07.562 [Executing redirectToBuildUrl(com.dabsquared.gitlabjenkins.webhook.status.BranchBuildPageRedirectActionTest)] DEBUG org.mortbay.log - started authentication-filter
+17:10:07.562 [Executing redirectToBuildUrl(com.dabsquared.gitlabjenkins.webhook.status.BranchBuildPageRedirectActionTest)] DEBUG org.mortbay.log - Holding class hudson.security.csrf.CrumbFilter
+17:10:07.562 [Executing redirectToBuildUrl(com.dabsquared.gitlabjenkins.webhook.status.BranchBuildPageRedirectActionTest)] DEBUG org.mortbay.log - started csrf-filter
+17:10:07.562 [Executing redirectToBuildUrl(com.dabsquared.gitlabjenkins.webhook.status.BranchBuildPageRedirectActionTest)] DEBUG org.mortbay.log - Holding class hudson.util.PluginServletFilter
+17:10:07.562 [Executing redirectToBuildUrl(com.dabsquared.gitlabjenkins.webhook.status.BranchBuildPageRedirectActionTest)] DEBUG org.mortbay.log - started plugins-filter
+17:10:07.562 [Executing redirectToBuildUrl(com.dabsquared.gitlabjenkins.webhook.status.BranchBuildPageRedirectActionTest)] DEBUG org.mortbay.log - Holding class org.kohsuke.stapler.Stapler
+17:10:07.562 [Executing redirectToBuildUrl(com.dabsquared.gitlabjenkins.webhook.status.BranchBuildPageRedirectActionTest)] DEBUG org.mortbay.log - started Stapler
+17:10:07.562 [Executing redirectToBuildUrl(com.dabsquared.gitlabjenkins.webhook.status.BranchBuildPageRedirectActionTest)] DEBUG org.mortbay.log - Holding class org.mortbay.jetty.servlet.DefaultServlet
+17:10:07.562 [Executing redirectToBuildUrl(com.dabsquared.gitlabjenkins.webhook.status.BranchBuildPageRedirectActionTest)] DEBUG org.mortbay.log - started org.mortbay.jetty.servlet.DefaultServlet$NIOResourceCache@500341c4
+17:10:07.562 [Executing redirectToBuildUrl(com.dabsquared.gitlabjenkins.webhook.status.BranchBuildPageRedirectActionTest)] DEBUG org.mortbay.log - started org.mortbay.jetty.ResourceCache@3d4b3b94
+17:10:07.562 [Executing redirectToBuildUrl(com.dabsquared.gitlabjenkins.webhook.status.BranchBuildPageRedirectActionTest)] DEBUG org.mortbay.log - resource base = file:/Users/tippelsk/Documents/Programming/opensource/gitlab-plugin/target/jenkins-for-testx/
+17:10:07.562 [Executing redirectToBuildUrl(com.dabsquared.gitlabjenkins.webhook.status.BranchBuildPageRedirectActionTest)] DEBUG org.mortbay.log - started default
+17:10:07.562 [Executing redirectToBuildUrl(com.dabsquared.gitlabjenkins.webhook.status.BranchBuildPageRedirectActionTest)] DEBUG org.mortbay.log - Holding class org.mortbay.servlet.NoJspServlet
+17:10:07.562 [Executing redirectToBuildUrl(com.dabsquared.gitlabjenkins.webhook.status.BranchBuildPageRedirectActionTest)] DEBUG org.mortbay.log - started jsp
+17:10:07.562 [Executing redirectToBuildUrl(com.dabsquared.gitlabjenkins.webhook.status.BranchBuildPageRedirectActionTest)] DEBUG org.mortbay.log - started org.mortbay.jetty.webapp.WebAppContext@65e4ee59{/jenkins,/Users/tippelsk/Documents/Programming/opensource/gitlab-plugin/target/jenkins-for-testx}
+17:10:07.562 [Executing redirectToBuildUrl(com.dabsquared.gitlabjenkins.webhook.status.BranchBuildPageRedirectActionTest)] DEBUG org.mortbay.log - starting Server@756476a3
+17:10:07.562 [Executing redirectToBuildUrl(com.dabsquared.gitlabjenkins.webhook.status.BranchBuildPageRedirectActionTest)] INFO  org.mortbay.log - Started SocketConnector@0.0.0.0:52438
+17:10:07.562 [Executing redirectToBuildUrl(com.dabsquared.gitlabjenkins.webhook.status.BranchBuildPageRedirectActionTest)] DEBUG org.mortbay.log - started SocketConnector@0.0.0.0:52438
+17:10:07.562 [Executing redirectToBuildUrl(com.dabsquared.gitlabjenkins.webhook.status.BranchBuildPageRedirectActionTest)] DEBUG org.mortbay.log - started Server@756476a3
+Aug 26, 2016 5:10:07 PM org.jvnet.hudson.test.JenkinsRule createWebServer
+INFO: Running on http://localhost:52438/jenkins/
+Aug 26, 2016 5:10:07 PM jenkins.InitReactorRunner$1 onAttained
+INFO: Started initialization
+Aug 26, 2016 5:10:07 PM jenkins.InitReactorRunner$1 onAttained
+INFO: Listed all plugins
+Aug 26, 2016 5:10:07 PM jenkins.InitReactorRunner$1 onAttained
+INFO: Prepared all plugins
+Aug 26, 2016 5:10:07 PM jenkins.InitReactorRunner$1 onAttained
+INFO: Started all plugins
+Aug 26, 2016 5:10:07 PM jenkins.InitReactorRunner$1 onAttained
+INFO: Augmented all extensions
+Aug 26, 2016 5:10:07 PM jenkins.InitReactorRunner$1 onAttained
+INFO: Loaded all jobs
+Aug 26, 2016 5:10:08 PM org.jenkinsci.main.modules.sshd.SSHD start
+INFO: Started SSHD at port 52439
+Aug 26, 2016 5:10:08 PM jenkins.InitReactorRunner$1 onAttained
+INFO: Completed initialization
+Aug 26, 2016 5:10:08 PM hudson.UDPBroadcastThread run
+WARNING: UDP handling problem
+java.net.SocketException: Can't assign requested address
+	at java.net.PlainDatagramSocketImpl.join(Native Method)
+	at java.net.AbstractPlainDatagramSocketImpl.join(AbstractPlainDatagramSocketImpl.java:179)
+	at java.net.MulticastSocket.joinGroup(MulticastSocket.java:323)
+	at hudson.UDPBroadcastThread.run(UDPBroadcastThread.java:76)
+
+=== Starting redirectToBuildUrl(com.dabsquared.gitlabjenkins.webhook.status.BranchBuildPageRedirectActionTest)
+Aug 26, 2016 5:10:08 PM hudson.model.Run execute
+INFO: test #1 main build action completed: SUCCESS
+17:10:08.141 [Executing redirectToBuildUrl(com.dabsquared.gitlabjenkins.webhook.status.BranchBuildPageRedirectActionTest)] DEBUG org.mortbay.log - stopped Realm[default]==[bob, alice, charlie]
+17:10:08.141 [Executing redirectToBuildUrl(com.dabsquared.gitlabjenkins.webhook.status.BranchBuildPageRedirectActionTest)] INFO  org.mortbay.log - Stopped SocketConnector@0.0.0.0:52438
+17:10:08.141 [Executing redirectToBuildUrl(com.dabsquared.gitlabjenkins.webhook.status.BranchBuildPageRedirectActionTest)] DEBUG org.mortbay.log - stopped SocketConnector@0.0.0.0:0
+17:10:08.141 [Executing redirectToBuildUrl(com.dabsquared.gitlabjenkins.webhook.status.BranchBuildPageRedirectActionTest)] DEBUG org.mortbay.log - stopping Server@756476a3
+17:10:08.141 [Executing redirectToBuildUrl(com.dabsquared.gitlabjenkins.webhook.status.BranchBuildPageRedirectActionTest)] DEBUG org.mortbay.log - stopping org.mortbay.jetty.webapp.WebAppContext@65e4ee59{/jenkins,/Users/tippelsk/Documents/Programming/opensource/gitlab-plugin/target/jenkins-for-testx}
+17:10:08.141 [Executing redirectToBuildUrl(com.dabsquared.gitlabjenkins.webhook.status.BranchBuildPageRedirectActionTest)] DEBUG org.mortbay.log - stopping SessionHandler@1b0e81b3
+17:10:08.141 [Executing redirectToBuildUrl(com.dabsquared.gitlabjenkins.webhook.status.BranchBuildPageRedirectActionTest)] DEBUG org.mortbay.log - stopping SecurityHandler@4746d52d
+17:10:08.141 [Executing redirectToBuildUrl(com.dabsquared.gitlabjenkins.webhook.status.BranchBuildPageRedirectActionTest)] DEBUG org.mortbay.log - stopping ServletHandler@4d0927df
+17:10:08.141 [Executing redirectToBuildUrl(com.dabsquared.gitlabjenkins.webhook.status.BranchBuildPageRedirectActionTest)] DEBUG org.mortbay.log - stopped plugins-filter
+17:10:08.141 [Executing redirectToBuildUrl(com.dabsquared.gitlabjenkins.webhook.status.BranchBuildPageRedirectActionTest)] DEBUG org.mortbay.log - stopped csrf-filter
+17:10:08.141 [Executing redirectToBuildUrl(com.dabsquared.gitlabjenkins.webhook.status.BranchBuildPageRedirectActionTest)] DEBUG org.mortbay.log - stopped authentication-filter
+17:10:08.141 [Executing redirectToBuildUrl(com.dabsquared.gitlabjenkins.webhook.status.BranchBuildPageRedirectActionTest)] DEBUG org.mortbay.log - stopped compression-filter
+17:10:08.141 [Executing redirectToBuildUrl(com.dabsquared.gitlabjenkins.webhook.status.BranchBuildPageRedirectActionTest)] DEBUG org.mortbay.log - stopped encoding-filter
+17:10:08.141 [Executing redirectToBuildUrl(com.dabsquared.gitlabjenkins.webhook.status.BranchBuildPageRedirectActionTest)] DEBUG org.mortbay.log - stopped diagnostic-name-filter
+17:10:08.141 [Executing redirectToBuildUrl(com.dabsquared.gitlabjenkins.webhook.status.BranchBuildPageRedirectActionTest)] DEBUG org.mortbay.log - stopped Stapler
+17:10:08.141 [Executing redirectToBuildUrl(com.dabsquared.gitlabjenkins.webhook.status.BranchBuildPageRedirectActionTest)] DEBUG org.mortbay.log - stopped jsp
+17:10:08.141 [Executing redirectToBuildUrl(com.dabsquared.gitlabjenkins.webhook.status.BranchBuildPageRedirectActionTest)] DEBUG org.mortbay.log - stopped org.mortbay.jetty.servlet.DefaultServlet$NIOResourceCache@500341c4
+17:10:08.141 [Executing redirectToBuildUrl(com.dabsquared.gitlabjenkins.webhook.status.BranchBuildPageRedirectActionTest)] DEBUG org.mortbay.log - stopped org.mortbay.jetty.ResourceCache@3d4b3b94
+17:10:08.141 [Executing redirectToBuildUrl(com.dabsquared.gitlabjenkins.webhook.status.BranchBuildPageRedirectActionTest)] DEBUG org.mortbay.log - stopped default
+17:10:08.141 [Executing redirectToBuildUrl(com.dabsquared.gitlabjenkins.webhook.status.BranchBuildPageRedirectActionTest)] DEBUG org.mortbay.log - stopped ServletHandler@4d0927df
+17:10:08.141 [Executing redirectToBuildUrl(com.dabsquared.gitlabjenkins.webhook.status.BranchBuildPageRedirectActionTest)] DEBUG org.mortbay.log - stopped SecurityHandler@4746d52d
+17:10:08.141 [Executing redirectToBuildUrl(com.dabsquared.gitlabjenkins.webhook.status.BranchBuildPageRedirectActionTest)] DEBUG org.mortbay.log - stopped org.mortbay.jetty.servlet.HashSessionManager@59da32ad
+17:10:08.141 [Executing redirectToBuildUrl(com.dabsquared.gitlabjenkins.webhook.status.BranchBuildPageRedirectActionTest)] DEBUG org.mortbay.log - stopped SessionHandler@1b0e81b3
+17:10:08.141 [Executing redirectToBuildUrl(com.dabsquared.gitlabjenkins.webhook.status.BranchBuildPageRedirectActionTest)] DEBUG org.mortbay.log - stopping ErrorPageErrorHandler@28446b06
+17:10:08.141 [Executing redirectToBuildUrl(com.dabsquared.gitlabjenkins.webhook.status.BranchBuildPageRedirectActionTest)] DEBUG org.mortbay.log - stopped ErrorPageErrorHandler@28446b06
+17:10:08.142 [Executing redirectToBuildUrl(com.dabsquared.gitlabjenkins.webhook.status.BranchBuildPageRedirectActionTest)] DEBUG org.mortbay.log - Container ServletHandler@4d0927df - plugins-filter as filter
+17:10:08.142 [Executing redirectToBuildUrl(com.dabsquared.gitlabjenkins.webhook.status.BranchBuildPageRedirectActionTest)] DEBUG org.mortbay.log - Container ServletHandler@4d0927df - csrf-filter as filter
+17:10:08.142 [Executing redirectToBuildUrl(com.dabsquared.gitlabjenkins.webhook.status.BranchBuildPageRedirectActionTest)] DEBUG org.mortbay.log - Container ServletHandler@4d0927df - authentication-filter as filter
+17:10:08.142 [Executing redirectToBuildUrl(com.dabsquared.gitlabjenkins.webhook.status.BranchBuildPageRedirectActionTest)] DEBUG org.mortbay.log - Container ServletHandler@4d0927df - compression-filter as filter
+17:10:08.142 [Executing redirectToBuildUrl(com.dabsquared.gitlabjenkins.webhook.status.BranchBuildPageRedirectActionTest)] DEBUG org.mortbay.log - Container ServletHandler@4d0927df - encoding-filter as filter
+17:10:08.142 [Executing redirectToBuildUrl(com.dabsquared.gitlabjenkins.webhook.status.BranchBuildPageRedirectActionTest)] DEBUG org.mortbay.log - Container ServletHandler@4d0927df - diagnostic-name-filter as filter
+17:10:08.142 [Executing redirectToBuildUrl(com.dabsquared.gitlabjenkins.webhook.status.BranchBuildPageRedirectActionTest)] DEBUG org.mortbay.log - Container ServletHandler@4d0927df - (F=plugins-filter,[/*],[],0) as filterMapping
+17:10:08.142 [Executing redirectToBuildUrl(com.dabsquared.gitlabjenkins.webhook.status.BranchBuildPageRedirectActionTest)] DEBUG org.mortbay.log - Container ServletHandler@4d0927df - (F=csrf-filter,[/*],[],0) as filterMapping
+17:10:08.142 [Executing redirectToBuildUrl(com.dabsquared.gitlabjenkins.webhook.status.BranchBuildPageRedirectActionTest)] DEBUG org.mortbay.log - Container ServletHandler@4d0927df - (F=authentication-filter,[/*],[],0) as filterMapping
+17:10:08.142 [Executing redirectToBuildUrl(com.dabsquared.gitlabjenkins.webhook.status.BranchBuildPageRedirectActionTest)] DEBUG org.mortbay.log - Container ServletHandler@4d0927df - (F=compression-filter,[/*],[],0) as filterMapping
+17:10:08.142 [Executing redirectToBuildUrl(com.dabsquared.gitlabjenkins.webhook.status.BranchBuildPageRedirectActionTest)] DEBUG org.mortbay.log - Container ServletHandler@4d0927df - (F=encoding-filter,[/*],[],0) as filterMapping
+17:10:08.142 [Executing redirectToBuildUrl(com.dabsquared.gitlabjenkins.webhook.status.BranchBuildPageRedirectActionTest)] DEBUG org.mortbay.log - Container ServletHandler@4d0927df - (F=diagnostic-name-filter,[/*],[],0) as filterMapping
+17:10:08.142 [Executing redirectToBuildUrl(com.dabsquared.gitlabjenkins.webhook.status.BranchBuildPageRedirectActionTest)] DEBUG org.mortbay.log - filterNameMap=null
+17:10:08.142 [Executing redirectToBuildUrl(com.dabsquared.gitlabjenkins.webhook.status.BranchBuildPageRedirectActionTest)] DEBUG org.mortbay.log - pathFilters=null
+17:10:08.142 [Executing redirectToBuildUrl(com.dabsquared.gitlabjenkins.webhook.status.BranchBuildPageRedirectActionTest)] DEBUG org.mortbay.log - servletFilterMap=null
+17:10:08.142 [Executing redirectToBuildUrl(com.dabsquared.gitlabjenkins.webhook.status.BranchBuildPageRedirectActionTest)] DEBUG org.mortbay.log - servletPathMap={*.jspx=jsp, *.JSPX=jsp, *.jsp=jsp, *.JSPF=jsp, *.jspf=jsp, *.JSP=jsp, *.xsp=jsp, *.XSP=jsp, /*=Stapler, /=default}
+17:10:08.142 [Executing redirectToBuildUrl(com.dabsquared.gitlabjenkins.webhook.status.BranchBuildPageRedirectActionTest)] DEBUG org.mortbay.log - servletNameMap={default=default, jsp=jsp, Stapler=Stapler}
+17:10:08.142 [Executing redirectToBuildUrl(com.dabsquared.gitlabjenkins.webhook.status.BranchBuildPageRedirectActionTest)] DEBUG org.mortbay.log - Container ServletHandler@4d0927df - Stapler as servlet
+17:10:08.142 [Executing redirectToBuildUrl(com.dabsquared.gitlabjenkins.webhook.status.BranchBuildPageRedirectActionTest)] DEBUG org.mortbay.log - Container ServletHandler@4d0927df - jsp as servlet
+17:10:08.142 [Executing redirectToBuildUrl(com.dabsquared.gitlabjenkins.webhook.status.BranchBuildPageRedirectActionTest)] DEBUG org.mortbay.log - Container ServletHandler@4d0927df - default as servlet
+17:10:08.142 [Executing redirectToBuildUrl(com.dabsquared.gitlabjenkins.webhook.status.BranchBuildPageRedirectActionTest)] DEBUG org.mortbay.log - Container ServletHandler@4d0927df - (S=Stapler,[/*]) as servletMapping
+17:10:08.142 [Executing redirectToBuildUrl(com.dabsquared.gitlabjenkins.webhook.status.BranchBuildPageRedirectActionTest)] DEBUG org.mortbay.log - Container ServletHandler@4d0927df - (S=jsp,[*.jsp, *.jspf, *.jspx, *.xsp, *.JSP, *.JSPF, *.JSPX, *.XSP]) as servletMapping
+17:10:08.142 [Executing redirectToBuildUrl(com.dabsquared.gitlabjenkins.webhook.status.BranchBuildPageRedirectActionTest)] DEBUG org.mortbay.log - Container ServletHandler@4d0927df - (S=default,[/]) as servletMapping
+17:10:08.142 [Executing redirectToBuildUrl(com.dabsquared.gitlabjenkins.webhook.status.BranchBuildPageRedirectActionTest)] DEBUG org.mortbay.log - filterNameMap=null
+17:10:08.142 [Executing redirectToBuildUrl(com.dabsquared.gitlabjenkins.webhook.status.BranchBuildPageRedirectActionTest)] DEBUG org.mortbay.log - pathFilters=null
+17:10:08.142 [Executing redirectToBuildUrl(com.dabsquared.gitlabjenkins.webhook.status.BranchBuildPageRedirectActionTest)] DEBUG org.mortbay.log - servletFilterMap=null
+17:10:08.142 [Executing redirectToBuildUrl(com.dabsquared.gitlabjenkins.webhook.status.BranchBuildPageRedirectActionTest)] DEBUG org.mortbay.log - servletPathMap=null
+17:10:08.142 [Executing redirectToBuildUrl(com.dabsquared.gitlabjenkins.webhook.status.BranchBuildPageRedirectActionTest)] DEBUG org.mortbay.log - servletNameMap=null
+17:10:08.142 [Executing redirectToBuildUrl(com.dabsquared.gitlabjenkins.webhook.status.BranchBuildPageRedirectActionTest)] DEBUG org.mortbay.log - stopped org.mortbay.jetty.webapp.WebAppContext@65e4ee59{/jenkins,/Users/tippelsk/Documents/Programming/opensource/gitlab-plugin/target/jenkins-for-testx}
+17:10:08.142 [Executing redirectToBuildUrl(com.dabsquared.gitlabjenkins.webhook.status.BranchBuildPageRedirectActionTest)] DEBUG org.mortbay.log - stopped org.mortbay.jetty.servlet.HashSessionIdManager@583f6270
+17:10:08.142 [Executing redirectToBuildUrl(com.dabsquared.gitlabjenkins.webhook.status.BranchBuildPageRedirectActionTest)] DEBUG org.mortbay.log - stopped org.jvnet.hudson.test.ThreadPoolImpl@2cf7860e
+17:10:08.142 [Executing redirectToBuildUrl(com.dabsquared.gitlabjenkins.webhook.status.BranchBuildPageRedirectActionTest)] DEBUG org.mortbay.log - stopped Server@756476a3
+17:10:08.142 [Executing redirectToBuildUrl(com.dabsquared.gitlabjenkins.webhook.status.BranchBuildPageRedirectActionTest)] DEBUG o.a.m.core.service.AbstractIoService - awaitTermination on (nio socket acceptor: not bound) called by thread=[Executing redirectToBuildUrl(com.dabsquared.gitlabjenkins.webhook.status.BranchBuildPageRedirectActionTest)]
+17:10:08.143 [Executing redirectToBuildUrl(com.dabsquared.gitlabjenkins.webhook.status.BranchBuildPageRedirectActionTest)] DEBUG o.a.m.core.service.AbstractIoService - awaitTermination on (nio socket acceptor: not bound) finished
+17:10:08.251 [Executing redirectToBuildStatusUrl(com.dabsquared.gitlabjenkins.webhook.status.BranchBuildPageRedirectActionTest)] DEBUG org.mortbay.log - Container Server@337f6716 + org.mortbay.jetty.webapp.WebAppContext@4734a551{/jenkins,/Users/tippelsk/Documents/Programming/opensource/gitlab-plugin/target/jenkins-for-testx} as handler
+17:10:08.251 [Executing redirectToBuildStatusUrl(com.dabsquared.gitlabjenkins.webhook.status.BranchBuildPageRedirectActionTest)] DEBUG org.mortbay.log - Container SecurityHandler@780ccdc9 + ServletHandler@2d4df467 as handler
+17:10:08.251 [Executing redirectToBuildStatusUrl(com.dabsquared.gitlabjenkins.webhook.status.BranchBuildPageRedirectActionTest)] DEBUG org.mortbay.log - Container SessionHandler@65c2610f + SecurityHandler@780ccdc9 as handler
+17:10:08.251 [Executing redirectToBuildStatusUrl(com.dabsquared.gitlabjenkins.webhook.status.BranchBuildPageRedirectActionTest)] DEBUG org.mortbay.log - Container SessionHandler@65c2610f + org.mortbay.jetty.servlet.HashSessionManager@73e4ecb as sessionManager
+17:10:08.251 [Executing redirectToBuildStatusUrl(com.dabsquared.gitlabjenkins.webhook.status.BranchBuildPageRedirectActionTest)] DEBUG org.mortbay.log - Container org.mortbay.jetty.webapp.WebAppContext@4734a551{/jenkins,/Users/tippelsk/Documents/Programming/opensource/gitlab-plugin/target/jenkins-for-testx} + SessionHandler@65c2610f as handler
+17:10:08.251 [Executing redirectToBuildStatusUrl(com.dabsquared.gitlabjenkins.webhook.status.BranchBuildPageRedirectActionTest)] DEBUG org.mortbay.log - Container org.mortbay.jetty.webapp.WebAppContext@4734a551{/jenkins,/Users/tippelsk/Documents/Programming/opensource/gitlab-plugin/target/jenkins-for-testx} + ErrorPageErrorHandler@1942a960 as error
+17:10:08.251 [Executing redirectToBuildStatusUrl(com.dabsquared.gitlabjenkins.webhook.status.BranchBuildPageRedirectActionTest)] DEBUG org.mortbay.log - Container Server@337f6716 + org.jvnet.hudson.test.ThreadPoolImpl@5bee88e3 as threadpool
+17:10:08.251 [Executing redirectToBuildStatusUrl(com.dabsquared.gitlabjenkins.webhook.status.BranchBuildPageRedirectActionTest)] DEBUG org.mortbay.log - Container Server@337f6716 + SocketConnector@0.0.0.0:0 as connector
+17:10:08.251 [Executing redirectToBuildStatusUrl(com.dabsquared.gitlabjenkins.webhook.status.BranchBuildPageRedirectActionTest)] DEBUG org.mortbay.log - Container Server@337f6716 + Realm[default]==[bob, alice, charlie] as realm
+17:10:08.251 [Executing redirectToBuildStatusUrl(com.dabsquared.gitlabjenkins.webhook.status.BranchBuildPageRedirectActionTest)] INFO  org.mortbay.log - jetty-6.1.26
+17:10:08.251 [Executing redirectToBuildStatusUrl(com.dabsquared.gitlabjenkins.webhook.status.BranchBuildPageRedirectActionTest)] DEBUG org.mortbay.log - started Realm[default]==[bob, alice, charlie]
+17:10:08.251 [Executing redirectToBuildStatusUrl(com.dabsquared.gitlabjenkins.webhook.status.BranchBuildPageRedirectActionTest)] DEBUG org.mortbay.log - started org.jvnet.hudson.test.ThreadPoolImpl@5bee88e3
+17:10:08.251 [Executing redirectToBuildStatusUrl(com.dabsquared.gitlabjenkins.webhook.status.BranchBuildPageRedirectActionTest)] DEBUG org.mortbay.log - Thread Context class loader is: sun.misc.Launcher$AppClassLoader@58644d46
+17:10:08.251 [Executing redirectToBuildStatusUrl(com.dabsquared.gitlabjenkins.webhook.status.BranchBuildPageRedirectActionTest)] DEBUG org.mortbay.log - Parent class loader is: sun.misc.Launcher$ExtClassLoader@78fa769e
+17:10:08.251 [Executing redirectToBuildStatusUrl(com.dabsquared.gitlabjenkins.webhook.status.BranchBuildPageRedirectActionTest)] DEBUG org.mortbay.log - Created temp dir /var/folders/v_/m3p4ckmx2zn4y_xvs4rl6_4w0000gp/T/Jetty_0_0_0_0_0_jenkins.for.testx__jenkins__g54ua0 for org.mortbay.jetty.webapp.WebAppContext@4734a551{/jenkins,/Users/tippelsk/Documents/Programming/opensource/gitlab-plugin/target/jenkins-for-testx}
+17:10:08.252 [Executing redirectToBuildStatusUrl(com.dabsquared.gitlabjenkins.webhook.status.BranchBuildPageRedirectActionTest)] DEBUG org.mortbay.log - parse: jar:file:/Users/tippelsk/.m2/repository/org/mortbay/jetty/jetty/6.1.26/jetty-6.1.26.jar!/org/mortbay/jetty/webapp/webdefault.xml
+17:10:08.252 [Executing redirectToBuildStatusUrl(com.dabsquared.gitlabjenkins.webhook.status.BranchBuildPageRedirectActionTest)] DEBUG org.mortbay.log - parsing: sid=jar:file:/Users/tippelsk/.m2/repository/org/mortbay/jetty/jetty/6.1.26/jetty-6.1.26.jar!/org/mortbay/jetty/webapp/webdefault.xml,pid=null
+17:10:08.253 [Executing redirectToBuildStatusUrl(com.dabsquared.gitlabjenkins.webhook.status.BranchBuildPageRedirectActionTest)] DEBUG org.mortbay.log - ContextParam: org.mortbay.jetty.webapp.NoTLDJarPattern=start.jar|ant-.*\.jar|dojo-.*\.jar|jetty-.*\.jar|jsp-api-.*\.jar|junit-.*\.jar|servlet-api-.*\.jar|dnsns\.jar|rt\.jar|jsse\.jar|tools\.jar|sunpkcs11\.jar|sunjce_provider\.jar|xerces.*\.jar
+17:10:08.253 [Executing redirectToBuildStatusUrl(com.dabsquared.gitlabjenkins.webhook.status.BranchBuildPageRedirectActionTest)] INFO  org.mortbay.log - NO JSP Support for /jenkins, did not find org.apache.jasper.servlet.JspServlet
+17:10:08.254 [Executing redirectToBuildStatusUrl(com.dabsquared.gitlabjenkins.webhook.status.BranchBuildPageRedirectActionTest)] DEBUG org.mortbay.log - filterNameMap=null
+17:10:08.254 [Executing redirectToBuildStatusUrl(com.dabsquared.gitlabjenkins.webhook.status.BranchBuildPageRedirectActionTest)] DEBUG org.mortbay.log - pathFilters=[]
+17:10:08.254 [Executing redirectToBuildStatusUrl(com.dabsquared.gitlabjenkins.webhook.status.BranchBuildPageRedirectActionTest)] DEBUG org.mortbay.log - servletFilterMap=null
+17:10:08.254 [Executing redirectToBuildStatusUrl(com.dabsquared.gitlabjenkins.webhook.status.BranchBuildPageRedirectActionTest)] DEBUG org.mortbay.log - servletPathMap=null
+17:10:08.254 [Executing redirectToBuildStatusUrl(com.dabsquared.gitlabjenkins.webhook.status.BranchBuildPageRedirectActionTest)] DEBUG org.mortbay.log - servletNameMap=null
+17:10:08.254 [Executing redirectToBuildStatusUrl(com.dabsquared.gitlabjenkins.webhook.status.BranchBuildPageRedirectActionTest)] DEBUG org.mortbay.log - Container ServletHandler@2d4df467 + default as servlet
+17:10:08.254 [Executing redirectToBuildStatusUrl(com.dabsquared.gitlabjenkins.webhook.status.BranchBuildPageRedirectActionTest)] DEBUG org.mortbay.log - Container ServletHandler@2d4df467 + jsp as servlet
+17:10:08.254 [Executing redirectToBuildStatusUrl(com.dabsquared.gitlabjenkins.webhook.status.BranchBuildPageRedirectActionTest)] DEBUG org.mortbay.log - Container ServletHandler@2d4df467 + (S=default,[/]) as servletMapping
+17:10:08.254 [Executing redirectToBuildStatusUrl(com.dabsquared.gitlabjenkins.webhook.status.BranchBuildPageRedirectActionTest)] DEBUG org.mortbay.log - Container ServletHandler@2d4df467 + (S=jsp,[*.jsp, *.jspf, *.jspx, *.xsp, *.JSP, *.JSPF, *.JSPX, *.XSP]) as servletMapping
+17:10:08.254 [Executing redirectToBuildStatusUrl(com.dabsquared.gitlabjenkins.webhook.status.BranchBuildPageRedirectActionTest)] DEBUG org.mortbay.log - filterNameMap=null
+17:10:08.254 [Executing redirectToBuildStatusUrl(com.dabsquared.gitlabjenkins.webhook.status.BranchBuildPageRedirectActionTest)] DEBUG org.mortbay.log - pathFilters=[]
+17:10:08.254 [Executing redirectToBuildStatusUrl(com.dabsquared.gitlabjenkins.webhook.status.BranchBuildPageRedirectActionTest)] DEBUG org.mortbay.log - servletFilterMap=null
+17:10:08.254 [Executing redirectToBuildStatusUrl(com.dabsquared.gitlabjenkins.webhook.status.BranchBuildPageRedirectActionTest)] DEBUG org.mortbay.log - servletPathMap={*.jspx=jsp, *.JSPX=jsp, *.jsp=jsp, *.JSPF=jsp, *.jspf=jsp, *.JSP=jsp, *.xsp=jsp, *.XSP=jsp, /=default}
+17:10:08.254 [Executing redirectToBuildStatusUrl(com.dabsquared.gitlabjenkins.webhook.status.BranchBuildPageRedirectActionTest)] DEBUG org.mortbay.log - servletNameMap={default=default, jsp=jsp}
+17:10:08.254 [Executing redirectToBuildStatusUrl(com.dabsquared.gitlabjenkins.webhook.status.BranchBuildPageRedirectActionTest)] DEBUG org.mortbay.log - Try webapp=file:/Users/tippelsk/Documents/Programming/opensource/gitlab-plugin/target/jenkins-for-testx/, exists=true, directory=true
+17:10:08.254 [Executing redirectToBuildStatusUrl(com.dabsquared.gitlabjenkins.webhook.status.BranchBuildPageRedirectActionTest)] DEBUG org.mortbay.log - webapp=file:/Users/tippelsk/Documents/Programming/opensource/gitlab-plugin/target/jenkins-for-testx/
+17:10:08.254 [Executing redirectToBuildStatusUrl(com.dabsquared.gitlabjenkins.webhook.status.BranchBuildPageRedirectActionTest)] DEBUG org.mortbay.log - parse: file:/Users/tippelsk/Documents/Programming/opensource/gitlab-plugin/target/jenkins-for-testx/WEB-INF/web.xml
+17:10:08.254 [Executing redirectToBuildStatusUrl(com.dabsquared.gitlabjenkins.webhook.status.BranchBuildPageRedirectActionTest)] DEBUG org.mortbay.log - parsing: sid=file:/Users/tippelsk/Documents/Programming/opensource/gitlab-plugin/target/jenkins-for-testx/WEB-INF/web.xml,pid=null
+17:10:08.254 [Executing redirectToBuildStatusUrl(com.dabsquared.gitlabjenkins.webhook.status.BranchBuildPageRedirectActionTest)] DEBUG org.mortbay.log - Element env-entry not handled in org.mortbay.jetty.webapp.WebXmlConfiguration@416dd4d8
+17:10:08.254 [Executing redirectToBuildStatusUrl(com.dabsquared.gitlabjenkins.webhook.status.BranchBuildPageRedirectActionTest)] DEBUG org.mortbay.log - <env-entry>
+    <env-entry-name>HUDSON_HOME</env-entry-name>
+    <env-entry-type>java.lang.String</env-entry-type>
+    <env-entry-value/>
+  </env-entry>
+17:10:08.254 [Executing redirectToBuildStatusUrl(com.dabsquared.gitlabjenkins.webhook.status.BranchBuildPageRedirectActionTest)] DEBUG org.mortbay.log - Container ServletHandler@2d4df467 + diagnostic-name-filter as filter
+17:10:08.254 [Executing redirectToBuildStatusUrl(com.dabsquared.gitlabjenkins.webhook.status.BranchBuildPageRedirectActionTest)] DEBUG org.mortbay.log - Container ServletHandler@2d4df467 + encoding-filter as filter
+17:10:08.254 [Executing redirectToBuildStatusUrl(com.dabsquared.gitlabjenkins.webhook.status.BranchBuildPageRedirectActionTest)] DEBUG org.mortbay.log - Container ServletHandler@2d4df467 + compression-filter as filter
+17:10:08.254 [Executing redirectToBuildStatusUrl(com.dabsquared.gitlabjenkins.webhook.status.BranchBuildPageRedirectActionTest)] DEBUG org.mortbay.log - Container ServletHandler@2d4df467 + authentication-filter as filter
+17:10:08.254 [Executing redirectToBuildStatusUrl(com.dabsquared.gitlabjenkins.webhook.status.BranchBuildPageRedirectActionTest)] DEBUG org.mortbay.log - Container ServletHandler@2d4df467 + csrf-filter as filter
+17:10:08.254 [Executing redirectToBuildStatusUrl(com.dabsquared.gitlabjenkins.webhook.status.BranchBuildPageRedirectActionTest)] DEBUG org.mortbay.log - Container ServletHandler@2d4df467 + plugins-filter as filter
+17:10:08.254 [Executing redirectToBuildStatusUrl(com.dabsquared.gitlabjenkins.webhook.status.BranchBuildPageRedirectActionTest)] DEBUG org.mortbay.log - Container ServletHandler@2d4df467 + (F=diagnostic-name-filter,[/*],[],0) as filterMapping
+17:10:08.254 [Executing redirectToBuildStatusUrl(com.dabsquared.gitlabjenkins.webhook.status.BranchBuildPageRedirectActionTest)] DEBUG org.mortbay.log - Container ServletHandler@2d4df467 + (F=encoding-filter,[/*],[],0) as filterMapping
+17:10:08.254 [Executing redirectToBuildStatusUrl(com.dabsquared.gitlabjenkins.webhook.status.BranchBuildPageRedirectActionTest)] DEBUG org.mortbay.log - Container ServletHandler@2d4df467 + (F=compression-filter,[/*],[],0) as filterMapping
+17:10:08.254 [Executing redirectToBuildStatusUrl(com.dabsquared.gitlabjenkins.webhook.status.BranchBuildPageRedirectActionTest)] DEBUG org.mortbay.log - Container ServletHandler@2d4df467 + (F=authentication-filter,[/*],[],0) as filterMapping
+17:10:08.254 [Executing redirectToBuildStatusUrl(com.dabsquared.gitlabjenkins.webhook.status.BranchBuildPageRedirectActionTest)] DEBUG org.mortbay.log - Container ServletHandler@2d4df467 + (F=csrf-filter,[/*],[],0) as filterMapping
+17:10:08.254 [Executing redirectToBuildStatusUrl(com.dabsquared.gitlabjenkins.webhook.status.BranchBuildPageRedirectActionTest)] DEBUG org.mortbay.log - Container ServletHandler@2d4df467 + (F=plugins-filter,[/*],[],0) as filterMapping
+17:10:08.254 [Executing redirectToBuildStatusUrl(com.dabsquared.gitlabjenkins.webhook.status.BranchBuildPageRedirectActionTest)] DEBUG org.mortbay.log - filterNameMap={csrf-filter=csrf-filter, encoding-filter=encoding-filter, diagnostic-name-filter=diagnostic-name-filter, compression-filter=compression-filter, plugins-filter=plugins-filter, authentication-filter=authentication-filter}
+17:10:08.255 [Executing redirectToBuildStatusUrl(com.dabsquared.gitlabjenkins.webhook.status.BranchBuildPageRedirectActionTest)] DEBUG org.mortbay.log - pathFilters=[(F=diagnostic-name-filter,[/*],[],0), (F=encoding-filter,[/*],[],0), (F=compression-filter,[/*],[],0), (F=authentication-filter,[/*],[],0), (F=csrf-filter,[/*],[],0), (F=plugins-filter,[/*],[],0)]
+17:10:08.255 [Executing redirectToBuildStatusUrl(com.dabsquared.gitlabjenkins.webhook.status.BranchBuildPageRedirectActionTest)] DEBUG org.mortbay.log - servletFilterMap=null
+17:10:08.255 [Executing redirectToBuildStatusUrl(com.dabsquared.gitlabjenkins.webhook.status.BranchBuildPageRedirectActionTest)] DEBUG org.mortbay.log - servletPathMap={*.jspx=jsp, *.JSPX=jsp, *.jsp=jsp, *.JSPF=jsp, *.jspf=jsp, *.JSP=jsp, *.xsp=jsp, *.XSP=jsp, /=default}
+17:10:08.255 [Executing redirectToBuildStatusUrl(com.dabsquared.gitlabjenkins.webhook.status.BranchBuildPageRedirectActionTest)] DEBUG org.mortbay.log - servletNameMap={default=default, jsp=jsp}
+17:10:08.255 [Executing redirectToBuildStatusUrl(com.dabsquared.gitlabjenkins.webhook.status.BranchBuildPageRedirectActionTest)] DEBUG org.mortbay.log - Container ServletHandler@2d4df467 + Stapler as servlet
+17:10:08.255 [Executing redirectToBuildStatusUrl(com.dabsquared.gitlabjenkins.webhook.status.BranchBuildPageRedirectActionTest)] DEBUG org.mortbay.log - Container ServletHandler@2d4df467 + (S=Stapler,[/*]) as servletMapping
+17:10:08.255 [Executing redirectToBuildStatusUrl(com.dabsquared.gitlabjenkins.webhook.status.BranchBuildPageRedirectActionTest)] DEBUG org.mortbay.log - filterNameMap={csrf-filter=csrf-filter, encoding-filter=encoding-filter, diagnostic-name-filter=diagnostic-name-filter, compression-filter=compression-filter, plugins-filter=plugins-filter, authentication-filter=authentication-filter}
+17:10:08.255 [Executing redirectToBuildStatusUrl(com.dabsquared.gitlabjenkins.webhook.status.BranchBuildPageRedirectActionTest)] DEBUG org.mortbay.log - pathFilters=[(F=diagnostic-name-filter,[/*],[],0), (F=encoding-filter,[/*],[],0), (F=compression-filter,[/*],[],0), (F=authentication-filter,[/*],[],0), (F=csrf-filter,[/*],[],0), (F=plugins-filter,[/*],[],0)]
+17:10:08.255 [Executing redirectToBuildStatusUrl(com.dabsquared.gitlabjenkins.webhook.status.BranchBuildPageRedirectActionTest)] DEBUG org.mortbay.log - servletFilterMap=null
+17:10:08.255 [Executing redirectToBuildStatusUrl(com.dabsquared.gitlabjenkins.webhook.status.BranchBuildPageRedirectActionTest)] DEBUG org.mortbay.log - servletPathMap={*.jspx=jsp, *.JSPX=jsp, *.jsp=jsp, *.JSPF=jsp, *.jspf=jsp, *.JSP=jsp, *.xsp=jsp, *.XSP=jsp, /*=Stapler, /=default}
+17:10:08.255 [Executing redirectToBuildStatusUrl(com.dabsquared.gitlabjenkins.webhook.status.BranchBuildPageRedirectActionTest)] DEBUG org.mortbay.log - servletNameMap={default=default, jsp=jsp, Stapler=Stapler}
+17:10:08.255 [Executing redirectToBuildStatusUrl(com.dabsquared.gitlabjenkins.webhook.status.BranchBuildPageRedirectActionTest)] DEBUG org.mortbay.log - Container Server@337f6716 + org.mortbay.jetty.servlet.HashSessionIdManager@5434de8 as sessionIdManager
+17:10:08.255 [Executing redirectToBuildStatusUrl(com.dabsquared.gitlabjenkins.webhook.status.BranchBuildPageRedirectActionTest)] DEBUG org.mortbay.log - Init SecureRandom.
+17:10:08.255 [Executing redirectToBuildStatusUrl(com.dabsquared.gitlabjenkins.webhook.status.BranchBuildPageRedirectActionTest)] DEBUG org.mortbay.log - started org.mortbay.jetty.servlet.HashSessionIdManager@5434de8
+17:10:08.255 [Executing redirectToBuildStatusUrl(com.dabsquared.gitlabjenkins.webhook.status.BranchBuildPageRedirectActionTest)] DEBUG org.mortbay.log - started org.mortbay.jetty.servlet.HashSessionManager@73e4ecb
+17:10:08.255 [Executing redirectToBuildStatusUrl(com.dabsquared.gitlabjenkins.webhook.status.BranchBuildPageRedirectActionTest)] DEBUG org.mortbay.log - filterNameMap={csrf-filter=csrf-filter, encoding-filter=encoding-filter, diagnostic-name-filter=diagnostic-name-filter, compression-filter=compression-filter, plugins-filter=plugins-filter, authentication-filter=authentication-filter}
+17:10:08.255 [Executing redirectToBuildStatusUrl(com.dabsquared.gitlabjenkins.webhook.status.BranchBuildPageRedirectActionTest)] DEBUG org.mortbay.log - pathFilters=[(F=diagnostic-name-filter,[/*],[],0), (F=encoding-filter,[/*],[],0), (F=compression-filter,[/*],[],0), (F=authentication-filter,[/*],[],0), (F=csrf-filter,[/*],[],0), (F=plugins-filter,[/*],[],0)]
+17:10:08.255 [Executing redirectToBuildStatusUrl(com.dabsquared.gitlabjenkins.webhook.status.BranchBuildPageRedirectActionTest)] DEBUG org.mortbay.log - servletFilterMap=null
+17:10:08.255 [Executing redirectToBuildStatusUrl(com.dabsquared.gitlabjenkins.webhook.status.BranchBuildPageRedirectActionTest)] DEBUG org.mortbay.log - servletPathMap={*.jspx=jsp, *.JSPX=jsp, *.jsp=jsp, *.JSPF=jsp, *.jspf=jsp, *.JSP=jsp, *.xsp=jsp, *.XSP=jsp, /*=Stapler, /=default}
+17:10:08.255 [Executing redirectToBuildStatusUrl(com.dabsquared.gitlabjenkins.webhook.status.BranchBuildPageRedirectActionTest)] DEBUG org.mortbay.log - servletNameMap={default=default, jsp=jsp, Stapler=Stapler}
+17:10:08.255 [Executing redirectToBuildStatusUrl(com.dabsquared.gitlabjenkins.webhook.status.BranchBuildPageRedirectActionTest)] DEBUG org.mortbay.log - starting ServletHandler@2d4df467
+17:10:08.255 [Executing redirectToBuildStatusUrl(com.dabsquared.gitlabjenkins.webhook.status.BranchBuildPageRedirectActionTest)] DEBUG org.mortbay.log - started ServletHandler@2d4df467
+17:10:08.255 [Executing redirectToBuildStatusUrl(com.dabsquared.gitlabjenkins.webhook.status.BranchBuildPageRedirectActionTest)] DEBUG org.mortbay.log - starting SecurityHandler@780ccdc9
+17:10:08.255 [Executing redirectToBuildStatusUrl(com.dabsquared.gitlabjenkins.webhook.status.BranchBuildPageRedirectActionTest)] DEBUG org.mortbay.log - started SecurityHandler@780ccdc9
+17:10:08.255 [Executing redirectToBuildStatusUrl(com.dabsquared.gitlabjenkins.webhook.status.BranchBuildPageRedirectActionTest)] DEBUG org.mortbay.log - starting SessionHandler@65c2610f
+17:10:08.255 [Executing redirectToBuildStatusUrl(com.dabsquared.gitlabjenkins.webhook.status.BranchBuildPageRedirectActionTest)] DEBUG org.mortbay.log - started SessionHandler@65c2610f
+17:10:08.255 [Executing redirectToBuildStatusUrl(com.dabsquared.gitlabjenkins.webhook.status.BranchBuildPageRedirectActionTest)] DEBUG org.mortbay.log - starting org.mortbay.jetty.webapp.WebAppContext@4734a551{/jenkins,/Users/tippelsk/Documents/Programming/opensource/gitlab-plugin/target/jenkins-for-testx}
+17:10:08.255 [Executing redirectToBuildStatusUrl(com.dabsquared.gitlabjenkins.webhook.status.BranchBuildPageRedirectActionTest)] DEBUG org.mortbay.log - starting ErrorPageErrorHandler@1942a960
+17:10:08.255 [Executing redirectToBuildStatusUrl(com.dabsquared.gitlabjenkins.webhook.status.BranchBuildPageRedirectActionTest)] DEBUG org.mortbay.log - started ErrorPageErrorHandler@1942a960
+17:10:08.255 [Executing redirectToBuildStatusUrl(com.dabsquared.gitlabjenkins.webhook.status.BranchBuildPageRedirectActionTest)] DEBUG org.mortbay.log - Holding class org.kohsuke.stapler.DiagnosticThreadNameFilter
+17:10:08.255 [Executing redirectToBuildStatusUrl(com.dabsquared.gitlabjenkins.webhook.status.BranchBuildPageRedirectActionTest)] DEBUG org.mortbay.log - started diagnostic-name-filter
+17:10:08.255 [Executing redirectToBuildStatusUrl(com.dabsquared.gitlabjenkins.webhook.status.BranchBuildPageRedirectActionTest)] DEBUG org.mortbay.log - Holding class hudson.util.CharacterEncodingFilter
+17:10:08.255 [Executing redirectToBuildStatusUrl(com.dabsquared.gitlabjenkins.webhook.status.BranchBuildPageRedirectActionTest)] DEBUG org.mortbay.log - started encoding-filter
+17:10:08.255 [Executing redirectToBuildStatusUrl(com.dabsquared.gitlabjenkins.webhook.status.BranchBuildPageRedirectActionTest)] DEBUG org.mortbay.log - Holding class org.kohsuke.stapler.compression.CompressionFilter
+17:10:08.255 [Executing redirectToBuildStatusUrl(com.dabsquared.gitlabjenkins.webhook.status.BranchBuildPageRedirectActionTest)] DEBUG org.mortbay.log - started compression-filter
+17:10:08.255 [Executing redirectToBuildStatusUrl(com.dabsquared.gitlabjenkins.webhook.status.BranchBuildPageRedirectActionTest)] DEBUG org.mortbay.log - Holding class hudson.security.HudsonFilter
+17:10:08.255 [Executing redirectToBuildStatusUrl(com.dabsquared.gitlabjenkins.webhook.status.BranchBuildPageRedirectActionTest)] DEBUG org.mortbay.log - started authentication-filter
+17:10:08.255 [Executing redirectToBuildStatusUrl(com.dabsquared.gitlabjenkins.webhook.status.BranchBuildPageRedirectActionTest)] DEBUG org.mortbay.log - Holding class hudson.security.csrf.CrumbFilter
+17:10:08.255 [Executing redirectToBuildStatusUrl(com.dabsquared.gitlabjenkins.webhook.status.BranchBuildPageRedirectActionTest)] DEBUG org.mortbay.log - started csrf-filter
+17:10:08.255 [Executing redirectToBuildStatusUrl(com.dabsquared.gitlabjenkins.webhook.status.BranchBuildPageRedirectActionTest)] DEBUG org.mortbay.log - Holding class hudson.util.PluginServletFilter
+17:10:08.255 [Executing redirectToBuildStatusUrl(com.dabsquared.gitlabjenkins.webhook.status.BranchBuildPageRedirectActionTest)] DEBUG org.mortbay.log - started plugins-filter
+17:10:08.255 [Executing redirectToBuildStatusUrl(com.dabsquared.gitlabjenkins.webhook.status.BranchBuildPageRedirectActionTest)] DEBUG org.mortbay.log - Holding class org.kohsuke.stapler.Stapler
+17:10:08.255 [Executing redirectToBuildStatusUrl(com.dabsquared.gitlabjenkins.webhook.status.BranchBuildPageRedirectActionTest)] DEBUG org.mortbay.log - started Stapler
+17:10:08.255 [Executing redirectToBuildStatusUrl(com.dabsquared.gitlabjenkins.webhook.status.BranchBuildPageRedirectActionTest)] DEBUG org.mortbay.log - Holding class org.mortbay.jetty.servlet.DefaultServlet
+17:10:08.255 [Executing redirectToBuildStatusUrl(com.dabsquared.gitlabjenkins.webhook.status.BranchBuildPageRedirectActionTest)] DEBUG org.mortbay.log - started org.mortbay.jetty.servlet.DefaultServlet$NIOResourceCache@47ba8e3c
+17:10:08.255 [Executing redirectToBuildStatusUrl(com.dabsquared.gitlabjenkins.webhook.status.BranchBuildPageRedirectActionTest)] DEBUG org.mortbay.log - started org.mortbay.jetty.ResourceCache@1638fa8b
+17:10:08.255 [Executing redirectToBuildStatusUrl(com.dabsquared.gitlabjenkins.webhook.status.BranchBuildPageRedirectActionTest)] DEBUG org.mortbay.log - resource base = file:/Users/tippelsk/Documents/Programming/opensource/gitlab-plugin/target/jenkins-for-testx/
+17:10:08.255 [Executing redirectToBuildStatusUrl(com.dabsquared.gitlabjenkins.webhook.status.BranchBuildPageRedirectActionTest)] DEBUG org.mortbay.log - started default
+17:10:08.255 [Executing redirectToBuildStatusUrl(com.dabsquared.gitlabjenkins.webhook.status.BranchBuildPageRedirectActionTest)] DEBUG org.mortbay.log - Holding class org.mortbay.servlet.NoJspServlet
+17:10:08.255 [Executing redirectToBuildStatusUrl(com.dabsquared.gitlabjenkins.webhook.status.BranchBuildPageRedirectActionTest)] DEBUG org.mortbay.log - started jsp
+17:10:08.255 [Executing redirectToBuildStatusUrl(com.dabsquared.gitlabjenkins.webhook.status.BranchBuildPageRedirectActionTest)] DEBUG org.mortbay.log - started org.mortbay.jetty.webapp.WebAppContext@4734a551{/jenkins,/Users/tippelsk/Documents/Programming/opensource/gitlab-plugin/target/jenkins-for-testx}
+17:10:08.255 [Executing redirectToBuildStatusUrl(com.dabsquared.gitlabjenkins.webhook.status.BranchBuildPageRedirectActionTest)] DEBUG org.mortbay.log - starting Server@337f6716
+17:10:08.255 [Executing redirectToBuildStatusUrl(com.dabsquared.gitlabjenkins.webhook.status.BranchBuildPageRedirectActionTest)] INFO  org.mortbay.log - Started SocketConnector@0.0.0.0:52441
+17:10:08.256 [Executing redirectToBuildStatusUrl(com.dabsquared.gitlabjenkins.webhook.status.BranchBuildPageRedirectActionTest)] DEBUG org.mortbay.log - started SocketConnector@0.0.0.0:52441
+17:10:08.256 [Executing redirectToBuildStatusUrl(com.dabsquared.gitlabjenkins.webhook.status.BranchBuildPageRedirectActionTest)] DEBUG org.mortbay.log - started Server@337f6716
+Aug 26, 2016 5:10:08 PM org.jvnet.hudson.test.JenkinsRule createWebServer
+INFO: Running on http://localhost:52441/jenkins/
+Aug 26, 2016 5:10:08 PM jenkins.InitReactorRunner$1 onAttained
+INFO: Started initialization
+Aug 26, 2016 5:10:08 PM jenkins.InitReactorRunner$1 onAttained
+INFO: Listed all plugins
+Aug 26, 2016 5:10:08 PM jenkins.InitReactorRunner$1 onAttained
+INFO: Prepared all plugins
+Aug 26, 2016 5:10:08 PM jenkins.InitReactorRunner$1 onAttained
+INFO: Started all plugins
+Aug 26, 2016 5:10:08 PM jenkins.InitReactorRunner$1 onAttained
+INFO: Augmented all extensions
+Aug 26, 2016 5:10:08 PM jenkins.InitReactorRunner$1 onAttained
+INFO: Loaded all jobs
+Aug 26, 2016 5:10:08 PM org.jenkinsci.main.modules.sshd.SSHD start
+INFO: Started SSHD at port 52442
+Aug 26, 2016 5:10:08 PM jenkins.InitReactorRunner$1 onAttained
+INFO: Completed initialization
+Aug 26, 2016 5:10:08 PM hudson.UDPBroadcastThread run
+WARNING: UDP handling problem
+java.net.SocketException: Can't assign requested address
+	at java.net.PlainDatagramSocketImpl.join(Native Method)
+	at java.net.AbstractPlainDatagramSocketImpl.join(AbstractPlainDatagramSocketImpl.java:179)
+	at java.net.MulticastSocket.joinGroup(MulticastSocket.java:323)
+	at hudson.UDPBroadcastThread.run(UDPBroadcastThread.java:76)
+
+=== Starting redirectToBuildStatusUrl(com.dabsquared.gitlabjenkins.webhook.status.BranchBuildPageRedirectActionTest)
+Aug 26, 2016 5:10:08 PM hudson.model.Run execute
+INFO: test #1 main build action completed: SUCCESS
+17:10:08.979 [Executing redirectToBuildStatusUrl(com.dabsquared.gitlabjenkins.webhook.status.BranchBuildPageRedirectActionTest)] DEBUG org.mortbay.log - stopped Realm[default]==[bob, alice, charlie]
+17:10:08.979 [Executing redirectToBuildStatusUrl(com.dabsquared.gitlabjenkins.webhook.status.BranchBuildPageRedirectActionTest)] INFO  org.mortbay.log - Stopped SocketConnector@0.0.0.0:52441
+17:10:08.979 [Executing redirectToBuildStatusUrl(com.dabsquared.gitlabjenkins.webhook.status.BranchBuildPageRedirectActionTest)] DEBUG org.mortbay.log - stopped SocketConnector@0.0.0.0:0
+17:10:08.979 [Executing redirectToBuildStatusUrl(com.dabsquared.gitlabjenkins.webhook.status.BranchBuildPageRedirectActionTest)] DEBUG org.mortbay.log - stopping Server@337f6716
+17:10:08.979 [Executing redirectToBuildStatusUrl(com.dabsquared.gitlabjenkins.webhook.status.BranchBuildPageRedirectActionTest)] DEBUG org.mortbay.log - stopping org.mortbay.jetty.webapp.WebAppContext@4734a551{/jenkins,/Users/tippelsk/Documents/Programming/opensource/gitlab-plugin/target/jenkins-for-testx}
+17:10:08.979 [Executing redirectToBuildStatusUrl(com.dabsquared.gitlabjenkins.webhook.status.BranchBuildPageRedirectActionTest)] DEBUG org.mortbay.log - stopping SessionHandler@65c2610f
+17:10:08.979 [Executing redirectToBuildStatusUrl(com.dabsquared.gitlabjenkins.webhook.status.BranchBuildPageRedirectActionTest)] DEBUG org.mortbay.log - stopping SecurityHandler@780ccdc9
+17:10:08.979 [Executing redirectToBuildStatusUrl(com.dabsquared.gitlabjenkins.webhook.status.BranchBuildPageRedirectActionTest)] DEBUG org.mortbay.log - stopping ServletHandler@2d4df467
+17:10:08.979 [Executing redirectToBuildStatusUrl(com.dabsquared.gitlabjenkins.webhook.status.BranchBuildPageRedirectActionTest)] DEBUG org.mortbay.log - stopped plugins-filter
+17:10:08.979 [Executing redirectToBuildStatusUrl(com.dabsquared.gitlabjenkins.webhook.status.BranchBuildPageRedirectActionTest)] DEBUG org.mortbay.log - stopped csrf-filter
+17:10:08.979 [Executing redirectToBuildStatusUrl(com.dabsquared.gitlabjenkins.webhook.status.BranchBuildPageRedirectActionTest)] DEBUG org.mortbay.log - stopped authentication-filter
+17:10:08.979 [Executing redirectToBuildStatusUrl(com.dabsquared.gitlabjenkins.webhook.status.BranchBuildPageRedirectActionTest)] DEBUG org.mortbay.log - stopped compression-filter
+17:10:08.979 [Executing redirectToBuildStatusUrl(com.dabsquared.gitlabjenkins.webhook.status.BranchBuildPageRedirectActionTest)] DEBUG org.mortbay.log - stopped encoding-filter
+17:10:08.979 [Executing redirectToBuildStatusUrl(com.dabsquared.gitlabjenkins.webhook.status.BranchBuildPageRedirectActionTest)] DEBUG org.mortbay.log - stopped diagnostic-name-filter
+17:10:08.979 [Executing redirectToBuildStatusUrl(com.dabsquared.gitlabjenkins.webhook.status.BranchBuildPageRedirectActionTest)] DEBUG org.mortbay.log - stopped Stapler
+17:10:08.979 [Executing redirectToBuildStatusUrl(com.dabsquared.gitlabjenkins.webhook.status.BranchBuildPageRedirectActionTest)] DEBUG org.mortbay.log - stopped jsp
+17:10:08.979 [Executing redirectToBuildStatusUrl(com.dabsquared.gitlabjenkins.webhook.status.BranchBuildPageRedirectActionTest)] DEBUG org.mortbay.log - stopped org.mortbay.jetty.servlet.DefaultServlet$NIOResourceCache@47ba8e3c
+17:10:08.979 [Executing redirectToBuildStatusUrl(com.dabsquared.gitlabjenkins.webhook.status.BranchBuildPageRedirectActionTest)] DEBUG org.mortbay.log - stopped org.mortbay.jetty.ResourceCache@1638fa8b
+17:10:08.979 [Executing redirectToBuildStatusUrl(com.dabsquared.gitlabjenkins.webhook.status.BranchBuildPageRedirectActionTest)] DEBUG org.mortbay.log - stopped default
+17:10:08.979 [Executing redirectToBuildStatusUrl(com.dabsquared.gitlabjenkins.webhook.status.BranchBuildPageRedirectActionTest)] DEBUG org.mortbay.log - stopped ServletHandler@2d4df467
+17:10:08.979 [Executing redirectToBuildStatusUrl(com.dabsquared.gitlabjenkins.webhook.status.BranchBuildPageRedirectActionTest)] DEBUG org.mortbay.log - stopped SecurityHandler@780ccdc9
+17:10:08.979 [Executing redirectToBuildStatusUrl(com.dabsquared.gitlabjenkins.webhook.status.BranchBuildPageRedirectActionTest)] DEBUG org.mortbay.log - stopped org.mortbay.jetty.servlet.HashSessionManager@73e4ecb
+17:10:08.979 [Executing redirectToBuildStatusUrl(com.dabsquared.gitlabjenkins.webhook.status.BranchBuildPageRedirectActionTest)] DEBUG org.mortbay.log - stopped SessionHandler@65c2610f
+17:10:08.979 [Executing redirectToBuildStatusUrl(com.dabsquared.gitlabjenkins.webhook.status.BranchBuildPageRedirectActionTest)] DEBUG org.mortbay.log - stopping ErrorPageErrorHandler@1942a960
+17:10:08.979 [Executing redirectToBuildStatusUrl(com.dabsquared.gitlabjenkins.webhook.status.BranchBuildPageRedirectActionTest)] DEBUG org.mortbay.log - stopped ErrorPageErrorHandler@1942a960
+17:10:08.979 [Executing redirectToBuildStatusUrl(com.dabsquared.gitlabjenkins.webhook.status.BranchBuildPageRedirectActionTest)] DEBUG org.mortbay.log - Container ServletHandler@2d4df467 - plugins-filter as filter
+17:10:08.979 [Executing redirectToBuildStatusUrl(com.dabsquared.gitlabjenkins.webhook.status.BranchBuildPageRedirectActionTest)] DEBUG org.mortbay.log - Container ServletHandler@2d4df467 - csrf-filter as filter
+17:10:08.979 [Executing redirectToBuildStatusUrl(com.dabsquared.gitlabjenkins.webhook.status.BranchBuildPageRedirectActionTest)] DEBUG org.mortbay.log - Container ServletHandler@2d4df467 - authentication-filter as filter
+17:10:08.979 [Executing redirectToBuildStatusUrl(com.dabsquared.gitlabjenkins.webhook.status.BranchBuildPageRedirectActionTest)] DEBUG org.mortbay.log - Container ServletHandler@2d4df467 - compression-filter as filter
+17:10:08.979 [Executing redirectToBuildStatusUrl(com.dabsquared.gitlabjenkins.webhook.status.BranchBuildPageRedirectActionTest)] DEBUG org.mortbay.log - Container ServletHandler@2d4df467 - encoding-filter as filter
+17:10:08.979 [Executing redirectToBuildStatusUrl(com.dabsquared.gitlabjenkins.webhook.status.BranchBuildPageRedirectActionTest)] DEBUG org.mortbay.log - Container ServletHandler@2d4df467 - diagnostic-name-filter as filter
+17:10:08.979 [Executing redirectToBuildStatusUrl(com.dabsquared.gitlabjenkins.webhook.status.BranchBuildPageRedirectActionTest)] DEBUG org.mortbay.log - Container ServletHandler@2d4df467 - (F=plugins-filter,[/*],[],0) as filterMapping
+17:10:08.979 [Executing redirectToBuildStatusUrl(com.dabsquared.gitlabjenkins.webhook.status.BranchBuildPageRedirectActionTest)] DEBUG org.mortbay.log - Container ServletHandler@2d4df467 - (F=csrf-filter,[/*],[],0) as filterMapping
+17:10:08.979 [Executing redirectToBuildStatusUrl(com.dabsquared.gitlabjenkins.webhook.status.BranchBuildPageRedirectActionTest)] DEBUG org.mortbay.log - Container ServletHandler@2d4df467 - (F=authentication-filter,[/*],[],0) as filterMapping
+17:10:08.979 [Executing redirectToBuildStatusUrl(com.dabsquared.gitlabjenkins.webhook.status.BranchBuildPageRedirectActionTest)] DEBUG org.mortbay.log - Container ServletHandler@2d4df467 - (F=compression-filter,[/*],[],0) as filterMapping
+17:10:08.979 [Executing redirectToBuildStatusUrl(com.dabsquared.gitlabjenkins.webhook.status.BranchBuildPageRedirectActionTest)] DEBUG org.mortbay.log - Container ServletHandler@2d4df467 - (F=encoding-filter,[/*],[],0) as filterMapping
+17:10:08.979 [Executing redirectToBuildStatusUrl(com.dabsquared.gitlabjenkins.webhook.status.BranchBuildPageRedirectActionTest)] DEBUG org.mortbay.log - Container ServletHandler@2d4df467 - (F=diagnostic-name-filter,[/*],[],0) as filterMapping
+17:10:08.979 [Executing redirectToBuildStatusUrl(com.dabsquared.gitlabjenkins.webhook.status.BranchBuildPageRedirectActionTest)] DEBUG org.mortbay.log - filterNameMap=null
+17:10:08.979 [Executing redirectToBuildStatusUrl(com.dabsquared.gitlabjenkins.webhook.status.BranchBuildPageRedirectActionTest)] DEBUG org.mortbay.log - pathFilters=null
+17:10:08.979 [Executing redirectToBuildStatusUrl(com.dabsquared.gitlabjenkins.webhook.status.BranchBuildPageRedirectActionTest)] DEBUG org.mortbay.log - servletFilterMap=null
+17:10:08.979 [Executing redirectToBuildStatusUrl(com.dabsquared.gitlabjenkins.webhook.status.BranchBuildPageRedirectActionTest)] DEBUG org.mortbay.log - servletPathMap={*.jspx=jsp, *.JSPX=jsp, *.jsp=jsp, *.JSPF=jsp, *.jspf=jsp, *.JSP=jsp, *.xsp=jsp, *.XSP=jsp, /*=Stapler, /=default}
+17:10:08.979 [Executing redirectToBuildStatusUrl(com.dabsquared.gitlabjenkins.webhook.status.BranchBuildPageRedirectActionTest)] DEBUG org.mortbay.log - servletNameMap={default=default, jsp=jsp, Stapler=Stapler}
+17:10:08.979 [Executing redirectToBuildStatusUrl(com.dabsquared.gitlabjenkins.webhook.status.BranchBuildPageRedirectActionTest)] DEBUG org.mortbay.log - Container ServletHandler@2d4df467 - Stapler as servlet
+17:10:08.979 [Executing redirectToBuildStatusUrl(com.dabsquared.gitlabjenkins.webhook.status.BranchBuildPageRedirectActionTest)] DEBUG org.mortbay.log - Container ServletHandler@2d4df467 - jsp as servlet
+17:10:08.979 [Executing redirectToBuildStatusUrl(com.dabsquared.gitlabjenkins.webhook.status.BranchBuildPageRedirectActionTest)] DEBUG org.mortbay.log - Container ServletHandler@2d4df467 - default as servlet
+17:10:08.979 [Executing redirectToBuildStatusUrl(com.dabsquared.gitlabjenkins.webhook.status.BranchBuildPageRedirectActionTest)] DEBUG org.mortbay.log - Container ServletHandler@2d4df467 - (S=Stapler,[/*]) as servletMapping
+17:10:08.979 [Executing redirectToBuildStatusUrl(com.dabsquared.gitlabjenkins.webhook.status.BranchBuildPageRedirectActionTest)] DEBUG org.mortbay.log - Container ServletHandler@2d4df467 - (S=jsp,[*.jsp, *.jspf, *.jspx, *.xsp, *.JSP, *.JSPF, *.JSPX, *.XSP]) as servletMapping
+17:10:08.979 [Executing redirectToBuildStatusUrl(com.dabsquared.gitlabjenkins.webhook.status.BranchBuildPageRedirectActionTest)] DEBUG org.mortbay.log - Container ServletHandler@2d4df467 - (S=default,[/]) as servletMapping
+17:10:08.979 [Executing redirectToBuildStatusUrl(com.dabsquared.gitlabjenkins.webhook.status.BranchBuildPageRedirectActionTest)] DEBUG org.mortbay.log - filterNameMap=null
+17:10:08.979 [Executing redirectToBuildStatusUrl(com.dabsquared.gitlabjenkins.webhook.status.BranchBuildPageRedirectActionTest)] DEBUG org.mortbay.log - pathFilters=null
+17:10:08.979 [Executing redirectToBuildStatusUrl(com.dabsquared.gitlabjenkins.webhook.status.BranchBuildPageRedirectActionTest)] DEBUG org.mortbay.log - servletFilterMap=null
+17:10:08.979 [Executing redirectToBuildStatusUrl(com.dabsquared.gitlabjenkins.webhook.status.BranchBuildPageRedirectActionTest)] DEBUG org.mortbay.log - servletPathMap=null
+17:10:08.979 [Executing redirectToBuildStatusUrl(com.dabsquared.gitlabjenkins.webhook.status.BranchBuildPageRedirectActionTest)] DEBUG org.mortbay.log - servletNameMap=null
+17:10:08.980 [Executing redirectToBuildStatusUrl(com.dabsquared.gitlabjenkins.webhook.status.BranchBuildPageRedirectActionTest)] DEBUG org.mortbay.log - stopped org.mortbay.jetty.webapp.WebAppContext@4734a551{/jenkins,/Users/tippelsk/Documents/Programming/opensource/gitlab-plugin/target/jenkins-for-testx}
+17:10:08.980 [Executing redirectToBuildStatusUrl(com.dabsquared.gitlabjenkins.webhook.status.BranchBuildPageRedirectActionTest)] DEBUG org.mortbay.log - stopped org.mortbay.jetty.servlet.HashSessionIdManager@5434de8
+17:10:08.980 [Executing redirectToBuildStatusUrl(com.dabsquared.gitlabjenkins.webhook.status.BranchBuildPageRedirectActionTest)] DEBUG org.mortbay.log - stopped org.jvnet.hudson.test.ThreadPoolImpl@5bee88e3
+17:10:08.980 [Executing redirectToBuildStatusUrl(com.dabsquared.gitlabjenkins.webhook.status.BranchBuildPageRedirectActionTest)] DEBUG org.mortbay.log - stopped Server@337f6716
+17:10:08.980 [Executing redirectToBuildStatusUrl(com.dabsquared.gitlabjenkins.webhook.status.BranchBuildPageRedirectActionTest)] DEBUG o.a.m.core.service.AbstractIoService - awaitTermination on (nio socket acceptor: not bound) called by thread=[Executing redirectToBuildStatusUrl(com.dabsquared.gitlabjenkins.webhook.status.BranchBuildPageRedirectActionTest)]
+17:10:08.982 [Executing redirectToBuildStatusUrl(com.dabsquared.gitlabjenkins.webhook.status.BranchBuildPageRedirectActionTest)] DEBUG o.a.m.core.service.AbstractIoService - awaitTermination on (nio socket acceptor: not bound) finished

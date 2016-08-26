@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>NameBasedFilter.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">GitLab Plugin</a> &gt; <a href="index.source.html" class="el_package">com.dabsquared.gitlabjenkins.trigger.filter</a> &gt; <span class="el_source">NameBasedFilter.java</span></div><h1>NameBasedFilter.java</h1><pre class="source lang-java linenums">package com.dabsquared.gitlabjenkins.trigger.filter;
+
+import com.google.common.base.Splitter;
+import org.springframework.util.AntPathMatcher;
+
+import java.util.ArrayList;
+import java.util.List;
+
+/**
+ * @author Robin Müller
+ */
+class NameBasedFilter implements BranchFilter {
+
+    private final List&lt;String&gt; includedBranches;
+    private final List&lt;String&gt; excludedBranches;
+
+<span class="fc" id="L17">    public NameBasedFilter(String includedBranches, String excludedBranches) {</span>
+<span class="fc" id="L18">        this.includedBranches = convert(includedBranches);</span>
+<span class="fc" id="L19">        this.excludedBranches = convert(excludedBranches);</span>
+<span class="fc" id="L20">    }</span>
+
+    @Override
+    public boolean isBranchAllowed(String branchName) {
+<span class="pc bpc" id="L24" title="1 of 6 branches missed.">        return hasNoBranchSpecs() || (isBranchNotExcluded(branchName) &amp;&amp; isBranchIncluded(branchName));</span>
+    }
+
+    private boolean hasNoBranchSpecs() {
+<span class="pc bpc" id="L28" title="1 of 4 branches missed.">        return includedBranches.isEmpty() &amp;&amp; excludedBranches.isEmpty();</span>
+    }
+
+    private boolean isBranchNotExcluded(String branchName) {
+<span class="fc" id="L32">        AntPathMatcher matcher = new AntPathMatcher();</span>
+<span class="fc bfc" id="L33" title="All 2 branches covered.">        for (String excludePattern : excludedBranches) {</span>
+<span class="fc bfc" id="L34" title="All 2 branches covered.">            if (matcher.match(excludePattern, branchName)) {</span>
+<span class="fc" id="L35">                return false;</span>
+            }
+<span class="fc" id="L37">        }</span>
+<span class="fc" id="L38">        return true;</span>
+    }
+
+    private boolean isBranchIncluded(String branchName) {
+<span class="fc" id="L42">        AntPathMatcher matcher = new AntPathMatcher();</span>
+<span class="fc bfc" id="L43" title="All 2 branches covered.">        for (String includePattern : includedBranches) {</span>
+<span class="fc bfc" id="L44" title="All 2 branches covered.">            if (matcher.match(includePattern, branchName)) {</span>
+<span class="fc" id="L45">                return true;</span>
+            }
+<span class="fc" id="L47">        }</span>
+<span class="fc" id="L48">        return includedBranches.isEmpty();</span>
+    }
+
+    private List&lt;String&gt; convert(String commaSeparatedString) {
+<span class="fc" id="L52">        ArrayList&lt;String&gt; result = new ArrayList&lt;&gt;();</span>
+<span class="fc bfc" id="L53" title="All 2 branches covered.">        for (String s : Splitter.on(',').omitEmptyStrings().trimResults().split(commaSeparatedString)) {</span>
+<span class="fc" id="L54">            result.add(s);</span>
+<span class="fc" id="L55">        }</span>
+<span class="fc" id="L56">        return result;</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.2.201409121644</span></div></body></html>

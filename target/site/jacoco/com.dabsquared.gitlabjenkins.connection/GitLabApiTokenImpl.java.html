@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>GitLabApiTokenImpl.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">GitLab Plugin</a> &gt; <a href="index.source.html" class="el_package">com.dabsquared.gitlabjenkins.connection</a> &gt; <span class="el_source">GitLabApiTokenImpl.java</span></div><h1>GitLabApiTokenImpl.java</h1><pre class="source lang-java linenums">package com.dabsquared.gitlabjenkins.connection;
+
+import com.cloudbees.plugins.credentials.CredentialsScope;
+import com.cloudbees.plugins.credentials.impl.BaseStandardCredentials;
+import hudson.Extension;
+import hudson.util.Secret;
+import org.kohsuke.stapler.DataBoundConstructor;
+
+/**
+ * @author Robin Müller
+ */
+public final class GitLabApiTokenImpl extends BaseStandardCredentials implements GitLabApiToken {
+
+    private Secret apiToken;
+
+    @DataBoundConstructor
+    public GitLabApiTokenImpl(CredentialsScope scope, String id, String description, Secret apiToken) {
+<span class="nc" id="L18">        super(scope, id, description);</span>
+<span class="nc" id="L19">        this.apiToken = apiToken;</span>
+<span class="nc" id="L20">    }</span>
+
+    @Override
+    public Secret getApiToken() {
+<span class="nc" id="L24">        return apiToken;</span>
+    }
+
+    @Extension
+<span class="fc" id="L28">    public static class DescriptorImpl extends BaseStandardCredentialsDescriptor {</span>
+        @Override
+        public String getDisplayName() {
+<span class="fc" id="L31">            return Messages.GitLabApiToken_name();</span>
+        }
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.2.201409121644</span></div></body></html>

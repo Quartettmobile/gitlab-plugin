@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: com.dabsquared.gitlabjenkins.webhook.build.NoteBuildActionTest
+-------------------------------------------------------------------------------
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.367 sec - in com.dabsquared.gitlabjenkins.webhook.build.NoteBuildActionTest

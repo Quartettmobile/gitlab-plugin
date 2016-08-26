@@ -1,0 +1,3 @@
+com.dabsquared.gitlabjenkins.GitLabPushTrigger
+com.dabsquared.gitlabjenkins.connection.GitLabConnection
+com.dabsquared.gitlabjenkins.gitlab.GitLabClientBuilder

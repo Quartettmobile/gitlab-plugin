@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>PushBuildAction.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">GitLab Plugin</a> &gt; <a href="index.source.html" class="el_package">com.dabsquared.gitlabjenkins.webhook.build</a> &gt; <span class="el_source">PushBuildAction.java</span></div><h1>PushBuildAction.java</h1><pre class="source lang-java linenums">package com.dabsquared.gitlabjenkins.webhook.build;
+
+import com.dabsquared.gitlabjenkins.GitLabPushTrigger;
+import com.dabsquared.gitlabjenkins.gitlab.hook.model.Project;
+import com.dabsquared.gitlabjenkins.gitlab.hook.model.PushHook;
+import com.dabsquared.gitlabjenkins.util.JsonUtil;
+import hudson.model.Item;
+import hudson.model.Job;
+import hudson.security.ACL;
+import hudson.util.HttpResponses;
+import jenkins.plugins.git.GitSCMSource;
+import jenkins.scm.api.SCMSource;
+import jenkins.scm.api.SCMSourceOwner;
+import org.apache.commons.lang.StringUtils;
+import org.eclipse.jgit.transport.URIish;
+
+import java.net.MalformedURLException;
+import java.net.URISyntaxException;
+import java.net.URL;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
+import static com.dabsquared.gitlabjenkins.util.JsonUtil.toPrettyPrint;
+import static com.dabsquared.gitlabjenkins.util.LoggerUtil.toArray;
+
+/**
+ * @author Robin Müller
+ */
+public class PushBuildAction extends BuildWebHookAction {
+
+<span class="fc" id="L31">    private final static Logger LOGGER = Logger.getLogger(PushBuildAction.class.getName());</span>
+    private final Item project;
+
+    private PushHook pushHook;
+
+<span class="fc" id="L36">    public PushBuildAction(Item project, String json) {</span>
+<span class="fc" id="L37">        LOGGER.log(Level.FINE, &quot;Push: {0}&quot;, toPrettyPrint(json));</span>
+<span class="fc" id="L38">        this.project = project;</span>
+<span class="fc" id="L39">        this.pushHook = JsonUtil.read(json, PushHook.class);</span>
+<span class="fc" id="L40">    }</span>
+
+    void processForCompatibility() {
+        // Fill in project if it's not defined.
+<span class="pc bpc" id="L44" title="1 of 4 branches missed.">        if (this.pushHook.getProject() == null &amp;&amp; this.pushHook.getRepository() != null) {</span>
+            try {
+<span class="nc" id="L46">                String path = new URL(this.pushHook.getRepository().getGitHttpUrl()).getPath();</span>
+<span class="nc bnc" id="L47" title="All 2 branches missed.">                if (StringUtils.isNotBlank(path)) {</span>
+<span class="nc" id="L48">                    Project project = new Project();</span>
+<span class="nc" id="L49">                    project.setNamespace(path.replaceFirst(&quot;/&quot;, &quot;&quot;).substring(0, path.lastIndexOf(&quot;/&quot;)));</span>
+<span class="nc" id="L50">                    this.pushHook.setProject(project);</span>
+<span class="nc" id="L51">                } else {</span>
+<span class="nc" id="L52">                    LOGGER.log(Level.WARNING, &quot;Could not find suitable namespace.&quot;);</span>
+                }
+<span class="nc" id="L54">            } catch (MalformedURLException ignored) {</span>
+<span class="nc" id="L55">                LOGGER.log(Level.WARNING, &quot;Invalid repository url found while building namespace.&quot;);</span>
+<span class="nc" id="L56">            }</span>
+        }
+<span class="fc" id="L58">    }</span>
+
+    public void execute() {
+<span class="fc bfc" id="L61" title="All 4 branches covered.">        if (pushHook.getRepository() != null &amp;&amp; pushHook.getRepository().getUrl() == null) {</span>
+<span class="fc" id="L62">            LOGGER.log(Level.WARNING, &quot;No repository url found.&quot;);</span>
+<span class="fc" id="L63">            return;</span>
+        }
+
+<span class="pc bpc" id="L66" title="1 of 2 branches missed.">        if (project instanceof Job&lt;?, ?&gt;) {</span>
+<span class="fc" id="L67">            ACL.impersonate(ACL.SYSTEM, new Runnable() {</span>
+                public void run() {
+<span class="fc" id="L69">                    GitLabPushTrigger trigger = GitLabPushTrigger.getFromJob((Job&lt;?, ?&gt;) project);</span>
+<span class="fc bfc" id="L70" title="All 2 branches covered.">                    if (trigger != null) {</span>
+<span class="fc" id="L71">                        trigger.onPost(pushHook);</span>
+                    }
+<span class="fc" id="L73">                }</span>
+            });
+<span class="fc" id="L75">            throw HttpResponses.ok();</span>
+        }
+<span class="nc bnc" id="L77" title="All 2 branches missed.">        if (project instanceof SCMSourceOwner) {</span>
+<span class="nc" id="L78">            ACL.impersonate(ACL.SYSTEM, new SCMSourceOwnerNotifier());</span>
+<span class="nc" id="L79">            throw HttpResponses.ok();</span>
+        }
+<span class="nc" id="L81">        throw HttpResponses.errorWithoutStack(409, &quot;Push Hook is not supported for this project&quot;);</span>
+    }
+
+<span class="nc" id="L84">    private class SCMSourceOwnerNotifier implements Runnable {</span>
+        public void run() {
+<span class="nc bnc" id="L86" title="All 2 branches missed.">            for (SCMSource scmSource : ((SCMSourceOwner) project).getSCMSources()) {</span>
+<span class="nc bnc" id="L87" title="All 2 branches missed.">                if (scmSource instanceof GitSCMSource) {</span>
+<span class="nc" id="L88">                    GitSCMSource gitSCMSource = (GitSCMSource) scmSource;</span>
+                    try {
+<span class="nc bnc" id="L90" title="All 2 branches missed.">                        if (new URIish(gitSCMSource.getRemote()).equals(new URIish(gitSCMSource.getRemote()))) {</span>
+<span class="nc bnc" id="L91" title="All 2 branches missed.">                            if (!gitSCMSource.isIgnoreOnPushNotifications()) {</span>
+<span class="nc" id="L92">                                LOGGER.log(Level.FINE, &quot;Notify scmSourceOwner {0} about changes for {1}&quot;,</span>
+<span class="nc" id="L93">                                           toArray(project.getName(), gitSCMSource.getRemote()));</span>
+<span class="nc" id="L94">                                ((SCMSourceOwner) project).onSCMSourceUpdated(scmSource);</span>
+                            } else {
+<span class="nc" id="L96">                                LOGGER.log(Level.FINE, &quot;Ignore on push notification for scmSourceOwner {0} about changes for {1}&quot;,</span>
+<span class="nc" id="L97">                                           toArray(project.getName(), gitSCMSource.getRemote()));</span>
+                            }
+                        }
+<span class="nc" id="L100">                    } catch (URISyntaxException e) {</span>
+                        // nothing to do
+<span class="nc" id="L102">                    }</span>
+                }
+<span class="nc" id="L104">            }</span>
+<span class="nc" id="L105">        }</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.2.201409121644</span></div></body></html>

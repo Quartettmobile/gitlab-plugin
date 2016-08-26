@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>GitLabConnectionConfig.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">GitLab Plugin</a> &gt; <a href="index.source.html" class="el_package">com.dabsquared.gitlabjenkins.connection</a> &gt; <span class="el_source">GitLabConnectionConfig.java</span></div><h1>GitLabConnectionConfig.java</h1><pre class="source lang-java linenums">package com.dabsquared.gitlabjenkins.connection;
+
+import com.cloudbees.plugins.credentials.Credentials;
+import com.cloudbees.plugins.credentials.CredentialsMatcher;
+import com.cloudbees.plugins.credentials.common.AbstractIdCredentialsListBoxModel;
+import com.cloudbees.plugins.credentials.common.StandardCredentials;
+import com.cloudbees.plugins.credentials.common.StandardListBoxModel;
+import com.cloudbees.plugins.credentials.domains.URIRequirementBuilder;
+import com.dabsquared.gitlabjenkins.gitlab.GitLabClientBuilder;
+import com.dabsquared.gitlabjenkins.gitlab.api.GitLabApi;
+import edu.umd.cs.findbugs.annotations.NonNull;
+import hudson.Extension;
+import hudson.model.Item;
+import hudson.security.ACL;
+import hudson.util.FormValidation;
+import hudson.util.ListBoxModel;
+import jenkins.model.GlobalConfiguration;
+import jenkins.model.Jenkins;
+import net.sf.json.JSONObject;
+import org.eclipse.jgit.util.StringUtils;
+import org.jenkinsci.plugins.plaincredentials.StringCredentials;
+import org.kohsuke.stapler.QueryParameter;
+import org.kohsuke.stapler.StaplerRequest;
+
+import javax.ws.rs.ProcessingException;
+import javax.ws.rs.WebApplicationException;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+/**
+ * @author Robin Müller
+ */
+@Extension
+public class GitLabConnectionConfig extends GlobalConfiguration {
+
+    private boolean useAuthenticatedEndpoint;
+<span class="fc" id="L39">    private List&lt;GitLabConnection&gt; connections = new ArrayList&lt;&gt;();</span>
+<span class="fc" id="L40">    private transient Map&lt;String, GitLabConnection&gt; connectionMap = new HashMap&lt;&gt;();</span>
+<span class="fc" id="L41">    private transient Map&lt;String, GitLabApi&gt; clients = new HashMap&lt;&gt;();</span>
+
+<span class="fc" id="L43">    public GitLabConnectionConfig() {</span>
+<span class="fc" id="L44">        load();</span>
+<span class="fc" id="L45">        refreshConnectionMap();</span>
+<span class="fc" id="L46">    }</span>
+
+    @Override
+    public boolean configure(StaplerRequest req, JSONObject json) throws FormException {
+<span class="nc" id="L50">        connections = req.bindJSONToList(GitLabConnection.class, json.get(&quot;connections&quot;));</span>
+<span class="nc" id="L51">        useAuthenticatedEndpoint = json.getBoolean(&quot;useAuthenticatedEndpoint&quot;);</span>
+<span class="nc" id="L52">        refreshConnectionMap();</span>
+<span class="nc" id="L53">        clients.clear();</span>
+<span class="nc" id="L54">        save();</span>
+<span class="nc" id="L55">        return super.configure(req, json);</span>
+    }
+
+    public boolean isUseAuthenticatedEndpoint() {
+<span class="fc" id="L59">        return useAuthenticatedEndpoint;</span>
+    }
+
+    void setUseAuthenticatedEndpoint(boolean useAuthenticatedEndpoint) {
+<span class="fc" id="L63">        this.useAuthenticatedEndpoint = useAuthenticatedEndpoint;</span>
+<span class="fc" id="L64">    }</span>
+
+    public List&lt;GitLabConnection&gt; getConnections() {
+<span class="fc" id="L67">        return connections;</span>
+    }
+
+    public void addConnection(GitLabConnection connection) {
+<span class="fc" id="L71">        connections.add(connection);</span>
+<span class="fc" id="L72">        connectionMap.put(connection.getName(), connection);</span>
+<span class="fc" id="L73">    }</span>
+
+    public GitLabApi getClient(String connectionName) {
+<span class="pc bpc" id="L76" title="1 of 4 branches missed.">        if (!clients.containsKey(connectionName) &amp;&amp; connectionMap.containsKey(connectionName)) {</span>
+<span class="fc" id="L77">            clients.put(connectionName, GitLabClientBuilder.buildClient(connectionMap.get(connectionName)));</span>
+        }
+<span class="fc" id="L79">        return clients.get(connectionName);</span>
+    }
+
+    public FormValidation doCheckName(@QueryParameter String id, @QueryParameter String value) {
+<span class="nc bnc" id="L83" title="All 2 branches missed.">        if (StringUtils.isEmptyOrNull(value)) {</span>
+<span class="nc" id="L84">            return FormValidation.error(Messages.name_required());</span>
+<span class="nc bnc" id="L85" title="All 4 branches missed.">        } else if (connectionMap.containsKey(value) &amp;&amp; !connectionMap.get(value).toString().equals(id)) {</span>
+<span class="nc" id="L86">            return FormValidation.error(Messages.name_exists(value));</span>
+        } else {
+<span class="nc" id="L88">            return FormValidation.ok();</span>
+        }
+    }
+
+    public FormValidation doCheckUrl(@QueryParameter String value) {
+<span class="nc bnc" id="L93" title="All 2 branches missed.">        if (StringUtils.isEmptyOrNull(value)) {</span>
+<span class="nc" id="L94">            return FormValidation.error(Messages.url_required());</span>
+        } else {
+<span class="nc" id="L96">            return FormValidation.ok();</span>
+        }
+    }
+
+    public FormValidation doCheckApiTokenId(@QueryParameter String value) {
+<span class="nc bnc" id="L101" title="All 2 branches missed.">        if (StringUtils.isEmptyOrNull(value)) {</span>
+<span class="nc" id="L102">            return FormValidation.error(Messages.apiToken_required());</span>
+        } else {
+<span class="nc" id="L104">            return FormValidation.ok();</span>
+        }
+    }
+
+    public FormValidation doCheckConnectionTimeout(@QueryParameter Integer value) {
+<span class="nc bnc" id="L109" title="All 2 branches missed.">        if (value == null) {</span>
+<span class="nc" id="L110">            return FormValidation.error(Messages.connectionTimeout_required());</span>
+        } else {
+<span class="nc" id="L112">            return FormValidation.ok();</span>
+        }
+    }
+
+    public FormValidation doCheckReadTimeout(@QueryParameter Integer value) {
+<span class="nc bnc" id="L117" title="All 2 branches missed.">        if (value == null) {</span>
+<span class="nc" id="L118">            return FormValidation.error(Messages.readTimeout_required());</span>
+        } else {
+<span class="nc" id="L120">            return FormValidation.ok();</span>
+        }
+    }
+
+    public FormValidation doTestConnection(@QueryParameter String url,
+                                           @QueryParameter String apiTokenId,
+                                           @QueryParameter boolean ignoreCertificateErrors,
+                                           @QueryParameter int connectionTimeout,
+                                           @QueryParameter int readTimeout) {
+        try {
+<span class="fc" id="L130">            GitLabClientBuilder.buildClient(url, apiTokenId, ignoreCertificateErrors, connectionTimeout, readTimeout).headCurrentUser();</span>
+<span class="fc" id="L131">            return FormValidation.ok(Messages.connection_success());</span>
+<span class="fc" id="L132">        } catch (WebApplicationException e) {</span>
+<span class="fc" id="L133">            return FormValidation.error(Messages.connection_error(e.getMessage()));</span>
+<span class="fc" id="L134">        } catch (ProcessingException e) {</span>
+<span class="fc" id="L135">            return FormValidation.error(Messages.connection_error(e.getCause().getMessage()));</span>
+        }
+    }
+
+    public ListBoxModel doFillApiTokenIdItems(@QueryParameter String name, @QueryParameter String url) {
+<span class="nc bnc" id="L140" title="All 2 branches missed.">        if (Jenkins.getInstance().hasPermission(Item.CONFIGURE)) {</span>
+<span class="nc" id="L141">            AbstractIdCredentialsListBoxModel&lt;StandardListBoxModel, StandardCredentials&gt; options = new StandardListBoxModel()</span>
+<span class="nc" id="L142">                .includeEmptyValue()</span>
+<span class="nc" id="L143">                .includeMatchingAs(ACL.SYSTEM,</span>
+<span class="nc" id="L144">                                   Jenkins.getActiveInstance(),</span>
+                                   StandardCredentials.class,
+<span class="nc" id="L146">                                   URIRequirementBuilder.fromUri(url).build(),</span>
+                                   new GitLabCredentialMatcher());
+<span class="nc bnc" id="L148" title="All 4 branches missed.">            if (name != null &amp;&amp; connectionMap.containsKey(name)) {</span>
+<span class="nc" id="L149">                String apiTokenId = connectionMap.get(name).getApiTokenId();</span>
+<span class="nc" id="L150">                options.includeCurrentValue(apiTokenId);</span>
+<span class="nc bnc" id="L151" title="All 2 branches missed.">                for (ListBoxModel.Option option : options) {</span>
+<span class="nc bnc" id="L152" title="All 2 branches missed.">                    if (option.value.equals(apiTokenId)) {</span>
+<span class="nc" id="L153">                        option.selected = true;</span>
+                    }
+<span class="nc" id="L155">                }</span>
+            }
+<span class="nc" id="L157">            return options;</span>
+        }
+<span class="nc" id="L159">        return new StandardListBoxModel();</span>
+    }
+
+    private void refreshConnectionMap() {
+<span class="fc" id="L163">        connectionMap.clear();</span>
+<span class="pc bpc" id="L164" title="1 of 2 branches missed.">        for (GitLabConnection connection : connections) {</span>
+<span class="nc" id="L165">            connectionMap.put(connection.getName(), connection);</span>
+<span class="nc" id="L166">        }</span>
+<span class="fc" id="L167">    }</span>
+
+<span class="nc" id="L169">    private static class GitLabCredentialMatcher implements CredentialsMatcher {</span>
+        @Override
+        public boolean matches(@NonNull Credentials credentials) {
+            try {
+<span class="nc bnc" id="L173" title="All 4 branches missed.">                return credentials instanceof GitLabApiToken || credentials instanceof StringCredentials;</span>
+<span class="nc" id="L174">            } catch (Exception e) {</span>
+<span class="nc" id="L175">                return false;</span>
+            }
+        }
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.2.201409121644</span></div></body></html>

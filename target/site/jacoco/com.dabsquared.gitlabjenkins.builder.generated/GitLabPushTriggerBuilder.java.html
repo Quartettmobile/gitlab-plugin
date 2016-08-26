@@ -1,0 +1,294 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>GitLabPushTriggerBuilder.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">GitLab Plugin</a> &gt; <a href="index.source.html" class="el_package">com.dabsquared.gitlabjenkins.builder.generated</a> &gt; <span class="el_source">GitLabPushTriggerBuilder.java</span></div><h1>GitLabPushTriggerBuilder.java</h1><pre class="source lang-java linenums">package com.dabsquared.gitlabjenkins.builder.generated;
+
+import com.dabsquared.gitlabjenkins.GitLabPushTrigger;
+import com.dabsquared.gitlabjenkins.trigger.TriggerOpenMergeRequest;
+import com.dabsquared.gitlabjenkins.trigger.filter.BranchFilterType;
+import javax.annotation.Generated;
+
+@Generated(&quot;PojoBuilder&quot;)
+public class GitLabPushTriggerBuilder
+    implements Cloneable {
+  protected GitLabPushTriggerBuilder self;
+  protected boolean value$triggerOnPush$boolean;
+  protected boolean isSet$triggerOnPush$boolean;
+  protected boolean value$triggerOnMergeRequest$boolean;
+  protected boolean isSet$triggerOnMergeRequest$boolean;
+  protected TriggerOpenMergeRequest value$triggerOpenMergeRequestOnPush$com$dabsquared$gitlabjenkins$trigger$TriggerOpenMergeRequest;
+  protected boolean isSet$triggerOpenMergeRequestOnPush$com$dabsquared$gitlabjenkins$trigger$TriggerOpenMergeRequest;
+  protected boolean value$triggerOnNoteRequest$boolean;
+  protected boolean isSet$triggerOnNoteRequest$boolean;
+  protected String value$noteRegex$java$lang$String;
+  protected boolean isSet$noteRegex$java$lang$String;
+  protected boolean value$skipWorkInProgressMergeRequest$boolean;
+  protected boolean isSet$skipWorkInProgressMergeRequest$boolean;
+  protected boolean value$ciSkip$boolean;
+  protected boolean isSet$ciSkip$boolean;
+  protected boolean value$setBuildDescription$boolean;
+  protected boolean isSet$setBuildDescription$boolean;
+  protected boolean value$addNoteOnMergeRequest$boolean;
+  protected boolean isSet$addNoteOnMergeRequest$boolean;
+  protected boolean value$addCiMessage$boolean;
+  protected boolean isSet$addCiMessage$boolean;
+  protected boolean value$addVoteOnMergeRequest$boolean;
+  protected boolean isSet$addVoteOnMergeRequest$boolean;
+  protected boolean value$acceptMergeRequestOnSuccess$boolean;
+  protected boolean isSet$acceptMergeRequestOnSuccess$boolean;
+  protected BranchFilterType value$branchFilterType$com$dabsquared$gitlabjenkins$trigger$filter$BranchFilterType;
+  protected boolean isSet$branchFilterType$com$dabsquared$gitlabjenkins$trigger$filter$BranchFilterType;
+  protected String value$includeBranchesSpec$java$lang$String;
+  protected boolean isSet$includeBranchesSpec$java$lang$String;
+  protected String value$excludeBranchesSpec$java$lang$String;
+  protected boolean isSet$excludeBranchesSpec$java$lang$String;
+  protected String value$targetBranchRegex$java$lang$String;
+  protected boolean isSet$targetBranchRegex$java$lang$String;
+
+  /**
+   * Factory Method to construct a GitLabPushTriggerBuilder
+   *
+   * @return a new GitLabPushTriggerBuilder
+   */
+  public static GitLabPushTriggerBuilder gitLabPushTrigger() {
+<span class="nc" id="L51">    return new GitLabPushTriggerBuilder();</span>
+  }
+
+  /**
+   * Creates a new {@link GitLabPushTriggerBuilder}.
+   */
+<span class="nc" id="L57">  public GitLabPushTriggerBuilder() {</span>
+<span class="nc" id="L58">    self = (GitLabPushTriggerBuilder)this;</span>
+<span class="nc" id="L59">  }</span>
+
+  /**
+   * Sets the default value for the {@link GitLabPushTrigger#triggerOnPush} property.
+   *
+   * @param value the default value
+   * @return this builder
+   */
+  public GitLabPushTriggerBuilder withTriggerOnPush(boolean value) {
+<span class="nc" id="L68">    this.value$triggerOnPush$boolean = value;</span>
+<span class="nc" id="L69">    this.isSet$triggerOnPush$boolean = true;</span>
+<span class="nc" id="L70">    return self;</span>
+  }
+
+  /**
+   * Sets the default value for the {@link GitLabPushTrigger#triggerOnMergeRequest} property.
+   *
+   * @param value the default value
+   * @return this builder
+   */
+  public GitLabPushTriggerBuilder withTriggerOnMergeRequest(boolean value) {
+<span class="nc" id="L80">    this.value$triggerOnMergeRequest$boolean = value;</span>
+<span class="nc" id="L81">    this.isSet$triggerOnMergeRequest$boolean = true;</span>
+<span class="nc" id="L82">    return self;</span>
+  }
+
+  /**
+   * Sets the default value for the {@link GitLabPushTrigger#triggerOpenMergeRequestOnPush} property.
+   *
+   * @param value the default value
+   * @return this builder
+   */
+  public GitLabPushTriggerBuilder withTriggerOpenMergeRequestOnPush(TriggerOpenMergeRequest value) {
+<span class="nc" id="L92">    this.value$triggerOpenMergeRequestOnPush$com$dabsquared$gitlabjenkins$trigger$TriggerOpenMergeRequest = value;</span>
+<span class="nc" id="L93">    this.isSet$triggerOpenMergeRequestOnPush$com$dabsquared$gitlabjenkins$trigger$TriggerOpenMergeRequest = true;</span>
+<span class="nc" id="L94">    return self;</span>
+  }
+
+  /**
+   * Sets the default value for the {@link GitLabPushTrigger#triggerOnNoteRequest} property.
+   *
+   * @param value the default value
+   * @return this builder
+   */
+  public GitLabPushTriggerBuilder withTriggerOnNoteRequest(boolean value) {
+<span class="nc" id="L104">    this.value$triggerOnNoteRequest$boolean = value;</span>
+<span class="nc" id="L105">    this.isSet$triggerOnNoteRequest$boolean = true;</span>
+<span class="nc" id="L106">    return self;</span>
+  }
+
+  /**
+   * Sets the default value for the {@link GitLabPushTrigger#noteRegex} property.
+   *
+   * @param value the default value
+   * @return this builder
+   */
+  public GitLabPushTriggerBuilder withNoteRegex(String value) {
+<span class="nc" id="L116">    this.value$noteRegex$java$lang$String = value;</span>
+<span class="nc" id="L117">    this.isSet$noteRegex$java$lang$String = true;</span>
+<span class="nc" id="L118">    return self;</span>
+  }
+
+  /**
+   * Sets the default value for the {@link GitLabPushTrigger#skipWorkInProgressMergeRequest} property.
+   *
+   * @param value the default value
+   * @return this builder
+   */
+  public GitLabPushTriggerBuilder withSkipWorkInProgressMergeRequest(boolean value) {
+<span class="nc" id="L128">    this.value$skipWorkInProgressMergeRequest$boolean = value;</span>
+<span class="nc" id="L129">    this.isSet$skipWorkInProgressMergeRequest$boolean = true;</span>
+<span class="nc" id="L130">    return self;</span>
+  }
+
+  /**
+   * Sets the default value for the {@link GitLabPushTrigger#ciSkip} property.
+   *
+   * @param value the default value
+   * @return this builder
+   */
+  public GitLabPushTriggerBuilder withCiSkip(boolean value) {
+<span class="nc" id="L140">    this.value$ciSkip$boolean = value;</span>
+<span class="nc" id="L141">    this.isSet$ciSkip$boolean = true;</span>
+<span class="nc" id="L142">    return self;</span>
+  }
+
+  /**
+   * Sets the default value for the {@link GitLabPushTrigger#setBuildDescription} property.
+   *
+   * @param value the default value
+   * @return this builder
+   */
+  public GitLabPushTriggerBuilder withSetBuildDescription(boolean value) {
+<span class="nc" id="L152">    this.value$setBuildDescription$boolean = value;</span>
+<span class="nc" id="L153">    this.isSet$setBuildDescription$boolean = true;</span>
+<span class="nc" id="L154">    return self;</span>
+  }
+
+  /**
+   * Sets the default value for the {@link GitLabPushTrigger#addNoteOnMergeRequest} property.
+   *
+   * @param value the default value
+   * @return this builder
+   */
+  public GitLabPushTriggerBuilder withAddNoteOnMergeRequest(boolean value) {
+<span class="nc" id="L164">    this.value$addNoteOnMergeRequest$boolean = value;</span>
+<span class="nc" id="L165">    this.isSet$addNoteOnMergeRequest$boolean = true;</span>
+<span class="nc" id="L166">    return self;</span>
+  }
+
+  /**
+   * Sets the default value for the {@link GitLabPushTrigger#addCiMessage} property.
+   *
+   * @param value the default value
+   * @return this builder
+   */
+  public GitLabPushTriggerBuilder withAddCiMessage(boolean value) {
+<span class="nc" id="L176">    this.value$addCiMessage$boolean = value;</span>
+<span class="nc" id="L177">    this.isSet$addCiMessage$boolean = true;</span>
+<span class="nc" id="L178">    return self;</span>
+  }
+
+  /**
+   * Sets the default value for the {@link GitLabPushTrigger#addVoteOnMergeRequest} property.
+   *
+   * @param value the default value
+   * @return this builder
+   */
+  public GitLabPushTriggerBuilder withAddVoteOnMergeRequest(boolean value) {
+<span class="nc" id="L188">    this.value$addVoteOnMergeRequest$boolean = value;</span>
+<span class="nc" id="L189">    this.isSet$addVoteOnMergeRequest$boolean = true;</span>
+<span class="nc" id="L190">    return self;</span>
+  }
+
+  /**
+   * Sets the default value for the {@link GitLabPushTrigger#acceptMergeRequestOnSuccess} property.
+   *
+   * @param value the default value
+   * @return this builder
+   */
+  public GitLabPushTriggerBuilder withAcceptMergeRequestOnSuccess(boolean value) {
+<span class="nc" id="L200">    this.value$acceptMergeRequestOnSuccess$boolean = value;</span>
+<span class="nc" id="L201">    this.isSet$acceptMergeRequestOnSuccess$boolean = true;</span>
+<span class="nc" id="L202">    return self;</span>
+  }
+
+  /**
+   * Sets the default value for the {@link GitLabPushTrigger#branchFilterType} property.
+   *
+   * @param value the default value
+   * @return this builder
+   */
+  public GitLabPushTriggerBuilder withBranchFilterType(BranchFilterType value) {
+<span class="nc" id="L212">    this.value$branchFilterType$com$dabsquared$gitlabjenkins$trigger$filter$BranchFilterType = value;</span>
+<span class="nc" id="L213">    this.isSet$branchFilterType$com$dabsquared$gitlabjenkins$trigger$filter$BranchFilterType = true;</span>
+<span class="nc" id="L214">    return self;</span>
+  }
+
+  /**
+   * Sets the default value for the {@link GitLabPushTrigger#includeBranchesSpec} property.
+   *
+   * @param value the default value
+   * @return this builder
+   */
+  public GitLabPushTriggerBuilder withIncludeBranchesSpec(String value) {
+<span class="nc" id="L224">    this.value$includeBranchesSpec$java$lang$String = value;</span>
+<span class="nc" id="L225">    this.isSet$includeBranchesSpec$java$lang$String = true;</span>
+<span class="nc" id="L226">    return self;</span>
+  }
+
+  /**
+   * Sets the default value for the {@link GitLabPushTrigger#excludeBranchesSpec} property.
+   *
+   * @param value the default value
+   * @return this builder
+   */
+  public GitLabPushTriggerBuilder withExcludeBranchesSpec(String value) {
+<span class="nc" id="L236">    this.value$excludeBranchesSpec$java$lang$String = value;</span>
+<span class="nc" id="L237">    this.isSet$excludeBranchesSpec$java$lang$String = true;</span>
+<span class="nc" id="L238">    return self;</span>
+  }
+
+  /**
+   * Sets the default value for the {@link GitLabPushTrigger#targetBranchRegex} property.
+   *
+   * @param value the default value
+   * @return this builder
+   */
+  public GitLabPushTriggerBuilder withTargetBranchRegex(String value) {
+<span class="nc" id="L248">    this.value$targetBranchRegex$java$lang$String = value;</span>
+<span class="nc" id="L249">    this.isSet$targetBranchRegex$java$lang$String = true;</span>
+<span class="nc" id="L250">    return self;</span>
+  }
+
+  /**
+   * Returns a clone of this builder.
+   *
+   * @return the clone
+   */
+  @Override
+  public Object clone() {
+    try {
+<span class="nc" id="L261">      GitLabPushTriggerBuilder result = (GitLabPushTriggerBuilder)super.clone();</span>
+<span class="nc" id="L262">      result.self = result;</span>
+<span class="nc" id="L263">      return result;</span>
+<span class="nc" id="L264">    } catch (CloneNotSupportedException e) {</span>
+<span class="nc" id="L265">      throw new InternalError(e.getMessage());</span>
+    }
+  }
+
+  /**
+   * Returns a clone of this builder.
+   *
+   * @return the clone
+   */
+  public GitLabPushTriggerBuilder but() {
+<span class="nc" id="L275">    return (GitLabPushTriggerBuilder)clone();</span>
+  }
+
+  /**
+   * Creates a new {@link GitLabPushTrigger} based on this builder's settings.
+   *
+   * @return the created GitLabPushTrigger
+   */
+  public GitLabPushTrigger build() {
+    try {
+<span class="nc" id="L285">      GitLabPushTrigger result = new GitLabPushTrigger(value$triggerOnPush$boolean, value$triggerOnMergeRequest$boolean, value$triggerOpenMergeRequestOnPush$com$dabsquared$gitlabjenkins$trigger$TriggerOpenMergeRequest, value$triggerOnNoteRequest$boolean, value$noteRegex$java$lang$String, value$skipWorkInProgressMergeRequest$boolean, value$ciSkip$boolean, value$setBuildDescription$boolean, value$addNoteOnMergeRequest$boolean, value$addCiMessage$boolean, value$addVoteOnMergeRequest$boolean, value$acceptMergeRequestOnSuccess$boolean, value$branchFilterType$com$dabsquared$gitlabjenkins$trigger$filter$BranchFilterType, value$includeBranchesSpec$java$lang$String, value$excludeBranchesSpec$java$lang$String, value$targetBranchRegex$java$lang$String);</span>
+<span class="nc" id="L286">      return result;</span>
+<span class="nc" id="L287">    } catch (RuntimeException ex) {</span>
+<span class="nc" id="L288">      throw ex;</span>
+<span class="nc" id="L289">    } catch (Exception ex) {</span>
+<span class="nc" id="L290">      throw new java.lang.reflect.UndeclaredThrowableException(ex);</span>
+    }
+  }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.2.201409121644</span></div></body></html>

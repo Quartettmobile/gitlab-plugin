@@ -1,0 +1,342 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>GitLabPushTrigger.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">GitLab Plugin</a> &gt; <a href="index.source.html" class="el_package">com.dabsquared.gitlabjenkins</a> &gt; <span class="el_source">GitLabPushTrigger.java</span></div><h1>GitLabPushTrigger.java</h1><pre class="source lang-java linenums">package com.dabsquared.gitlabjenkins;
+
+import com.dabsquared.gitlabjenkins.connection.GitLabConnection;
+import com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfig;
+import com.dabsquared.gitlabjenkins.connection.GitLabConnectionProperty;
+import com.dabsquared.gitlabjenkins.gitlab.hook.model.MergeRequestHook;
+import com.dabsquared.gitlabjenkins.gitlab.hook.model.NoteHook;
+import com.dabsquared.gitlabjenkins.gitlab.hook.model.PushHook;
+import com.dabsquared.gitlabjenkins.publisher.GitLabCommitStatusPublisher;
+import com.dabsquared.gitlabjenkins.trigger.TriggerOpenMergeRequest;
+import com.dabsquared.gitlabjenkins.trigger.branch.ProjectBranchesProvider;
+import com.dabsquared.gitlabjenkins.trigger.filter.BranchFilter;
+import com.dabsquared.gitlabjenkins.trigger.filter.BranchFilterFactory;
+import com.dabsquared.gitlabjenkins.trigger.filter.BranchFilterType;
+import com.dabsquared.gitlabjenkins.trigger.handler.merge.MergeRequestHookTriggerHandler;
+import com.dabsquared.gitlabjenkins.trigger.handler.note.NoteHookTriggerHandler;
+import com.dabsquared.gitlabjenkins.trigger.handler.push.PushHookTriggerHandler;
+import com.dabsquared.gitlabjenkins.webhook.GitLabWebHook;
+import hudson.Extension;
+import hudson.Util;
+import hudson.init.InitMilestone;
+import hudson.init.Initializer;
+import hudson.model.AbstractProject;
+import hudson.model.AutoCompletionCandidates;
+import hudson.model.Item;
+import hudson.model.Job;
+import hudson.triggers.Trigger;
+import hudson.triggers.TriggerDescriptor;
+import hudson.util.FormValidation;
+import hudson.util.ListBoxModel;
+import hudson.util.ListBoxModel.Option;
+import hudson.util.SequentialExecutionQueue;
+import jenkins.model.Jenkins;
+import jenkins.model.ParameterizedJobMixIn;
+import jenkins.triggers.SCMTriggerItem.SCMTriggerItems;
+import net.karneim.pojobuilder.GeneratePojoBuilder;
+import net.sf.json.JSONObject;
+import org.apache.commons.lang.StringUtils;
+import org.kohsuke.stapler.Ancestor;
+import org.kohsuke.stapler.AncestorInPath;
+import org.kohsuke.stapler.DataBoundConstructor;
+import org.kohsuke.stapler.QueryParameter;
+import org.kohsuke.stapler.Stapler;
+import org.kohsuke.stapler.StaplerRequest;
+
+import java.io.IOException;
+import java.io.ObjectStreamException;
+
+import static com.dabsquared.gitlabjenkins.trigger.filter.BranchFilterConfig.BranchFilterConfigBuilder.branchFilterConfig;
+import static com.dabsquared.gitlabjenkins.trigger.handler.merge.MergeRequestHookTriggerHandlerFactory.newMergeRequestHookTriggerHandler;
+import static com.dabsquared.gitlabjenkins.trigger.handler.note.NoteHookTriggerHandlerFactory.newNoteHookTriggerHandler;
+import static com.dabsquared.gitlabjenkins.trigger.handler.push.PushHookTriggerHandlerFactory.newPushHookTriggerHandler;
+
+
+/**
+ * Triggers a build when we receive a GitLab WebHook.
+ *
+ * @author Daniel Brooks
+ */
+public class GitLabPushTrigger extends Trigger&lt;Job&lt;?, ?&gt;&gt; {
+<span class="nc" id="L61">	private boolean triggerOnPush = true;</span>
+<span class="nc" id="L62">    private boolean triggerOnMergeRequest = true;</span>
+    private final TriggerOpenMergeRequest triggerOpenMergeRequestOnPush;
+<span class="nc" id="L64">    private boolean triggerOnNoteRequest = true;</span>
+    private final String noteRegex;
+<span class="nc" id="L66">    private boolean ciSkip = true;</span>
+    private boolean skipWorkInProgressMergeRequest;
+<span class="nc" id="L68">    private boolean setBuildDescription = true;</span>
+<span class="nc" id="L69">    private boolean addNoteOnMergeRequest = true;</span>
+<span class="nc" id="L70">    private boolean addCiMessage = false;</span>
+<span class="nc" id="L71">    private boolean addVoteOnMergeRequest = true;</span>
+<span class="nc" id="L72">    private transient boolean allowAllBranches = false;</span>
+    private transient String branchFilterName;
+    private BranchFilterType branchFilterType;
+    private String includeBranchesSpec;
+    private String excludeBranchesSpec;
+    private String targetBranchRegex;
+    private transient BranchFilter branchFilter;
+    private transient PushHookTriggerHandler pushHookTriggerHandler;
+    private transient MergeRequestHookTriggerHandler mergeRequestHookTriggerHandler;
+    private transient NoteHookTriggerHandler noteHookTriggerHandler;
+<span class="nc" id="L82">    private boolean acceptMergeRequestOnSuccess = false;</span>
+
+
+    @DataBoundConstructor
+    @GeneratePojoBuilder(intoPackage = &quot;*.builder.generated&quot;, withFactoryMethod = &quot;*&quot;)
+    public GitLabPushTrigger(boolean triggerOnPush, boolean triggerOnMergeRequest, TriggerOpenMergeRequest triggerOpenMergeRequestOnPush,
+                             boolean triggerOnNoteRequest, String noteRegex, boolean skipWorkInProgressMergeRequest, boolean ciSkip,
+                             boolean setBuildDescription, boolean addNoteOnMergeRequest, boolean addCiMessage, boolean addVoteOnMergeRequest,
+                             boolean acceptMergeRequestOnSuccess, BranchFilterType branchFilterType,
+<span class="nc" id="L91">                             String includeBranchesSpec, String excludeBranchesSpec, String targetBranchRegex) {</span>
+<span class="nc" id="L92">        this.triggerOnPush = triggerOnPush;</span>
+<span class="nc" id="L93">        this.triggerOnMergeRequest = triggerOnMergeRequest;</span>
+<span class="nc" id="L94">        this.triggerOnNoteRequest = triggerOnNoteRequest;</span>
+<span class="nc" id="L95">        this.noteRegex = noteRegex;</span>
+<span class="nc" id="L96">        this.triggerOpenMergeRequestOnPush = triggerOpenMergeRequestOnPush;</span>
+<span class="nc" id="L97">        this.ciSkip = ciSkip;</span>
+<span class="nc" id="L98">        this.skipWorkInProgressMergeRequest = skipWorkInProgressMergeRequest;</span>
+<span class="nc" id="L99">        this.setBuildDescription = setBuildDescription;</span>
+<span class="nc" id="L100">        this.addNoteOnMergeRequest = addNoteOnMergeRequest;</span>
+<span class="nc" id="L101">        this.addCiMessage = addCiMessage;</span>
+<span class="nc" id="L102">        this.addVoteOnMergeRequest = addVoteOnMergeRequest;</span>
+<span class="nc" id="L103">        this.branchFilterType = branchFilterType;</span>
+<span class="nc" id="L104">        this.includeBranchesSpec = includeBranchesSpec;</span>
+<span class="nc" id="L105">        this.excludeBranchesSpec = excludeBranchesSpec;</span>
+<span class="nc" id="L106">        this.targetBranchRegex = targetBranchRegex;</span>
+<span class="nc" id="L107">        this.acceptMergeRequestOnSuccess = acceptMergeRequestOnSuccess;</span>
+
+<span class="nc" id="L109">        initializeTriggerHandler();</span>
+<span class="nc" id="L110">        initializeBranchFilter();</span>
+<span class="nc" id="L111">    }</span>
+
+    @Initializer(after = InitMilestone.JOB_LOADED)
+    public static void migrateJobs() throws IOException {
+<span class="fc" id="L115">        GitLabPushTrigger.DescriptorImpl oldConfig = Trigger.all().get(GitLabPushTrigger.DescriptorImpl.class);</span>
+<span class="pc bpc" id="L116" title="1 of 2 branches missed.">        if (!oldConfig.jobsMigrated) {</span>
+<span class="fc" id="L117">            GitLabConnectionConfig gitLabConfig = (GitLabConnectionConfig) Jenkins.getInstance().getDescriptor(GitLabConnectionConfig.class);</span>
+<span class="fc" id="L118">            gitLabConfig.getConnections().add(new GitLabConnection(oldConfig.gitlabHostUrl,</span>
+<span class="fc" id="L119">                    oldConfig.gitlabHostUrl,</span>
+<span class="fc" id="L120">                    oldConfig.gitlabApiToken,</span>
+<span class="fc" id="L121">                    oldConfig.ignoreCertificateErrors,</span>
+<span class="fc" id="L122">                    10,</span>
+<span class="fc" id="L123">                    10));</span>
+
+<span class="fc" id="L125">            String defaultConnectionName = gitLabConfig.getConnections().get(0).getName();</span>
+<span class="pc bpc" id="L126" title="1 of 2 branches missed.">            for (AbstractProject&lt;?, ?&gt; project : Jenkins.getInstance().getAllItems(AbstractProject.class)) {</span>
+<span class="nc" id="L127">                GitLabPushTrigger trigger = project.getTrigger(GitLabPushTrigger.class);</span>
+<span class="nc bnc" id="L128" title="All 2 branches missed.">                if (trigger != null) {</span>
+<span class="nc bnc" id="L129" title="All 2 branches missed.">                    if (trigger.addCiMessage) {</span>
+<span class="nc" id="L130">                        project.getPublishersList().add(new GitLabCommitStatusPublisher(&quot;jenkins&quot;));</span>
+                    }
+<span class="nc" id="L132">                    project.addProperty(new GitLabConnectionProperty(defaultConnectionName));</span>
+<span class="nc" id="L133">                    project.save();</span>
+                }
+<span class="nc" id="L135">            }</span>
+<span class="fc" id="L136">            gitLabConfig.save();</span>
+<span class="fc" id="L137">            oldConfig.jobsMigrated = true;</span>
+<span class="fc" id="L138">            oldConfig.save();</span>
+        }
+<span class="fc" id="L140">    }</span>
+
+    public boolean getTriggerOnPush() {
+<span class="nc" id="L143">        return triggerOnPush;</span>
+    }
+
+    public boolean getTriggerOnMergeRequest() {
+<span class="nc" id="L147">        return triggerOnMergeRequest;</span>
+    }
+
+    public boolean getTriggerOnNoteRequest() {
+<span class="nc" id="L151">        return triggerOnNoteRequest;</span>
+    }
+
+    public String getNoteRegex() {
+<span class="nc bnc" id="L155" title="All 2 branches missed.">        return this.noteRegex == null ? &quot;&quot; : this.noteRegex;</span>
+    }
+
+    public TriggerOpenMergeRequest getTriggerOpenMergeRequestOnPush() {
+<span class="nc" id="L159">        return triggerOpenMergeRequestOnPush;</span>
+    }
+
+    public boolean getSetBuildDescription() {
+<span class="nc" id="L163">        return setBuildDescription;</span>
+    }
+
+    public boolean getAddNoteOnMergeRequest() {
+<span class="nc" id="L167">        return addNoteOnMergeRequest;</span>
+    }
+
+    public boolean getAddVoteOnMergeRequest() {
+<span class="nc" id="L171">        return addVoteOnMergeRequest;</span>
+    }
+
+    public boolean getAcceptMergeRequestOnSuccess() {
+<span class="nc" id="L175">        return acceptMergeRequestOnSuccess;</span>
+    }
+
+    public boolean getCiSkip() {
+<span class="nc" id="L179">        return ciSkip;</span>
+    }
+
+    public boolean isSkipWorkInProgressMergeRequest() {
+<span class="nc" id="L183">        return skipWorkInProgressMergeRequest;</span>
+    }
+
+    public BranchFilterType getBranchFilterType() {
+<span class="nc" id="L187">        return branchFilterType;</span>
+    }
+
+    public String getIncludeBranchesSpec() {
+<span class="nc" id="L191">        return includeBranchesSpec;</span>
+    }
+
+    public String getExcludeBranchesSpec() {
+<span class="nc" id="L195">        return excludeBranchesSpec;</span>
+    }
+
+    public String getTargetBranchRegex() {
+<span class="nc" id="L199">        return targetBranchRegex;</span>
+    }
+
+    // executes when the Trigger receives a push request
+    public void onPost(final PushHook hook) {
+<span class="nc" id="L204">        pushHookTriggerHandler.handle(job, hook, ciSkip, branchFilter);</span>
+<span class="nc" id="L205">    }</span>
+
+    // executes when the Trigger receives a merge request
+    public void onPost(final MergeRequestHook hook) {
+<span class="nc" id="L209">        mergeRequestHookTriggerHandler.handle(job, hook, ciSkip, branchFilter);</span>
+<span class="nc" id="L210">    }</span>
+
+    // executes when the Trigger receives a note request
+    public void onPost(final NoteHook hook) {
+<span class="nc" id="L214">        noteHookTriggerHandler.handle(job, hook, ciSkip, branchFilter);</span>
+<span class="nc" id="L215">    }</span>
+
+    private void initializeTriggerHandler() {
+<span class="nc" id="L218">        mergeRequestHookTriggerHandler = newMergeRequestHookTriggerHandler(triggerOnMergeRequest, triggerOpenMergeRequestOnPush, skipWorkInProgressMergeRequest);</span>
+<span class="nc" id="L219">        noteHookTriggerHandler = newNoteHookTriggerHandler(triggerOnNoteRequest, noteRegex);</span>
+<span class="nc" id="L220">        pushHookTriggerHandler = newPushHookTriggerHandler(triggerOnPush, triggerOpenMergeRequestOnPush, skipWorkInProgressMergeRequest);</span>
+<span class="nc" id="L221">    }</span>
+
+    private void initializeBranchFilter() {
+<span class="nc" id="L224">        branchFilter = BranchFilterFactory.newBranchFilter(branchFilterConfig()</span>
+<span class="nc" id="L225">                .withIncludeBranchesSpec(includeBranchesSpec)</span>
+<span class="nc" id="L226">                .withExcludeBranchesSpec(excludeBranchesSpec)</span>
+<span class="nc" id="L227">                .withTargetBranchRegex(targetBranchRegex)</span>
+<span class="nc" id="L228">                .build(branchFilterType));</span>
+<span class="nc" id="L229">    }</span>
+
+    @Override
+    protected Object readResolve() throws ObjectStreamException {
+<span class="nc bnc" id="L233" title="All 2 branches missed.">        if (branchFilterType == null) {</span>
+<span class="nc bnc" id="L234" title="All 2 branches missed.">            branchFilterType = StringUtils.isNotBlank(branchFilterName) ? BranchFilterType.valueOf(branchFilterName) : BranchFilterType.All;</span>
+        }
+<span class="nc" id="L236">        initializeTriggerHandler();</span>
+<span class="nc" id="L237">        initializeBranchFilter();</span>
+<span class="nc" id="L238">        return super.readResolve();</span>
+    }
+
+    public static GitLabPushTrigger getFromJob(Job&lt;?, ?&gt; job) {
+<span class="fc" id="L242">        GitLabPushTrigger trigger = null;</span>
+<span class="pc bpc" id="L243" title="1 of 2 branches missed.">        if (job instanceof ParameterizedJobMixIn.ParameterizedJob) {</span>
+<span class="fc" id="L244">            ParameterizedJobMixIn.ParameterizedJob p = (ParameterizedJobMixIn.ParameterizedJob) job;</span>
+<span class="fc bfc" id="L245" title="All 2 branches covered.">            for (Trigger t : p.getTriggers().values()) {</span>
+<span class="pc bpc" id="L246" title="1 of 2 branches missed.">                if (t instanceof GitLabPushTrigger) {</span>
+<span class="fc" id="L247">                    trigger = (GitLabPushTrigger) t;</span>
+                }
+<span class="fc" id="L249">            }</span>
+        }
+<span class="fc" id="L251">        return trigger;</span>
+    }
+
+    @Extension
+    public static class DescriptorImpl extends TriggerDescriptor {
+
+<span class="fc" id="L257">        private transient final SequentialExecutionQueue queue = new SequentialExecutionQueue(Jenkins.MasterComputer.threadPoolForRemoting);</span>
+<span class="fc" id="L258">        private boolean jobsMigrated = false;</span>
+        private String gitlabApiToken;
+<span class="fc" id="L260">        private String gitlabHostUrl = &quot;&quot;;</span>
+<span class="fc" id="L261">        private boolean ignoreCertificateErrors = false;</span>
+
+<span class="fc" id="L263">        public DescriptorImpl() {</span>
+<span class="fc" id="L264">            load();</span>
+<span class="fc" id="L265">        }</span>
+
+        @Override
+        public boolean isApplicable(Item item) {
+<span class="nc bnc" id="L269" title="All 2 branches missed.">            return item instanceof Job</span>
+<span class="nc bnc" id="L270" title="All 4 branches missed.">                    &amp;&amp; SCMTriggerItems.asSCMTriggerItem(item) != null</span>
+                    &amp;&amp; item instanceof ParameterizedJobMixIn.ParameterizedJob;
+        }
+
+        @Override
+        public String getDisplayName() {
+<span class="fc" id="L276">            Job&lt;?, ?&gt; project = retrieveCurrentJob();</span>
+<span class="pc bpc" id="L277" title="1 of 2 branches missed.">            if (project != null) {</span>
+                try {
+<span class="nc" id="L279">                    return &quot;Build when a change is pushed to GitLab. GitLab CI Service URL: &quot; + retrieveProjectUrl(project);</span>
+<span class="nc" id="L280">                } catch (IllegalStateException e) {</span>
+                    // nothing to do
+                }
+            }
+<span class="fc" id="L284">            return &quot;Build when a change is pushed to GitLab, unknown URL&quot;;</span>
+        }
+
+        private StringBuilder retrieveProjectUrl(Job&lt;?, ?&gt; project) {
+<span class="nc" id="L288">            return new StringBuilder()</span>
+<span class="nc" id="L289">                    .append(Jenkins.getInstance().getRootUrl())</span>
+<span class="nc" id="L290">                    .append(GitLabWebHook.WEBHOOK_URL)</span>
+<span class="nc" id="L291">                    .append(retrieveParentUrl(project))</span>
+<span class="nc" id="L292">                    .append('/').append(Util.rawEncode(project.getName()));</span>
+        }
+
+        private StringBuilder retrieveParentUrl(Item item) {
+<span class="nc bnc" id="L296" title="All 2 branches missed.">            if (item.getParent() instanceof Item) {</span>
+<span class="nc" id="L297">                Item parent = (Item) item.getParent();</span>
+<span class="nc" id="L298">                return retrieveParentUrl(parent).append('/').append(Util.rawEncode(parent.getName()));</span>
+            } else {
+<span class="nc" id="L300">                return new StringBuilder();</span>
+            }
+        }
+
+        private Job&lt;?, ?&gt; retrieveCurrentJob() {
+<span class="fc" id="L305">            StaplerRequest request = Stapler.getCurrentRequest();</span>
+<span class="pc bpc" id="L306" title="1 of 2 branches missed.">            if (request != null) {</span>
+<span class="nc" id="L307">                Ancestor ancestor = request.findAncestor(Job.class);</span>
+<span class="nc bnc" id="L308" title="All 2 branches missed.">                return ancestor == null ? null : (Job&lt;?, ?&gt;) ancestor.getObject();</span>
+            }
+<span class="fc" id="L310">            return null;</span>
+        }
+
+        @Override
+        public boolean configure(StaplerRequest req, JSONObject formData) throws FormException {
+<span class="nc" id="L315">            save();</span>
+<span class="nc" id="L316">            return super.configure(req, formData);</span>
+        }
+
+        public ListBoxModel doFillTriggerOpenMergeRequestOnPushItems(@QueryParameter String triggerOpenMergeRequestOnPush) {
+<span class="nc" id="L320">            return new ListBoxModel(new Option(&quot;Never&quot;, &quot;never&quot;, triggerOpenMergeRequestOnPush.matches(&quot;never&quot;)),</span>
+<span class="nc" id="L321">                    new Option(&quot;On push to source branch&quot;, &quot;source&quot;, triggerOpenMergeRequestOnPush.matches(&quot;source&quot;)),</span>
+<span class="nc" id="L322">                    new Option(&quot;On push to source or target branch&quot;, &quot;both&quot;, triggerOpenMergeRequestOnPush.matches(&quot;both&quot;)));</span>
+        }
+
+        public AutoCompletionCandidates doAutoCompleteIncludeBranchesSpec(@AncestorInPath final Job&lt;?, ?&gt; job, @QueryParameter final String value) {
+<span class="nc" id="L326">            return ProjectBranchesProvider.instance().doAutoCompleteBranchesSpec(job, value);</span>
+        }
+
+        public AutoCompletionCandidates doAutoCompleteExcludeBranchesSpec(@AncestorInPath final Job&lt;?, ?&gt; job, @QueryParameter final String value) {
+<span class="nc" id="L330">            return ProjectBranchesProvider.instance().doAutoCompleteBranchesSpec(job, value);</span>
+        }
+
+        public FormValidation doCheckIncludeBranchesSpec(@AncestorInPath final Job&lt;?, ?&gt; project, @QueryParameter final String value) {
+<span class="nc" id="L334">            return ProjectBranchesProvider.instance().doCheckBranchesSpec(project, value);</span>
+        }
+
+        public FormValidation doCheckExcludeBranchesSpec(@AncestorInPath final Job&lt;?, ?&gt; project, @QueryParameter final String value) {
+<span class="nc" id="L338">            return ProjectBranchesProvider.instance().doCheckBranchesSpec(project, value);</span>
+        }
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.2.201409121644</span></div></body></html>

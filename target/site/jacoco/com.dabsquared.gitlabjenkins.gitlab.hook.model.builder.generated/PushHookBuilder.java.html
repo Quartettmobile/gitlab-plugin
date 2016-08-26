@@ -1,0 +1,293 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>PushHookBuilder.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">GitLab Plugin</a> &gt; <a href="index.source.html" class="el_package">com.dabsquared.gitlabjenkins.gitlab.hook.model.builder.generated</a> &gt; <span class="el_source">PushHookBuilder.java</span></div><h1>PushHookBuilder.java</h1><pre class="source lang-java linenums">package com.dabsquared.gitlabjenkins.gitlab.hook.model.builder.generated;
+
+import com.dabsquared.gitlabjenkins.gitlab.hook.model.Commit;
+import com.dabsquared.gitlabjenkins.gitlab.hook.model.Project;
+import com.dabsquared.gitlabjenkins.gitlab.hook.model.PushHook;
+import com.dabsquared.gitlabjenkins.gitlab.hook.model.Repository;
+import java.util.List;
+import javax.annotation.Generated;
+
+@Generated(&quot;PojoBuilder&quot;)
+public class PushHookBuilder
+    implements Cloneable {
+  protected PushHookBuilder self;
+  protected String value$objectKind$java$lang$String;
+  protected boolean isSet$objectKind$java$lang$String;
+  protected Repository value$repository$com$dabsquared$gitlabjenkins$gitlab$hook$model$Repository;
+  protected boolean isSet$repository$com$dabsquared$gitlabjenkins$gitlab$hook$model$Repository;
+  protected String value$before$java$lang$String;
+  protected boolean isSet$before$java$lang$String;
+  protected String value$after$java$lang$String;
+  protected boolean isSet$after$java$lang$String;
+  protected String value$ref$java$lang$String;
+  protected boolean isSet$ref$java$lang$String;
+  protected Integer value$userId$java$lang$Integer;
+  protected boolean isSet$userId$java$lang$Integer;
+  protected String value$userName$java$lang$String;
+  protected boolean isSet$userName$java$lang$String;
+  protected String value$userEmail$java$lang$String;
+  protected boolean isSet$userEmail$java$lang$String;
+  protected String value$userAvatar$java$lang$String;
+  protected boolean isSet$userAvatar$java$lang$String;
+  protected Integer value$projectId$java$lang$Integer;
+  protected boolean isSet$projectId$java$lang$Integer;
+  protected Project value$project$com$dabsquared$gitlabjenkins$gitlab$hook$model$Project;
+  protected boolean isSet$project$com$dabsquared$gitlabjenkins$gitlab$hook$model$Project;
+  protected List&lt;Commit&gt; value$commits$java$util$List;
+  protected boolean isSet$commits$java$util$List;
+  protected Integer value$totalCommitsCount$java$lang$Integer;
+  protected boolean isSet$totalCommitsCount$java$lang$Integer;
+
+  /**
+   * Factory Method to construct a PushHookBuilder
+   *
+   * @return a new PushHookBuilder
+   */
+  public static PushHookBuilder pushHook() {
+<span class="fc" id="L47">    return new PushHookBuilder();</span>
+  }
+
+  /**
+   * Creates a new {@link PushHookBuilder}.
+   */
+<span class="fc" id="L53">  public PushHookBuilder() {</span>
+<span class="fc" id="L54">    self = (PushHookBuilder)this;</span>
+<span class="fc" id="L55">  }</span>
+
+  /**
+   * Sets the default value for the {@link PushHook#objectKind} property.
+   *
+   * @param value the default value
+   * @return this builder
+   */
+  public PushHookBuilder withObjectKind(String value) {
+<span class="nc" id="L64">    this.value$objectKind$java$lang$String = value;</span>
+<span class="nc" id="L65">    this.isSet$objectKind$java$lang$String = true;</span>
+<span class="nc" id="L66">    return self;</span>
+  }
+
+  /**
+   * Sets the default value for the {@link PushHook#repository} property.
+   *
+   * @param value the default value
+   * @return this builder
+   */
+  public PushHookBuilder withRepository(Repository value) {
+<span class="fc" id="L76">    this.value$repository$com$dabsquared$gitlabjenkins$gitlab$hook$model$Repository = value;</span>
+<span class="fc" id="L77">    this.isSet$repository$com$dabsquared$gitlabjenkins$gitlab$hook$model$Repository = true;</span>
+<span class="fc" id="L78">    return self;</span>
+  }
+
+  /**
+   * Sets the default value for the {@link PushHook#before} property.
+   *
+   * @param value the default value
+   * @return this builder
+   */
+  public PushHookBuilder withBefore(String value) {
+<span class="fc" id="L88">    this.value$before$java$lang$String = value;</span>
+<span class="fc" id="L89">    this.isSet$before$java$lang$String = true;</span>
+<span class="fc" id="L90">    return self;</span>
+  }
+
+  /**
+   * Sets the default value for the {@link PushHook#after} property.
+   *
+   * @param value the default value
+   * @return this builder
+   */
+  public PushHookBuilder withAfter(String value) {
+<span class="fc" id="L100">    this.value$after$java$lang$String = value;</span>
+<span class="fc" id="L101">    this.isSet$after$java$lang$String = true;</span>
+<span class="fc" id="L102">    return self;</span>
+  }
+
+  /**
+   * Sets the default value for the {@link PushHook#ref} property.
+   *
+   * @param value the default value
+   * @return this builder
+   */
+  public PushHookBuilder withRef(String value) {
+<span class="fc" id="L112">    this.value$ref$java$lang$String = value;</span>
+<span class="fc" id="L113">    this.isSet$ref$java$lang$String = true;</span>
+<span class="fc" id="L114">    return self;</span>
+  }
+
+  /**
+   * Sets the default value for the {@link PushHook#userId} property.
+   *
+   * @param value the default value
+   * @return this builder
+   */
+  public PushHookBuilder withUserId(Integer value) {
+<span class="fc" id="L124">    this.value$userId$java$lang$Integer = value;</span>
+<span class="fc" id="L125">    this.isSet$userId$java$lang$Integer = true;</span>
+<span class="fc" id="L126">    return self;</span>
+  }
+
+  /**
+   * Sets the default value for the {@link PushHook#userName} property.
+   *
+   * @param value the default value
+   * @return this builder
+   */
+  public PushHookBuilder withUserName(String value) {
+<span class="fc" id="L136">    this.value$userName$java$lang$String = value;</span>
+<span class="fc" id="L137">    this.isSet$userName$java$lang$String = true;</span>
+<span class="fc" id="L138">    return self;</span>
+  }
+
+  /**
+   * Sets the default value for the {@link PushHook#userEmail} property.
+   *
+   * @param value the default value
+   * @return this builder
+   */
+  public PushHookBuilder withUserEmail(String value) {
+<span class="nc" id="L148">    this.value$userEmail$java$lang$String = value;</span>
+<span class="nc" id="L149">    this.isSet$userEmail$java$lang$String = true;</span>
+<span class="nc" id="L150">    return self;</span>
+  }
+
+  /**
+   * Sets the default value for the {@link PushHook#userAvatar} property.
+   *
+   * @param value the default value
+   * @return this builder
+   */
+  public PushHookBuilder withUserAvatar(String value) {
+<span class="nc" id="L160">    this.value$userAvatar$java$lang$String = value;</span>
+<span class="nc" id="L161">    this.isSet$userAvatar$java$lang$String = true;</span>
+<span class="nc" id="L162">    return self;</span>
+  }
+
+  /**
+   * Sets the default value for the {@link PushHook#projectId} property.
+   *
+   * @param value the default value
+   * @return this builder
+   */
+  public PushHookBuilder withProjectId(Integer value) {
+<span class="fc" id="L172">    this.value$projectId$java$lang$Integer = value;</span>
+<span class="fc" id="L173">    this.isSet$projectId$java$lang$Integer = true;</span>
+<span class="fc" id="L174">    return self;</span>
+  }
+
+  /**
+   * Sets the default value for the {@link PushHook#project} property.
+   *
+   * @param value the default value
+   * @return this builder
+   */
+  public PushHookBuilder withProject(Project value) {
+<span class="fc" id="L184">    this.value$project$com$dabsquared$gitlabjenkins$gitlab$hook$model$Project = value;</span>
+<span class="fc" id="L185">    this.isSet$project$com$dabsquared$gitlabjenkins$gitlab$hook$model$Project = true;</span>
+<span class="fc" id="L186">    return self;</span>
+  }
+
+  /**
+   * Sets the default value for the {@link PushHook#commits} property.
+   *
+   * @param value the default value
+   * @return this builder
+   */
+  public PushHookBuilder withCommits(List&lt;Commit&gt; value) {
+<span class="fc" id="L196">    this.value$commits$java$util$List = value;</span>
+<span class="fc" id="L197">    this.isSet$commits$java$util$List = true;</span>
+<span class="fc" id="L198">    return self;</span>
+  }
+
+  /**
+   * Sets the default value for the {@link PushHook#totalCommitsCount} property.
+   *
+   * @param value the default value
+   * @return this builder
+   */
+  public PushHookBuilder withTotalCommitsCount(Integer value) {
+<span class="nc" id="L208">    this.value$totalCommitsCount$java$lang$Integer = value;</span>
+<span class="nc" id="L209">    this.isSet$totalCommitsCount$java$lang$Integer = true;</span>
+<span class="nc" id="L210">    return self;</span>
+  }
+
+  /**
+   * Returns a clone of this builder.
+   *
+   * @return the clone
+   */
+  @Override
+  public Object clone() {
+    try {
+<span class="nc" id="L221">      PushHookBuilder result = (PushHookBuilder)super.clone();</span>
+<span class="nc" id="L222">      result.self = result;</span>
+<span class="nc" id="L223">      return result;</span>
+<span class="nc" id="L224">    } catch (CloneNotSupportedException e) {</span>
+<span class="nc" id="L225">      throw new InternalError(e.getMessage());</span>
+    }
+  }
+
+  /**
+   * Returns a clone of this builder.
+   *
+   * @return the clone
+   */
+  public PushHookBuilder but() {
+<span class="nc" id="L235">    return (PushHookBuilder)clone();</span>
+  }
+
+  /**
+   * Creates a new {@link PushHook} based on this builder's settings.
+   *
+   * @return the created PushHook
+   */
+  public PushHook build() {
+    try {
+<span class="fc" id="L245">      PushHook result = new PushHook();</span>
+<span class="pc bpc" id="L246" title="1 of 2 branches missed.">      if (isSet$objectKind$java$lang$String) {</span>
+<span class="nc" id="L247">        result.setObjectKind(value$objectKind$java$lang$String);</span>
+      }
+<span class="fc bfc" id="L249" title="All 2 branches covered.">      if (isSet$repository$com$dabsquared$gitlabjenkins$gitlab$hook$model$Repository) {</span>
+<span class="fc" id="L250">        result.setRepository(value$repository$com$dabsquared$gitlabjenkins$gitlab$hook$model$Repository);</span>
+      }
+<span class="fc bfc" id="L252" title="All 2 branches covered.">      if (isSet$before$java$lang$String) {</span>
+<span class="fc" id="L253">        result.setBefore(value$before$java$lang$String);</span>
+      }
+<span class="fc bfc" id="L255" title="All 2 branches covered.">      if (isSet$after$java$lang$String) {</span>
+<span class="fc" id="L256">        result.setAfter(value$after$java$lang$String);</span>
+      }
+<span class="fc bfc" id="L258" title="All 2 branches covered.">      if (isSet$ref$java$lang$String) {</span>
+<span class="fc" id="L259">        result.setRef(value$ref$java$lang$String);</span>
+      }
+<span class="fc bfc" id="L261" title="All 2 branches covered.">      if (isSet$userId$java$lang$Integer) {</span>
+<span class="fc" id="L262">        result.setUserId(value$userId$java$lang$Integer);</span>
+      }
+<span class="fc bfc" id="L264" title="All 2 branches covered.">      if (isSet$userName$java$lang$String) {</span>
+<span class="fc" id="L265">        result.setUserName(value$userName$java$lang$String);</span>
+      }
+<span class="pc bpc" id="L267" title="1 of 2 branches missed.">      if (isSet$userEmail$java$lang$String) {</span>
+<span class="nc" id="L268">        result.setUserEmail(value$userEmail$java$lang$String);</span>
+      }
+<span class="pc bpc" id="L270" title="1 of 2 branches missed.">      if (isSet$userAvatar$java$lang$String) {</span>
+<span class="nc" id="L271">        result.setUserAvatar(value$userAvatar$java$lang$String);</span>
+      }
+<span class="fc bfc" id="L273" title="All 2 branches covered.">      if (isSet$projectId$java$lang$Integer) {</span>
+<span class="fc" id="L274">        result.setProjectId(value$projectId$java$lang$Integer);</span>
+      }
+<span class="fc bfc" id="L276" title="All 2 branches covered.">      if (isSet$project$com$dabsquared$gitlabjenkins$gitlab$hook$model$Project) {</span>
+<span class="fc" id="L277">        result.setProject(value$project$com$dabsquared$gitlabjenkins$gitlab$hook$model$Project);</span>
+      }
+<span class="fc bfc" id="L279" title="All 2 branches covered.">      if (isSet$commits$java$util$List) {</span>
+<span class="fc" id="L280">        result.setCommits(value$commits$java$util$List);</span>
+      }
+<span class="pc bpc" id="L282" title="1 of 2 branches missed.">      if (isSet$totalCommitsCount$java$lang$Integer) {</span>
+<span class="nc" id="L283">        result.setTotalCommitsCount(value$totalCommitsCount$java$lang$Integer);</span>
+      }
+<span class="fc" id="L285">      return result;</span>
+<span class="nc" id="L286">    } catch (RuntimeException ex) {</span>
+<span class="nc" id="L287">      throw ex;</span>
+<span class="nc" id="L288">    } catch (Exception ex) {</span>
+<span class="nc" id="L289">      throw new java.lang.reflect.UndeclaredThrowableException(ex);</span>
+    }
+  }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.2.201409121644</span></div></body></html>

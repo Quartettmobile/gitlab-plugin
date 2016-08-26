@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: com.dabsquared.gitlabjenkins.webhook.build.MergeRequestBuildActionTest
+-------------------------------------------------------------------------------
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 3.078 sec - in com.dabsquared.gitlabjenkins.webhook.build.MergeRequestBuildActionTest

@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>ProjectBuilder.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">GitLab Plugin</a> &gt; <a href="index.source.html" class="el_package">com.dabsquared.gitlabjenkins.gitlab.api.model.builder.generated</a> &gt; <span class="el_source">ProjectBuilder.java</span></div><h1>ProjectBuilder.java</h1><pre class="source lang-java linenums">package com.dabsquared.gitlabjenkins.gitlab.api.model.builder.generated;
+
+import com.dabsquared.gitlabjenkins.gitlab.api.model.Namespace;
+import com.dabsquared.gitlabjenkins.gitlab.api.model.Project;
+import javax.annotation.Generated;
+
+@Generated(&quot;PojoBuilder&quot;)
+public class ProjectBuilder
+    implements Cloneable {
+  protected ProjectBuilder self;
+  protected Integer value$id$java$lang$Integer;
+  protected boolean isSet$id$java$lang$Integer;
+  protected String value$name$java$lang$String;
+  protected boolean isSet$name$java$lang$String;
+  protected Namespace value$namespace$com$dabsquared$gitlabjenkins$gitlab$api$model$Namespace;
+  protected boolean isSet$namespace$com$dabsquared$gitlabjenkins$gitlab$api$model$Namespace;
+  protected String value$webUrl$java$lang$String;
+  protected boolean isSet$webUrl$java$lang$String;
+  protected String value$sshUrlToRepo$java$lang$String;
+  protected boolean isSet$sshUrlToRepo$java$lang$String;
+  protected String value$httpUrlToRepo$java$lang$String;
+  protected boolean isSet$httpUrlToRepo$java$lang$String;
+
+  /**
+   * Factory Method to construct a ProjectBuilder
+   *
+   * @return a new ProjectBuilder
+   */
+  public static ProjectBuilder project() {
+<span class="nc" id="L30">    return new ProjectBuilder();</span>
+  }
+
+  /**
+   * Creates a new {@link ProjectBuilder}.
+   */
+<span class="nc" id="L36">  public ProjectBuilder() {</span>
+<span class="nc" id="L37">    self = (ProjectBuilder)this;</span>
+<span class="nc" id="L38">  }</span>
+
+  /**
+   * Sets the default value for the {@link Project#id} property.
+   *
+   * @param value the default value
+   * @return this builder
+   */
+  public ProjectBuilder withId(Integer value) {
+<span class="nc" id="L47">    this.value$id$java$lang$Integer = value;</span>
+<span class="nc" id="L48">    this.isSet$id$java$lang$Integer = true;</span>
+<span class="nc" id="L49">    return self;</span>
+  }
+
+  /**
+   * Sets the default value for the {@link Project#name} property.
+   *
+   * @param value the default value
+   * @return this builder
+   */
+  public ProjectBuilder withName(String value) {
+<span class="nc" id="L59">    this.value$name$java$lang$String = value;</span>
+<span class="nc" id="L60">    this.isSet$name$java$lang$String = true;</span>
+<span class="nc" id="L61">    return self;</span>
+  }
+
+  /**
+   * Sets the default value for the {@link Project#namespace} property.
+   *
+   * @param value the default value
+   * @return this builder
+   */
+  public ProjectBuilder withNamespace(Namespace value) {
+<span class="nc" id="L71">    this.value$namespace$com$dabsquared$gitlabjenkins$gitlab$api$model$Namespace = value;</span>
+<span class="nc" id="L72">    this.isSet$namespace$com$dabsquared$gitlabjenkins$gitlab$api$model$Namespace = true;</span>
+<span class="nc" id="L73">    return self;</span>
+  }
+
+  /**
+   * Sets the default value for the {@link Project#webUrl} property.
+   *
+   * @param value the default value
+   * @return this builder
+   */
+  public ProjectBuilder withWebUrl(String value) {
+<span class="nc" id="L83">    this.value$webUrl$java$lang$String = value;</span>
+<span class="nc" id="L84">    this.isSet$webUrl$java$lang$String = true;</span>
+<span class="nc" id="L85">    return self;</span>
+  }
+
+  /**
+   * Sets the default value for the {@link Project#sshUrlToRepo} property.
+   *
+   * @param value the default value
+   * @return this builder
+   */
+  public ProjectBuilder withSshUrlToRepo(String value) {
+<span class="nc" id="L95">    this.value$sshUrlToRepo$java$lang$String = value;</span>
+<span class="nc" id="L96">    this.isSet$sshUrlToRepo$java$lang$String = true;</span>
+<span class="nc" id="L97">    return self;</span>
+  }
+
+  /**
+   * Sets the default value for the {@link Project#httpUrlToRepo} property.
+   *
+   * @param value the default value
+   * @return this builder
+   */
+  public ProjectBuilder withHttpUrlToRepo(String value) {
+<span class="nc" id="L107">    this.value$httpUrlToRepo$java$lang$String = value;</span>
+<span class="nc" id="L108">    this.isSet$httpUrlToRepo$java$lang$String = true;</span>
+<span class="nc" id="L109">    return self;</span>
+  }
+
+  /**
+   * Returns a clone of this builder.
+   *
+   * @return the clone
+   */
+  @Override
+  public Object clone() {
+    try {
+<span class="nc" id="L120">      ProjectBuilder result = (ProjectBuilder)super.clone();</span>
+<span class="nc" id="L121">      result.self = result;</span>
+<span class="nc" id="L122">      return result;</span>
+<span class="nc" id="L123">    } catch (CloneNotSupportedException e) {</span>
+<span class="nc" id="L124">      throw new InternalError(e.getMessage());</span>
+    }
+  }
+
+  /**
+   * Returns a clone of this builder.
+   *
+   * @return the clone
+   */
+  public ProjectBuilder but() {
+<span class="nc" id="L134">    return (ProjectBuilder)clone();</span>
+  }
+
+  /**
+   * Creates a new {@link Project} based on this builder's settings.
+   *
+   * @return the created Project
+   */
+  public Project build() {
+    try {
+<span class="nc" id="L144">      Project result = new Project();</span>
+<span class="nc bnc" id="L145" title="All 2 branches missed.">      if (isSet$id$java$lang$Integer) {</span>
+<span class="nc" id="L146">        result.setId(value$id$java$lang$Integer);</span>
+      }
+<span class="nc bnc" id="L148" title="All 2 branches missed.">      if (isSet$name$java$lang$String) {</span>
+<span class="nc" id="L149">        result.setName(value$name$java$lang$String);</span>
+      }
+<span class="nc bnc" id="L151" title="All 2 branches missed.">      if (isSet$namespace$com$dabsquared$gitlabjenkins$gitlab$api$model$Namespace) {</span>
+<span class="nc" id="L152">        result.setNamespace(value$namespace$com$dabsquared$gitlabjenkins$gitlab$api$model$Namespace);</span>
+      }
+<span class="nc bnc" id="L154" title="All 2 branches missed.">      if (isSet$webUrl$java$lang$String) {</span>
+<span class="nc" id="L155">        result.setWebUrl(value$webUrl$java$lang$String);</span>
+      }
+<span class="nc bnc" id="L157" title="All 2 branches missed.">      if (isSet$sshUrlToRepo$java$lang$String) {</span>
+<span class="nc" id="L158">        result.setSshUrlToRepo(value$sshUrlToRepo$java$lang$String);</span>
+      }
+<span class="nc bnc" id="L160" title="All 2 branches missed.">      if (isSet$httpUrlToRepo$java$lang$String) {</span>
+<span class="nc" id="L161">        result.setHttpUrlToRepo(value$httpUrlToRepo$java$lang$String);</span>
+      }
+<span class="nc" id="L163">      return result;</span>
+<span class="nc" id="L164">    } catch (RuntimeException ex) {</span>
+<span class="nc" id="L165">      throw ex;</span>
+<span class="nc" id="L166">    } catch (Exception ex) {</span>
+<span class="nc" id="L167">      throw new java.lang.reflect.UndeclaredThrowableException(ex);</span>
+    }
+  }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.2.201409121644</span></div></body></html>

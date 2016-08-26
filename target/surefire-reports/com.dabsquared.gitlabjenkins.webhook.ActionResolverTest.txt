@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: com.dabsquared.gitlabjenkins.webhook.ActionResolverTest
+-------------------------------------------------------------------------------
+Tests run: 12, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 7.293 sec - in com.dabsquared.gitlabjenkins.webhook.ActionResolverTest

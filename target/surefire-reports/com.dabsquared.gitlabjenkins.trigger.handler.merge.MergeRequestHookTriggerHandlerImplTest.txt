@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: com.dabsquared.gitlabjenkins.trigger.handler.merge.MergeRequestHookTriggerHandlerImplTest
+-------------------------------------------------------------------------------
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 26.202 sec - in com.dabsquared.gitlabjenkins.trigger.handler.merge.MergeRequestHookTriggerHandlerImplTest

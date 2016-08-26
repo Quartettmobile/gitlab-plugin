@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>StatusPngAction.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">GitLab Plugin</a> &gt; <a href="index.source.html" class="el_package">com.dabsquared.gitlabjenkins.webhook.status</a> &gt; <span class="el_source">StatusPngAction.java</span></div><h1>StatusPngAction.java</h1><pre class="source lang-java linenums">package com.dabsquared.gitlabjenkins.webhook.status;
+
+import hudson.model.Job;
+import hudson.model.Run;
+import hudson.util.HttpResponses;
+import org.apache.commons.io.IOUtils;
+import org.kohsuke.stapler.StaplerResponse;
+
+import java.io.InputStream;
+
+/**
+ * @author Robin Müller
+ */
+class StatusPngAction extends BuildStatusAction {
+    protected StatusPngAction(Job&lt;?, ?&gt; project, Run&lt;?, ?&gt; build) {
+<span class="fc" id="L16">        super(project, build);</span>
+<span class="fc" id="L17">    }</span>
+
+    @Override
+    protected void writeStatusBody(StaplerResponse response, Run&lt;?, ?&gt; build, BuildStatus status) {
+        try {
+<span class="fc" id="L22">            response.setHeader(&quot;Expires&quot;, &quot;Fri, 01 Jan 1984 00:00:00 GMT&quot;);</span>
+<span class="fc" id="L23">            response.setHeader(&quot;Cache-Control&quot;, &quot;no-cache, private&quot;);</span>
+<span class="fc" id="L24">            response.setHeader(&quot;Content-Type&quot;, &quot;image/png&quot;);</span>
+<span class="fc" id="L25">            IOUtils.copy(getStatusImage(status), response.getOutputStream());</span>
+<span class="fc" id="L26">            response.flushBuffer();</span>
+<span class="nc" id="L27">        } catch (Exception e) {</span>
+<span class="nc" id="L28">            throw HttpResponses.error(500, &quot;Could not generate response.&quot;);</span>
+<span class="fc" id="L29">        }</span>
+<span class="fc" id="L30">    }</span>
+
+    private InputStream getStatusImage(BuildStatus status) {
+<span class="pc bfc" id="L33" title="All 5 branches covered.">        switch (status) {</span>
+            case RUNNING:
+<span class="fc" id="L35">                return getClass().getResourceAsStream(&quot;running.png&quot;);</span>
+            case SUCCESS:
+<span class="fc" id="L37">                return getClass().getResourceAsStream(&quot;success.png&quot;);</span>
+            case FAILED:
+<span class="fc" id="L39">                return getClass().getResourceAsStream(&quot;failed.png&quot;);</span>
+            case UNSTABLE:
+<span class="fc" id="L41">                return getClass().getResourceAsStream(&quot;unstable.png&quot;);</span>
+            default:
+<span class="fc" id="L43">                return getClass().getResourceAsStream(&quot;unknown.png&quot;);</span>
+        }
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.2.201409121644</span></div></body></html>

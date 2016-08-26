@@ -1,0 +1,413 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>MergeRequestObjectAttributesBuilder.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">GitLab Plugin</a> &gt; <a href="index.source.html" class="el_package">com.dabsquared.gitlabjenkins.gitlab.hook.model.builder.generated</a> &gt; <span class="el_source">MergeRequestObjectAttributesBuilder.java</span></div><h1>MergeRequestObjectAttributesBuilder.java</h1><pre class="source lang-java linenums">package com.dabsquared.gitlabjenkins.gitlab.hook.model.builder.generated;
+
+import com.dabsquared.gitlabjenkins.gitlab.hook.model.Action;
+import com.dabsquared.gitlabjenkins.gitlab.hook.model.Commit;
+import com.dabsquared.gitlabjenkins.gitlab.hook.model.MergeRequestObjectAttributes;
+import com.dabsquared.gitlabjenkins.gitlab.hook.model.Project;
+import com.dabsquared.gitlabjenkins.gitlab.hook.model.State;
+import java.util.Date;
+import javax.annotation.Generated;
+
+@Generated(&quot;PojoBuilder&quot;)
+public class MergeRequestObjectAttributesBuilder
+    implements Cloneable {
+  protected MergeRequestObjectAttributesBuilder self;
+  protected Integer value$id$java$lang$Integer;
+  protected boolean isSet$id$java$lang$Integer;
+  protected Integer value$iid$java$lang$Integer;
+  protected boolean isSet$iid$java$lang$Integer;
+  protected String value$sourceBranch$java$lang$String;
+  protected boolean isSet$sourceBranch$java$lang$String;
+  protected String value$targetBranch$java$lang$String;
+  protected boolean isSet$targetBranch$java$lang$String;
+  protected Integer value$sourceProjectId$java$lang$Integer;
+  protected boolean isSet$sourceProjectId$java$lang$Integer;
+  protected Integer value$targetProjectId$java$lang$Integer;
+  protected boolean isSet$targetProjectId$java$lang$Integer;
+  protected Integer value$authorId$java$lang$Integer;
+  protected boolean isSet$authorId$java$lang$Integer;
+  protected Integer value$assigneeId$java$lang$Integer;
+  protected boolean isSet$assigneeId$java$lang$Integer;
+  protected String value$title$java$lang$String;
+  protected boolean isSet$title$java$lang$String;
+  protected Date value$createdAt$java$util$Date;
+  protected boolean isSet$createdAt$java$util$Date;
+  protected Date value$updatedAt$java$util$Date;
+  protected boolean isSet$updatedAt$java$util$Date;
+  protected State value$state$com$dabsquared$gitlabjenkins$gitlab$hook$model$State;
+  protected boolean isSet$state$com$dabsquared$gitlabjenkins$gitlab$hook$model$State;
+  protected String value$description$java$lang$String;
+  protected boolean isSet$description$java$lang$String;
+  protected Project value$source$com$dabsquared$gitlabjenkins$gitlab$hook$model$Project;
+  protected boolean isSet$source$com$dabsquared$gitlabjenkins$gitlab$hook$model$Project;
+  protected Project value$target$com$dabsquared$gitlabjenkins$gitlab$hook$model$Project;
+  protected boolean isSet$target$com$dabsquared$gitlabjenkins$gitlab$hook$model$Project;
+  protected Commit value$lastCommit$com$dabsquared$gitlabjenkins$gitlab$hook$model$Commit;
+  protected boolean isSet$lastCommit$com$dabsquared$gitlabjenkins$gitlab$hook$model$Commit;
+  protected String value$mergeStatus$java$lang$String;
+  protected boolean isSet$mergeStatus$java$lang$String;
+  protected String value$url$java$lang$String;
+  protected boolean isSet$url$java$lang$String;
+  protected Action value$action$com$dabsquared$gitlabjenkins$gitlab$hook$model$Action;
+  protected boolean isSet$action$com$dabsquared$gitlabjenkins$gitlab$hook$model$Action;
+  protected Boolean value$workInProgress$java$lang$Boolean;
+  protected boolean isSet$workInProgress$java$lang$Boolean;
+
+  /**
+   * Factory Method to construct a MergeRequestObjectAttributesBuilder
+   *
+   * @return a new MergeRequestObjectAttributesBuilder
+   */
+  public static MergeRequestObjectAttributesBuilder mergeRequestObjectAttributes() {
+<span class="fc" id="L62">    return new MergeRequestObjectAttributesBuilder();</span>
+  }
+
+  /**
+   * Creates a new {@link MergeRequestObjectAttributesBuilder}.
+   */
+<span class="fc" id="L68">  public MergeRequestObjectAttributesBuilder() {</span>
+<span class="fc" id="L69">    self = (MergeRequestObjectAttributesBuilder)this;</span>
+<span class="fc" id="L70">  }</span>
+
+  /**
+   * Sets the default value for the {@link MergeRequestObjectAttributes#id} property.
+   *
+   * @param value the default value
+   * @return this builder
+   */
+  public MergeRequestObjectAttributesBuilder withId(Integer value) {
+<span class="nc" id="L79">    this.value$id$java$lang$Integer = value;</span>
+<span class="nc" id="L80">    this.isSet$id$java$lang$Integer = true;</span>
+<span class="nc" id="L81">    return self;</span>
+  }
+
+  /**
+   * Sets the default value for the {@link MergeRequestObjectAttributes#iid} property.
+   *
+   * @param value the default value
+   * @return this builder
+   */
+  public MergeRequestObjectAttributesBuilder withIid(Integer value) {
+<span class="fc" id="L91">    this.value$iid$java$lang$Integer = value;</span>
+<span class="fc" id="L92">    this.isSet$iid$java$lang$Integer = true;</span>
+<span class="fc" id="L93">    return self;</span>
+  }
+
+  /**
+   * Sets the default value for the {@link MergeRequestObjectAttributes#sourceBranch} property.
+   *
+   * @param value the default value
+   * @return this builder
+   */
+  public MergeRequestObjectAttributesBuilder withSourceBranch(String value) {
+<span class="fc" id="L103">    this.value$sourceBranch$java$lang$String = value;</span>
+<span class="fc" id="L104">    this.isSet$sourceBranch$java$lang$String = true;</span>
+<span class="fc" id="L105">    return self;</span>
+  }
+
+  /**
+   * Sets the default value for the {@link MergeRequestObjectAttributes#targetBranch} property.
+   *
+   * @param value the default value
+   * @return this builder
+   */
+  public MergeRequestObjectAttributesBuilder withTargetBranch(String value) {
+<span class="fc" id="L115">    this.value$targetBranch$java$lang$String = value;</span>
+<span class="fc" id="L116">    this.isSet$targetBranch$java$lang$String = true;</span>
+<span class="fc" id="L117">    return self;</span>
+  }
+
+  /**
+   * Sets the default value for the {@link MergeRequestObjectAttributes#sourceProjectId} property.
+   *
+   * @param value the default value
+   * @return this builder
+   */
+  public MergeRequestObjectAttributesBuilder withSourceProjectId(Integer value) {
+<span class="fc" id="L127">    this.value$sourceProjectId$java$lang$Integer = value;</span>
+<span class="fc" id="L128">    this.isSet$sourceProjectId$java$lang$Integer = true;</span>
+<span class="fc" id="L129">    return self;</span>
+  }
+
+  /**
+   * Sets the default value for the {@link MergeRequestObjectAttributes#targetProjectId} property.
+   *
+   * @param value the default value
+   * @return this builder
+   */
+  public MergeRequestObjectAttributesBuilder withTargetProjectId(Integer value) {
+<span class="fc" id="L139">    this.value$targetProjectId$java$lang$Integer = value;</span>
+<span class="fc" id="L140">    this.isSet$targetProjectId$java$lang$Integer = true;</span>
+<span class="fc" id="L141">    return self;</span>
+  }
+
+  /**
+   * Sets the default value for the {@link MergeRequestObjectAttributes#authorId} property.
+   *
+   * @param value the default value
+   * @return this builder
+   */
+  public MergeRequestObjectAttributesBuilder withAuthorId(Integer value) {
+<span class="nc" id="L151">    this.value$authorId$java$lang$Integer = value;</span>
+<span class="nc" id="L152">    this.isSet$authorId$java$lang$Integer = true;</span>
+<span class="nc" id="L153">    return self;</span>
+  }
+
+  /**
+   * Sets the default value for the {@link MergeRequestObjectAttributes#assigneeId} property.
+   *
+   * @param value the default value
+   * @return this builder
+   */
+  public MergeRequestObjectAttributesBuilder withAssigneeId(Integer value) {
+<span class="nc" id="L163">    this.value$assigneeId$java$lang$Integer = value;</span>
+<span class="nc" id="L164">    this.isSet$assigneeId$java$lang$Integer = true;</span>
+<span class="nc" id="L165">    return self;</span>
+  }
+
+  /**
+   * Sets the default value for the {@link MergeRequestObjectAttributes#title} property.
+   *
+   * @param value the default value
+   * @return this builder
+   */
+  public MergeRequestObjectAttributesBuilder withTitle(String value) {
+<span class="fc" id="L175">    this.value$title$java$lang$String = value;</span>
+<span class="fc" id="L176">    this.isSet$title$java$lang$String = true;</span>
+<span class="fc" id="L177">    return self;</span>
+  }
+
+  /**
+   * Sets the default value for the {@link MergeRequestObjectAttributes#createdAt} property.
+   *
+   * @param value the default value
+   * @return this builder
+   */
+  public MergeRequestObjectAttributesBuilder withCreatedAt(Date value) {
+<span class="nc" id="L187">    this.value$createdAt$java$util$Date = value;</span>
+<span class="nc" id="L188">    this.isSet$createdAt$java$util$Date = true;</span>
+<span class="nc" id="L189">    return self;</span>
+  }
+
+  /**
+   * Sets the default value for the {@link MergeRequestObjectAttributes#updatedAt} property.
+   *
+   * @param value the default value
+   * @return this builder
+   */
+  public MergeRequestObjectAttributesBuilder withUpdatedAt(Date value) {
+<span class="nc" id="L199">    this.value$updatedAt$java$util$Date = value;</span>
+<span class="nc" id="L200">    this.isSet$updatedAt$java$util$Date = true;</span>
+<span class="nc" id="L201">    return self;</span>
+  }
+
+  /**
+   * Sets the default value for the {@link MergeRequestObjectAttributes#state} property.
+   *
+   * @param value the default value
+   * @return this builder
+   */
+  public MergeRequestObjectAttributesBuilder withState(State value) {
+<span class="fc" id="L211">    this.value$state$com$dabsquared$gitlabjenkins$gitlab$hook$model$State = value;</span>
+<span class="fc" id="L212">    this.isSet$state$com$dabsquared$gitlabjenkins$gitlab$hook$model$State = true;</span>
+<span class="fc" id="L213">    return self;</span>
+  }
+
+  /**
+   * Sets the default value for the {@link MergeRequestObjectAttributes#description} property.
+   *
+   * @param value the default value
+   * @return this builder
+   */
+  public MergeRequestObjectAttributesBuilder withDescription(String value) {
+<span class="fc" id="L223">    this.value$description$java$lang$String = value;</span>
+<span class="fc" id="L224">    this.isSet$description$java$lang$String = true;</span>
+<span class="fc" id="L225">    return self;</span>
+  }
+
+  /**
+   * Sets the default value for the {@link MergeRequestObjectAttributes#source} property.
+   *
+   * @param value the default value
+   * @return this builder
+   */
+  public MergeRequestObjectAttributesBuilder withSource(Project value) {
+<span class="fc" id="L235">    this.value$source$com$dabsquared$gitlabjenkins$gitlab$hook$model$Project = value;</span>
+<span class="fc" id="L236">    this.isSet$source$com$dabsquared$gitlabjenkins$gitlab$hook$model$Project = true;</span>
+<span class="fc" id="L237">    return self;</span>
+  }
+
+  /**
+   * Sets the default value for the {@link MergeRequestObjectAttributes#target} property.
+   *
+   * @param value the default value
+   * @return this builder
+   */
+  public MergeRequestObjectAttributesBuilder withTarget(Project value) {
+<span class="fc" id="L247">    this.value$target$com$dabsquared$gitlabjenkins$gitlab$hook$model$Project = value;</span>
+<span class="fc" id="L248">    this.isSet$target$com$dabsquared$gitlabjenkins$gitlab$hook$model$Project = true;</span>
+<span class="fc" id="L249">    return self;</span>
+  }
+
+  /**
+   * Sets the default value for the {@link MergeRequestObjectAttributes#lastCommit} property.
+   *
+   * @param value the default value
+   * @return this builder
+   */
+  public MergeRequestObjectAttributesBuilder withLastCommit(Commit value) {
+<span class="fc" id="L259">    this.value$lastCommit$com$dabsquared$gitlabjenkins$gitlab$hook$model$Commit = value;</span>
+<span class="fc" id="L260">    this.isSet$lastCommit$com$dabsquared$gitlabjenkins$gitlab$hook$model$Commit = true;</span>
+<span class="fc" id="L261">    return self;</span>
+  }
+
+  /**
+   * Sets the default value for the {@link MergeRequestObjectAttributes#mergeStatus} property.
+   *
+   * @param value the default value
+   * @return this builder
+   */
+  public MergeRequestObjectAttributesBuilder withMergeStatus(String value) {
+<span class="nc" id="L271">    this.value$mergeStatus$java$lang$String = value;</span>
+<span class="nc" id="L272">    this.isSet$mergeStatus$java$lang$String = true;</span>
+<span class="nc" id="L273">    return self;</span>
+  }
+
+  /**
+   * Sets the default value for the {@link MergeRequestObjectAttributes#url} property.
+   *
+   * @param value the default value
+   * @return this builder
+   */
+  public MergeRequestObjectAttributesBuilder withUrl(String value) {
+<span class="nc" id="L283">    this.value$url$java$lang$String = value;</span>
+<span class="nc" id="L284">    this.isSet$url$java$lang$String = true;</span>
+<span class="nc" id="L285">    return self;</span>
+  }
+
+  /**
+   * Sets the default value for the {@link MergeRequestObjectAttributes#action} property.
+   *
+   * @param value the default value
+   * @return this builder
+   */
+  public MergeRequestObjectAttributesBuilder withAction(Action value) {
+<span class="nc" id="L295">    this.value$action$com$dabsquared$gitlabjenkins$gitlab$hook$model$Action = value;</span>
+<span class="nc" id="L296">    this.isSet$action$com$dabsquared$gitlabjenkins$gitlab$hook$model$Action = true;</span>
+<span class="nc" id="L297">    return self;</span>
+  }
+
+  /**
+   * Sets the default value for the {@link MergeRequestObjectAttributes#workInProgress} property.
+   *
+   * @param value the default value
+   * @return this builder
+   */
+  public MergeRequestObjectAttributesBuilder withWorkInProgress(Boolean value) {
+<span class="nc" id="L307">    this.value$workInProgress$java$lang$Boolean = value;</span>
+<span class="nc" id="L308">    this.isSet$workInProgress$java$lang$Boolean = true;</span>
+<span class="nc" id="L309">    return self;</span>
+  }
+
+  /**
+   * Returns a clone of this builder.
+   *
+   * @return the clone
+   */
+  @Override
+  public Object clone() {
+    try {
+<span class="nc" id="L320">      MergeRequestObjectAttributesBuilder result = (MergeRequestObjectAttributesBuilder)super.clone();</span>
+<span class="nc" id="L321">      result.self = result;</span>
+<span class="nc" id="L322">      return result;</span>
+<span class="nc" id="L323">    } catch (CloneNotSupportedException e) {</span>
+<span class="nc" id="L324">      throw new InternalError(e.getMessage());</span>
+    }
+  }
+
+  /**
+   * Returns a clone of this builder.
+   *
+   * @return the clone
+   */
+  public MergeRequestObjectAttributesBuilder but() {
+<span class="nc" id="L334">    return (MergeRequestObjectAttributesBuilder)clone();</span>
+  }
+
+  /**
+   * Creates a new {@link MergeRequestObjectAttributes} based on this builder's settings.
+   *
+   * @return the created MergeRequestObjectAttributes
+   */
+  public MergeRequestObjectAttributes build() {
+    try {
+<span class="fc" id="L344">      MergeRequestObjectAttributes result = new MergeRequestObjectAttributes();</span>
+<span class="pc bpc" id="L345" title="1 of 2 branches missed.">      if (isSet$id$java$lang$Integer) {</span>
+<span class="nc" id="L346">        result.setId(value$id$java$lang$Integer);</span>
+      }
+<span class="fc bfc" id="L348" title="All 2 branches covered.">      if (isSet$iid$java$lang$Integer) {</span>
+<span class="fc" id="L349">        result.setIid(value$iid$java$lang$Integer);</span>
+      }
+<span class="fc bfc" id="L351" title="All 2 branches covered.">      if (isSet$sourceBranch$java$lang$String) {</span>
+<span class="fc" id="L352">        result.setSourceBranch(value$sourceBranch$java$lang$String);</span>
+      }
+<span class="fc bfc" id="L354" title="All 2 branches covered.">      if (isSet$targetBranch$java$lang$String) {</span>
+<span class="fc" id="L355">        result.setTargetBranch(value$targetBranch$java$lang$String);</span>
+      }
+<span class="fc bfc" id="L357" title="All 2 branches covered.">      if (isSet$sourceProjectId$java$lang$Integer) {</span>
+<span class="fc" id="L358">        result.setSourceProjectId(value$sourceProjectId$java$lang$Integer);</span>
+      }
+<span class="fc bfc" id="L360" title="All 2 branches covered.">      if (isSet$targetProjectId$java$lang$Integer) {</span>
+<span class="fc" id="L361">        result.setTargetProjectId(value$targetProjectId$java$lang$Integer);</span>
+      }
+<span class="pc bpc" id="L363" title="1 of 2 branches missed.">      if (isSet$authorId$java$lang$Integer) {</span>
+<span class="nc" id="L364">        result.setAuthorId(value$authorId$java$lang$Integer);</span>
+      }
+<span class="pc bpc" id="L366" title="1 of 2 branches missed.">      if (isSet$assigneeId$java$lang$Integer) {</span>
+<span class="nc" id="L367">        result.setAssigneeId(value$assigneeId$java$lang$Integer);</span>
+      }
+<span class="fc bfc" id="L369" title="All 2 branches covered.">      if (isSet$title$java$lang$String) {</span>
+<span class="fc" id="L370">        result.setTitle(value$title$java$lang$String);</span>
+      }
+<span class="pc bpc" id="L372" title="1 of 2 branches missed.">      if (isSet$createdAt$java$util$Date) {</span>
+<span class="nc" id="L373">        result.setCreatedAt(value$createdAt$java$util$Date);</span>
+      }
+<span class="pc bpc" id="L375" title="1 of 2 branches missed.">      if (isSet$updatedAt$java$util$Date) {</span>
+<span class="nc" id="L376">        result.setUpdatedAt(value$updatedAt$java$util$Date);</span>
+      }
+<span class="fc bfc" id="L378" title="All 2 branches covered.">      if (isSet$state$com$dabsquared$gitlabjenkins$gitlab$hook$model$State) {</span>
+<span class="fc" id="L379">        result.setState(value$state$com$dabsquared$gitlabjenkins$gitlab$hook$model$State);</span>
+      }
+<span class="fc bfc" id="L381" title="All 2 branches covered.">      if (isSet$description$java$lang$String) {</span>
+<span class="fc" id="L382">        result.setDescription(value$description$java$lang$String);</span>
+      }
+<span class="fc bfc" id="L384" title="All 2 branches covered.">      if (isSet$source$com$dabsquared$gitlabjenkins$gitlab$hook$model$Project) {</span>
+<span class="fc" id="L385">        result.setSource(value$source$com$dabsquared$gitlabjenkins$gitlab$hook$model$Project);</span>
+      }
+<span class="fc bfc" id="L387" title="All 2 branches covered.">      if (isSet$target$com$dabsquared$gitlabjenkins$gitlab$hook$model$Project) {</span>
+<span class="fc" id="L388">        result.setTarget(value$target$com$dabsquared$gitlabjenkins$gitlab$hook$model$Project);</span>
+      }
+<span class="fc bfc" id="L390" title="All 2 branches covered.">      if (isSet$lastCommit$com$dabsquared$gitlabjenkins$gitlab$hook$model$Commit) {</span>
+<span class="fc" id="L391">        result.setLastCommit(value$lastCommit$com$dabsquared$gitlabjenkins$gitlab$hook$model$Commit);</span>
+      }
+<span class="pc bpc" id="L393" title="1 of 2 branches missed.">      if (isSet$mergeStatus$java$lang$String) {</span>
+<span class="nc" id="L394">        result.setMergeStatus(value$mergeStatus$java$lang$String);</span>
+      }
+<span class="pc bpc" id="L396" title="1 of 2 branches missed.">      if (isSet$url$java$lang$String) {</span>
+<span class="nc" id="L397">        result.setUrl(value$url$java$lang$String);</span>
+      }
+<span class="pc bpc" id="L399" title="1 of 2 branches missed.">      if (isSet$action$com$dabsquared$gitlabjenkins$gitlab$hook$model$Action) {</span>
+<span class="nc" id="L400">        result.setAction(value$action$com$dabsquared$gitlabjenkins$gitlab$hook$model$Action);</span>
+      }
+<span class="pc bpc" id="L402" title="1 of 2 branches missed.">      if (isSet$workInProgress$java$lang$Boolean) {</span>
+<span class="nc" id="L403">        result.setWorkInProgress(value$workInProgress$java$lang$Boolean);</span>
+      }
+<span class="fc" id="L405">      return result;</span>
+<span class="nc" id="L406">    } catch (RuntimeException ex) {</span>
+<span class="nc" id="L407">      throw ex;</span>
+<span class="nc" id="L408">    } catch (Exception ex) {</span>
+<span class="nc" id="L409">      throw new java.lang.reflect.UndeclaredThrowableException(ex);</span>
+    }
+  }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.2.201409121644</span></div></body></html>
